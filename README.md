@@ -147,7 +147,7 @@
 작업 태그/이슈 번호-작업 내용
 
 # 올바른 브랜치 네임 예시
-- Design/#1-mainview-ui
+- design/#1-mainview-ui
 
 # 올바르지 않은 브랜치 네임 예시
 - Design/#1-MainView-UI (브랜치 네임은 모두 소문자로 작성되어야 합니다.)
