@@ -38,6 +38,7 @@
 		DD0FF2602B8EDFD50061F9DB /* PyeongChangPeace-Bold 2.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2552B8EDFC80061F9DB /* PyeongChangPeace-Bold 2.otf */; };
 		DD0FF2612B8EDFD50061F9DB /* SCDream2.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2542B8EDFC80061F9DB /* SCDream2.otf */; };
 		DD0FF2622B8EDFD50061F9DB /* SCDream7.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24A2B8EDFC80061F9DB /* SCDream7.otf */; };
+		DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2642B8EE7370061F9DB /* BaseURL.swift */; };
 		DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */; };
 		DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD652CFE2B8A2FBE00542337 /* ContentView.swift */; };
 		DD652D012B8A2FBF00542337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD652D002B8A2FBF00542337 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		DD0FF2532B8EDFC80061F9DB /* SCDream3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream3.otf; sourceTree = "<group>"; };
 		DD0FF2542B8EDFC80061F9DB /* SCDream2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream2.otf; sourceTree = "<group>"; };
 		DD0FF2552B8EDFC80061F9DB /* PyeongChangPeace-Bold 2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PyeongChangPeace-Bold 2.otf"; sourceTree = "<group>"; };
+		DD0FF2642B8EE7370061F9DB /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		DD652CF92B8A2FBE00542337 /* Honzapda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honzapda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonzapdaApp.swift; sourceTree = "<group>"; };
 		DD652CFE2B8A2FBE00542337 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -236,21 +238,22 @@
 		DD0FF23B2B8ED9320061F9DB /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				DD0FF2472B8EDE7E0061F9DB /* Resources */,
 				DD0FF2442B8EDE4C0061F9DB /* Extensions */,
+				DD0FF2632B8EE7110061F9DB /* Privates */,
 				DD0FF2412B8EDE2C0061F9DB /* Protocols */,
-				DD0FF23C2B8ED9520061F9DB /* Supporting */,
+				DD0FF2472B8EDE7E0061F9DB /* Resources */,
+				DD0FF23C2B8ED9520061F9DB /* Supportings */,
 			);
 			path = Global;
 			sourceTree = "<group>";
 		};
-		DD0FF23C2B8ED9520061F9DB /* Supporting */ = {
+		DD0FF23C2B8ED9520061F9DB /* Supportings */ = {
 			isa = PBXGroup;
 			children = (
 				DD652D022B8A2FBF00542337 /* Preview Content */,
 				DD0FF23D2B8EDA0F0061F9DB /* Info.plist */,
 			);
-			path = Supporting;
+			path = Supportings;
 			sourceTree = "<group>";
 		};
 		DD0FF2412B8EDE2C0061F9DB /* Protocols */ = {
@@ -296,6 +299,14 @@
 				DD0FF24E2B8EDFC80061F9DB /* SCDream9.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DD0FF2632B8EE7110061F9DB /* Privates */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2642B8EE7370061F9DB /* BaseURL.swift */,
+			);
+			path = Privates;
 			sourceTree = "<group>";
 		};
 		DD652CF02B8A2FBE00542337 = {
@@ -451,6 +462,7 @@
 			files = (
 				DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */,
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
+				DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
 				DD0FF2382B8ED8A60061F9DB /* Onboarding.swift in Sources */,
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
