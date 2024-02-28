@@ -8,6 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		DD0FF20A2B8EC1570061F9DB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2092B8EC1570061F9DB /* .swiftlint.yml */; };
+		DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */; };
+		DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */; };
+		DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2112B8ED59B0061F9DB /* NetworkConstant.swift */; };
+		DD0FF21C2B8ED7E20061F9DB /* CafeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF21B2B8ED7E20061F9DB /* CafeEntity.swift */; };
+		DD0FF21E2B8ED7EF0061F9DB /* CurationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF21D2B8ED7EF0061F9DB /* CurationEntity.swift */; };
+		DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF21F2B8ED7F80061F9DB /* HomeEntity.swift */; };
+		DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2212B8ED8020061F9DB /* OnboardingEntity.swift */; };
+		DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2252B8ED81C0061F9DB /* SearchEntity.swift */; };
+		DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2272B8ED8250061F9DB /* UserEntity.swift */; };
+		DD0FF2352B8ED8A60061F9DB /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22A2B8ED8A60061F9DB /* Cafe.swift */; };
+		DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22C2B8ED8A60061F9DB /* Home.swift */; };
+		DD0FF2372B8ED8A60061F9DB /* Curation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22E2B8ED8A60061F9DB /* Curation.swift */; };
+		DD0FF2382B8ED8A60061F9DB /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2302B8ED8A60061F9DB /* Onboarding.swift */; };
+		DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2322B8ED8A60061F9DB /* User.swift */; };
+		DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2342B8ED8A60061F9DB /* Search.swift */; };
+		DD0FF2402B8EDE220061F9DB /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF23F2B8EDE220061F9DB /* BaseURL.swift */; };
+		DD0FF2432B8EDE400061F9DB /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2422B8EDE400061F9DB /* Protocol.swift */; };
+		DD0FF2462B8EDE690061F9DB /* Extension+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2452B8EDE690061F9DB /* Extension+.swift */; };
+		DD0FF2562B8EDFD50061F9DB /* SCDream9.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24E2B8EDFC80061F9DB /* SCDream9.otf */; };
+		DD0FF2572B8EDFD50061F9DB /* SCDream5.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2492B8EDFC80061F9DB /* SCDream5.otf */; };
+		DD0FF2582B8EDFD50061F9DB /* PyeongChangPeace-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24C2B8EDFC80061F9DB /* PyeongChangPeace-Bold.otf */; };
+		DD0FF2592B8EDFD50061F9DB /* SCDream8.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24B2B8EDFC80061F9DB /* SCDream8.otf */; };
+		DD0FF25A2B8EDFD50061F9DB /* PyeongChangPeace-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24D2B8EDFC80061F9DB /* PyeongChangPeace-Light.otf */; };
+		DD0FF25B2B8EDFD50061F9DB /* SCDream6.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2512B8EDFC80061F9DB /* SCDream6.otf */; };
+		DD0FF25C2B8EDFD50061F9DB /* PyeongChangPeace-Light 2.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24F2B8EDFC80061F9DB /* PyeongChangPeace-Light 2.otf */; };
+		DD0FF25D2B8EDFD50061F9DB /* SCDream1.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2502B8EDFC80061F9DB /* SCDream1.otf */; };
+		DD0FF25E2B8EDFD50061F9DB /* SCDream4.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2522B8EDFC80061F9DB /* SCDream4.otf */; };
+		DD0FF25F2B8EDFD50061F9DB /* SCDream3.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2532B8EDFC80061F9DB /* SCDream3.otf */; };
+		DD0FF2602B8EDFD50061F9DB /* PyeongChangPeace-Bold 2.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2552B8EDFC80061F9DB /* PyeongChangPeace-Bold 2.otf */; };
+		DD0FF2612B8EDFD50061F9DB /* SCDream2.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2542B8EDFC80061F9DB /* SCDream2.otf */; };
+		DD0FF2622B8EDFD50061F9DB /* SCDream7.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24A2B8EDFC80061F9DB /* SCDream7.otf */; };
 		DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */; };
 		DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD652CFE2B8A2FBE00542337 /* ContentView.swift */; };
 		DD652D012B8A2FBF00542337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD652D002B8A2FBF00542337 /* Assets.xcassets */; };
@@ -18,12 +49,43 @@
 
 /* Begin PBXFileReference section */
 		DD0FF2092B8EC1570061F9DB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		DD0FF2112B8ED59B0061F9DB /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
+		DD0FF21B2B8ED7E20061F9DB /* CafeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeEntity.swift; sourceTree = "<group>"; };
+		DD0FF21D2B8ED7EF0061F9DB /* CurationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationEntity.swift; sourceTree = "<group>"; };
+		DD0FF21F2B8ED7F80061F9DB /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
+		DD0FF2212B8ED8020061F9DB /* OnboardingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEntity.swift; sourceTree = "<group>"; };
+		DD0FF2252B8ED81C0061F9DB /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
+		DD0FF2272B8ED8250061F9DB /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		DD0FF22A2B8ED8A60061F9DB /* Cafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
+		DD0FF22C2B8ED8A60061F9DB /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		DD0FF22E2B8ED8A60061F9DB /* Curation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curation.swift; sourceTree = "<group>"; };
+		DD0FF2302B8ED8A60061F9DB /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		DD0FF2322B8ED8A60061F9DB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DD0FF2342B8ED8A60061F9DB /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		DD0FF23D2B8EDA0F0061F9DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD0FF23F2B8EDE220061F9DB /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		DD0FF2422B8EDE400061F9DB /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		DD0FF2452B8EDE690061F9DB /* Extension+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+.swift"; sourceTree = "<group>"; };
+		DD0FF2492B8EDFC80061F9DB /* SCDream5.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream5.otf; sourceTree = "<group>"; };
+		DD0FF24A2B8EDFC80061F9DB /* SCDream7.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream7.otf; sourceTree = "<group>"; };
+		DD0FF24B2B8EDFC80061F9DB /* SCDream8.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream8.otf; sourceTree = "<group>"; };
+		DD0FF24C2B8EDFC80061F9DB /* PyeongChangPeace-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PyeongChangPeace-Bold.otf"; sourceTree = "<group>"; };
+		DD0FF24D2B8EDFC80061F9DB /* PyeongChangPeace-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PyeongChangPeace-Light.otf"; sourceTree = "<group>"; };
+		DD0FF24E2B8EDFC80061F9DB /* SCDream9.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream9.otf; sourceTree = "<group>"; };
+		DD0FF24F2B8EDFC80061F9DB /* PyeongChangPeace-Light 2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PyeongChangPeace-Light 2.otf"; sourceTree = "<group>"; };
+		DD0FF2502B8EDFC80061F9DB /* SCDream1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream1.otf; sourceTree = "<group>"; };
+		DD0FF2512B8EDFC80061F9DB /* SCDream6.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream6.otf; sourceTree = "<group>"; };
+		DD0FF2522B8EDFC80061F9DB /* SCDream4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream4.otf; sourceTree = "<group>"; };
+		DD0FF2532B8EDFC80061F9DB /* SCDream3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream3.otf; sourceTree = "<group>"; };
+		DD0FF2542B8EDFC80061F9DB /* SCDream2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream2.otf; sourceTree = "<group>"; };
+		DD0FF2552B8EDFC80061F9DB /* PyeongChangPeace-Bold 2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PyeongChangPeace-Bold 2.otf"; sourceTree = "<group>"; };
 		DD652CF92B8A2FBE00542337 /* Honzapda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honzapda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonzapdaApp.swift; sourceTree = "<group>"; };
 		DD652CFE2B8A2FBE00542337 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DD652D002B8A2FBF00542337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD652D032B8A2FBF00542337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DDC908222B8A42CF00CFCEDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +101,214 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD0FF20B2B8ED54C0061F9DB /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		DD0FF20C2B8ED55F0061F9DB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2112B8ED59B0061F9DB /* NetworkConstant.swift */,
+				DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */,
+				DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */,
+				DD0FF2182B8ED7570061F9DB /* Cafe */,
+				DD0FF2162B8ED5D60061F9DB /* Curation */,
+				DD0FF2142B8ED5BF0061F9DB /* Home */,
+				DD0FF2132B8ED5AC0061F9DB /* Onboarding */,
+				DD0FF2152B8ED5C80061F9DB /* Search */,
+				DD0FF2172B8ED7400061F9DB /* User */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DD0FF2132B8ED5AC0061F9DB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2212B8ED8020061F9DB /* OnboardingEntity.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DD0FF2142B8ED5BF0061F9DB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF21F2B8ED7F80061F9DB /* HomeEntity.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DD0FF2152B8ED5C80061F9DB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2252B8ED81C0061F9DB /* SearchEntity.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DD0FF2162B8ED5D60061F9DB /* Curation */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF21D2B8ED7EF0061F9DB /* CurationEntity.swift */,
+			);
+			path = Curation;
+			sourceTree = "<group>";
+		};
+		DD0FF2172B8ED7400061F9DB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2272B8ED8250061F9DB /* UserEntity.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		DD0FF2182B8ED7570061F9DB /* Cafe */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF21B2B8ED7E20061F9DB /* CafeEntity.swift */,
+			);
+			path = Cafe;
+			sourceTree = "<group>";
+		};
+		DD0FF21A2B8ED7980061F9DB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DD652CFE2B8A2FBE00542337 /* ContentView.swift */,
+				DD0FF2292B8ED8A60061F9DB /* Cafe */,
+				DD0FF22D2B8ED8A60061F9DB /* Curation */,
+				DD0FF22B2B8ED8A60061F9DB /* Home */,
+				DD0FF22F2B8ED8A60061F9DB /* Onboarding */,
+				DD0FF2332B8ED8A60061F9DB /* Search */,
+				DD0FF2312B8ED8A60061F9DB /* User */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DD0FF2292B8ED8A60061F9DB /* Cafe */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF22A2B8ED8A60061F9DB /* Cafe.swift */,
+			);
+			path = Cafe;
+			sourceTree = "<group>";
+		};
+		DD0FF22B2B8ED8A60061F9DB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF22C2B8ED8A60061F9DB /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DD0FF22D2B8ED8A60061F9DB /* Curation */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF22E2B8ED8A60061F9DB /* Curation.swift */,
+			);
+			path = Curation;
+			sourceTree = "<group>";
+		};
+		DD0FF22F2B8ED8A60061F9DB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2302B8ED8A60061F9DB /* Onboarding.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DD0FF2312B8ED8A60061F9DB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2322B8ED8A60061F9DB /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		DD0FF2332B8ED8A60061F9DB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2342B8ED8A60061F9DB /* Search.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DD0FF23B2B8ED9320061F9DB /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2472B8EDE7E0061F9DB /* Resources */,
+				DD0FF2442B8EDE4C0061F9DB /* Extensions */,
+				DD0FF2412B8EDE2C0061F9DB /* Protocols */,
+				DD0FF23E2B8EDE030061F9DB /* Privates */,
+				DD0FF23C2B8ED9520061F9DB /* Supporting */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		DD0FF23C2B8ED9520061F9DB /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				DD652D022B8A2FBF00542337 /* Preview Content */,
+				DD0FF23D2B8EDA0F0061F9DB /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		DD0FF23E2B8EDE030061F9DB /* Privates */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF23F2B8EDE220061F9DB /* BaseURL.swift */,
+			);
+			path = Privates;
+			sourceTree = "<group>";
+		};
+		DD0FF2412B8EDE2C0061F9DB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2422B8EDE400061F9DB /* Protocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DD0FF2442B8EDE4C0061F9DB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2452B8EDE690061F9DB /* Extension+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD0FF2472B8EDE7E0061F9DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2482B8EDF4D0061F9DB /* Fonts */,
+				DD652D002B8A2FBF00542337 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DD0FF2482B8EDF4D0061F9DB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF2552B8EDFC80061F9DB /* PyeongChangPeace-Bold 2.otf */,
+				DD0FF24C2B8EDFC80061F9DB /* PyeongChangPeace-Bold.otf */,
+				DD0FF24F2B8EDFC80061F9DB /* PyeongChangPeace-Light 2.otf */,
+				DD0FF24D2B8EDFC80061F9DB /* PyeongChangPeace-Light.otf */,
+				DD0FF2502B8EDFC80061F9DB /* SCDream1.otf */,
+				DD0FF2542B8EDFC80061F9DB /* SCDream2.otf */,
+				DD0FF2532B8EDFC80061F9DB /* SCDream3.otf */,
+				DD0FF2522B8EDFC80061F9DB /* SCDream4.otf */,
+				DD0FF2492B8EDFC80061F9DB /* SCDream5.otf */,
+				DD0FF2512B8EDFC80061F9DB /* SCDream6.otf */,
+				DD0FF24A2B8EDFC80061F9DB /* SCDream7.otf */,
+				DD0FF24B2B8EDFC80061F9DB /* SCDream8.otf */,
+				DD0FF24E2B8EDFC80061F9DB /* SCDream9.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		DD652CF02B8A2FBE00542337 = {
 			isa = PBXGroup;
 			children = (
@@ -59,11 +329,10 @@
 		DD652CFB2B8A2FBE00542337 /* Honzapda */ = {
 			isa = PBXGroup;
 			children = (
-				DDC908222B8A42CF00CFCEDD /* Info.plist */,
-				DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */,
-				DD652CFE2B8A2FBE00542337 /* ContentView.swift */,
-				DD652D002B8A2FBF00542337 /* Assets.xcassets */,
-				DD652D022B8A2FBF00542337 /* Preview Content */,
+				DD0FF20B2B8ED54C0061F9DB /* Application */,
+				DD0FF23B2B8ED9320061F9DB /* Global */,
+				DD0FF20C2B8ED55F0061F9DB /* Network */,
+				DD0FF21A2B8ED7980061F9DB /* Presentation */,
 			);
 			path = Honzapda;
 			sourceTree = "<group>";
@@ -143,9 +412,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0FF2612B8EDFD50061F9DB /* SCDream2.otf in Resources */,
+				DD0FF2572B8EDFD50061F9DB /* SCDream5.otf in Resources */,
+				DD0FF2592B8EDFD50061F9DB /* SCDream8.otf in Resources */,
+				DD0FF25D2B8EDFD50061F9DB /* SCDream1.otf in Resources */,
+				DD0FF2582B8EDFD50061F9DB /* PyeongChangPeace-Bold.otf in Resources */,
+				DD0FF25F2B8EDFD50061F9DB /* SCDream3.otf in Resources */,
+				DD0FF25B2B8EDFD50061F9DB /* SCDream6.otf in Resources */,
 				DD0FF20A2B8EC1570061F9DB /* .swiftlint.yml in Resources */,
+				DD0FF2602B8EDFD50061F9DB /* PyeongChangPeace-Bold 2.otf in Resources */,
+				DD0FF2622B8EDFD50061F9DB /* SCDream7.otf in Resources */,
+				DD0FF25E2B8EDFD50061F9DB /* SCDream4.otf in Resources */,
 				DD652D042B8A2FBF00542337 /* Preview Assets.xcassets in Resources */,
 				DD652D012B8A2FBF00542337 /* Assets.xcassets in Resources */,
+				DD0FF25C2B8EDFD50061F9DB /* PyeongChangPeace-Light 2.otf in Resources */,
+				DD0FF2562B8EDFD50061F9DB /* SCDream9.otf in Resources */,
+				DD0FF25A2B8EDFD50061F9DB /* PyeongChangPeace-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +459,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */,
+				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
+				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
+				DD0FF2382B8ED8A60061F9DB /* Onboarding.swift in Sources */,
+				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
+				DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */,
+				DD0FF21E2B8ED7EF0061F9DB /* CurationEntity.swift in Sources */,
+				DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */,
+				DD0FF2402B8EDE220061F9DB /* BaseURL.swift in Sources */,
+				DD0FF2432B8EDE400061F9DB /* Protocol.swift in Sources */,
+				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
+				DD0FF2462B8EDE690061F9DB /* Extension+.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
+				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
+				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
+				DD0FF2372B8ED8A60061F9DB /* Curation.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
+				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
+				DD0FF21C2B8ED7E20061F9DB /* CafeEntity.swift in Sources */,
+				DD0FF2352B8ED8A60061F9DB /* Cafe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,14 +616,16 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2DF5SKQK2R;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Honzapda/Info.plist;
+				INFOPLIST_FILE = Honzapda/Global/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "혼잡다";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -358,14 +660,16 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2DF5SKQK2R;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Honzapda/Info.plist;
+				INFOPLIST_FILE = Honzapda/Global/Supporting/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "혼잡다";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

@@ -5,6 +5,8 @@
 ## .DS_Store
 .DS_Store
 
+## Secret
+Global/Privates/
 
 ## User settings
 xcuserdata/
