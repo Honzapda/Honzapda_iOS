@@ -23,7 +23,6 @@
 		DD0FF2382B8ED8A60061F9DB /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2302B8ED8A60061F9DB /* Onboarding.swift */; };
 		DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2322B8ED8A60061F9DB /* User.swift */; };
 		DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2342B8ED8A60061F9DB /* Search.swift */; };
-		DD0FF2402B8EDE220061F9DB /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF23F2B8EDE220061F9DB /* BaseURL.swift */; };
 		DD0FF2432B8EDE400061F9DB /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2422B8EDE400061F9DB /* Protocol.swift */; };
 		DD0FF2462B8EDE690061F9DB /* Extension+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2452B8EDE690061F9DB /* Extension+.swift */; };
 		DD0FF2562B8EDFD50061F9DB /* SCDream9.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24E2B8EDFC80061F9DB /* SCDream9.otf */; };
@@ -65,7 +64,6 @@
 		DD0FF2322B8ED8A60061F9DB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DD0FF2342B8ED8A60061F9DB /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		DD0FF23D2B8EDA0F0061F9DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD0FF23F2B8EDE220061F9DB /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		DD0FF2422B8EDE400061F9DB /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		DD0FF2452B8EDE690061F9DB /* Extension+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+.swift"; sourceTree = "<group>"; };
 		DD0FF2492B8EDFC80061F9DB /* SCDream5.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream5.otf; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 				DD0FF2472B8EDE7E0061F9DB /* Resources */,
 				DD0FF2442B8EDE4C0061F9DB /* Extensions */,
 				DD0FF2412B8EDE2C0061F9DB /* Protocols */,
-				DD0FF23E2B8EDE030061F9DB /* Privates */,
 				DD0FF23C2B8ED9520061F9DB /* Supporting */,
 			);
 			path = Global;
@@ -254,14 +251,6 @@
 				DD0FF23D2B8EDA0F0061F9DB /* Info.plist */,
 			);
 			path = Supporting;
-			sourceTree = "<group>";
-		};
-		DD0FF23E2B8EDE030061F9DB /* Privates */ = {
-			isa = PBXGroup;
-			children = (
-				DD0FF23F2B8EDE220061F9DB /* BaseURL.swift */,
-			);
-			path = Privates;
 			sourceTree = "<group>";
 		};
 		DD0FF2412B8EDE2C0061F9DB /* Protocols */ = {
@@ -468,7 +457,6 @@
 				DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */,
 				DD0FF21E2B8ED7EF0061F9DB /* CurationEntity.swift in Sources */,
 				DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */,
-				DD0FF2402B8EDE220061F9DB /* BaseURL.swift in Sources */,
 				DD0FF2432B8EDE400061F9DB /* Protocol.swift in Sources */,
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
 				DD0FF2462B8EDE690061F9DB /* Extension+.swift in Sources */,
