@@ -612,7 +612,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Honzapda/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Honzapda/Global/Supporting/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2DF5SKQK2R;
 				ENABLE_PREVIEWS = YES;
@@ -656,7 +656,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Honzapda/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Honzapda/Global/Supporting/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2DF5SKQK2R;
 				ENABLE_PREVIEWS = YES;

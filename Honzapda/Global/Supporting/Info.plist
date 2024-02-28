@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+    <key>UIAppFonts</key>
+    <array>
+        <string>SCDream1.otf</string>
+        <string>SCDream2.otf</string>
+        <string>SCDream3.otf</string>
+        <string>SCDream4.otf</string>
+        <string>SCDream5.otf</string>
+        <string>SCDream6.otf</string>
+        <string>SCDream7.otf</string>
+        <string>SCDream8.otf</string>
+        <string>SCDream9.otf</string>
+        <string>PyeongChangPeace-Bold.otf</string>
+        <string>PyeongChangPeace-Light.otf</string>
+    </array>
+</dict>
 </plist>
