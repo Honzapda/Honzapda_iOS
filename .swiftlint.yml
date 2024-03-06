@@ -8,6 +8,8 @@
 
 disabled_rules:
   - identifier_name
+  - trailing_whitespace
+  - vertical_whitespace
 
 opt_in_rules:
   - empty_count
@@ -23,10 +25,6 @@ excluded: # 린트 과정에서 무시할 파일 경로. `included`보다 우선
 # 한 줄의 최대 길이를 99로 설정합니다.
 line_length:
   warning: 99
-
-# 빈 줄의 최대 연속 개수를 1로 설정합니다.
-vertical_whitespace:
-  max_empty_lines: 1
 
 # 콜론(:) 오른쪽에 공백을 두지 않도록 설정합니다.
 colon:
@@ -72,25 +70,7 @@ nesting:
 function_parameter_count:
   warning: 6
 
-# 빈 줄 뒤의 공백을 무시하도록 설정합니다.
-trailing_whitespace:
-  ignoring_empty_lines: true
-
 custom_rules:
- # MARK 구문 위에는 공백을 추가합니다.
-  mark_spacing_above:
-    name: "MARK Spacing Above"
-    regex: "^\\s*// MARK:.*$"
-    severity: warning
-    message: "Ensure there's a newline above the // MARK:."
-
- # MARK 구문 아래에는 공백을 추가합니다.
-  mark_spacing_below:
-    name: "MARK Spacing Below"
-    regex: "^.*// MARK:.*\n[^\n]"
-    severity: warning
-    message: "Ensure there's a newline below the // MARK:."
-
   # 클래스의 이름에는 UpperCamelCase를 사용하고, 클래스 이름에 접두사를 붙이지 않습니다.
   no_class_prefix:
     name: "No Class Prefix"
