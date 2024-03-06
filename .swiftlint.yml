@@ -77,20 +77,6 @@ trailing_whitespace:
   ignoring_empty_lines: true
 
 custom_rules:
- # MARK 구문 위에는 공백을 추가합니다.
-  mark_spacing_above:
-    name: "MARK Spacing Above"
-    regex: "^\\s*// MARK:.*$"
-    severity: warning
-    message: "Ensure there's a newline above the // MARK:."
-
- # MARK 구문 아래에는 공백을 추가합니다.
-  mark_spacing_below:
-    name: "MARK Spacing Below"
-    regex: "^.*// MARK:.*\n[^\n]"
-    severity: warning
-    message: "Ensure there's a newline below the // MARK:."
-
   # 클래스의 이름에는 UpperCamelCase를 사용하고, 클래스 이름에 접두사를 붙이지 않습니다.
   no_class_prefix:
     name: "No Class Prefix"
