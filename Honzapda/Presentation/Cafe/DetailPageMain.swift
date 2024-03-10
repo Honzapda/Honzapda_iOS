@@ -9,6 +9,9 @@ import SwiftUI
 
 // MARK: - MAIN VIEW
 struct DetailPageMain: View {
+    // MARK: PARAMETER
+    var cafeName: String?
+    // MARK: BODY
     var body: some View {
         ScrollView {
             CafeBannerView()
@@ -20,7 +23,7 @@ struct DetailPageMain: View {
 
             UserHelpfulInformation()
             DividerBox()
-            
+
             UsersReview()
         } //: ScrollView
         .navigationTitle("스테이 어도러블")
@@ -29,6 +32,12 @@ struct DetailPageMain: View {
 }
 // MARK: - 메인 배너
 struct CafeBannerView: View {
+    // MARK: PARAMETER
+    var cafeBannerImageURL: String?
+    var cafeLocation: String?
+    var callNumber: String?
+    var isOpening: Bool?
+    // MARK: BODY
     var body: some View {
         ZStack {
             Image(systemName: "bolt.fill")
@@ -43,6 +52,12 @@ struct CafeBannerView: View {
 } //: 메인 배너
 // MARK: - 카페 종합 정보
 struct CafeInfomationView: View {
+    // MARK: PARAMETER
+    var distanceSummary: String?
+    var rating: Float?
+    var reviewCount: Int?
+    var cafeIntroduce: String?
+    // MARK: BODY
     var body: some View {
         VStack {
             VStack {
@@ -54,7 +69,7 @@ struct CafeInfomationView: View {
                     }
                     VStack {
                         Image(systemName: "star")
-                        Text("평점\n4.63")
+                        Text("평점\n4.83")
                     }
                     VStack {
                         Image(systemName: "note")
@@ -69,7 +84,7 @@ struct CafeInfomationView: View {
                         .foregroundColor(.clear)
                         .frame(width: 329, height: 71)
                         .background(Color(red: 0.96, green: 0.96, blue: 0.95))
-                    Text("인테리어가 귀엽고 강아지가 감성적이예요 🥹")
+                    Text("인테리어가 귀엽고 강아지가 감성적이예요 🥹")    // TODO: cafeIntroduce 파라미터로 내용 변경
                 }
             }   //: 카페 소개
         }
@@ -77,19 +92,28 @@ struct CafeInfomationView: View {
 } //: 카페 종합 정보
 // MARK: - 카페 혼잡도
 struct CafeCongestion: View {
+    // MARK: PARAMETER
+    var weakdayStartTime: Float?
+    var weakdayEndTime: Float?
+    var weakendStartTime: Float?
+    var weakendEndTime: Float?
+    var seatTotal: Int?
+    var seatCountedCamera: Int?
+    var seatCountedNetwork: Int?
+    // MARK: BODY
     var body: some View {
         VStack {
             VStack {
                 Text("요일별 혼잡도")
                 Text("요일별 혼잡도는 혼잡도 데이터를 모아 생성된 예상 혼잡도로서, 실제 척도와는 다를 수 있으니 유의하세요!")
-                HStack {
+                HStack {    // TODO: 혼잡도 이미지 표현 방식에 대한 부분 고려 필요
                     DayCongestionBox(today: "월")
-                    DayCongestionBox(today: "월")
-                    DayCongestionBox(today: "월")
-                    DayCongestionBox(today: "월")
-                    DayCongestionBox(today: "월")
-                    DayCongestionBox(today: "월")
-                    DayCongestionBox(today: "월")
+                    DayCongestionBox(today: "화")
+                    DayCongestionBox(today: "수")
+                    DayCongestionBox(today: "목")
+                    DayCongestionBox(today: "금")
+                    DayCongestionBox(today: "토")
+                    DayCongestionBox(today: "일")
                 }
             } //: 요일별 혼잡도
             VStack {
@@ -158,6 +182,8 @@ struct CafeCongestion: View {
 } //: 카페 혼잡도
 // MARK: - 유저의 도움 정보
 struct UserHelpfulInformation: View {
+    // MARK: PARAMETER
+    // MARK: BODY
     var body: some View {
         VStack {
             HStack {
@@ -165,12 +191,14 @@ struct UserHelpfulInformation: View {
                     HStack {
                         Text("유저의 도움 정보")
                         Button("정보 제공하기") {
+                            // TODO: 정보 제공 기능 구현
                             print("DUBUG: 정보 제공하기")
                         }
                     }
                     Text("유저들이 도와 제공한 카페 정보를 살펴보세요.\n유저들이 선택한 정보 순으로 제공해드릴게요 :)")
                 }
                 Button("정보 더 보기") {
+                    // TODO: 정보 더 보기 기능 구현
                     print("DUBUG: 정보 더 보기")
                 }
             }
@@ -187,12 +215,14 @@ struct UsersReview: View {
                     HStack {
                         Text("리뷰")
                         Button("리뷰 작성하기") {
+                            // TODO: 리뷰 작성하기 기능 구현
                             print("DEBUG: 리뷰 작성하기")
                         }
                     }
                     Text("유저들이 제공한 리뷰를 살펴보세요.\n유저들이 선택한 정보 순으로 제공해드릴게요 :)")
                 }
                 Button("리뷰 더 보기") {
+                    // TODO: 리뷰 더 보기 기능 구현
                     print("DEBUG: 리뷰 더 보기")
                 }
             }
@@ -238,8 +268,21 @@ struct InfoBox: View {
 } //: 카페 정보 박스 템플릿
 // MARK: - 유저 도움 정보 박스
 struct UsersHelpfulInformationBox: View {
-    var width: CGFloat!
-    var height: CGFloat!
+    // MARK: PARAMETER
+    var userProfileImageURL: String?
+    var userName: String?
+    var userVisitDay: String?
+    var userVisitTime: Int?
+    var recommendCount: Int?
+    var congestion: String? // TODO: API상에서 String인데, 나중에 혼잡도 계산을 위해 Int형이 낫지 않을까? 싶은 의견 제시
+    var deskSize: String?
+    var outletCount: String?
+    var light: String?
+    var outletLocation: String?
+    var restroomLocation: String?
+    var musicGenre: String?
+    var atmosphere: String?
+    // MARK: BODY
     var body: some View {
         ZStack {
             Rectangle()
@@ -249,10 +292,10 @@ struct UsersHelpfulInformationBox: View {
                 .cornerRadius(12)
             VStack {
                 HStack {
-                    Image(systemName: "bolt")
+                    Image(systemName: "bolt")   // TODO: userProfile param
                     VStack {
-                        Text("체리")
-                        Text("이 카페를 목요일 17시에 방문했어요")
+                        Text("체리")  // TODO: userName
+                        Text("이 카페를 목요일 17시에 방문했어요")    // TODO: userVisitDay & Time
                     }
                     VStack {
                         Image(systemName: "heart")
@@ -302,7 +345,10 @@ struct UsersHelpfulInformationBox: View {
 } //: 유저 도움 정보 박스
 // MARK: 유저 도움 정보 빈칸 언더바
 struct UsersHelpfulInformationUnderbar: View {
+    // MARK: PARAMETER
     var info: String!
+    var width: Int?
+    // MARK: BODY
     var body: some View {
         VStack {
             Text(info)
@@ -315,6 +361,14 @@ struct UsersHelpfulInformationUnderbar: View {
 } //: 유저 도움 정보 빈칸 언더바
 // MARK: - 유저 리뷰 박스
 struct UsersReviewBox: View {
+    // MARK: PARAMETER
+    var userProfileImageURL: String?
+    var userName: String?
+    var reviewScore: Double?
+    var reviewRecommendCount: Int?
+    var userReview: String?
+    var userVisitDate: String?
+    // MARK: BODY
     var body: some View {
         ZStack {
             Rectangle()
