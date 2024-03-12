@@ -39,6 +39,7 @@
 		DD0FF2622B8EDFD50061F9DB /* SCDream7.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24A2B8EDFC80061F9DB /* SCDream7.otf */; };
 		DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2642B8EE7370061F9DB /* BaseURL.swift */; };
 		DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */; };
+		DD4BD92E2BA0123700D94748 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BD92D2BA0123700D94748 /* View+.swift */; };
 		DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */; };
 		DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD652CFE2B8A2FBE00542337 /* ContentView.swift */; };
 		DD652D012B8A2FBF00542337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD652D002B8A2FBF00542337 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		DD0FF2552B8EDFC80061F9DB /* PyeongChangPeace-Bold 2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PyeongChangPeace-Bold 2.otf"; sourceTree = "<group>"; };
 		DD0FF2642B8EE7370061F9DB /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselView.swift; sourceTree = "<group>"; };
+		DD4BD92D2BA0123700D94748 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		DD652CF92B8A2FBE00542337 /* Honzapda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honzapda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonzapdaApp.swift; sourceTree = "<group>"; };
 		DD652CFE2B8A2FBE00542337 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0FF2452B8EDE690061F9DB /* Extension+.swift */,
+				DD4BD92D2BA0123700D94748 /* View+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
 				DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
+				DD4BD92E2BA0123700D94748 /* View+.swift in Sources */,
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
 				DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */,
 				DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */,
