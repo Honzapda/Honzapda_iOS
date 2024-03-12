@@ -9,7 +9,7 @@ import SwiftUI
 
 
 // MARK: 문장 중간 지정된 단어들의 색깔과 굵기를 바꿔주는 구조체 선언
-// CAUTION:  처음 등장하는 단어를 체크하기 때문에 공통된 단어들일지라도 처음 등장한 단어에만 적용됨
+// CAUTION: 처음 등장하는 단어를 체크하기 때문에 공통된 단어들일지라도 처음 등장한 단어에만 적용됨
 // 모두 적용하고 싶으면 원하는 단어의 수대로 적용해줘야함
 
 struct HighlightedText: View {
@@ -45,6 +45,7 @@ struct HighlightedText: View {
         let remainingText = originalText[currentIndex...]
         result = (result + Text(remainingText))
             .foregroundColor(originalColor)
+            .font(originalFont)
         
         return result
     }
