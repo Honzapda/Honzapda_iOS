@@ -12,10 +12,10 @@ import SwiftUI
 // CAUTION:  처음 등장하는 단어를 체크하기 때문에 공통된 단어들일지라도 처음 등장한 단어에만 적용됨
 // 모두 적용하고 싶으면 원하는 단어의 수대로 적용해줘야함
 
-struct MultiColoredText: View {
-    var originalText: String
+struct HighlightedText: View {
     var highlightedSubstrings: [(String, Color)]
     var highlightedFont: Font
+    var originalText: String
     var originalColor: Color
     var originalFont: Font
     
@@ -47,35 +47,5 @@ struct MultiColoredText: View {
             .foregroundColor(originalColor)
         
         return result
-    }
-}
-
-struct TextWithColoredSubstring: View {
-    var originalText: String
-    var coloredSubstring: String
-    var originalColor: Color
-    var originalFont: Font
-    var highlightedColor: Color
-    var highlightedFont: Font
-    
-    var body: some View {
-        if let coloredRange = originalText.range(of: coloredSubstring) {
-            let beforeRange = originalText[..<coloredRange.lowerBound]
-            let coloredText = originalText[coloredRange]
-            let afterRange = originalText[coloredRange.upperBound...]
-            
-            return Text(beforeRange)
-                .foregroundColor(originalColor)
-                .font(originalFont)
-            + Text(coloredText)
-                .foregroundColor(highlightedColor)
-                .font(highlightedFont)
-            + Text(afterRange)
-                .foregroundColor(originalColor)
-                .font(originalFont)
-        } else {
-            return Text(originalText)
-                .foregroundColor(.black)
-        }
     }
 }
