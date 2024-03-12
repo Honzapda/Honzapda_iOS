@@ -46,6 +46,7 @@
 		DD9086902B8CD05B006E5625 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DD90868F2B8CD05B006E5625 /* Kingfisher */; };
 		DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */; };
 		DDFA80562B9827F100FF32C6 /* CarouselPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA80552B9827F100FF32C6 /* CarouselPageModel.swift */; };
+		DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DDFA80552B9827F100FF32C6 /* CarouselPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselPageModel.swift; sourceTree = "<group>"; };
 		DDFA805C2B98607600FF32C6 /* Honzapda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Honzapda.entitlements; sourceTree = "<group>"; };
+		DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleLoginButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 		DD0FF22F2B8ED8A60061F9DB /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				DDFA805D2B98637E00FF32C6 /* View */,
 				DDFA80542B9827D500FF32C6 /* Model */,
 				DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */,
 			);
@@ -358,6 +361,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DDFA805D2B98637E00FF32C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,6 +497,7 @@
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
 				DD0FF2462B8EDE690061F9DB /* Extension+.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
+				DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */,
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
 				DD0FF2372B8ED8A60061F9DB /* Curation.swift in Sources */,
