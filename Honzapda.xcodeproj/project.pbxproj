@@ -38,6 +38,7 @@
 		DD0FF2612B8EDFD50061F9DB /* SCDream2.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2542B8EDFC80061F9DB /* SCDream2.otf */; };
 		DD0FF2622B8EDFD50061F9DB /* SCDream7.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24A2B8EDFC80061F9DB /* SCDream7.otf */; };
 		DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2642B8EE7370061F9DB /* BaseURL.swift */; };
+		DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */; };
 		DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */; };
 		DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD652CFE2B8A2FBE00542337 /* ContentView.swift */; };
 		DD652D012B8A2FBF00542337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD652D002B8A2FBF00542337 /* Assets.xcassets */; };
@@ -45,7 +46,6 @@
 		DD90868D2B8C98BF006E5625 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DD90868C2B8C98BF006E5625 /* Alamofire */; };
 		DD9086902B8CD05B006E5625 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DD90868F2B8CD05B006E5625 /* Kingfisher */; };
 		DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */; };
-		DDFA80562B9827F100FF32C6 /* CarouselPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA80552B9827F100FF32C6 /* CarouselPageModel.swift */; };
 		DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,13 +82,13 @@
 		DD0FF2542B8EDFC80061F9DB /* SCDream2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream2.otf; sourceTree = "<group>"; };
 		DD0FF2552B8EDFC80061F9DB /* PyeongChangPeace-Bold 2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PyeongChangPeace-Bold 2.otf"; sourceTree = "<group>"; };
 		DD0FF2642B8EE7370061F9DB /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselView.swift; sourceTree = "<group>"; };
 		DD652CF92B8A2FBE00542337 /* Honzapda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honzapda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonzapdaApp.swift; sourceTree = "<group>"; };
 		DD652CFE2B8A2FBE00542337 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DD652D002B8A2FBF00542337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD652D032B8A2FBF00542337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		DDFA80552B9827F100FF32C6 /* CarouselPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselPageModel.swift; sourceTree = "<group>"; };
 		DDFA805C2B98607600FF32C6 /* Honzapda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Honzapda.entitlements; sourceTree = "<group>"; };
 		DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleLoginButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -356,7 +356,6 @@
 		DDFA80542B9827D500FF32C6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DDFA80552B9827F100FF32C6 /* CarouselPageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -365,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */,
+				DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 				DD0FF2372B8ED8A60061F9DB /* Curation.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
 				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
-				DDFA80562B9827F100FF32C6 /* CarouselPageModel.swift in Sources */,
+				DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */,
 				DD0FF21C2B8ED7E20061F9DB /* CafeEntity.swift in Sources */,
 				DD0FF2352B8ED8A60061F9DB /* Cafe.swift in Sources */,
 			);

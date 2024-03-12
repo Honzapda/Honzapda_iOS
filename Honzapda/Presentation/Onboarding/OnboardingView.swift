@@ -9,6 +9,8 @@ import AuthenticationServices
 import SwiftUI
 
 struct OnboardingView: View {
+    @State private var selectedTab = 1
+    
     var body: some View {
         ZStack {
             Image("background_onboarding")
@@ -17,8 +19,16 @@ struct OnboardingView: View {
             VStack {
                 Spacer(minLength: 120)
                 
-                Rectangle()
+                TabView(selection: $selectedTab) {
+                    ForEach(1...5, id: \.self) { index in
+                        Image("image_onboarding_mood")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                }
                     .frame(width: 279, height: 425)
+                    .tabViewStyle(PageTabViewStyle())
+                    .background(.blue)
                 
                 Spacer(minLength: 70)
                 
