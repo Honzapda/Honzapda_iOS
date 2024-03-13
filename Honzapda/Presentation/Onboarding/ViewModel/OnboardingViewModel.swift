@@ -8,5 +8,5 @@
 import SwiftUI
 
 class OnboardingViewModel: ObservableObject {
-    @State var selectedTab = 0
+    @Published public var selectedTab = 0
 }
