@@ -5,8 +5,8 @@
 //  Created by YOUJIM on 3/12/24.
 //
 
-import Foundation
+import SwiftUI
 
 class OnboardingViewModel: ObservableObject {
-    
+    @State var selectedTab = 0
 }
