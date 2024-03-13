@@ -26,8 +26,6 @@ struct DetailPageMain: View {
 
             UsersReview()
         } //: ScrollView
-        .navigationTitle("스테이 어도러블")
-        .navigationBarTitleDisplayMode(.large)
     }
 }
 // MARK: - 메인 배너
@@ -40,13 +38,48 @@ struct CafeBannerView: View {
     // MARK: BODY
     var body: some View {
         ZStack {
-            Image(systemName: "bolt.fill")
-            VStack {
-                Text("경기 용인시 기흥구 죽전로43번길 15-3 1층")
+            Image("Cafe/thumbnail_cafe_detail")
+            VStack(alignment: .leading) {
+                Spacer()
                 HStack {
-                    Label("010-9999-9999", systemImage: "bolt")
+                    Text("스테이 어도러블")
+                        .font(Font.custom("S-Core Dream", size: 22))
+                    Text("영업 중")
+                        .font(Font.custom("S-Core Dream", size: 6))
+                        .padding(4)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .inset(by: 0.25)
+                                .stroke(lineWidth: 0.5)
+                        )
+                    Spacer()
+                }
+                .foregroundColor(.white)
+                HStack {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("경기 용인시 기흥구 죽전로43번길 15-3 1층")
+                            .font(Font.custom("S-Core Dream", size: 10))
+                            .foregroundColor(.gray01)
+                        
+                        HStack {
+                            Image("Cafe/icon_home_phoneNumber_fill")
+                                .foregroundColor(.white)
+                            Text("010-9999-9999")
+                                .font(Font.custom("S-Core Dream", size: 10))
+                                .foregroundColor(.gray01)
+                        }
+                    }
+                    Spacer()
+                    VStack(spacing: 8) {
+                        Image("Cafe/icon_my_heart_none")
+                        Text("가게\n찜하기")
+                            .font(Font.custom("S-Core Dream", size: 8))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
+                    }
                 }
             }
+            .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
         }
     }
 } //: 메인 배너
