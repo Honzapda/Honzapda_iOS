@@ -20,7 +20,7 @@ struct OnboardingView: View {
                 Spacer(minLength: 120)
                 
                 TabView(selection: $selectedTab) {
-                    ForEach(1...5, id: \.self) { index in
+                    ForEach(1...5, id: \.self) { _ in
                         Image("image_onboarding_mood")
                             .resizable()
                             .aspectRatio(contentMode: .fit)

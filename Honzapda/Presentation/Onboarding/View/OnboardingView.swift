@@ -19,14 +19,30 @@ struct OnboardingView: View {
                 .ignoresSafeArea()
             
             VStack {
-                TabView(selection: onboardingViewModel.$selectedTab) {
+                HStack {
+                    ForEach(0...3, id: \.self) { index in
+                        if index == onboardingViewModel.selectedTab {
+                            Circle()
+                                .frame(width: 4, height: 4)
+                                .foregroundStyle(.primary05)
+                        } else {
+                            Circle()
+                                .stroke(.primary05, lineWidth: 0.5)
+                                .frame(width: 4, height: 4)
+                                .foregroundStyle(.clear)}
+                    }
+                }
+                .padding(.top, 120)
+                
+                Spacer(minLength: 40)
+                
+                TabView(selection: $onboardingViewModel.selectedTab) {
                     ForEach(Common.carouselList.indices, id: \.self) { index in
                         OnboardingCarouselView(selectedTab: index)
                             .tag(index)
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .padding(.top, 120)
                 
                 Spacer(minLength: 70)
                 
