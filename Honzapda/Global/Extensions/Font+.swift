@@ -44,7 +44,7 @@ extension Font {
         }
     }
     
-    static func scoreDream(_ weight: SCoreDream, size: CGFloat) -> Font {
+    static func sCoreDream(_ weight: SCoreDream, size: CGFloat) -> Font {
         return .custom(weight.name, size: size)
     }
 }
