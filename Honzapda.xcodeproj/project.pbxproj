@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */; };
 		DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045272BA07EA1008C66C9 /* Font+.swift */; };
+		DD00452A2BA0867B008C66C9 /* CarouselModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045292BA0867B008C66C9 /* CarouselModel.swift */; };
 		DD0FF20A2B8EC1570061F9DB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2092B8EC1570061F9DB /* .swiftlint.yml */; };
 		DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */; };
 		DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */; };
@@ -45,6 +46,7 @@
 		DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD652CFE2B8A2FBE00542337 /* ContentView.swift */; };
 		DD652D012B8A2FBF00542337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD652D002B8A2FBF00542337 /* Assets.xcassets */; };
 		DD652D042B8A2FBF00542337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD652D032B8A2FBF00542337 /* Preview Assets.xcassets */; };
+		DD78D6032BA1C6B6001A37EC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD78D6022BA1C6B6001A37EC /* Common.swift */; };
 		DD90868D2B8C98BF006E5625 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DD90868C2B8C98BF006E5625 /* Alamofire */; };
 		DD9086902B8CD05B006E5625 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DD90868F2B8CD05B006E5625 /* Kingfisher */; };
 		DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */; };
@@ -54,6 +56,7 @@
 /* Begin PBXFileReference section */
 		DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DD0045272BA07EA1008C66C9 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		DD0045292BA0867B008C66C9 /* CarouselModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselModel.swift; sourceTree = "<group>"; };
 		DD0FF2092B8EC1570061F9DB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 		DD652CFE2B8A2FBE00542337 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DD652D002B8A2FBF00542337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD652D032B8A2FBF00542337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DD78D6022BA1C6B6001A37EC /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DDFA805C2B98607600FF32C6 /* Honzapda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Honzapda.entitlements; sourceTree = "<group>"; };
 		DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleLoginButtonView.swift; sourceTree = "<group>"; };
@@ -234,7 +238,6 @@
 				DD0045242BA07D3E008C66C9 /* ViewModel */,
 				DDFA805D2B98637E00FF32C6 /* View */,
 				DDFA80542B9827D500FF32C6 /* Model */,
-				DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 		DD0FF23B2B8ED9320061F9DB /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				DD78D5FF2BA1C67A001A37EC /* Const */,
 				DD0FF2442B8EDE4C0061F9DB /* Extensions */,
 				DD0FF2632B8EE7110061F9DB /* Privates */,
 				DD0FF2412B8EDE2C0061F9DB /* Protocols */,
@@ -367,9 +371,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DD78D5FF2BA1C67A001A37EC /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				DD78D6022BA1C6B6001A37EC /* Common.swift */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
 		DDFA80542B9827D500FF32C6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD0045292BA0867B008C66C9 /* CarouselModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,6 +390,7 @@
 		DDFA805D2B98637E00FF32C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */,
 				DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */,
 				DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */,
 			);
@@ -500,6 +514,7 @@
 			files = (
 				DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */,
 				DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */,
+				DD78D6032BA1C6B6001A37EC /* Common.swift in Sources */,
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
 				DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
@@ -513,6 +528,7 @@
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */,
+				DD00452A2BA0867B008C66C9 /* CarouselModel.swift in Sources */,
 				DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */,
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
