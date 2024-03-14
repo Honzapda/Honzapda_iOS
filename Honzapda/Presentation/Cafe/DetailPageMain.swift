@@ -94,33 +94,69 @@ struct CafeInfomationView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("카페 정보")
                 HStack {
+                    Text("카페 정보")
+                        .font(Font.custom("S-Core Dream", size: 18))
+                        .foregroundColor(.gray09)
+                    Spacer()
+                }
+                Spacer(minLength: 24)
+                HStack(spacing: 80) {
                     VStack {
-                        Image(systemName: "pin")
+                        Image("Cafe/icon_home_location_fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        Spacer(minLength: 12)
                         Text("죽전역부터\n걸어서 8분")
+                            .font(Font.custom("S-Core Dream", size: 12))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.primary06)
                     }
                     VStack {
-                        Image(systemName: "star")
+                        Image("Cafe/icon_home_star_fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        Spacer(minLength: 12)
                         Text("평점\n4.83")
+                            .font(Font.custom("S-Core Dream", size: 12))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.primary06)
+
+
                     }
                     VStack {
-                        Image(systemName: "note")
+                        Image("Cafe/icon_home_review_fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        Spacer(minLength: 12)
                         Text("리뷰\n363개")
+                            .font(Font.custom("S-Core Dream", size: 12))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.primary06)
                     }
                 }
+                .frame(maxHeight: 80)
             }   //: 카페 정보
+            Spacer(minLength: 32)
             VStack {
-                Text("카페 소개")
+                HStack {
+                    Text("카페 소개")
+                        .font(Font.custom("S-Core Dream", size: 18))
+                        .foregroundColor(.gray09)
+                    Spacer()
+                }
+                Spacer(minLength: 16)
                 ZStack {
                     Rectangle()
-                        .foregroundColor(.clear)
+                        .cornerRadius(8)
                         .frame(width: 329, height: 71)
-                        .background(Color(red: 0.96, green: 0.96, blue: 0.95))
+                        .foregroundColor(.gray02)
                     Text("인테리어가 귀엽고 강아지가 감성적이예요 🥹")    // TODO: cafeIntroduce 파라미터로 내용 변경
+                        .font(Font.custom("S-Core Dream", size: 12))
                 }
             }   //: 카페 소개
         }
+        .padding(EdgeInsets(top: 32, leading: 24, bottom: 32, trailing: 24))
     }
 } //: 카페 종합 정보
 // MARK: - 카페 혼잡도
