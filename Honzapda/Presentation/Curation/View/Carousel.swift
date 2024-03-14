@@ -14,15 +14,13 @@ struct Carousel<Content: View>: View {
     let visibleEdgeSpace: CGFloat
     let spacing: CGFloat
     let content: (PageIndex) -> Content
-    
     @GestureState var dragOffset: CGFloat = 0
     @State var currentIndex: Int
-   
     init(
         pageCount: Int,
         visibleEdgeSpace: CGFloat,
         spacing: CGFloat,
-        startingIndex : Int = 0,
+        startingIndex: Int = 0,
         @ViewBuilder content: @escaping (PageIndex) -> Content
     ) {
         self.pageCount = pageCount
@@ -31,13 +29,13 @@ struct Carousel<Content: View>: View {
         self.content = content
         _currentIndex = State(initialValue: startingIndex)
     }
-    
     var body: some View {
         GeometryReader { proxy in
             let baseOffset: CGFloat = spacing + visibleEdgeSpace
             let pageWidth: CGFloat = proxy.size.width - (visibleEdgeSpace + spacing) * 2
-            let offsetX: CGFloat = baseOffset + CGFloat(currentIndex) * -pageWidth + CGFloat(currentIndex) * -spacing + dragOffset
-            
+            let offsetX: CGFloat = (baseOffset + CGFloat(currentIndex) *
+                                    -pageWidth + CGFloat(currentIndex)
+                                    * -spacing + dragOffset)
             HStack(spacing: spacing) {
                 ForEach(0..<pageCount, id: \.self) { pageIndex in
                     self.content(pageIndex)
@@ -64,14 +62,14 @@ struct Carousel<Content: View>: View {
         }
     }
 }
-//struct Carousel_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Carousel(pageCount: 5, visibleEdgeSpace: 30, spacing: 10) { index in
-//            Text("Page \(index)")
-//                .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                .background(Color.red)
-//                .cornerRadius(5)
-//        }
-//        .frame(height: 300)
-//    }
-//}
+struct Carousel_Previews: PreviewProvider {
+    static var previews: some View {
+        Carousel(pageCount: 5, visibleEdgeSpace: 30, spacing: 10) { index in
+            Text("Page \(index)")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.red)
+                .cornerRadius(5)
+        }
+        .frame(height: 300)
+    }
+}
