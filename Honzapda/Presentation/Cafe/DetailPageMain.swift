@@ -43,9 +43,9 @@ struct CafeBannerView: View {
                 Spacer()
                 HStack {
                     Text("스테이 어도러블")
-                        .font(Font.custom("S-Core Dream", size: 22))
+                        .font(Font.custom("S-Core Dream", size: 24))
                     Text("영업 중")
-                        .font(Font.custom("S-Core Dream", size: 6))
+                        .font(Font.custom("S-Core Dream", size: 8))
                         .padding(4)
                         .overlay(
                             RoundedRectangle(cornerRadius: 8)
@@ -58,14 +58,14 @@ struct CafeBannerView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("경기 용인시 기흥구 죽전로43번길 15-3 1층")
-                            .font(Font.custom("S-Core Dream", size: 10))
+                            .font(Font.custom("S-Core Dream", size: 12))
                             .foregroundColor(.gray01)
                         
                         HStack {
                             Image("Cafe/icon_home_phoneNumber_fill")
                                 .foregroundColor(.white)
                             Text("010-9999-9999")
-                                .font(Font.custom("S-Core Dream", size: 10))
+                                .font(Font.custom("S-Core Dream", size: 12))
                                 .foregroundColor(.gray01)
                         }
                     }
@@ -73,7 +73,7 @@ struct CafeBannerView: View {
                     VStack(spacing: 8) {
                         Image("Cafe/icon_my_heart_none")
                         Text("가게\n찜하기")
-                            .font(Font.custom("S-Core Dream", size: 8))
+                            .font(Font.custom("S-Core Dream", size: 10))
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                     }
