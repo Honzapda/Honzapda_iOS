@@ -160,7 +160,7 @@ struct CafeInfomationView: View {
     }
 } //: 카페 종합 정보
 // MARK: - 카페 혼잡도
-struct CafeCongestion: View {
+struct CafeCongestion: View {   // TODO: 분할 Text들의 상세 폰트 사이즈 확인 필요
     // MARK: PARAMETER
     var weakdayStartTime: Float?
     var weakdayEndTime: Float?
@@ -172,82 +172,170 @@ struct CafeCongestion: View {
     // MARK: BODY
     var body: some View {
         VStack {
-            VStack {
-                Text("요일별 혼잡도")
-                Text("요일별 혼잡도는 혼잡도 데이터를 모아 생성된 예상 혼잡도로서, 실제 척도와는 다를 수 있으니 유의하세요!")
-                HStack {    // TODO: 혼잡도 이미지 표현 방식에 대한 부분 고려 필요
-                    DayCongestionBox(today: "월")
-                    DayCongestionBox(today: "화")
-                    DayCongestionBox(today: "수")
-                    DayCongestionBox(today: "목")
-                    DayCongestionBox(today: "금")
-                    DayCongestionBox(today: "토")
-                    DayCongestionBox(today: "일")
-                }
-            } //: 요일별 혼잡도
-            VStack {
-                Text("평균 혼잡도")
-                Text("평일과 주말 각각 어느 시간대에 가장 카페가 혼잡한지 알 수 있어요. ")
+            VStack(alignment: .leading, spacing: 8) {
                 HStack {
+                    Text("요일별 혼잡도")
+                        .font(Font.custom("S-Core Dream", size: 18))
+                        .foregroundColor(.gray09)
+                    Image("Cafe/icon_home_info_none")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 12, height: 12)
+                    Spacer()
+                }
+                Text("요일별 혼잡도는 혼잡도 데이터를 모아 생성된 예상 혼잡도로서, 실제 척도와는 다를 수 있으니 유의하세요!")
+                    .font(Font.custom("S-Core Dream", size: 11))
+                    .foregroundColor(.gray06)
+                    .multilineTextAlignment(.leading)
+                HStack(spacing: 8) {    // TODO: 혼잡도 이미지 표현 방식에 대한 부분 고려 필요
+                    DayCongestionBox(today: "월", congestion: "COMFORTABLE")
+                    DayCongestionBox(today: "화", congestion: "BUSY")
+                    DayCongestionBox(today: "수", congestion: "COMFORTABLE")
+                    DayCongestionBox(today: "목", congestion: "NORMAL")
+                    DayCongestionBox(today: "금", congestion: "COMFORTABLE")
+                    DayCongestionBox(today: "토", congestion: "BUSY", textColor: .primary04)
+                    DayCongestionBox(today: "일", congestion: "BUSY", textColor: .second204)
+                }
+                .padding(EdgeInsets(top: 16, leading: 8, bottom: 32.33, trailing: 8))
+                .frame(maxWidth: .infinity)
+            } //: 요일별 혼잡도
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Text("평균 혼잡도")
+                        .font(Font.custom("S-Core Dream", size: 18))
+                        .foregroundColor(.gray09)
+                    Spacer()
+                }
+                Text("평일과 주말 각각 어느 시간대에 가장 카페가 혼잡한지 알 수 있어요.")
+                    .font(Font.custom("S-Core Dream", size: 11))
+                    .foregroundColor(.gray06)
+                    .multilineTextAlignment(.leading)
+                Spacer().frame(height: 8)
+                HStack(spacing: 16) {
                     ZStack {
                         InfoBox(width: 148, height: 115,
                                      shadow_color: .black.opacity(0.15),
                                      shadow_radius: 6, shadow_x: 0, shadow_y: 4)
-                        VStack {
+                        VStack(spacing: 8) {
                             Text("평일")
-                            Text("18시 부터\n20시 까지")
+                                .font(Font.custom("S-Core Dream", size: 16))
+                                .foregroundColor(.gray08)
+                            Text("18시 ")
+                                .font(Font.custom("S-Core Dream", size: 20))
+                                .foregroundColor(.primary05)
+                            + Text("부터")
+                                .font(Font.custom("S-Core Dream", size: 14))    // TODO: 사이즈 확인 필요
+                                .foregroundColor(.gray06)
+                            Text("20시 ")
+                                .font(Font.custom("S-Core Dream", size: 20))
+                                .foregroundColor(.primary05)
+                            + Text("까지")
+                                .font(Font.custom("S-Core Dream", size: 14))
+                                .foregroundColor(.gray06)
                         }
                     }   //: 평일
                     ZStack {
                         InfoBox(width: 148, height: 115,
                                      shadow_color: .black.opacity(0.15),
                                      shadow_radius: 6, shadow_x: 0, shadow_y: 4)
-                        VStack {
+                        VStack(spacing: 8) {
                             Text("주말")
-                            Text("14시 부터\n16시 까지")
+                                .font(Font.custom("S-Core Dream", size: 16))
+                                .foregroundColor(.gray08)
+                            Text("14시 ")
+                                .font(Font.custom("S-Core Dream", size: 20))
+                                .foregroundColor(.primary05)
+                            + Text("부터")
+                                .font(Font.custom("S-Core Dream", size: 14))
+                                .foregroundColor(.gray06)
+                            Text("16시 ")
+                                .font(Font.custom("S-Core Dream", size: 20))
+                                .foregroundColor(.primary05)
+                            + Text("까지")
+                                .font(Font.custom("S-Core Dream", size: 14))
+                                .foregroundColor(.gray06)
                         }
                     }   //: 주말
                 }
+                .frame(maxWidth: .infinity)
             } //: 평균 혼잡도
-            VStack {
-                Text("실시간 혼잡도")
+            Spacer().frame(height: 32)
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Text("실시간 혼잡도")
+                        .font(Font.custom("S-Core Dream", size: 18))
+                        .foregroundColor(.gray09)
+                    Spacer()
+                }
                 Text("매장 카메라와 통신망을 이용해 분석한 실시간 혼잡도를 확인하세요.")
+                    .font(Font.custom("S-Core Dream", size: 11))
+                    .foregroundColor(.gray06)
+                    .multilineTextAlignment(.leading)
+                Spacer().frame(height: 0)
                 ZStack {
                     InfoBox(width: 312, height: 100,
                                  shadow_color: .black.opacity(0.15),
                                  shadow_radius: 6, shadow_x: 0, shadow_y: 4)
-                    HStack {
-                        Text("스테이 어도러블의\n전체 좌석 수")
+                    HStack(spacing: 32) {
+                        VStack(alignment: .trailing, spacing: 4) {
+                            Text("스테이 어도러블")
+                                .font(Font.custom("S-Core Dream", size: 16))
+                                .foregroundColor(.primary05)
+                            + Text("의")
+                                .font(Font.custom("S-Core Dream", size: 14))
+                                .foregroundColor(.gray08)
+                            Text("전체 좌석 수")
+                                .font(Font.custom("S-Core Dream", size: 14))
+                                .foregroundColor(.gray08)
+                        }
                         Rectangle()
-                            .foregroundColor(.clear)
+                            .foregroundColor(.gray03)
                             .frame(width: 1, height: 80)
-                            .background(Color(red: 0.87, green: 0.87, blue: 0.87))
                         Text("23개")
+                            .font(Font.custom("S-Core Dream", size: 24))
                     }   //: 전체 좌석 수
                 }
-                HStack {
+                .frame(maxWidth: .infinity)
+                Spacer().frame(height: 0)
+                HStack(spacing: 9) {
                     ZStack {
                         InfoBox(width: 151, height: 130,
                                      shadow_color: .black.opacity(0.15),
                                      shadow_radius: 6, shadow_x: 0, shadow_y: 4)
-                        VStack {
-                            Text("카메라 기준\n현재 차있는 좌석")
+                        VStack(alignment: .center, spacing: 4) {
+                            Text("카메라 기준")
+                                .font(Font.custom("S-Core Dream", size: 14))
+                                .foregroundColor(.primary05)
+                            Text("현재 차있는 좌석")
+                                .font(Font.custom("S-Core Dream", size: 12))
+                                .foregroundColor(.gray08)
+                            Spacer().frame(height: 9)
                             Text("4개")
+                                .font(Font.custom("S-Core Dream", size: 20))
                         }
                     } //: 카메라 기준 좌석 수
                     ZStack {
                         InfoBox(width: 152, height: 130,
                                      shadow_color: .black.opacity(0.15),
                                      shadow_radius: 6, shadow_x: 0, shadow_y: 4)
-                        VStack {
-                            Text("통신망 기준\n현재 차있는 좌석")
+                        VStack(alignment: .center, spacing: 4) {
+                            Text("통신망 기준")
+                                .font(Font.custom("S-Core Dream", size: 14))
+                                .foregroundColor(.primary05)
+                            Text("현재 차있는 좌석")
+                                .font(Font.custom("S-Core Dream", size: 12))
+                                .foregroundColor(.gray08)
+                            Spacer().frame(height: 9)
                             Text("6개")
+                                .font(Font.custom("S-Core Dream", size: 20))
                         }
                     } //: 통신망 기준 좌석 수
                 }
+                .frame(maxWidth: .infinity)
             } //: 실시간 혼잡도
         }
-    }
+        .padding(EdgeInsets(top: 40, leading: 24, bottom: 40, trailing: 24))
+    } // : body
 } //: 카페 혼잡도
 // MARK: - 유저의 도움 정보
 struct UserHelpfulInformation: View {
@@ -302,15 +390,36 @@ struct UsersReview: View {
 // MARK: - 재사용하는 View
 // MARK: - 요일별 혼잡도 이미지 박스
 struct DayCongestionBox: View {
+    // MARK: - PARAMETER
     var today: String!
+    var congestion: String!
+    var textColor: Color! = .gray08
+    // MARK: - BODY
     var body: some View {
         ZStack {
             InfoBox(width: 42, height: 60.66667,
                          shadow_color: .black.opacity(0.25), shadow_radius: 4,
                          shadow_x: 0, shadow_y: 4)
-            VStack {
+            VStack(spacing: 8) {
                 Text(today)
-                Image(systemName: "bolt")
+                    .font(Font.custom("S-Core Dream", size: 10))
+                    .foregroundColor(textColor)
+                if congestion == "COMFORTABLE" {
+                    Image("Cafe/icon_home_crowd_low")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24)
+                } else if congestion == "NORMAL" {
+                    Image("Cafe/icon_home_crowd_middle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24)
+                } else if congestion == "BUSY" {
+                    Image("Cafe/icon_home_crowd_high")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24)
+                }
             }
         }
     }
@@ -326,9 +435,8 @@ struct InfoBox: View {
 
     var body: some View {
         Rectangle()
-            .foregroundColor(.clear)
+            .foregroundColor(.white)
             .frame(width: width, height: height)
-            .background(.white)
             .cornerRadius(8)
             .shadow(color: shadow_color,
                     radius: shadow_radius,
