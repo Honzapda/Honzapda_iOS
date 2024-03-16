@@ -381,25 +381,40 @@ struct UserHelpfulInformation: View {
 // MARK: - 유저 리뷰
 struct UsersReview: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 16) {
             HStack {
-                VStack {
-                    HStack {
+                Spacer()
+                    .frame(width: 8)
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 8) {
                         Text("리뷰")
+                            .font(Font.custom("S-Core Dream", size: 18))
+                            .foregroundColor(.gray09)
                         Button("리뷰 작성하기") {
                             // TODO: 리뷰 작성하기 기능 구현
                             print("DEBUG: 리뷰 작성하기")
                         }
+                        .font(Font.custom("S-Core Dream", size: 11))
+                        .foregroundColor(.primary05)
+                        Spacer()
                     }
                     Text("유저들이 제공한 리뷰를 살펴보세요.\n유저들이 선택한 정보 순으로 제공해드릴게요 :)")
+                        .font(Font.custom("S-Core Dream", size: 11))
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.gray06)
+                    Spacer().frame(height: 0)
                 }
+                Spacer()
                 Button("리뷰 더 보기") {
                     // TODO: 리뷰 더 보기 기능 구현
                     print("DEBUG: 리뷰 더 보기")
                 }
+                .font(Font.custom("S-Core Dream", size: 11))
+                .foregroundColor(.primary05)
             }
             UsersReviewBox()
         }
+        .padding(EdgeInsets(top: 40, leading: 24, bottom: 40, trailing: 24))
     }
 }   //: 유저 리뷰
 // MARK: - 재사용하는 View
@@ -597,28 +612,46 @@ struct UsersReviewBox: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(.clear)
-                .frame(width: 345, height: 174)
-                .background(Color(red: 0.96, green: 0.96, blue: 0.95))
+                .foregroundColor(.gray02)
                 .cornerRadius(12)
-            VStack {
+            VStack(spacing: 16) {
                 HStack {
                     Image(systemName: "bolt")
-                    VStack {
+                    VStack(alignment: .leading, spacing: 2) {
                         Text("맥구")
+                            .font(Font.custom("S-Core Dream", size: 14))
                         Text("별점 5점")
+                            .font(Font.custom("S-Core Dream", size: 10))
+                            .foregroundColor(.primary04)
                     }
-                    VStack {
-                        Image(systemName: "heart")
-                        Text("추천 123개")
+                    Spacer()
+                    VStack(spacing: 6) {
+                        Image("Cafe/icon_my_heart_none")
+                            .renderingMode(.template)
+                            .foregroundColor(.primary05)
+                        Text("추천 ")
+                            .font(Font.custom("S-Core Dream", size: 9))
+                        + Text("123")
+                            .font(Font.custom("S-Core Dream", size: 9))
+                            .foregroundColor(.primary05)
+                        + Text("개")
+                            .font(Font.custom("S-Core Dream", size: 9))
                     }
                 } //: 유저
                 Text("처음 가봤는데 사장님이 친절하시고 강아지가 귀엽고 인테리어가 예뻐요! 조용해서 친구랑 가서 이야기하기 좋습니다. 근데 가서 공부하기에는 테이블도 협소하고 분위기도 그런 분위기는 아닌 것 같아요. 담소 나누기 좋은 카페 ^_^")
+                    .font(Font.custom("S-Core Dream", size: 11))
+                    .multilineTextAlignment(.leading)
                 HStack {
                     Text("2024.02.17 방문")
+                        .font(Font.custom("S-Core Dream", size: 10))
+                        .foregroundColor(.gray07)
+                    Spacer()
                     Text("리뷰 신고하기")
+                        .font(Font.custom("S-Core Dream", size: 9))
+                        .foregroundColor(.gray06)
                 }
             } //: 유저 & 리뷰 내용
+            .padding(24)
         }
     }
 } //: 유저 리뷰 박스
