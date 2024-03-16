@@ -342,25 +342,40 @@ struct UserHelpfulInformation: View {
     // MARK: PARAMETER
     // MARK: BODY
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             HStack {
-                VStack {
-                    HStack {
+                Spacer()
+                    .frame(width: 8)
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 8) {
                         Text("유저의 도움 정보")
+                            .font(Font.custom("S-Core Dream", size: 18))
+                            .foregroundColor(.gray09)
                         Button("정보 제공하기") {
                             // TODO: 정보 제공 기능 구현
                             print("DUBUG: 정보 제공하기")
                         }
+                        .font(Font.custom("S-Core Dream", size: 11))
+                        .foregroundColor(.primary05)
+                        Spacer()
                     }
                     Text("유저들이 도와 제공한 카페 정보를 살펴보세요.\n유저들이 선택한 정보 순으로 제공해드릴게요 :)")
+                        .font(Font.custom("S-Core Dream", size: 11))
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.gray06)
                 }
+                Spacer()
                 Button("정보 더 보기") {
                     // TODO: 정보 더 보기 기능 구현
                     print("DUBUG: 정보 더 보기")
                 }
+                .font(Font.custom("S-Core Dream", size: 11))
+                .foregroundColor(.primary05)
             }
+            Spacer().frame(height: 0)
             UsersHelpfulInformationBox()
         }
+        .padding(EdgeInsets(top: 40, leading: 24, bottom: 40, trailing: 24))
     }
 } //: 유저의 도움 정보
 // MARK: - 유저 리뷰
@@ -463,61 +478,93 @@ struct UsersHelpfulInformationBox: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(.clear)
-                .frame(width: 345, height: 297)
-                .background(Color(red: 0.96, green: 0.96, blue: 0.95))
+                .foregroundColor(.gray02)
                 .cornerRadius(12)
-            VStack {
-                HStack {
+            VStack(spacing: 20) {
+                HStack(spacing: 12) {
                     Image(systemName: "bolt")   // TODO: userProfile param
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("체리")  // TODO: userName
-                        Text("이 카페를 목요일 17시에 방문했어요")    // TODO: userVisitDay & Time
+                            .font(Font.custom("S-Core Dream", size: 14))
+                            .foregroundColor(.gray09)
+                        Text("이 카페를 ")
+                            .font(Font.custom("S-Core Dream", size: 10))
+                            .foregroundColor(.gray07)
+                        + Text("목요일 17시")   // TODO: userVisitDay & Time
+                            .font(Font.custom("S-Core Dream", size: 10))
+                            .foregroundColor(.primary05)
+                        + Text("에 방문했어요")
+                            .font(Font.custom("S-Core Dream", size: 10))
+                            .foregroundColor(.gray07)
                     }
-                    VStack {
-                        Image(systemName: "heart")
-                        Text("추천 123개")
+                    Spacer()
+                    VStack(spacing: 6) {
+                        Image("Cafe/icon_my_heart_none")
+                            .renderingMode(.template)
+                            .foregroundColor(.primary05)
+                        Text("추천 ")
+                            .font(Font.custom("S-Core Dream", size: 9))
+                        + Text("123")
+                            .font(Font.custom("S-Core Dream", size: 9))
+                            .foregroundColor(.primary05)
+                        + Text("개")
+                            .font(Font.custom("S-Core Dream", size: 9))
                     }
                 } //: 유저 정보
-                VStack {
-                    HStack {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack(spacing: 4) {
                         Text("혼잡도는")
+                            .font(Font.custom("S-Core Dream", size: 12))
                         UsersHelpfulInformationUnderbar(info: "90%")
                         Text("정도인 것 같아요")
+                            .font(Font.custom("S-Core Dream", size: 12))
                     }
-                    HStack {
+                    HStack(spacing: 4) {
                         UsersHelpfulInformationUnderbar(info: "넓은")
                         Text("책상을 보유하고 있어요")
+                            .font(Font.custom("S-Core Dream", size: 12))
                     }
-                    HStack {
+                    HStack(spacing: 4) {
                         UsersHelpfulInformationUnderbar(info: "넉넉한")
                         Text("콘센트를 보유하고 있고 주로")
+                            .font(Font.custom("S-Core Dream", size: 12))
                         UsersHelpfulInformationUnderbar(info: "책상 밑")
                         Text("에 있어요")
+                            .font(Font.custom("S-Core Dream", size: 12))
                     }
-                    HStack {
+                    HStack(spacing: 4) {
                         Text("화장실은")
+                            .font(Font.custom("S-Core Dream", size: 12))
                         UsersHelpfulInformationUnderbar(info: "1층 계단 옆")
                         Text("에 있어요")
+                            .font(Font.custom("S-Core Dream", size: 12))
                     }
-                    HStack {
+                    HStack(spacing: 4) {
                         Text("노래는")
+                            .font(Font.custom("S-Core Dream", size: 12))
                         UsersHelpfulInformationUnderbar(info: "잔잔한")
                         Text("음악이 많이 나와요")
+                            .font(Font.custom("S-Core Dream", size: 12))
                     }
-                    HStack {
+                    HStack(spacing: 4) {
                         Text("조명은")
+                            .font(Font.custom("S-Core Dream", size: 12))
                         UsersHelpfulInformationUnderbar(info: "밝은")
                         Text("편이예요")
+                            .font(Font.custom("S-Core Dream", size: 12))
                     }
-                    HStack {
+                    HStack(spacing: 4) {
                         Text("전체적인 분위기는")
+                            .font(Font.custom("S-Core Dream", size: 12))
                         UsersHelpfulInformationUnderbar(info: "아늑한")
                         Text("것 같아요")
+                            .font(Font.custom("S-Core Dream", size: 12))
                     }
                 } //: 유저 제공 정보
             }
+            .padding(24)
         }
+        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
     }
 } //: 유저 도움 정보 박스
 // MARK: 유저 도움 정보 빈칸 언더바
@@ -527,12 +574,13 @@ struct UsersHelpfulInformationUnderbar: View {
     var width: Int?
     // MARK: BODY
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Text(info)
+                .foregroundColor(.primary05)
+                .font(Font.custom("S-Core Dream", size: 14))
             Rectangle()
-                .foregroundColor(.clear)
-                .frame(width: 38, height: 1)
-                .background(Color(red: 0.87, green: 0.87, blue: 0.87))
+                .foregroundColor(.gray03)
+                .frame(width: 38, height: 1)    // TODO: Text의 내용에 맞게 길이 조절 필요
         }
     }
 } //: 유저 도움 정보 빈칸 언더바
