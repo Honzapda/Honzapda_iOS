@@ -32,14 +32,14 @@ struct DetailPageMain: View {
 struct CafeBannerView: View {
     // MARK: PARAMETER
     var cafeBannerImageURL: String?
-    var cafeLocation: String?
+    var cafeLocation: String?   // 도로명 주소
     var callNumber: String?
     var isOpening: Bool?
     // MARK: BODY
     var body: some View {
         ZStack {
             Image("Cafe/thumbnail_cafe_detail")
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading) { // 메인 배너
                 Spacer()
                 HStack {
                     Text("스테이 어도러블")
@@ -60,7 +60,6 @@ struct CafeBannerView: View {
                         Text("경기 용인시 기흥구 죽전로43번길 15-3 1층")
                             .font(Font.custom("S-Core Dream", size: 12))
                             .foregroundColor(.gray01)
-                        
                         HStack {
                             Image("Cafe/icon_home_phoneNumber_fill")
                                 .foregroundColor(.white)
@@ -78,7 +77,7 @@ struct CafeBannerView: View {
                             .foregroundColor(.white)
                     }
                 }
-            }
+            } //: 메인 배너
             .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
         }
     }
@@ -86,14 +85,14 @@ struct CafeBannerView: View {
 // MARK: - 카페 종합 정보
 struct CafeInfomationView: View {
     // MARK: PARAMETER
-    var distanceSummary: String?
+    var distanceSummary: String?    // 주변 대표지역으로 부터 N분 소요
     var rating: Float?
     var reviewCount: Int?
-    var cafeIntroduce: String?
+    var cafeIntroduce: String?      // 카페 한줄 소개
     // MARK: BODY
     var body: some View {
         VStack {
-            VStack {
+            VStack { // 카페 정보
                 HStack {
                     Text("카페 정보")
                         .font(Font.custom("S-Core Dream", size: 18))
@@ -121,8 +120,6 @@ struct CafeInfomationView: View {
                             .font(Font.custom("S-Core Dream", size: 12))
                             .multilineTextAlignment(.center)
                             .foregroundColor(.primary06)
-
-
                     }
                     VStack {
                         Image("Cafe/icon_home_review_fill")
@@ -136,9 +133,9 @@ struct CafeInfomationView: View {
                     }
                 }
                 .frame(maxHeight: 80)
-            }   //: 카페 정보
+            } //: 카페 정보
             Spacer(minLength: 32)
-            VStack {
+            VStack { // 카페 소개
                 HStack {
                     Text("카페 소개")
                         .font(Font.custom("S-Core Dream", size: 18))
@@ -151,20 +148,20 @@ struct CafeInfomationView: View {
                         .cornerRadius(8)
                         .frame(width: 329, height: 71)
                         .foregroundColor(.gray02)
-                    Text("인테리어가 귀엽고 강아지가 감성적이예요 🥹")    // TODO: cafeIntroduce 파라미터로 내용 변경
+                    Text("인테리어가 귀엽고 강아지가 감성적이예요 🥹")
                         .font(Font.custom("S-Core Dream", size: 12))
                 }
-            }   //: 카페 소개
+            } //: 카페 소개
         }
         .padding(EdgeInsets(top: 32, leading: 24, bottom: 32, trailing: 24))
     }
 } //: 카페 종합 정보
 // MARK: - 카페 혼잡도
-struct CafeCongestion: View {   // TODO: 분할 Text들의 상세 폰트 사이즈 확인 필요
+struct CafeCongestion: View {
     // MARK: PARAMETER
-    var weakdayStartTime: Float?
+    var weakdayStartTime: Float?    // 평일 혼잡 시간(시작)
     var weakdayEndTime: Float?
-    var weakendStartTime: Float?
+    var weakendStartTime: Float?    // 주말 혼잡 시간(시작)
     var weakendEndTime: Float?
     var seatTotal: Int?
     var seatCountedCamera: Int?
@@ -172,7 +169,7 @@ struct CafeCongestion: View {   // TODO: 분할 Text들의 상세 폰트 사이�
     // MARK: BODY
     var body: some View {
         VStack {
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 8) { // 요일별 혼잡도
                 HStack {
                     Text("요일별 혼잡도")
                         .font(Font.custom("S-Core Dream", size: 18))
@@ -187,7 +184,7 @@ struct CafeCongestion: View {   // TODO: 분할 Text들의 상세 폰트 사이�
                     .font(Font.custom("S-Core Dream", size: 11))
                     .foregroundColor(.gray06)
                     .multilineTextAlignment(.leading)
-                HStack(spacing: 8) {    // TODO: 혼잡도 이미지 표현 방식에 대한 부분 고려 필요
+                HStack(spacing: 8) {
                     DayCongestionBox(today: "월", congestion: "COMFORTABLE")
                     DayCongestionBox(today: "화", congestion: "BUSY")
                     DayCongestionBox(today: "수", congestion: "COMFORTABLE")
@@ -199,7 +196,7 @@ struct CafeCongestion: View {   // TODO: 분할 Text들의 상세 폰트 사이�
                 .padding(EdgeInsets(top: 16, leading: 8, bottom: 32.33, trailing: 8))
                 .frame(maxWidth: .infinity)
             } //: 요일별 혼잡도
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 8) { // 평균 혼잡도
                 HStack {
                     Text("평균 혼잡도")
                         .font(Font.custom("S-Core Dream", size: 18))
@@ -224,7 +221,7 @@ struct CafeCongestion: View {   // TODO: 분할 Text들의 상세 폰트 사이�
                                 .font(Font.custom("S-Core Dream", size: 20))
                                 .foregroundColor(.primary05)
                             + Text("부터")
-                                .font(Font.custom("S-Core Dream", size: 14))    // TODO: 사이즈 확인 필요
+                                .font(Font.custom("S-Core Dream", size: 14))
                                 .foregroundColor(.gray06)
                             Text("20시 ")
                                 .font(Font.custom("S-Core Dream", size: 20))
@@ -233,7 +230,7 @@ struct CafeCongestion: View {   // TODO: 분할 Text들의 상세 폰트 사이�
                                 .font(Font.custom("S-Core Dream", size: 14))
                                 .foregroundColor(.gray06)
                         }
-                    }   //: 평일
+                    } //: 평일
                     ZStack {
                         InfoBox(width: 148, height: 115,
                                      shadow_color: .black.opacity(0.15),
@@ -255,12 +252,12 @@ struct CafeCongestion: View {   // TODO: 분할 Text들의 상세 폰트 사이�
                                 .font(Font.custom("S-Core Dream", size: 14))
                                 .foregroundColor(.gray06)
                         }
-                    }   //: 주말
+                    } //: 주말
                 }
                 .frame(maxWidth: .infinity)
             } //: 평균 혼잡도
             Spacer().frame(height: 32)
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 8) { // 실시간 혼잡도
                 HStack {
                     Text("실시간 혼잡도")
                         .font(Font.custom("S-Core Dream", size: 18))
@@ -293,7 +290,7 @@ struct CafeCongestion: View {   // TODO: 분할 Text들의 상세 폰트 사이�
                             .frame(width: 1, height: 80)
                         Text("23개")
                             .font(Font.custom("S-Core Dream", size: 24))
-                    }   //: 전체 좌석 수
+                    } //: 전체 좌석 수
                 }
                 .frame(maxWidth: .infinity)
                 Spacer().frame(height: 0)
@@ -343,7 +340,7 @@ struct UserHelpfulInformation: View {
     // MARK: BODY
     var body: some View {
         VStack(spacing: 8) {
-            HStack {
+            HStack { // 유저의 도움 정보 헤더
                 Spacer()
                     .frame(width: 8)
                 VStack(alignment: .leading, spacing: 8) {
@@ -352,7 +349,6 @@ struct UserHelpfulInformation: View {
                             .font(Font.custom("S-Core Dream", size: 18))
                             .foregroundColor(.gray09)
                         Button("정보 제공하기") {
-                            // TODO: 정보 제공 기능 구현
                             print("DUBUG: 정보 제공하기")
                         }
                         .font(Font.custom("S-Core Dream", size: 11))
@@ -366,12 +362,11 @@ struct UserHelpfulInformation: View {
                 }
                 Spacer()
                 Button("정보 더 보기") {
-                    // TODO: 정보 더 보기 기능 구현
                     print("DUBUG: 정보 더 보기")
                 }
                 .font(Font.custom("S-Core Dream", size: 11))
                 .foregroundColor(.primary05)
-            }
+            } //: 유저의 도움 정보 헤더
             Spacer().frame(height: 0)
             UsersHelpfulInformationBox()
         }
@@ -382,7 +377,7 @@ struct UserHelpfulInformation: View {
 struct UsersReview: View {
     var body: some View {
         VStack(spacing: 16) {
-            HStack {
+            HStack { // 리뷰 헤더
                 Spacer()
                     .frame(width: 8)
                 VStack(alignment: .leading, spacing: 8) {
@@ -391,7 +386,6 @@ struct UsersReview: View {
                             .font(Font.custom("S-Core Dream", size: 18))
                             .foregroundColor(.gray09)
                         Button("리뷰 작성하기") {
-                            // TODO: 리뷰 작성하기 기능 구현
                             print("DEBUG: 리뷰 작성하기")
                         }
                         .font(Font.custom("S-Core Dream", size: 11))
@@ -406,22 +400,21 @@ struct UsersReview: View {
                 }
                 Spacer()
                 Button("리뷰 더 보기") {
-                    // TODO: 리뷰 더 보기 기능 구현
                     print("DEBUG: 리뷰 더 보기")
                 }
                 .font(Font.custom("S-Core Dream", size: 11))
                 .foregroundColor(.primary05)
-            }
+            } //: 리뷰 헤더
             UsersReviewBox()
         }
         .padding(EdgeInsets(top: 40, leading: 24, bottom: 40, trailing: 24))
     }
-}   //: 유저 리뷰
+} //: 유저 리뷰
 // MARK: - 재사용하는 View
 // MARK: - 요일별 혼잡도 이미지 박스
 struct DayCongestionBox: View {
     // MARK: - PARAMETER
-    var today: String!
+    var today: String!  // 요일
     var congestion: String!
     var textColor: Color! = .gray08
     // MARK: - BODY
@@ -430,7 +423,7 @@ struct DayCongestionBox: View {
             InfoBox(width: 42, height: 60.66667,
                          shadow_color: .black.opacity(0.25), shadow_radius: 4,
                          shadow_x: 0, shadow_y: 4)
-            VStack(spacing: 8) {
+            VStack(spacing: 8) { // 혼잡도 이미지
                 Text(today)
                     .font(Font.custom("S-Core Dream", size: 10))
                     .foregroundColor(textColor)
@@ -450,19 +443,20 @@ struct DayCongestionBox: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 24)
                 }
-            }
+            } //: 혼잡도 이미지
         }
     }
 } //: 요일별 혼잡도 이미지 박스
 // MARK: - 카페 정보 박스 템플릿
 struct InfoBox: View {
+    // MARK: PARAMETER
     var width: CGFloat!
     var height: CGFloat!
     var shadow_color: Color!
     var shadow_radius: CGFloat!
     var shadow_x: CGFloat!
     var shadow_y: CGFloat!
-
+    // MARK: BODY
     var body: some View {
         Rectangle()
             .foregroundColor(.white)
@@ -478,10 +472,10 @@ struct UsersHelpfulInformationBox: View {
     // MARK: PARAMETER
     var userProfileImageURL: String?
     var userName: String?
-    var userVisitDay: String?
+    var userVisitDay: String?   // 유저 방문 날짜
     var userVisitTime: Int?
-    var recommendCount: Int?
-    var congestion: String? // TODO: API상에서 String인데, 나중에 혼잡도 계산을 위해 Int형이 낫지 않을까? 싶은 의견 제시
+    var recommendCount: Int?    // 추천 수
+    var congestion: String?
     var deskSize: String?
     var outletCount: String?
     var light: String?
@@ -496,16 +490,16 @@ struct UsersHelpfulInformationBox: View {
                 .foregroundColor(.gray02)
                 .cornerRadius(12)
             VStack(spacing: 20) {
-                HStack(spacing: 12) {
-                    Image(systemName: "bolt")   // TODO: userProfile param
+                HStack(spacing: 12) { // 유저 정보
+                    Image(systemName: "bolt")
                     VStack(alignment: .leading) {
-                        Text("체리")  // TODO: userName
+                        Text("체리")
                             .font(Font.custom("S-Core Dream", size: 14))
                             .foregroundColor(.gray09)
                         Text("이 카페를 ")
                             .font(Font.custom("S-Core Dream", size: 10))
                             .foregroundColor(.gray07)
-                        + Text("목요일 17시")   // TODO: userVisitDay & Time
+                        + Text("목요일 17시")
                             .font(Font.custom("S-Core Dream", size: 10))
                             .foregroundColor(.primary05)
                         + Text("에 방문했어요")
@@ -526,7 +520,7 @@ struct UsersHelpfulInformationBox: View {
                             .font(Font.custom("S-Core Dream", size: 9))
                     }
                 } //: 유저 정보
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: 12) { // 유저 제공 카페 정보
                     HStack(spacing: 4) {
                         Text("혼잡도는")
                             .font(Font.custom("S-Core Dream", size: 12))
@@ -575,7 +569,7 @@ struct UsersHelpfulInformationBox: View {
                         Text("것 같아요")
                             .font(Font.custom("S-Core Dream", size: 12))
                     }
-                } //: 유저 제공 정보
+                } //: 유저 제공 카페 정보
             }
             .padding(24)
         }
@@ -638,6 +632,7 @@ struct UsersReviewBox: View {
                             .font(Font.custom("S-Core Dream", size: 9))
                     }
                 } //: 유저
+                // 리뷰 내용
                 Text("처음 가봤는데 사장님이 친절하시고 강아지가 귀엽고 인테리어가 예뻐요! 조용해서 친구랑 가서 이야기하기 좋습니다. 근데 가서 공부하기에는 테이블도 협소하고 분위기도 그런 분위기는 아닌 것 같아요. 담소 나누기 좋은 카페 ^_^")
                     .font(Font.custom("S-Core Dream", size: 11))
                     .multilineTextAlignment(.leading)
@@ -650,6 +645,7 @@ struct UsersReviewBox: View {
                         .font(Font.custom("S-Core Dream", size: 9))
                         .foregroundColor(.gray06)
                 }
+                //: 리뷰 내용
             } //: 유저 & 리뷰 내용
             .padding(24)
         }
@@ -662,8 +658,8 @@ struct DividerBox: View {
           .foregroundColor(.clear)
           .background(Color(red: 0.96, green: 0.96, blue: 0.95))
   }
-}   //: 뷰 사이 공간
+} //: 뷰 사이 공간
 //MARK: - 프리뷰
 #Preview {
     DetailPageMain()
-}
+} //: 프리뷰
