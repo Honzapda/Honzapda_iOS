@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050F7BE02B9C599900EDA176 /* HelpMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F7BDF2B9C599900EDA176 /* HelpMessageView.swift */; };
+		0526FA182BA0802200A730FD /* LogoutAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526FA172BA0802200A730FD /* LogoutAlertView.swift */; };
+		05D0F49A2B93829400F6E852 /* MyCafeTasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D0F4992B93829400F6E852 /* MyCafeTasteView.swift */; };
+		05D0F49C2B938DA100F6E852 /* MyCafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D0F49B2B938DA100F6E852 /* MyCafeView.swift */; };
+		05D0F49E2B93BB6100F6E852 /* ToastMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D0F49D2B93BB6100F6E852 /* ToastMessageView.swift */; };
+		05F3A0C12BA2F12F0088262B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F3A0C02BA2F12F0088262B /* UserViewModel.swift */; };
 		DD0FF20A2B8EC1570061F9DB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2092B8EC1570061F9DB /* .swiftlint.yml */; };
 		DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */; };
 		DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */; };
@@ -48,6 +54,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050F7BDF2B9C599900EDA176 /* HelpMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMessageView.swift; sourceTree = "<group>"; };
+		0526FA172BA0802200A730FD /* LogoutAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertView.swift; sourceTree = "<group>"; };
+		05D0F4992B93829400F6E852 /* MyCafeTasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCafeTasteView.swift; sourceTree = "<group>"; };
+		05D0F49B2B938DA100F6E852 /* MyCafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCafeView.swift; sourceTree = "<group>"; };
+		05D0F49D2B93BB6100F6E852 /* ToastMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessageView.swift; sourceTree = "<group>"; };
+		05F3A0C02BA2F12F0088262B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		DD0FF2092B8EC1570061F9DB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
@@ -101,6 +113,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05F3A0BD2BA2ED860088262B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		05F3A0BE2BA2ED8D0088262B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0526FA172BA0802200A730FD /* LogoutAlertView.swift */,
+				050F7BDF2B9C599900EDA176 /* HelpMessageView.swift */,
+				05D0F49D2B93BB6100F6E852 /* ToastMessageView.swift */,
+				05D0F49B2B938DA100F6E852 /* MyCafeView.swift */,
+				05D0F4992B93829400F6E852 /* MyCafeTasteView.swift */,
+				DD0FF2322B8ED8A60061F9DB /* User.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05F3A0BF2BA2ED940088262B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				05F3A0C02BA2F12F0088262B /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DD0FF20B2B8ED54C0061F9DB /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +262,9 @@
 		DD0FF2312B8ED8A60061F9DB /* User */ = {
 			isa = PBXGroup;
 			children = (
-				DD0FF2322B8ED8A60061F9DB /* User.swift */,
+				05F3A0BF2BA2ED940088262B /* ViewModel */,
+				05F3A0BE2BA2ED8D0088262B /* View */,
+				05F3A0BD2BA2ED860088262B /* Model */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -356,6 +398,7 @@
 				DD652CF52B8A2FBE00542337 /* Sources */,
 				DD652CF62B8A2FBE00542337 /* Frameworks */,
 				DD652CF72B8A2FBE00542337 /* Resources */,
+				05D0F4942B90CC0C00F6E852 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -434,6 +477,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05D0F4942B90CC0C00F6E852 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		DD0FF2062B8EBFAC0061F9DB /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -461,13 +521,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */,
+				05F3A0C12BA2F12F0088262B /* UserViewModel.swift in Sources */,
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
 				DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */,
+				05D0F49E2B93BB6100F6E852 /* ToastMessageView.swift in Sources */,
+				050F7BE02B9C599900EDA176 /* HelpMessageView.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
 				DD0FF2382B8ED8A60061F9DB /* Onboarding.swift in Sources */,
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
 				DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */,
 				DD0FF21E2B8ED7EF0061F9DB /* CurationEntity.swift in Sources */,
+				0526FA182BA0802200A730FD /* LogoutAlertView.swift in Sources */,
 				DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */,
 				DD0FF2432B8EDE400061F9DB /* Protocol.swift in Sources */,
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
@@ -475,7 +539,9 @@
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
+				05D0F49A2B93829400F6E852 /* MyCafeTasteView.swift in Sources */,
 				DD0FF2372B8ED8A60061F9DB /* Curation.swift in Sources */,
+				05D0F49C2B938DA100F6E852 /* MyCafeView.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
 				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
 				DD0FF21C2B8ED7E20061F9DB /* CafeEntity.swift in Sources */,
