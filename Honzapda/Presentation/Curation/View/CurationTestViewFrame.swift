@@ -3,151 +3,170 @@ import SwiftUI
 //: MARK: 큐레이션 태스트뷰 프레임
 
 struct CurationTestView1: View { // 오늘의 기분은 어떄요
-    @Binding var progress: Int
-    @Binding var mood: String
+    @ObservedObject var curationViewModel: CurationViewModel
+
     var body: some View {
-        ZStack {
-            Image("background_curationtest")
+        ZStack(alignment: .top) {
+            Image("background_curationTest")
                 .resizable()
                 .scaledToFill()
+                .frame(height: screenHeight)
+            
             VStack(alignment: .leading, spacing: 30) {
                 Text("오늘의 기분은\n어때요?")
-                    .font(Font.custom("S-Core Dream", size: 26))
+                    .font(Font.custom("S-CoreDream-6Bold", size: 26))
                     .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
                     .padding(.leading, 14)
-                if mood == "none" {
+                
+                if curationViewModel.mood == "none" {
                     VStack(spacing: -5) {
                         Button {
                             print("good")
-                            mood = "good"
-                            progress += 1
+                            curationViewModel.mood = "good"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 1)
                         }
+                        
                         Button {
                             print("normal")
-                            mood = "normal"
-                            progress += 1
+                            curationViewModel.mood = "normal"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 2)
                                 .padding(.vertical, 20)
                         }
+                        
                         Button {
                             print("bad")
-                            mood = "bad"
-                            progress += 1
+                            curationViewModel.mood = "bad"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 3)
                         }
                     }
-                } else if mood == "good" {
+                } else if curationViewModel.mood == "good" {
                     VStack(spacing: -5) {
                         Button {
                             print("good")
-                            mood = "good"
-                            progress += 1
+                            curationViewModel.mood = "good"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 1)
                         }
+                        
                         Button {
                             print("normal")
-                            mood = "normal"
-                            progress += 1
+                            curationViewModel.mood = "normal"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 5)
                                 .padding(.vertical, 20)
                         }
+                        
                         Button {
                             print("bad")
-                            mood = "bad"
-                            progress += 1
+                            curationViewModel.mood = "bad"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 6)
                         }
                     }
-                } else if mood == "normal" {
+                } else if curationViewModel.mood == "normal" {
                     VStack(spacing: -5) {
                         Button {
                             print("good")
-                            mood = "good"
-                            progress += 1
+                            curationViewModel.mood = "good"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 4)
                         }
+                        
                         Button {
                             print("normal")
-                            mood = "normal"
-                            progress += 1
+                            curationViewModel.mood = "normal"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 2)
                                 .padding(.vertical, 20)
                         }
+                        
                         Button {
                             print("bad")
-                            mood = "bad"
-                            progress += 1
+                            curationViewModel.mood = "bad"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 6)
                         }
                     }
-                } else if mood == "bad" {
+                } else if curationViewModel.mood == "bad" {
                     VStack(spacing: -5) {
                         Button {
                             print("good")
-                            mood = "good"
-                            progress += 1
+                            curationViewModel.mood = "good"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 4)
                         }
+                        
                         Button {
                             print("normal")
-                            mood = "normal"
-                            progress += 1
+                            curationViewModel.mood = "normal"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater(num: 5)
                                 .padding(.vertical, 20)
                         }
+                        
                         Button {
                             print("bad")
-                            mood = "bad"
-                            progress += 1
+                            curationViewModel.mood = "bad"
+                            curationViewModel.progress += 1
                         } label: {
-                            CurationTestButtonLabelCreater(num: 2)
+                            CurationTestButtonLabelCreater(num: 3)
                         }
                     }
                 }
             }
+            .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+            .offset(y: screenHeight * 0.23)
         }
     }
 }
 
 struct CurationTestView2: View {
-    @Binding var progress: Int
-    @Binding var keyword: String
+   //  @Binding var progress: Int
+    // @Binding var keyword: String
+    @ObservedObject var curationViewModel: CurationViewModel
+    
     let choiceArr: [[String]] = [["휴식", "감성 사진 찍기"],
                                   ["여행", "활발한 대화"],
                                   ["회의", "독서", "업무"],
                                   ["핫플", "공부"]]
     var body: some View {
         ZStack(alignment: .top) {
-            Image("background_curationtest")
+            Image("background_curationTest")
                 .resizable()
                 .scaledToFill()
+                .frame(width: screenWidth)
+
             VStack(alignment: .leading, spacing: 30) {
                 Text("가장 마음에 드는\n키워드를 선택해주세요!")
-                    .font(Font.custom("S-Core Dream", size: 26))
+                    .font(Font.custom("S-CoreDream-6Bold", size: 26))
                     .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
                     .padding(.leading, 14)
+                    .padding(.bottom, 30)
                     .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+                    
                     VStack {
                     ForEach(0..<choiceArr.count, id: \.self) { rowIndex in
                         HStack(spacing: 10) {
                             ForEach(choiceArr[rowIndex], id: \.self) { choice in
                                 Button {
-                                    keyword = choice
-                                    progress += 1
+                                    curationViewModel.keyword = choice
+                                    curationViewModel.progress += 1
                                 } label: {
-                                    if keyword == choice {
+                                    if curationViewModel.keyword == choice {
                                         CurationTestSmallButtonLabelCreater2(title: choice)
                                     } else {
                                         CurationTestSmallButtonLabelCreater(title: choice)
@@ -158,124 +177,133 @@ struct CurationTestView2: View {
                     }
                 }
                 .frame(width: UIScreen.main.bounds.width * 0.9)
-                .padding(.top, 30)
             }
-            .offset(y: 200)
-            .frame(width: UIScreen.main.bounds.width * 0.9)
+            .offset(y: screenHeight * 0.23)
         }
     }
 }
 
 struct CurationTestView3: View {
-    @Binding var progress: Int
-    @Binding var menu: String
+    @ObservedObject var curationViewModel: CurationViewModel
     var body: some View {
         ZStack(alignment: .top) {
-            Image("background_curationtest")
+            Image("background_curationTest")
                 .resizable()
                 .scaledToFill()
+                .frame(width: screenWidth)
+
             VStack(alignment: .leading, spacing: 30) {
-                Text("오늘 먹고 싶은\n메뉴를 골라주세요!")
-                    .font(Font.custom("S-Core Dream", size: 26))
+                Text("오늘 먹고 싶은\n메뉴는?")
+                    .font(Font.custom("S-CoreDream-6Bold", size: 26))
                     .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
                     .padding(.leading, 14)
+
                 // 선택 안됨
-                if menu == "none" {
-                    VStack(spacing: -5) {
+                if curationViewModel.menu == "none" {
+                    VStack {
                         Button {
                             print( "coffee")
-                            menu = "coffee"
-                            progress += 1
+                            curationViewModel.menu = "coffee"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater2(num: 1)
                         }
                         Button {
                             print( "drink")
-                            menu = "drink"
-                            progress += 1
+                            curationViewModel.menu = "drink"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater2(num: 2)
                         }
                         Button {
                             print( "dessert")
-                            menu = "dessert"
-                            progress += 1
+                            curationViewModel.menu = "dessert"
+                            curationViewModel.progress += 1
                         } label: {
                             CurationTestButtonLabelCreater2(num: 3)
                         }
                     }
                 } else {
-                    VStack(spacing: -5) {
+                    VStack {
                         Button {
-                            menu = "coffee"
+                            curationViewModel.menu = "coffee"
                         } label: {
-                            if menu == "coffee"{
-                                CurationTestButtonLabelCreater2(num: 1)
-                            } else {
+                            if curationViewModel.menu == "coffee"{
                                 CurationTestButtonLabelCreater2(num: 4)
+                            } else {
+                                CurationTestButtonLabelCreater2(num: 1)
                             }
                         }
                         Button {
-                            menu = "drink"
+                            curationViewModel.menu = "drink"
                         } label: {
-                            if menu == "drink"{
-                                CurationTestButtonLabelCreater2(num: 2)
-                            } else {
+                            if curationViewModel.menu == "drink"{
                                 CurationTestButtonLabelCreater2(num: 5)
+                            } else {
+                                CurationTestButtonLabelCreater2(num: 2)
                             }
                         }
                         Button {
-                            menu = "dessert"
+                            curationViewModel.menu = "dessert"
                         } label: {
-                            if menu == "dessert"{
-                                CurationTestButtonLabelCreater2(num: 3)
-                            } else {
+                            if curationViewModel.menu == "dessert"{
                                 CurationTestButtonLabelCreater2(num: 6)
+                            } else {
+                                CurationTestButtonLabelCreater2(num: 3)
                             }
                         }
                     }
                 }
             }
-            .offset(y: 200)
             .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+            .offset(y: screenHeight * 0.23)
         }
     }
 }
+
 struct CurationTestView4: View {
-    @Binding var atmosphare: String
-    @Binding var gotoTest: Bool
+    @ObservedObject var curationViewModel: CurationViewModel
     var body: some View {
         ZStack(alignment: .top) {
-            Image("background_curationtest")
+            Image("background_curationTest")
                 .resizable()
                 .scaledToFill()
+                .frame(width: screenWidth)
+            
             VStack(alignment: .leading, spacing: 30) {
                 Text("오늘 가고 싶은\n카페 분위기를 알려주세요!")
-                    .font(Font.custom("S-Core Dream", size: 26))
+                    .font(Font.custom("S-CoreDream-6Bold", size: 26))
                     .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
                     .padding(.leading, 14)
+
                 // 선택 안됨
-                if atmosphare == "none" {
+                if curationViewModel.atmosphare == "none" {
                     HStack(spacing: -5) {
                         Button {
                             print( "quiet")
-                            atmosphare = "quiet"
-                           gotoTest = false
+                            curationViewModel.atmosphare = "quiet"
+                            curationViewModel.gotoTest = false
+                            curationViewModel.progress = 1
+                            curationViewModel.gotoResult = true
                         } label: {
                             CurationTestButtonLabelCreater3(num: 1)
                         }
                         Button {
                             print( "drink")
-                            atmosphare = "drink"
-                            gotoTest = false
+                            curationViewModel.atmosphare = "drink"
+                            curationViewModel.gotoTest = false
+                            curationViewModel.progress = 1
+                            curationViewModel.gotoResult = true
                         } label: {
                             CurationTestButtonLabelCreater3(num: 2)
                                 .padding(.vertical, 20)
                         }
                         Button {
                             print( "dessert")
-                            atmosphare = "dessert"
-                            gotoTest = false
+                            curationViewModel.atmosphare = "dessert"
+                            curationViewModel.gotoTest = false
+                            curationViewModel.progress = 1
+                            curationViewModel.gotoResult = true
                         } label: {
                             CurationTestButtonLabelCreater3(num: 3)
                         }
@@ -284,45 +312,49 @@ struct CurationTestView4: View {
                 } else {
                     HStack(spacing: -5) {
                         Button {
-                            atmosphare = "coffee"
+                            curationViewModel.atmosphare = "coffee"
                         } label: {
-                            if atmosphare == "coffee"{
-                                CurationTestButtonLabelCreater3(num: 1)
-                            } else {
+                            if curationViewModel.atmosphare == "coffee"{
                                 CurationTestButtonLabelCreater3(num: 4)
+                            } else {
+                                CurationTestButtonLabelCreater3(num: 1)
                             }
                         }
                         Button {
-                            atmosphare = "drink"
+                            curationViewModel.atmosphare = "drink"
                         } label: {
-                            if atmosphare == "drink"{
-                                CurationTestButtonLabelCreater3(num: 2)
-                            } else {
+                            if curationViewModel.atmosphare == "drink"{
                                 CurationTestButtonLabelCreater3(num: 5)
+                            } else {
+                                CurationTestButtonLabelCreater3(num: 2)
                             }
                         }
                         Button {
-                            atmosphare = "dessert"
+                            curationViewModel.atmosphare = "dessert"
                         } label: {
-                            if atmosphare == "dessert"{
-                                CurationTestButtonLabelCreater3(num: 3)
-                            } else {
+                            if curationViewModel.atmosphare == "dessert"{
                                 CurationTestButtonLabelCreater3(num: 6)
+                            } else {
+                                CurationTestButtonLabelCreater3(num: 3)
                             }
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width * 0.9)
                 }
             }
-            .offset(y: 200)
+            .offset(y: screenHeight * 0.23)
             .frame(width: UIScreen.main.bounds.width * 0.9,
                    alignment: .leading)
         }
     }
 }
-struct CUPV: PreviewProvider {
+struct CUPV3: PreviewProvider {
     static var previews: some View {
-       // CurationBodyView(dataset: cuData)
-        CurationMainView()
+        // CurationBodyView(dataset: cuData)
+        CurationTestView1(curationViewModel: CurationViewModel())
+        CurationTestView2(curationViewModel: CurationViewModel())
+        CurationTestView3(curationViewModel: CurationViewModel())
+        CurationTestView4(curationViewModel: CurationViewModel())
+
     }
 }

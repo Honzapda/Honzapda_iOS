@@ -7,26 +7,30 @@
 
 import SwiftUI
 
-class CurationViewModel : ObservableObject {
+class CurationViewModel: ObservableObject {
+    
     // MARK: Properties
     /*
      gotoTest -> 큐레이션 메인 뷰에서 큐레이션 테스트로 넘어가는 것 컨트롤 t-> 테스트뷰 f-> 메인뷰
+     testPopup -> 큐레이션 메인 뷰에서 테스트하기 선택 시 팝업 호출
+     resultPopup -> 테스트 완료 시 나오는 팝업 (결과 뷰에서 컨트롤)
+     gotoResult -> 테스트 완료 시 나오는 결과창으로 이동
      progress -> 테스트뷰 순서 반영
      mood -> 테스트 1에서 변동
      keyword -> 테스트2에서 변동
      menu -> 테스트 3에서 변동
      atmosphere -> 테스트 4에서 변동
      curationBodyViewDataset  -> 바디 뷰에 쓰이는 데이터셋
-     
      */
-    @Published var gotoTest : Bool = false
-    @Published var progress : Int = 0
-    @Published var mood : String = "none"
-    @Published var keyword : String = "none"
-    @Published var menu : String = "none"
-    @Published var atmosphere : String = "none"
-    
-    
+    @Published var gotoTest: Bool = false
+    @Published var testPopup: Bool = false
+    @Published var resultPopup: Bool = false
+    @Published var gotoResult: Bool = false
+    @Published var progress: Int = 0
+    @Published var mood: String = "none"
+    @Published var keyword: String = "none"
+    @Published var menu: String = "none"
+    @Published var atmosphare: String = "none"
     // MARK: 큐레이션 바디 뷰 데이터셋 셈플
 
     let cuData: CurationBVdataset = CurationBVdataset(title: "오늘의\n카페 추천",
@@ -56,9 +60,6 @@ class CurationViewModel : ObservableObject {
                                                                        "날이 추운 날,\n카공하기 좋은 카페",
                                                                        "공간대여 하기 좋은 카페"],
                                                         cafeNumberArr: [1, 2, 3, 4])
-
-    
-    
-    
-    
 }
+let screenWidth: CGFloat = UIScreen.main.bounds.width
+let screenHeight: CGFloat = UIScreen.main.bounds.height

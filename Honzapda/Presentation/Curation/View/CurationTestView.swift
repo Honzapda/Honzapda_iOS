@@ -1,65 +1,68 @@
-//
-//  CurationTestView.swift
-//  Honzapda
-//
-//  Created by 이재용 on 3/5/24.
-//
-
 import SwiftUI
 
 struct CurationTestMainView: View {
-    @Binding var gotoTest: Bool
-    @State var progress: Int = 1
-    @State var mood: String
-    @State var keyword: String
-    @State var menu: String
-    @State var atmosphare: String
+    @ObservedObject var curationViewModel: CurationViewModel
+    
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                VStack {
-                    Button(action: {
-                        gotoTest = false
-                        print("backButton -> gotoCuration")
-                    }) {
-                        Image("button_curationtest_chevron.left")
-                            .padding()
-                    }
-                    .frame(width: geometry.size.width, alignment: .leading)
-                    Rectangle()
-                        .frame(width: geometry.size.width * CGFloat(self.progress) / 4, height: 2)
-                        .foregroundColor(Color("Primary05")) // 프로그레스 바의 색상을 설정합니다.
-                }
-
-                VStack {
-                    ZStack {
-                        // 프로그레스와 테스트 뷰의 순서는 일치함
-                        if progress == 1 {
-                            CurationTestView1(progress: $progress, mood: $mood)
-                                .frame(height: UIScreen.main.bounds.height * 0.6)
-                                .transition(.asymmetric(insertion: .move(edge: .trailing),
-                                                        removal: .move(edge: .leading)))
-                        } else if progress == 2 {
-                            CurationTestView2(progress: $progress, keyword: $keyword)
-                                .frame(height: UIScreen.main.bounds.height * 0.6)
-                                .transition(.asymmetric(insertion: .move(edge: .trailing),
-                                                        removal: .move(edge: .leading)))
-                        } else if progress == 3 {
-                            CurationTestView3(progress: $progress, menu: $menu)
-                                .frame(height: UIScreen.main.bounds.height * 0.6)
-                                .transition(.asymmetric(insertion: .move(edge: .trailing),
-                                                        removal: .move(edge: .leading)))
-                        } else if progress == 4 {
-                            CurationTestView4(atmosphare: $atmosphare, gotoTest: $gotoTest)
-                                .frame(height: UIScreen.main.bounds.height * 0.6)
-                                .transition(.asymmetric(insertion: .move(edge: .trailing),
-                                                        removal: .move(edge: .leading)))
-                        }
-                    }
-                    .animation(.default, value: progress)
+        ZStack(alignment: .top) {
+            HeaderView(curationViewModel: curationViewModel) // 헤더 부분 분리
+            
+            Group { // 프로그레스에 따른 뷰 변경
+                switch curationViewModel.progress {
+                case 0:
+                    CurationTestView1(curationViewModel: curationViewModel)
+                case 1:
+                    CurationTestView2(curationViewModel: curationViewModel)
+                case 2:
+                    CurationTestView3(curationViewModel: curationViewModel)
+                case 3:
+                    CurationTestView4(curationViewModel: curationViewModel)
+                default:
+                    Text("Unknown progress")
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity) // 나머지 전체 영역을 차지하도록 설정
+            .transition(.asymmetric(insertion: .move(edge: .trailing),
+                                    removal: .move(edge: .leading)))
+            .animation(.default, value: curationViewModel.progress)
         }
         .navigationBarBackButtonHidden(true)
+    }
+}
+
+// 헤더 부분을 별도의 뷰로 분리
+struct HeaderView: View {
+    @ObservedObject var curationViewModel: CurationViewModel
+
+    var body: some View {
+        VStack(spacing: 0) {
+            Button(action: {
+                curationViewModel.gotoTest = false
+                print("backButton -> gotoCuration")
+            }) {
+                Image("button_curationtest_chevron.left")
+                    .padding()
+            } // 뒤로가기 버튼
+            .frame(width: screenWidth, alignment: .leading)
+
+            HStack(spacing: 0) { // 프로그레스 바
+                Rectangle()
+                    .frame(width: screenWidth * CGFloat(curationViewModel.progress) / 4, height: 2)
+                    .foregroundColor(Color("Primary05")) // 프로그레스 바 색상
+                
+                Rectangle()
+                    .frame(width: screenWidth * (1 - CGFloat(curationViewModel.progress) / 4), height: 2)
+                    .foregroundColor(Color("Gray05")) // 남은 부분 색상
+                Spacer()
+            }
+        }
+        .frame(height: screenHeight * 0.1)
+        .zIndex(1)
+    }
+}
+
+struct CUPV: PreviewProvider {
+    static var previews: some View {
+        CurationTestMainView(curationViewModel: CurationViewModel())
     }
 }

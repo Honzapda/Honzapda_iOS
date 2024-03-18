@@ -82,6 +82,7 @@ struct CurationTestButtonLabelCreater: View {
                     .offset(y: 2)
             }
             .frame(width: UIScreen.main.bounds.width * 0.9)
+            
         } else if num == 5 {
             ZStack {
                 Image("button_curationTest_mood_soso")
@@ -175,14 +176,14 @@ struct CurationTestButtonLabelCreater2: View {
                     .resizable()
                     .scaledToFit()
                     .shadow(radius: 3)
-                Text("카페의 정석!\n커피 메뉴")
                 
+                Text("카페의 정석!\n커피 메뉴")
                     .font(Font.custom("S-CoreDream-6Bold", size: 16))
                     .foregroundColor(Color(red: 0.29, green: 0.32, blue: 0.91))
                     .multilineTextAlignment(.leading)
                     .offset(x: -90)
             }
-            .frame(width: UIScreen.main.bounds.width * 0.9)
+            .frame(width: UIScreen.main.bounds.width * 0.85)
              
         } else if num == 2 {
             ZStack {
@@ -205,8 +206,8 @@ struct CurationTestButtonLabelCreater2: View {
                     .resizable()
                     .scaledToFit()
                     .shadow(radius: 3)
-                Text("카페는 디저트지!\n디저트 메뉴")
                 
+                Text("카페는 디저트지!\n디저트 메뉴")
                     .font(Font.custom("S-CoreDream-6Bold", size: 16))
                     .foregroundColor(Color(red: 0.95, green: 0.54, blue: 0.41))
                     .multilineTextAlignment(.leading)

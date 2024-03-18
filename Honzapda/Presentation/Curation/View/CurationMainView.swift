@@ -1,4 +1,3 @@
-
 //  CurationEntity.swift
 //  Honzapda
 //
@@ -10,65 +9,79 @@ import SwiftUI
 // 큐레이션 뷰
 struct CurationMainView: View {
     // gotoTest -> 테스트 뷰로 이동여부
-    @State var gotoTest: Bool = false
-    @ObservedObject var curationViewModel : CurationViewModel
+ //   @State var gotoTest: Bool = false
+    @ObservedObject var curationViewModel: CurationViewModel
     var body: some View {
-        NavigationView { // 화면 전체가 테스트 뷰로 이동함
-            VStack {
-                NavigationLink(destination: CurationTestView(
-                    gotoTest: $gotoTest,
-                    mood: "none",
-                    keyword: "none",
-                    menu: "none",
-                    atmosphare: "none"),
-                               isActive: $gotoTest) {
-                    EmptyView()
-                    // 추후 데이터 전달을 위해서 기본값 제공
-                }
-                HStack { // 헤더 부분, 로고와 앱 네임 -> 이미지 대체
-                    Image("image_header_curationmain")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 120)
-                    Spacer()
-                }
-                .padding(.leading)
-                Rectangle().frame(width: UIScreen.main.bounds.width, height: 1)
-                    .foregroundColor(Color("Gray03"))
-                ScrollView {
-                    ZStack {
-                        Image("background_curation")
-                        VStack {
-                            // cubv1
-                            CurationBodyView( dataset: curationViewModel.cuData, blur: false, gotoTest: $gotoTest)
-                                .padding(.vertical, 48)
-                            Rectangle()
-                                .foregroundColor(.clear)
-                                .frame(width: UIScreen.main.bounds.width, height: 20)
-                                .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-                            // cubv2
-                            CurationBodyView(dataset: curationViewModel.cuData2, blur: true, gotoTest: $gotoTest)
-                                .padding(.vertical, 48)
-                            Rectangle()
-                                .foregroundColor(.clear)
-                                .frame(width: UIScreen.main.bounds.width, height: 20)
-                                .background(Color(red: 0.96, green: 0.96, blue: 0.96))
-                            // cubv3
-                            CurationBodyView(dataset: curationViewModel.cuData3, blur: false, gotoTest: $gotoTest)
-                                .padding(.vertical, 48)
-                            Spacer()
-                        }
+        ZStack {
+            NavigationView { // 화면 전체가 테스트 뷰로 이동함
+                VStack {
+                    NavigationLink(destination: CurationTestMainView(curationViewModel: curationViewModel),
+                                   isActive: $curationViewModel.gotoTest) {
+                        EmptyView()
+                        // 추후 데이터 전달을 위해서 기본값 제공
                     }
+                    HStack { // 헤더 부분, 로고와 앱 네임 -> 이미지 대체
+                        Image("image_header_curationmain")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 120)
+                        Spacer()
+                    }
+                    .padding(.leading)
+                    
+                    Rectangle()
+                        .frame(width: UIScreen.main.bounds.width, height: 1)
+                        .foregroundColor(Color("Gray03"))
+                    
+                    ScrollView {
+                        ZStack {
+                            Image("background_curation")
+                            VStack {
+                                // cubv1
+                                CurationBodyView( curationViewModel: curationViewModel,
+                                                  dataset: curationViewModel.cuData,
+                                                  blur: false)
+                                    .padding(.vertical, 48)
+                                Rectangle()
+                                    .foregroundColor(.clear)
+                                    .frame(width: UIScreen.main.bounds.width, height: 20)
+                                    .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                                // cubv2
+                                CurationBodyView(curationViewModel: curationViewModel,
+                                                 dataset: curationViewModel.cuData2,
+                                                 blur: true)
+                                    .padding(.vertical, 48)
+                                Rectangle()
+                                    .foregroundColor(.clear)
+                                    .frame(width: UIScreen.main.bounds.width, height: 20)
+                                    .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                                // cubv3
+                                CurationBodyView(curationViewModel: curationViewModel,
+                                                 dataset: curationViewModel.cuData3,
+                                                 blur: false)
+                                    .padding(.vertical, 48)
+                                Spacer()
+                            }
+                        }
+                    } // 캐러셀이 적용된 카드뷰들
                 }
             }
+            if curationViewModel.testPopup {
+                TestStartPopUp(curationViewModel: curationViewModel)
+            } // 테스트 팝업
+            
+            if curationViewModel.gotoResult {
+                CurationResultView(curationViewModel: curationViewModel)
+            }// 큐레이션 결과창 이동
         }
     }
 }
 
 struct CurationBodyView: View {
+    @ObservedObject var curationViewModel: CurationViewModel
     var dataset: CurationBVdataset // 데이터셋 구조체
     let blur: Bool
-    @Binding var gotoTest: Bool
+//    @Binding var gotoTest: Bool
     var body: some View {
         VStack(spacing: 16) {
             // Title and Subtitle View
@@ -114,8 +127,8 @@ struct CurationBodyView: View {
                             .foregroundColor(.white)
                             .padding(10)
                         Button {
-                            print("gotoTest")
-                            gotoTest = true
+                            curationViewModel.testPopup = true
+                            print("gotoTest -> \(curationViewModel.testPopup)")
                         } label: {
                             Text("테스트하러 가기")
                                 .padding(.vertical, 10) // 상하 패딩 적용
@@ -195,4 +208,9 @@ struct CurationBVdataset {
     let cafeTitleArr: [String]?
     let cafeNumberArr: [Int]?
 }
-
+struct CUPV2: PreviewProvider {
+    static var previews: some View {
+        // CurationBodyView(dataset: cuData)
+        CurationMainView(curationViewModel: CurationViewModel())
+    }
+}
