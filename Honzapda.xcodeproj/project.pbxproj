@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB2E00BF2B9C5BDD00BE0592 /* CurationButtonFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E00BE2B9C5BDD00BE0592 /* CurationButtonFrame.swift */; };
+		BB2E00C12BA2D06F00BE0592 /* CurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E00C02BA2D06F00BE0592 /* CurationViewModel.swift */; };
+		BB6CB0042B907FBA0098CA10 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CB0032B907FBA0098CA10 /* HomeViewModel.swift */; };
+		BB6CB0082B90A5800098CA10 /* CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CB0072B90A5800098CA10 /* CoreLocation.swift */; };
+		BB6CB00A2B92DE310098CA10 /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CB0092B92DE310098CA10 /* HomeCardView.swift */; };
+		BB6CB00C2B92DEE00098CA10 /* HomeSavedCafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CB00B2B92DEE00098CA10 /* HomeSavedCafe.swift */; };
+		BB6CB00E2B92E1290098CA10 /* HonzapdaCafeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CB00D2B92E1290098CA10 /* HonzapdaCafeModel.swift */; };
+		BB6CB0102B9622C30098CA10 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CB00F2B9622C30098CA10 /* Carousel.swift */; };
+		BB6CB0122B9623BB0098CA10 /* CurationResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CB0112B9623BB0098CA10 /* CurationResultView.swift */; };
+		BB6CB0142B96F96E0098CA10 /* CurationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CB0132B96F96E0098CA10 /* CurationTestView.swift */; };
+		BB6CB0192B96FA980098CA10 /* CurationTestViewFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6CB0182B96FA980098CA10 /* CurationTestViewFrame.swift */; };
+		BB7E78F52BA8069B0085D6DC /* CurationPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E78F42BA8069A0085D6DC /* CurationPopUpView.swift */; };
 		DD0FF20A2B8EC1570061F9DB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2092B8EC1570061F9DB /* .swiftlint.yml */; };
 		DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */; };
 		DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */; };
@@ -18,8 +30,8 @@
 		DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2252B8ED81C0061F9DB /* SearchEntity.swift */; };
 		DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2272B8ED8250061F9DB /* UserEntity.swift */; };
 		DD0FF2352B8ED8A60061F9DB /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22A2B8ED8A60061F9DB /* Cafe.swift */; };
-		DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22C2B8ED8A60061F9DB /* Home.swift */; };
-		DD0FF2372B8ED8A60061F9DB /* Curation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22E2B8ED8A60061F9DB /* Curation.swift */; };
+		DD0FF2362B8ED8A60061F9DB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22C2B8ED8A60061F9DB /* HomeView.swift */; };
+		DD0FF2372B8ED8A60061F9DB /* CurationMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22E2B8ED8A60061F9DB /* CurationMainView.swift */; };
 		DD0FF2382B8ED8A60061F9DB /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2302B8ED8A60061F9DB /* Onboarding.swift */; };
 		DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2322B8ED8A60061F9DB /* User.swift */; };
 		DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2342B8ED8A60061F9DB /* Search.swift */; };
@@ -48,6 +60,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB2E00BE2B9C5BDD00BE0592 /* CurationButtonFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationButtonFrame.swift; sourceTree = "<group>"; };
+		BB2E00C02BA2D06F00BE0592 /* CurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationViewModel.swift; sourceTree = "<group>"; };
+		BB6CB0032B907FBA0098CA10 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BB6CB0072B90A5800098CA10 /* CoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocation.swift; sourceTree = "<group>"; };
+		BB6CB0092B92DE310098CA10 /* HomeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
+		BB6CB00B2B92DEE00098CA10 /* HomeSavedCafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSavedCafe.swift; sourceTree = "<group>"; };
+		BB6CB00D2B92E1290098CA10 /* HonzapdaCafeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonzapdaCafeModel.swift; sourceTree = "<group>"; };
+		BB6CB00F2B9622C30098CA10 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		BB6CB0112B9623BB0098CA10 /* CurationResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationResultView.swift; sourceTree = "<group>"; };
+		BB6CB0132B96F96E0098CA10 /* CurationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationTestView.swift; sourceTree = "<group>"; };
+		BB6CB0182B96FA980098CA10 /* CurationTestViewFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationTestViewFrame.swift; sourceTree = "<group>"; };
+		BB7E78F42BA8069A0085D6DC /* CurationPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationPopUpView.swift; sourceTree = "<group>"; };
 		DD0FF2092B8EC1570061F9DB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
@@ -59,8 +83,8 @@
 		DD0FF2252B8ED81C0061F9DB /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
 		DD0FF2272B8ED8250061F9DB /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		DD0FF22A2B8ED8A60061F9DB /* Cafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
-		DD0FF22C2B8ED8A60061F9DB /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		DD0FF22E2B8ED8A60061F9DB /* Curation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curation.swift; sourceTree = "<group>"; };
+		DD0FF22C2B8ED8A60061F9DB /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DD0FF22E2B8ED8A60061F9DB /* CurationMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurationMainView.swift; sourceTree = "<group>"; };
 		DD0FF2302B8ED8A60061F9DB /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		DD0FF2322B8ED8A60061F9DB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DD0FF2342B8ED8A60061F9DB /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -101,6 +125,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB6CB0002B907F5A0098CA10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB6CB0072B90A5800098CA10 /* CoreLocation.swift */,
+				BB6CB00D2B92E1290098CA10 /* HonzapdaCafeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB6CB0012B907F6E0098CA10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF22C2B8ED8A60061F9DB /* HomeView.swift */,
+				BB6CB0092B92DE310098CA10 /* HomeCardView.swift */,
+				BB6CB00B2B92DEE00098CA10 /* HomeSavedCafe.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB6CB0022B907F880098CA10 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB6CB0032B907FBA0098CA10 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BB6CB0152B96F9820098CA10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FF22E2B8ED8A60061F9DB /* CurationMainView.swift */,
+				BB6CB0132B96F96E0098CA10 /* CurationTestView.swift */,
+				BB6CB0112B9623BB0098CA10 /* CurationResultView.swift */,
+				BB6CB00F2B9622C30098CA10 /* Carousel.swift */,
+				BB6CB0182B96FA980098CA10 /* CurationTestViewFrame.swift */,
+				BB2E00BE2B9C5BDD00BE0592 /* CurationButtonFrame.swift */,
+				BB7E78F42BA8069A0085D6DC /* CurationPopUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB6CB0162B96F98A0098CA10 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E00C02BA2D06F00BE0592 /* CurationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BB6CB0172B96F99E0098CA10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DD0FF20B2B8ED54C0061F9DB /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +278,9 @@
 		DD0FF22B2B8ED8A60061F9DB /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DD0FF22C2B8ED8A60061F9DB /* Home.swift */,
+				BB6CB0022B907F880098CA10 /* ViewModel */,
+				BB6CB0012B907F6E0098CA10 /* View */,
+				BB6CB0002B907F5A0098CA10 /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -206,7 +288,9 @@
 		DD0FF22D2B8ED8A60061F9DB /* Curation */ = {
 			isa = PBXGroup;
 			children = (
-				DD0FF22E2B8ED8A60061F9DB /* Curation.swift */,
+				BB6CB0172B96F99E0098CA10 /* Model */,
+				BB6CB0162B96F98A0098CA10 /* ViewModel */,
+				BB6CB0152B96F9820098CA10 /* View */,
 			);
 			path = Curation;
 			sourceTree = "<group>";
@@ -461,23 +545,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */,
+				BB6CB00C2B92DEE00098CA10 /* HomeSavedCafe.swift in Sources */,
+				BB6CB0082B90A5800098CA10 /* CoreLocation.swift in Sources */,
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
 				DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */,
+				BB6CB00E2B92E1290098CA10 /* HonzapdaCafeModel.swift in Sources */,
+				BB2E00C12BA2D06F00BE0592 /* CurationViewModel.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
 				DD0FF2382B8ED8A60061F9DB /* Onboarding.swift in Sources */,
+				BB2E00BF2B9C5BDD00BE0592 /* CurationButtonFrame.swift in Sources */,
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
 				DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */,
+				BB6CB0192B96FA980098CA10 /* CurationTestViewFrame.swift in Sources */,
 				DD0FF21E2B8ED7EF0061F9DB /* CurationEntity.swift in Sources */,
 				DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */,
 				DD0FF2432B8EDE400061F9DB /* Protocol.swift in Sources */,
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
+				BB6CB00A2B92DE310098CA10 /* HomeCardView.swift in Sources */,
+				BB6CB0102B9622C30098CA10 /* Carousel.swift in Sources */,
 				DD0FF2462B8EDE690061F9DB /* Extension+.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
+				BB7E78F52BA8069B0085D6DC /* CurationPopUpView.swift in Sources */,
+				BB6CB0122B9623BB0098CA10 /* CurationResultView.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
-				DD0FF2372B8ED8A60061F9DB /* Curation.swift in Sources */,
+				BB6CB0142B96F96E0098CA10 /* CurationTestView.swift in Sources */,
+				DD0FF2372B8ED8A60061F9DB /* CurationMainView.swift in Sources */,
+				BB6CB0042B907FBA0098CA10 /* HomeViewModel.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
-				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
+				DD0FF2362B8ED8A60061F9DB /* HomeView.swift in Sources */,
 				DD0FF21C2B8ED7E20061F9DB /* CafeEntity.swift in Sources */,
 				DD0FF2352B8ED8A60061F9DB /* Cafe.swift in Sources */,
 			);
