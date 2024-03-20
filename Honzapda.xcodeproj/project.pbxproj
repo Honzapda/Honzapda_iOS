@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */; };
 		DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045272BA07EA1008C66C9 /* Font+.swift */; };
-		DD00452A2BA0867B008C66C9 /* CarouselModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045292BA0867B008C66C9 /* CarouselModel.swift */; };
+		DD00452A2BA0867B008C66C9 /* OnboardingCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */; };
 		DD0FF20A2B8EC1570061F9DB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2092B8EC1570061F9DB /* .swiftlint.yml */; };
 		DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */; };
 		DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */; };
@@ -56,7 +56,7 @@
 /* Begin PBXFileReference section */
 		DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DD0045272BA07EA1008C66C9 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
-		DD0045292BA0867B008C66C9 /* CarouselModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselModel.swift; sourceTree = "<group>"; };
+		DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardModel.swift; sourceTree = "<group>"; };
 		DD0FF2092B8EC1570061F9DB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DD0FF20D2B8ED57B0061F9DB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DD0FF20F2B8ED58D0061F9DB /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
@@ -382,7 +382,7 @@
 		DDFA80542B9827D500FF32C6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DD0045292BA0867B008C66C9 /* CarouselModel.swift */,
+				DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -528,7 +528,7 @@
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */,
-				DD00452A2BA0867B008C66C9 /* CarouselModel.swift in Sources */,
+				DD00452A2BA0867B008C66C9 /* OnboardingCardModel.swift in Sources */,
 				DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */,
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
