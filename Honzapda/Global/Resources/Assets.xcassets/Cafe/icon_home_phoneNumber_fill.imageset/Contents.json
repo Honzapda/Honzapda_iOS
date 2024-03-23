@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon_home_phoneNumber_fill.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
