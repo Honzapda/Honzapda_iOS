@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB97E2752BAD64B400B1442D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E26D2BAD64B400B1442D /* HomeViewModel.swift */; };
+		BB97E2762BAD64B400B1442D /* HonzapdaCafeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E26F2BAD64B400B1442D /* HonzapdaCafeModel.swift */; };
+		BB97E2772BAD64B400B1442D /* CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E2702BAD64B400B1442D /* CoreLocation.swift */; };
+		BB97E2782BAD64B400B1442D /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E2722BAD64B400B1442D /* HomeCardView.swift */; };
+		BB97E2792BAD64B400B1442D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E2732BAD64B400B1442D /* HomeView.swift */; };
+		BB97E27A2BAD64B400B1442D /* HomeSavedCafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E2742BAD64B400B1442D /* HomeSavedCafe.swift */; };
 		DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */; };
 		DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045272BA07EA1008C66C9 /* Font+.swift */; };
 		DD00452A2BA0867B008C66C9 /* OnboardingCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */; };
@@ -21,7 +27,6 @@
 		DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2252B8ED81C0061F9DB /* SearchEntity.swift */; };
 		DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2272B8ED8250061F9DB /* UserEntity.swift */; };
 		DD0FF2352B8ED8A60061F9DB /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22A2B8ED8A60061F9DB /* Cafe.swift */; };
-		DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22C2B8ED8A60061F9DB /* Home.swift */; };
 		DD0FF2372B8ED8A60061F9DB /* Curation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF22E2B8ED8A60061F9DB /* Curation.swift */; };
 		DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2322B8ED8A60061F9DB /* User.swift */; };
 		DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2342B8ED8A60061F9DB /* Search.swift */; };
@@ -54,6 +59,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB97E26D2BAD64B400B1442D /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BB97E26F2BAD64B400B1442D /* HonzapdaCafeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HonzapdaCafeModel.swift; sourceTree = "<group>"; };
+		BB97E2702BAD64B400B1442D /* CoreLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocation.swift; sourceTree = "<group>"; };
+		BB97E2722BAD64B400B1442D /* HomeCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
+		BB97E2732BAD64B400B1442D /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BB97E2742BAD64B400B1442D /* HomeSavedCafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSavedCafe.swift; sourceTree = "<group>"; };
 		DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DD0045272BA07EA1008C66C9 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardModel.swift; sourceTree = "<group>"; };
@@ -68,7 +79,6 @@
 		DD0FF2252B8ED81C0061F9DB /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
 		DD0FF2272B8ED8250061F9DB /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		DD0FF22A2B8ED8A60061F9DB /* Cafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cafe.swift; sourceTree = "<group>"; };
-		DD0FF22C2B8ED8A60061F9DB /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DD0FF22E2B8ED8A60061F9DB /* Curation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Curation.swift; sourceTree = "<group>"; };
 		DD0FF2322B8ED8A60061F9DB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DD0FF2342B8ED8A60061F9DB /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -114,6 +124,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB97E26B2BAD64B400B1442D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BB97E26C2BAD64B400B1442D /* ViewModel */,
+				BB97E26E2BAD64B400B1442D /* Model */,
+				BB97E2712BAD64B400B1442D /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BB97E26C2BAD64B400B1442D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB97E26D2BAD64B400B1442D /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BB97E26E2BAD64B400B1442D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB97E26F2BAD64B400B1442D /* HonzapdaCafeModel.swift */,
+				BB97E2702BAD64B400B1442D /* CoreLocation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB97E2712BAD64B400B1442D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB97E2722BAD64B400B1442D /* HomeCardView.swift */,
+				BB97E2732BAD64B400B1442D /* HomeView.swift */,
+				BB97E2742BAD64B400B1442D /* HomeSavedCafe.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DD0045242BA07D3E008C66C9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,10 +244,10 @@
 		DD0FF21A2B8ED7980061F9DB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BB97E26B2BAD64B400B1442D /* Home */,
 				DD652CFE2B8A2FBE00542337 /* ContentView.swift */,
 				DD0FF2292B8ED8A60061F9DB /* Cafe */,
 				DD0FF22D2B8ED8A60061F9DB /* Curation */,
-				DD0FF22B2B8ED8A60061F9DB /* Home */,
 				DD0FF22F2B8ED8A60061F9DB /* Onboarding */,
 				DD0FF2332B8ED8A60061F9DB /* Search */,
 				DD0FF2312B8ED8A60061F9DB /* User */,
@@ -214,14 +261,6 @@
 				DD0FF22A2B8ED8A60061F9DB /* Cafe.swift */,
 			);
 			path = Cafe;
-			sourceTree = "<group>";
-		};
-		DD0FF22B2B8ED8A60061F9DB /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				DD0FF22C2B8ED8A60061F9DB /* Home.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		DD0FF22D2B8ED8A60061F9DB /* Curation */ = {
@@ -515,6 +554,7 @@
 				DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */,
 				DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */,
 				DD78D6032BA1C6B6001A37EC /* Common.swift in Sources */,
+				BB97E2792BAD64B400B1442D /* HomeView.swift in Sources */,
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
 				DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
@@ -525,18 +565,22 @@
 				DD0FF21E2B8ED7EF0061F9DB /* CurationEntity.swift in Sources */,
 				DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */,
 				DD0FF2432B8EDE400061F9DB /* Protocol.swift in Sources */,
+				BB97E27A2BAD64B400B1442D /* HomeSavedCafe.swift in Sources */,
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */,
 				DD00452A2BA0867B008C66C9 /* OnboardingCardModel.swift in Sources */,
 				DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */,
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
+				BB97E2772BAD64B400B1442D /* CoreLocation.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
 				DD0FF2372B8ED8A60061F9DB /* Curation.swift in Sources */,
+				BB97E2752BAD64B400B1442D /* HomeViewModel.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
-				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
 				DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */,
 				DD0FF21C2B8ED7E20061F9DB /* CafeEntity.swift in Sources */,
+				BB97E2782BAD64B400B1442D /* HomeCardView.swift in Sources */,
+				BB97E2762BAD64B400B1442D /* HonzapdaCafeModel.swift in Sources */,
 				DD0FF2352B8ED8A60061F9DB /* Cafe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
