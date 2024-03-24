@@ -13,6 +13,7 @@
 		BB97E2782BAD64B400B1442D /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E2722BAD64B400B1442D /* HomeCardView.swift */; };
 		BB97E2792BAD64B400B1442D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E2732BAD64B400B1442D /* HomeView.swift */; };
 		BB97E27A2BAD64B400B1442D /* HomeSavedCafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E2742BAD64B400B1442D /* HomeSavedCafe.swift */; };
+		058B2F682BA0AF380033E71C /* DetailPageMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058B2F672BA0AF380033E71C /* DetailPageMain.swift */; };
 		DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */; };
 		DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045272BA07EA1008C66C9 /* Font+.swift */; };
 		DD00452A2BA0867B008C66C9 /* OnboardingCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */; };
@@ -65,6 +66,7 @@
 		BB97E2722BAD64B400B1442D /* HomeCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
 		BB97E2732BAD64B400B1442D /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BB97E2742BAD64B400B1442D /* HomeSavedCafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSavedCafe.swift; sourceTree = "<group>"; };
+		058B2F672BA0AF380033E71C /* DetailPageMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageMain.swift; sourceTree = "<group>"; };
 		DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DD0045272BA07EA1008C66C9 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardModel.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		DD0FF2292B8ED8A60061F9DB /* Cafe */ = {
 			isa = PBXGroup;
 			children = (
+				058B2F672BA0AF380033E71C /* DetailPageMain.swift */,
 				DD0FF22A2B8ED8A60061F9DB /* Cafe.swift */,
 			);
 			path = Cafe;
@@ -558,6 +561,8 @@
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
 				DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
+				DD0FF2382B8ED8A60061F9DB /* Onboarding.swift in Sources */,
+				058B2F682BA0AF380033E71C /* DetailPageMain.swift in Sources */,
 				DD4BD92E2BA0123700D94748 /* View+.swift in Sources */,
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
 				DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */,
