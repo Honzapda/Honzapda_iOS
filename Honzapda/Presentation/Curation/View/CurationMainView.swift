@@ -8,9 +8,8 @@ import SwiftUI
 
 // 큐레이션 뷰
 struct CurationMainView: View {
-    // gotoTest -> 테스트 뷰로 이동여부
- //   @State var gotoTest: Bool = false
     @ObservedObject var curationViewModel: CurationViewModel
+    
     var body: some View {
         ZStack {
             NavigationView { // 화면 전체가 테스트 뷰로 이동함
@@ -18,13 +17,13 @@ struct CurationMainView: View {
                     NavigationLink(destination: CurationTestMainView(curationViewModel: curationViewModel),
                                    isActive: $curationViewModel.gotoTest) {
                         EmptyView()
-                        // 추후 데이터 전달을 위해서 기본값 제공
                     }
                     HStack { // 헤더 부분, 로고와 앱 네임 -> 이미지 대체
                         Image("image_header_curationmain")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 120)
+                        
                         Spacer()
                     }
                     .padding(.leading)
@@ -34,32 +33,39 @@ struct CurationMainView: View {
                         .foregroundColor(Color("Gray03"))
                     
                     ScrollView {
+                        
                         ZStack {
                             Image("background_curation")
+                            
                             VStack {
                                 // cubv1
                                 CurationBodyView( curationViewModel: curationViewModel,
                                                   dataset: curationViewModel.cuData,
                                                   blur: false)
                                     .padding(.vertical, 48)
+                                
                                 Rectangle()
                                     .foregroundColor(.clear)
                                     .frame(width: UIScreen.main.bounds.width, height: 20)
                                     .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                                
                                 // cubv2
                                 CurationBodyView(curationViewModel: curationViewModel,
                                                  dataset: curationViewModel.cuData2,
                                                  blur: true)
                                     .padding(.vertical, 48)
+                                
                                 Rectangle()
                                     .foregroundColor(.clear)
                                     .frame(width: UIScreen.main.bounds.width, height: 20)
                                     .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                                
                                 // cubv3
                                 CurationBodyView(curationViewModel: curationViewModel,
                                                  dataset: curationViewModel.cuData3,
                                                  blur: false)
                                     .padding(.vertical, 48)
+                                
                                 Spacer()
                             }
                         }
@@ -81,11 +87,11 @@ struct CurationBodyView: View {
     @ObservedObject var curationViewModel: CurationViewModel
     var dataset: CurationBVdataset // 데이터셋 구조체
     let blur: Bool
-//    @Binding var gotoTest: Bool
     var body: some View {
         VStack(spacing: 16) {
             // Title and Subtitle View
             VStack {
+                
                 HStack {
                     Text(dataset.title)
                         .font(Font.custom("S-CoreDream-6Bold", size: 26))
@@ -208,9 +214,9 @@ struct CurationBVdataset {
     let cafeTitleArr: [String]?
     let cafeNumberArr: [Int]?
 }
-struct CUPV2: PreviewProvider {
-    static var previews: some View {
-        // CurationBodyView(dataset: cuData)
-        CurationMainView(curationViewModel: CurationViewModel())
-    }
-}
+//struct CUPV2: PreviewProvider {
+//    static var previews: some View {
+//        // CurationBodyView(dataset: cuData)
+//        CurationMainView(curationViewModel: CurationViewModel())
+//    }
+//}
