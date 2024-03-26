@@ -9,15 +9,16 @@ import SwiftUI
 
 struct CardView: View {
     @ObservedObject var homeViewModel: HomeViewModel
-    @State var savedChecker: Bool
-    var dataset: HonzapdaCafe = sampleData[0]
-    let shopID: Int
-    @Binding var gotoDetailBool: Bool
-    @Binding var detailShopId: Int
+    @State var savedChecker: Bool // 카드뷰가 표시하는 카페가 저장 되었는지 여부
+    var dataset: HonzapdaCafe = sampleData[0] // 데이터셋: 추후 api를 통해 받아온 카페 데이터를 보유하도록 변경됨
+    let shopID: Int // 현재 카페의 숍 아이디를 따로 저장
+    @Binding var gotoDetailBool: Bool // 상세 뷰 이동 여부를 표시
+//    @Binding var detailShopId: Int // 상세뷰에서 표시할 카페 아이디를 저장하지만 필요 없을 것으로 추정됨 -> 삭제 예정
     var body: some View {
         VStack {
+            // MARK: 카드 뷰 상단 이미지 부분
             ZStack {
-                AsyncImage(url: URL(string: dataset.photoUrl ?? "")) {
+                AsyncImage(url: URL(string: dataset.photoUrl)) {
                     // 이미지가 성공적으로 로드되었을 때의 뷰
                     image in image
                         .resizable()
@@ -44,32 +45,35 @@ struct CardView: View {
                 .clipped()
                 HStack {
                     VStack(alignment: .leading) {
-                        HStack {
+                        HStack { // 가게이름, 영업 중 / 영업 종료 이미지
                             Text(dataset.placeName)
-                                .font(Font.custom("S-CoreDream-7ExtraBold", size: 17))
-                                .foregroundColor(.white)
+                                .font(Font.custom("S-CoreDream-6Bold", size: 19))
+                                .foregroundColor(.gray01)
                             
                             Image("OnWorking")
                             
                         }
+                        // 가게 주소
                         Text(dataset.address)
-                            .font(Font.custom("S-CoreDream-5Medium", size: 8))
-                            .foregroundColor(Color(red: 0.96, green: 0.96, blue: 0.96))
+                            .font(Font.custom("S-CoreDream-5Medium", size: 10))
+                            .foregroundColor(.gray01)
                             .padding(.top, -2)
                         
-                        HStack {
+                        HStack { //전화번호이미지, 전화번호
                             Image("PhoneIcon")
+                            
                             Text(dataset.shopPhoneNumber)
-                                .font(Font.custom("S-CoreDream-5Medium", size: 8))
-                                .foregroundColor(Color(red: 0.96, green: 0.96, blue: 0.96))
+                                .font(Font.custom("S-CoreDream-5Medium", size: 10))
+                                .foregroundColor(.gray01)
                         }
                         .padding(.top, 5)
                         
-                        HStack {
+                        
+                        HStack { // 확성기 이미지, // 가게 주소디스크립션
                             Image("MegaPhone")
                             Text(dataset.description)
-                                .font(Font.custom("S-CoreDream-5Medium", size: 8))
-                                .foregroundColor(Color(red: 0.96, green: 0.96, blue: 0.96))
+                                .font(Font.custom("S-CoreDream-5Medium", size: 10))
+                                .foregroundColor(.gray01)
                             
                             Spacer()
                             
@@ -87,13 +91,13 @@ struct CardView: View {
                                 VStack {
                                     if savedChecker {
                                         Image("Flag")
-                                            .foregroundColor(Color("Primary05"))
+                                            .foregroundColor(.primary05)
                                     } else {
                                         Image("Flag")
                                     }
                                     
                                     Text("카페 저장하기")
-                                        .font(Font.custom("S-CoreDream-5Medium", size: 4))
+                                        .font(Font.custom("S-CoreDream-5Medium", size: 6))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
                                 }
@@ -117,26 +121,27 @@ struct CardView: View {
             .frame(width: UIScreen.main.bounds.width * 8 / 10,
                    height: UIScreen.main.bounds.height * 2.3 / 10)
             
+            // MARK: 카드 뷰 하단 정보 부분
             VStack {
                 HStack {
                     (Text(dataset.placeName) + Text("의 정보 >"))
-                        .font(Font.custom("S-Core Dream", size: 10))
+                        .font(Font.custom("S-Core Dream", size: 12))
                         .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
                     
                     Spacer()
                 }
                 .padding(.leading)
                 
-                HStack {
+                HStack { // 역에서부터의 위치, 별점, 리뷰
                     VStack {
                         Image("FarFrom")
                             .resizable()
                             .frame(width: 18, height: 22)
                         
                         Text(dataset.posFromStation)
-                            .font(Font.custom("S-Core Dream", size: 7))
+                            .font(Font.custom("S-Core Dream", size: 9))
                             .multilineTextAlignment(.center)
-                            .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
+                            .foregroundColor(.primary06)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     .padding()
@@ -150,11 +155,11 @@ struct CardView: View {
                             .resizable()
                             .frame(width: 18, height: 22)
                         
-                        Text("\(String(format: "%.2f", Double(dataset.rating) ?? 0.0)) / 5")
+                        Text("\(String(format: "%.2f", Double(dataset.rating))) / 5")
                             .frame(maxWidth: .infinity)
-                            .font(Font.custom("S-Core Dream", size: 7))
+                            .font(Font.custom("S-Core Dream", size: 9))
                             .multilineTextAlignment(.center)
-                            .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
+                            .foregroundColor(.primary06)
                     }
                     .padding()
                     
@@ -169,32 +174,33 @@ struct CardView: View {
                         
                         Text("리뷰\(dataset.reviewCount) 개")
                             .frame(maxWidth: .infinity)
-                            .font(Font.custom("S-Core Dream", size: 7))
+                            .font(Font.custom("S-Core Dream", size: 9))
                             .multilineTextAlignment(.center)
-                            .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
+                            .foregroundColor(.primary06)
                     }
                     .padding()
                 }
                 .frame(height: 63, alignment: .top)
                 
-                HStack {
+                HStack { // 스테이 어도러블의 요일별 혼잡도
                     Text("\(dataset.placeName)의 요일별 혼잡도")
-                        .font(Font.custom("S-Core Dream", size: 10))
-                        .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+                        .font(Font.custom("S-Core Dream", size: 12))
+                        .foregroundColor(.gray09)
                     
                     Image("Union")
                         .resizable()
                         .frame(width: 10, height: 10)
                     
                     Spacer()
-                }.padding(.leading)
-                    .padding(.vertical, 10)
+                }
+                .padding(.leading)
+                .padding(.vertical, 10)
                 
-                HStack {
+                HStack { // 요일별 혼잡도 이미지 생성
                     ForEach(0..<dataset.densityOfDays.count, id: \.self) { index in
                         VStack {
                             Text(dayOfWeek(index: index))
-                                .font(Font.custom("S-CoreDream-5Medium", size: 7))
+                                .font(Font.custom("S-CoreDream-5Medium", size: 9))
                                 .padding(.bottom, -2)
                                 .onAppear {
                                     print(dayOfWeek(index: index))

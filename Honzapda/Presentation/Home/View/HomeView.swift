@@ -11,7 +11,6 @@ import MapKit
 
 struct HomeView: View {
     @ObservedObject var homeViewModel: HomeViewModel // 홈 뷰 모델 지향
-   
     @GestureState private var dragOffset = CGSize.zero // 드래그제스쳐 관리
     @State private var bias: CGFloat = 0
     var body: some View {
@@ -19,6 +18,7 @@ struct HomeView: View {
             // 지도 화면에 설정
             Map(coordinateRegion: $homeViewModel.region)
                 .ignoresSafeArea()
+            
             VStack { // 세이브 버튼, 내 위치 버튼 설정
                 Button {// 세이브 버튼
                     print("save button tap")
@@ -28,6 +28,7 @@ struct HomeView: View {
                         .resizable()
                         .frame(width: 40, height: 40)
                 }
+                
                 Button { // 내 위치 버튼
                     print("center button tap")
                     homeViewModel.locationManager.requestCurrentLocation()
@@ -40,7 +41,8 @@ struct HomeView: View {
             .padding(.trailing)
             .frame(width: UIScreen.main.bounds.width, alignment: .trailing)
             .offset(y: -100)
-            if homeViewModel.bottomSheetisShowing {
+            
+            if homeViewModel.bottomSheetisShowing { // 바텀시트 온오프
                 HomeBottomSheetView(homeViewModel: homeViewModel)
                     .zIndex(3)
                     .transition(.move(edge: .bottom))

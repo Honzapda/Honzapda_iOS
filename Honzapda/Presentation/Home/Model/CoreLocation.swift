@@ -11,7 +11,9 @@ import Combine
 import MapKit
 
 class LocationManager: NSObject, ObservableObject {
+    // 로케이션 매니저 객체 생성
     private let locationManager = CLLocationManager()
+    // 맵킷에 위치를 지정하는 리전 생성 -> 유일해야함
     @Published var region: MKCoordinateRegion = MKCoordinateRegion()
 
     override init() {
