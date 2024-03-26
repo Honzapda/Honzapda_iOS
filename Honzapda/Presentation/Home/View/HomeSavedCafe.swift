@@ -18,6 +18,7 @@ struct HomeBottomSheetView: View {
               .resizable() // 이미지 크기 조정 가능하도록 설정
               .aspectRatio(contentMode: .fill) // 이미지를 프레임에 꽉 차게 채움
               .clipped() // 프레임을 넘어서는 부분을 잘라냄
+          
           VStack {
               HStack {
                   Rectangle()
@@ -29,6 +30,7 @@ struct HomeBottomSheetView: View {
                   Text("내가 저장한 카페")
                   .font(Font.custom("S-Core Dream", size: 20))
                   .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
+                  
                   Spacer()
               }.padding(.leading, 24)
                   .padding(.vertical)
