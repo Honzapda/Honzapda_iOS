@@ -11,6 +11,7 @@ import SwiftUI
 // MARK: - MAIN VIEW
 struct DetailPageMain: View {
     // MARK: PARAMETER
+    let cafeID: String!
     var cafeName: String?
     
     // MARK: BODY
