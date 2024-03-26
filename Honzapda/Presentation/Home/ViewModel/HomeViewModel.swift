@@ -12,7 +12,7 @@ import MapKit
 class HomeViewModel: ObservableObject {
     @Published var region: MKCoordinateRegion = MKCoordinateRegion()
     // 현재 위치를 로케이션 매니저에서 입력받음
-    @State private var bottomSheetisShowing: Bool = false // 바텀시트의 온오프 관리
+    @Published var bottomSheetisShowing: Bool = false // 바텀시트의 온오프 관리
     
     var locationManager: LocationManager = LocationManager()
     private var cancellables = Set<AnyCancellable>()

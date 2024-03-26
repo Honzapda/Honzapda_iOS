@@ -17,7 +17,7 @@ struct CardView: View {
     var body: some View {
         VStack {
             ZStack {
-                AsyncImage(url: URL(string: dataset.cafeImage ?? "")) {
+                AsyncImage(url: URL(string: dataset.photoUrl ?? "")) {
                     // 이미지가 성공적으로 로드되었을 때의 뷰
                     image in image
                         .resizable()
@@ -59,7 +59,7 @@ struct CardView: View {
                         
                         HStack {
                             Image("PhoneIcon")
-                            Text(dataset.phoneCall)
+                            Text(dataset.shopPhoneNumber)
                                 .font(Font.custom("S-CoreDream-5Medium", size: 8))
                                 .foregroundColor(Color(red: 0.96, green: 0.96, blue: 0.96))
                         }
@@ -67,7 +67,7 @@ struct CardView: View {
                         
                         HStack {
                             Image("MegaPhone")
-                            Text(dataset.discription)
+                            Text(dataset.description)
                                 .font(Font.custom("S-CoreDream-5Medium", size: 8))
                                 .foregroundColor(Color(red: 0.96, green: 0.96, blue: 0.96))
                             
@@ -76,11 +76,11 @@ struct CardView: View {
                             Button {
                                 print("cafe save button tapped")
                                 if savedChecker {
-                                    deleteCafe(shopId: dataset.id)
-                                    homeViewModel.savedCafeModel.fetchShops(page: 0, size: 10)
+                                //    deleteCafe(shopId: dataset.id)
+                                   // homeViewModel.savedCafeModel.fetchShops(page: 0, size: 10)
                                 } else {
-                                    saveCafe(shopId: dataset.id)
-                                    homeViewModel.savedCafeModel.fetchShops(page: 0, size: 10)
+                              //      saveCafe(shopId: dataset.id)
+                                   // homeViewModel.savedCafeModel.fetchShops(page: 0, size: 10)
                                     savedChecker = true
                                 }
                             } label: {

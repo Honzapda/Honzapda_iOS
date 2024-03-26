@@ -22,7 +22,7 @@ struct HomeView: View {
             VStack { // 세이브 버튼, 내 위치 버튼 설정
                 Button {// 세이브 버튼
                     print("save button tap")
-                    bottomSheetisShowing.toggle()
+                    homeViewModel.bottomSheetisShowing.toggle()
                 } label: {
                     Image("icon_home_saveButton_none")
                         .resizable()
@@ -40,7 +40,7 @@ struct HomeView: View {
             .padding(.trailing)
             .frame(width: UIScreen.main.bounds.width, alignment: .trailing)
             .offset(y: -100)
-            if bottomSheetisShowing {
+            if homeViewModel.bottomSheetisShowing {
                 HomeBottomSheetView(homeViewModel: homeViewModel)
                     .zIndex(3)
                     .transition(.move(edge: .bottom))
@@ -54,7 +54,7 @@ struct HomeView: View {
                             .onEnded { value in
                                 if value.translation.height > 50 { // 드래그 길이가 50보다 크면 화면을 숨깁니다.
                                     withAnimation {
-                                        bottomSheetisShowing = false
+                                        homeViewModel.bottomSheetisShowing = false
                                     }
                                 } else if value.translation.height < -50 {
                                     withAnimation {
@@ -68,8 +68,8 @@ struct HomeView: View {
     }
 }
 
-//struct HomeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomeView(homeViewModel: HomeViewModel()) // 인자 없이 HomeView를 초기화합니다.
-//    }
-//}
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView(homeViewModel: HomeViewModel()) // 인자 없이 HomeView를 초기화합니다.
+    }
+}
