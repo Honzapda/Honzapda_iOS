@@ -784,5 +784,5 @@ struct DividerBox: View {
 
 //MARK: - 프리뷰
 #Preview {
-    DetailPageMain()
+    DetailPageMain(cafeID: "test")
 } //: 프리뷰
