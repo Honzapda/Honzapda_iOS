@@ -15,19 +15,21 @@ struct DetailPageMainView: View {
     
     // MARK: BODY
     var body: some View {
-        ScrollView {
-            CafeBannerView()
-            CafeInfomationView()
-            DividerBoxView()
-
-            CafeCongestionView()
-            DividerBoxView()
-
-            UserHelpfulInformationView()
-            DividerBoxView()
-
-            UsersReviewView()
-        } //: ScrollView
+        NavigationView {
+            ScrollView {
+                CafeBannerView()
+                CafeInfomationView()
+                DividerBoxView()
+                
+                CafeCongestionView()
+                DividerBoxView()
+                
+                UserHelpfulInformationView()
+                DividerBoxView()
+                
+                UsersReviewView()
+            } //: ScrollView
+        }
     }
 }
 
@@ -480,9 +482,7 @@ struct UsersReviewView: View {
                 
                 Spacer()
                 
-                Button("리뷰 더 보기") {
-                    print("DEBUG: 리뷰 더 보기")
-                }
+                NavigationLink("리뷰 더 보기", destination: MoreReviewView())
                 .font(Font.custom("S-Core Dream", size: 11))
                 .foregroundColor(.primary05)
             } //: 리뷰 헤더
