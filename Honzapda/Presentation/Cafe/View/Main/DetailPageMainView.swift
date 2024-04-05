@@ -436,11 +436,9 @@ struct UserHelpfulInformationView: View {
                 
                 Spacer()
                 
-                Button("정보 더 보기") {
-                    print("DUBUG: 정보 더 보기")
-                }
-                .font(Font.custom("S-Core Dream", size: 11))
-                .foregroundColor(.primary05)
+                NavigationLink("정보 더 보기", destination: MoreHelpfulInformationView())
+                    .font(Font.custom("S-Core Dream", size: 11))
+                    .foregroundColor(.primary05)
             } //: 유저의 도움 정보 헤더
             
             Spacer().frame(height: 0)
