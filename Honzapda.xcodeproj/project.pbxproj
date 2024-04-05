@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		058B2F682BA0AF380033E71C /* DetailPageMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058B2F672BA0AF380033E71C /* DetailPageMain.swift */; };
+		0573B0C02BBB2B1F009C45F7 /* DividerBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573B0BF2BBB2B1F009C45F7 /* DividerBoxView.swift */; };
+		0573B0C22BBB2B61009C45F7 /* UserReviewsBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573B0C12BBB2B61009C45F7 /* UserReviewsBoxView.swift */; };
+		0573B0C42BBB2BAD009C45F7 /* UsersHelpfulInformationUnderbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573B0C32BBB2BAD009C45F7 /* UsersHelpfulInformationUnderbarView.swift */; };
+		0573B0C62BBB2C10009C45F7 /* UsersHelpfulInformationBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573B0C52BBB2C10009C45F7 /* UsersHelpfulInformationBoxView.swift */; };
+		0573B0C82BBB2C34009C45F7 /* InfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0573B0C72BBB2C34009C45F7 /* InfoBoxView.swift */; };
+		0579486D2BBAAE0600E6E4F9 /* MoreReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579486C2BBAAE0600E6E4F9 /* MoreReviewView.swift */; };
+		058B2F682BA0AF380033E71C /* DetailPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058B2F672BA0AF380033E71C /* DetailPageMainView.swift */; };
 		DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */; };
 		DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045272BA07EA1008C66C9 /* Font+.swift */; };
 		DD00452A2BA0867B008C66C9 /* OnboardingCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */; };
@@ -55,7 +61,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		058B2F672BA0AF380033E71C /* DetailPageMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageMain.swift; sourceTree = "<group>"; };
+		0573B0BF2BBB2B1F009C45F7 /* DividerBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerBoxView.swift; sourceTree = "<group>"; };
+		0573B0C12BBB2B61009C45F7 /* UserReviewsBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewsBoxView.swift; sourceTree = "<group>"; };
+		0573B0C32BBB2BAD009C45F7 /* UsersHelpfulInformationUnderbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersHelpfulInformationUnderbarView.swift; sourceTree = "<group>"; };
+		0573B0C52BBB2C10009C45F7 /* UsersHelpfulInformationBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersHelpfulInformationBoxView.swift; sourceTree = "<group>"; };
+		0573B0C72BBB2C34009C45F7 /* InfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBoxView.swift; sourceTree = "<group>"; };
+		0579486C2BBAAE0600E6E4F9 /* MoreReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreReviewView.swift; sourceTree = "<group>"; };
+		058B2F672BA0AF380033E71C /* DetailPageMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageMainView.swift; sourceTree = "<group>"; };
 		DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DD0045272BA07EA1008C66C9 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardModel.swift; sourceTree = "<group>"; };
@@ -116,6 +128,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0573B0C92BBB2D80009C45F7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				058B2F672BA0AF380033E71C /* DetailPageMainView.swift */,
+				0579486C2BBAAE0600E6E4F9 /* MoreReviewView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0573B0CA2BBB2D8E009C45F7 /* Recycle */ = {
+			isa = PBXGroup;
+			children = (
+				0573B0BF2BBB2B1F009C45F7 /* DividerBoxView.swift */,
+				0573B0C12BBB2B61009C45F7 /* UserReviewsBoxView.swift */,
+				0573B0C32BBB2BAD009C45F7 /* UsersHelpfulInformationUnderbarView.swift */,
+				0573B0C52BBB2C10009C45F7 /* UsersHelpfulInformationBoxView.swift */,
+				0573B0C72BBB2C34009C45F7 /* InfoBoxView.swift */,
+			);
+			path = Recycle;
+			sourceTree = "<group>";
+		};
+		0579486E2BBB28BE00E6E4F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0573B0C92BBB2D80009C45F7 /* Main */,
+				0573B0CA2BBB2D8E009C45F7 /* Recycle */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0579486F2BBB28CA00E6E4F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		057948702BBB28D100E6E4F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DD0045242BA07D3E008C66C9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,8 +269,10 @@
 		DD0FF2292B8ED8A60061F9DB /* Cafe */ = {
 			isa = PBXGroup;
 			children = (
-				058B2F672BA0AF380033E71C /* DetailPageMain.swift */,
 				DD0FF22A2B8ED8A60061F9DB /* Cafe.swift */,
+				0579486F2BBB28CA00E6E4F9 /* ViewModel */,
+				0579486E2BBB28BE00E6E4F9 /* View */,
+				057948702BBB28D100E6E4F9 /* Model */,
 			);
 			path = Cafe;
 			sourceTree = "<group>";
@@ -521,24 +579,29 @@
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
 				DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
-				DD0FF2382B8ED8A60061F9DB /* Onboarding.swift in Sources */,
-				058B2F682BA0AF380033E71C /* DetailPageMain.swift in Sources */,
+				058B2F682BA0AF380033E71C /* DetailPageMainView.swift in Sources */,
 				DD4BD92E2BA0123700D94748 /* View+.swift in Sources */,
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
 				DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */,
 				DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */,
 				DD0FF21E2B8ED7EF0061F9DB /* CurationEntity.swift in Sources */,
+				0579486D2BBAAE0600E6E4F9 /* MoreReviewView.swift in Sources */,
 				DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */,
 				DD0FF2432B8EDE400061F9DB /* Protocol.swift in Sources */,
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */,
+				0573B0C22BBB2B61009C45F7 /* UserReviewsBoxView.swift in Sources */,
 				DD00452A2BA0867B008C66C9 /* OnboardingCardModel.swift in Sources */,
+				0573B0C42BBB2BAD009C45F7 /* UsersHelpfulInformationUnderbarView.swift in Sources */,
 				DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */,
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
+				0573B0C62BBB2C10009C45F7 /* UsersHelpfulInformationBoxView.swift in Sources */,
+				0573B0C82BBB2C34009C45F7 /* InfoBoxView.swift in Sources */,
 				DD0FF2372B8ED8A60061F9DB /* Curation.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
+				0573B0C02BBB2B1F009C45F7 /* DividerBoxView.swift in Sources */,
 				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
 				DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */,
 				DD0FF21C2B8ED7E20061F9DB /* CafeEntity.swift in Sources */,
