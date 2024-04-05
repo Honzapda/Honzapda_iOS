@@ -64,17 +64,16 @@ struct ReviewView: View {
                     .frame(width: 8)
                 
                 VStack(alignment: .leading, spacing: 8) {
-                    HStack(spacing: 8) {
-                        Text("리뷰 ")
-                            .font(Font.custom("S-Core Dream", size: 18))
-                            .foregroundColor(.gray09)
-                        + Text("\(reviewCount)")
-                            .font(Font.custom("S-Core Dream", size: 18))
-                            .foregroundColor(.primary05)
-                        + Text("개")
-                            .font(Font.custom("S-Core Dream", size: 18))
-                            .foregroundColor(.gray09)
-                    }
+                    Text("리뷰 ")
+                        .font(Font.custom("S-Core Dream", size: 18))
+                        .foregroundColor(.gray09)
+                    + Text("\(reviewCount)")
+                        .font(Font.custom("S-Core Dream", size: 18))
+                        .foregroundColor(.primary05)
+                    + Text("개")
+                        .font(Font.custom("S-Core Dream", size: 18))
+                        .foregroundColor(.gray09)
+
                     Text("유저들이 제공한 리뷰를 살펴보세요.\n유저들이 선택한 정보 순으로 제공해드릴게요 :)")
                         .font(Font.custom("S-Core Dream", size: 11))
                         .multilineTextAlignment(.leading)

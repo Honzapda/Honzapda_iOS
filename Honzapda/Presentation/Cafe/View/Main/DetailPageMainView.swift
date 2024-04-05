@@ -481,8 +481,8 @@ struct UsersReviewView: View {
                 Spacer()
                 
                 NavigationLink("리뷰 더 보기", destination: MoreReviewView())
-                .font(Font.custom("S-Core Dream", size: 11))
-                .foregroundColor(.primary05)
+                    .font(Font.custom("S-Core Dream", size: 11))
+                    .foregroundColor(.primary05)
             } //: 리뷰 헤더
             UsersReviewBoxView()
         }
