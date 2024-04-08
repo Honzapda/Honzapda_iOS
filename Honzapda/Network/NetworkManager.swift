@@ -72,7 +72,7 @@ extension APIManager {
                                             completionHandler: @escaping (U)->Void) {
         
         guard let url = URL(string: BaseURL.baseURL + urlEndpointString) else { return }
-        print("patch 요청 URL --> \(url)")
+        print("delete 요청 URL --> \(url)")
         print("Request 쿼리 --> \(parameter)")
         
         AF
