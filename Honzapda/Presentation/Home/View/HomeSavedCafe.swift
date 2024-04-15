@@ -6,7 +6,7 @@
 //
 
 // 바텀시트
-
+import Foundation
 import SwiftUI
 
 struct HomeBottomSheetView: View {
@@ -26,37 +26,42 @@ struct HomeBottomSheetView: View {
                       .frame(width: 100, height: 3)
                       .padding(.top, 10)
               }
+              
               HStack {
                   Text("내가 저장한 카페")
                   .font(Font.custom("S-Core Dream", size: 20))
-                  .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
+                  .foregroundColor(.primary06)
                   
                   Spacer()
               }.padding(.leading, 24)
                   .padding(.vertical)
              ScrollView {
                   LazyVGrid(columns: columns) {
-                      ForEach(homeViewModel.savedCafeModel.savedCafeList) { data in
+                      ForEach (homeViewModel.honzapdaCafeArr, id: \.self) { data in
                         ZStack {
                             AsyncImage(url: URL(string: data.photoUrl)) { image in
                                        image.resizable()
                                    } placeholder: {
-                                       Image("CafeSampleIMG") // 이미지가 로드되는 동안 표시될 뷰
+                                       Image("image_curationmain_cafesample1") // 이미지가 로드되는 동안 표시될 뷰
                                    }
                                    .scaledToFill()
                                    .frame(width: 165, height: 150)
                                    .clipped()
+                            
                             VStack {
                                 HStack {
                                     Text(data.place_name)
                                         .font(Font.custom("S-Core Dream", size: 12))
                                         .foregroundColor(.white)
+                                    
                                     Spacer()
                                 }
+                                
                                 HStack {
                                     Text(data.address + data.address_spec)
                                         .font(Font.custom("S-Core Dream", size: 6))
-                                        .foregroundColor(Color(red: 0.96, green: 0.96, blue: 0.96))
+                                        .foregroundColor(.white)
+                                    
                                     Spacer()
                                 }
                             }

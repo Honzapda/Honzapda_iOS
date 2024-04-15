@@ -13,7 +13,6 @@ struct CardView: View {
     var dataset: HonzapdaCafe = sampleData[0] // 데이터셋: 추후 api를 통해 받아온 카페 데이터를 보유하도록 변경됨
     let shopID: Int // 현재 카페의 숍 아이디를 따로 저장
     @Binding var gotoDetailBool: Bool // 상세 뷰 이동 여부를 표시
-//    @Binding var detailShopId: Int // 상세뷰에서 표시할 카페 아이디를 저장하지만 필요 없을 것으로 추정됨 -> 삭제 예정
     var body: some View {
         VStack {
             // MARK: 카드 뷰 상단 이미지 부분
@@ -29,17 +28,17 @@ struct CardView: View {
                         .overlay(Color.black.opacity(0.3))
                         .onTapGesture {
                             self.gotoDetailBool = true
-                            self.detailShopId = shopID
+                           // self.detailShopId = shopID
                         }
                 } placeholder: {
                     // 이미지 로드 중 또는 URL이 nil인 경우 표시할 뷰
-                    Image("CafeSampleIMG")
+                    Image("image_curationmain_cafesample1")
                         .scaledToFill()
                         .frame(width: UIScreen.main.bounds.width * 0.8) // 최외곽 VStack의 너비에 맞춤
                         .clipped() // VStack의 경계를 넘어가는 부분을 잘라냄
                         .onTapGesture {
                             self.gotoDetailBool = true
-                            self.detailShopId = shopID
+                          //  self.detailShopId = shopID
                         }
                 }
                 .clipped()
@@ -59,7 +58,7 @@ struct CardView: View {
                             .foregroundColor(.gray01)
                             .padding(.top, -2)
                         
-                        HStack { //전화번호이미지, 전화번호
+                        HStack { // 전화번호이미지, 전화번호
                             Image("PhoneIcon")
                             
                             Text(dataset.shopPhoneNumber)

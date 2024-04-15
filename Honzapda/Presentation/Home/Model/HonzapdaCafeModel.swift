@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HonzapdaCafe: Codable, Identifiable, Hashable {
+struct HonzapdaCafe: Codable, Identifiable, Hashable { //서버 리시버
     let id: Int
     let placeName: String
     let adminName: String
@@ -26,6 +26,7 @@ struct HonzapdaCafe: Codable, Identifiable, Hashable {
     let densityOfDays: [Int]
     let x: Double
     let y: Double
+    var isSaved: Bool = false  // 앱 내부에서 사용하는 프로퍼티
     func hash(into hasher: inout Hasher) {
             hasher.combine(id)
         }
@@ -68,7 +69,8 @@ let sampleData: [HonzapdaCafe] = [
                  posFromStation: "5 minutes walk",
                  densityOfDays: [20, 30, 25, 35, 40, 50, 45],
                  x: 37.1234,
-                 y: 127.5678),
+                 y: 127.5678, 
+                 isSaved: false),
     HonzapdaCafe(id: 2,
                  placeName: "Cafe B",
                  adminName: "Owner B",
@@ -86,7 +88,8 @@ let sampleData: [HonzapdaCafe] = [
                  posFromStation: "10 minutes walk",
                  densityOfDays: [15, 25, 20, 30, 35, 40, 35],
                  x: 37.2345,
-                 y: 127.6789),
+                 y: 127.6789,
+                 isSaved: false),
     HonzapdaCafe(id: 3,
                  placeName: "Cafe C",
                  adminName: "Owner C",
@@ -104,7 +107,8 @@ let sampleData: [HonzapdaCafe] = [
                  posFromStation: "3 minutes walk",
                  densityOfDays: [25, 35, 30, 40, 45, 55, 50],
                  x: 37.3456,
-                 y: 127.7890),
+                 y: 127.7890,
+                 isSaved: true),
     HonzapdaCafe(id: 4,
                  placeName: "Cafe D",
                  adminName: "Owner D",
@@ -122,7 +126,8 @@ let sampleData: [HonzapdaCafe] = [
                  posFromStation: "7 minutes walk",
                  densityOfDays: [10, 20, 15, 25, 30, 35, 30],
                  x: 37.4567,
-                 y: 127.8901),
+                 y: 127.8901,
+                 isSaved: true),
     HonzapdaCafe(id: 5,
                  placeName: "Cafe E",
                  adminName: "Owner E",
@@ -140,5 +145,6 @@ let sampleData: [HonzapdaCafe] = [
                  posFromStation: "12 minutes walk",
                  densityOfDays: [18, 28, 23, 33, 38, 43, 38],
                  x: 37.5678,
-                 y: 127.9012)
+                 y: 127.9012,
+                 isSaved: true)
 ]
