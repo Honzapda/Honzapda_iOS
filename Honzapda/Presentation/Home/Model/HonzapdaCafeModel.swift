@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HonzapdaCafe: Codable, Identifiable, Hashable { //서버 리시버
+struct HonzapdaCafe: Codable, Identifiable, Hashable { // 서버 리시버
     let id: Int
     let placeName: String
     let adminName: String
@@ -19,7 +19,7 @@ struct HonzapdaCafe: Codable, Identifiable, Hashable { //서버 리시버
     let addressSpec: String
     let inactiveDate: String
     let openNow: Bool
-    let photoUrl: String
+    var photoUrl: String
     let rating: Double
     let reviewCount: Int
     let posFromStation: String
@@ -51,7 +51,7 @@ struct HonzapdaCafe: Codable, Identifiable, Hashable { //서버 리시버
         case densityOfDays
     }
 }
-let sampleData: [HonzapdaCafe] = [
+var sampleData: [HonzapdaCafe] = [
     HonzapdaCafe(id: 1,
                  placeName: "Cafe A",
                  adminName: "Owner A",

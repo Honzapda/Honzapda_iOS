@@ -6,13 +6,24 @@
 //
 
 import SwiftUI
+import MapKit
 
-struct POIModel {
-    let id: Int
-    let point: MapPoint
-}
+class CustomAnnotation: NSObject, MKAnnotation, Identifiable {
+    let id = UUID()
+    
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    var type: AnnotationType
 
-struct MapPoint {
-    let lat: Double
-    let lon: Double
+    init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String, type: AnnotationType) {
+        self.coordinate = coordinate
+        self.title = title
+        self.subtitle = subtitle
+        self.type = type
+    }
+
+    enum AnnotationType {
+        case user, cafe, selected
+    }
 }

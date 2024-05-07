@@ -23,20 +23,23 @@ class HomeViewModel: ObservableObject {
     
     
     init() {
-        locationManager.$region
-            .sink { [weak self] newRegion in
-                self?.region = newRegion
-            }
-            .store(in: &cancellables) // 이제 locationManager의 region을 안전하게 구독할 수 있습니다.
+        let seoulCityHallCoordinate = CLLocationCoordinate2D(latitude: 37.5665, longitude: 126.9780)
+               self.region = MKCoordinateRegion(
+                   center: seoulCityHallCoordinate,
+                   span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+                   )
+                   // 임시 주석 처리 - 서울시청으로 좌표 고정을 위함
+//        locationManager.$region
+//            .sink { [weak self] newRegion in
+//                self?.region = newRegion
+//            }
+//            .store(in: &cancellables) // 이제 locationManager의 region을 안전하게 구독할 수 있습니다.
     }
     
     // ToDo : 함수 추가되어야 하는 것
-    
     func postSavedCafe(id: Int) {
         // 카페저장 api를 호출하여 id에 해당하는 카페를 서버에 저장한다.
         // 호출 위치: home의 카드 뷰의 깃발 (토글)
-        
-        
     }
     
     func deleteSavedCafe(id: Int) {
