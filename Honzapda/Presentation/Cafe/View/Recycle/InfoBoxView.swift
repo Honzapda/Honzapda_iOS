@@ -28,7 +28,3 @@ struct InfoBoxView: View {
                     x: shadow_x, y: shadow_y)
     }
 } //: 카페 정보 박스 템플릿
-
-#Preview {
-    InfoBoxView()
-}
