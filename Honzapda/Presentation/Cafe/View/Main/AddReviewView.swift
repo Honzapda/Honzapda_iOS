@@ -83,6 +83,8 @@ struct AddVisitingDateView: View {
 }
 
 struct AddRatingView: View {
+    @State var rating = 0
+    
     var body: some View {
         VStack(spacing: 24) {
             HStack {
@@ -93,11 +95,20 @@ struct AddRatingView: View {
             }
             VStack(spacing: 8) {
                 HStack(spacing: 16) {
-                    Image("Cafe/rating_star")
-                    Image("Cafe/rating_star")
-                    Image("Cafe/rating_star")
-                    Image("Cafe/rating_star")
-                    Image("Cafe/rating_star")
+                    ForEach(0..<5) { number in
+                        if number >= rating {
+                            Image("Cafe/rating_star")
+                                .gesture(TapGesture().onEnded({
+                                    rating = number + 1
+                                }))
+                        }
+                        else {
+                            Image("Cafe/rating_star_fill")
+                                .gesture(TapGesture().onEnded({
+                                    rating = number + 1
+                                }))
+                        }
+                    }
                 }
                 HStack {
                     Text("0점")
