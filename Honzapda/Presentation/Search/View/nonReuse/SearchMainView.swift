@@ -14,13 +14,13 @@ import SwiftUI
 
 struct SearchMainView: View {
     @ObservedObject var searchViewModel: SearchViewModel
-    @State var searchWord: String = "" // 검색어 컨트롤
     @State var editNow: Bool = false // 편집 기능 컨트롤
+    @State var convertSearchPage: Bool = false // 검색 페이지로 전환 컨트롤
     let title: String = "검색어를\n입력해주세요"
     let placeholderText: String = "카페명, 주소명으로 검색"
     
     var body: some View {
-        GeometryReader {geometry in
+        GeometryReader { geometry in
             ZStack(alignment: .top) {
                 Image("background_searchmain")
                     .resizable()
@@ -54,8 +54,7 @@ struct SearchMainView: View {
                                 Text("완료")
                                     .font(.sCoreDream(.medium, size: 10))
                                     .padding()
-                            }
-                            else {
+                            } else {
                                 Text("편집")
                                     .font(.sCoreDream(.medium, size: 10))
                                     .padding()
@@ -66,8 +65,8 @@ struct SearchMainView: View {
                     // 뷰모델의 최근 검색어 배열을 이용해 생성
                     ForEach(searchViewModel.recentSearchWord.indices, id: \.self) { idx in
                         recentlySerached(edit: editNow, name: searchViewModel.recentSearchWord[idx])
-                                        .padding(.leading, 24)
-                                }
+                            .padding(.leading, 24)
+                    }
                     
                 }
                 .frame(width: UIScreen.main.bounds.width)
@@ -91,16 +90,22 @@ struct SearchMainView: View {
     
     @ViewBuilder
     private func searchWindow() -> some View { // 검색창
-        TextField(placeholderText, text: $searchWord)
+        Text(placeholderText)
+            .font(.sCoreDream(.medium, size: 14))
+            .foregroundStyle(.primary04)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(20)  // 텍스트 필드 내부에 패딩 추가
             .background(
                 RoundedRectangle(cornerRadius: 20)  // 둥근 사각형 배경
                     .strokeBorder(.primary06, lineWidth: 1)  // 테두리 색상 및 두께 지정
                     .background(RoundedRectangle(cornerRadius: 20).fill(Color.white))  // 테두리 내부를 흰색으로 채움
+                    .onTapGesture {
+                        convertSearchPage.toggle()
+                    }
             )
             .overlay(
                 Image("icon_search_search_fill")  // 시스템 아이콘 사용
-                    .padding(.trailing, 20) // 오른쪽 내부에 패딩 추가
+                    .padding(.trailing, 20)  // 오른쪽 내부에 패딩 추가
                 , alignment: .trailing  // 오른쪽 정렬
             )
             .padding()  // 외부 패딩으로 뷰 주변 간격 추가
@@ -128,7 +133,7 @@ struct SearchMainView: View {
             Text(name)
                 .multilineTextAlignment(.center)
                 .font(.sCoreDream(.medium, size: 14))
-                .foregroundColor(.primary05)
+                .foregroundColor(.primary04)
                 .padding(.vertical, 8)
                 .padding(.trailing)
         }
@@ -136,7 +141,7 @@ struct SearchMainView: View {
             RoundedRectangle(cornerRadius: 20)
                 .strokeBorder(.primary05, lineWidth: 1)
                 .background(.white)
-            )
+        )
     }
 }
 
