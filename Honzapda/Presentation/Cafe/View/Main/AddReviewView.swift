@@ -56,6 +56,8 @@ struct AddReviewPhotoView: View {
 }
 
 struct AddVisitingDateView: View {
+    @State private var isDatePickerShown = false
+
     var body: some View {
         VStack(spacing: 24) {
             HStack {
@@ -69,6 +71,11 @@ struct AddVisitingDateView: View {
                     .font(.sCoreDream(.medium, size: 14))
                     .foregroundColor(.gray05)
                     .padding(.vertical, 16)
+            }
+            .gesture(TapGesture().onEnded { isDatePickerShown = true })
+            .sheet(isPresented: $isDatePickerShown) {
+                ChoseDateView()
+                // TODO: Modal 사이즈 줄이기...어케하누
             }
         }
         .padding(EdgeInsets(top: 40, leading: 24, bottom: 40, trailing: 24))
