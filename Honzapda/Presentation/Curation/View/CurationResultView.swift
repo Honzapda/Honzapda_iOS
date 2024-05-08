@@ -113,11 +113,11 @@ struct CurationResultCellView: View {
                 Image("image_curationmain_cafesample1")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width * 0.8, height: 160)
+                    .frame(height: 160)
                     .clipped()
                 ZStack {
                     Rectangle()
-                        .frame(width: UIScreen.main.bounds.width * 0.8, height: 80)
+                        .frame( height: 80)
                         .foregroundColor(.white)
                     HStack {
                         VStack(alignment: .leading) {
@@ -126,12 +126,13 @@ struct CurationResultCellView: View {
                             Text("경기 용인시 기흥구 죽전로43번길 15-3 1층")
                                 .font(Font.custom("S-Core Dream", size: 8))
                         }
+                        .padding(.leading)
                         Spacer()
                     }
-                    .frame(width: UIScreen.main.bounds.width * 0.7)
                 }
             }
         }
+        .frame(width: UIScreen.main.bounds.width * 0.9)
         .cornerRadius(12)
     }
 }
