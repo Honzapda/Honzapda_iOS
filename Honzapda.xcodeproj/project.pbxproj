@@ -15,6 +15,13 @@
 		056A23A62BEA028D00971D34 /* UserReviewsBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23992BEA028D00971D34 /* UserReviewsBoxView.swift */; };
 		056A23A72BEA028D00971D34 /* UsersHelpfulInformationBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A239A2BEA028D00971D34 /* UsersHelpfulInformationBoxView.swift */; };
 		056A23A82BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A239B2BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift */; };
+		05C548182BEA0BD300893ADC /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548162BEA0BD300893ADC /* BaseURL.swift */; };
+		05C5481D2BEA254000893ADC /* Primary05Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5481C2BEA254000893ADC /* Primary05Button.swift */; };
+		05C5481F2BEA26AD00893ADC /* Gray04Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5481E2BEA26AD00893ADC /* Gray04Button.swift */; };
+		05C548212BEB46FF00893ADC /* Gray03Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548202BEB46FF00893ADC /* Gray03Button.swift */; };
+		05C548232BEB4A9B00893ADC /* Gray02Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548222BEB4A9B00893ADC /* Gray02Box.swift */; };
+		05C548252BEB63BE00893ADC /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548242BEB63BE00893ADC /* AddReviewView.swift */; };
+		05C548272BEB735D00893ADC /* CustomTextEdiotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548262BEB735D00893ADC /* CustomTextEdiotor.swift */; };
 		BBEBEC992BC29E28003F9BF8 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBEC8D2BC29E28003F9BF8 /* Carousel.swift */; };
 		BBEBEC9A2BC29E28003F9BF8 /* CurationButtonFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBEC8E2BC29E28003F9BF8 /* CurationButtonFrame.swift */; };
 		BBEBEC9B2BC29E28003F9BF8 /* CurationMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBEC8F2BC29E28003F9BF8 /* CurationMainView.swift */; };
@@ -81,6 +88,13 @@
 		056A23992BEA028D00971D34 /* UserReviewsBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReviewsBoxView.swift; sourceTree = "<group>"; };
 		056A239A2BEA028D00971D34 /* UsersHelpfulInformationBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersHelpfulInformationBoxView.swift; sourceTree = "<group>"; };
 		056A239B2BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersHelpfulInformationUnderbarView.swift; sourceTree = "<group>"; };
+		05C548162BEA0BD300893ADC /* BaseURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		05C5481C2BEA254000893ADC /* Primary05Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primary05Button.swift; sourceTree = "<group>"; };
+		05C5481E2BEA26AD00893ADC /* Gray04Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gray04Button.swift; sourceTree = "<group>"; };
+		05C548202BEB46FF00893ADC /* Gray03Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gray03Button.swift; sourceTree = "<group>"; };
+		05C548222BEB4A9B00893ADC /* Gray02Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gray02Box.swift; sourceTree = "<group>"; };
+		05C548242BEB63BE00893ADC /* AddReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
+		05C548262BEB735D00893ADC /* CustomTextEdiotor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEdiotor.swift; sourceTree = "<group>"; };
 		BBEBEC8D2BC29E28003F9BF8 /* Carousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		BBEBEC8E2BC29E28003F9BF8 /* CurationButtonFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurationButtonFrame.swift; sourceTree = "<group>"; };
 		BBEBEC8F2BC29E28003F9BF8 /* CurationMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurationMainView.swift; sourceTree = "<group>"; };
@@ -164,6 +178,7 @@
 			children = (
 				056A23932BEA028D00971D34 /* DetailPageMainView.swift */,
 				056A23942BEA028D00971D34 /* MoreHelpfulInformationView.swift */,
+				05C548242BEB63BE00893ADC /* AddReviewView.swift */,
 				056A23952BEA028D00971D34 /* MoreReviewView.swift */,
 			);
 			path = Main;
@@ -205,6 +220,26 @@
 				056A239E2BEA028D00971D34 /* ViewModel */,
 			);
 			path = Cafe;
+			sourceTree = "<group>";
+		};
+		05C548172BEA0BD300893ADC /* Privates */ = {
+			isa = PBXGroup;
+			children = (
+				05C548162BEA0BD300893ADC /* BaseURL.swift */,
+			);
+			path = Privates;
+			sourceTree = "<group>";
+		};
+		05C548192BEA1AF500893ADC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05C5481C2BEA254000893ADC /* Primary05Button.swift */,
+				05C548202BEB46FF00893ADC /* Gray03Button.swift */,
+				05C5481E2BEA26AD00893ADC /* Gray04Button.swift */,
+				05C548222BEB4A9B00893ADC /* Gray02Box.swift */,
+				05C548262BEB735D00893ADC /* CustomTextEdiotor.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BBEBEC8C2BC29E28003F9BF8 /* Model */ = {
@@ -421,8 +456,10 @@
 			isa = PBXGroup;
 			children = (
 				DD117DA72BF4EC3400AFAD42 /* Privates */,
+				05C548192BEA1AF500893ADC /* View */,
 				DD78D5FF2BA1C67A001A37EC /* Const */,
 				DD0FF2442B8EDE4C0061F9DB /* Extensions */,
+				05C548172BEA0BD300893ADC /* Privates */,
 				DD0FF2412B8EDE2C0061F9DB /* Protocols */,
 				DD0FF2472B8EDE7E0061F9DB /* Resources */,
 				DD0FF23C2B8ED9520061F9DB /* Supportings */,
@@ -674,8 +711,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				056A23A72BEA028D00971D34 /* UsersHelpfulInformationBoxView.swift in Sources */,
+				05C548232BEB4A9B00893ADC /* Gray02Box.swift in Sources */,
 				DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */,
 				BBEBECA02BC29E28003F9BF8 /* CurationViewModel.swift in Sources */,
+				05C548272BEB735D00893ADC /* CustomTextEdiotor.swift in Sources */,
 				DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */,
 				BBEBEC9B2BC29E28003F9BF8 /* CurationMainView.swift in Sources */,
 				BBEBED052BEA02F0003F9BF8 /* SearchViewModel.swift in Sources */,
@@ -693,13 +732,18 @@
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
 				DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */,
 				056A23A62BEA028D00971D34 /* UserReviewsBoxView.swift in Sources */,
+				05C548212BEB46FF00893ADC /* Gray03Button.swift in Sources */,
 				DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */,
 				DD0FF21E2B8ED7EF0061F9DB /* CurationEntity.swift in Sources */,
+				05C5481D2BEA254000893ADC /* Primary05Button.swift in Sources */,
 				BBEBEC9A2BC29E28003F9BF8 /* CurationButtonFrame.swift in Sources */,
 				DDE5E9812BEBA1900026D32D /* LoginViewModel.swift in Sources */,
 				056A23A22BEA028D00971D34 /* MoreHelpfulInformationView.swift in Sources */,
+				DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */,
+				05C548182BEA0BD300893ADC /* BaseURL.swift in Sources */,
 				DD0FF2432B8EDE400061F9DB /* Protocol.swift in Sources */,
 				BBEBEC9E2BC29E28003F9BF8 /* CurationTestView.swift in Sources */,
+				05C548252BEB63BE00893ADC /* AddReviewView.swift in Sources */,
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				056A23A52BEA028D00971D34 /* InfoBoxView.swift in Sources */,
@@ -711,6 +755,7 @@
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
 				DD117DA82BF4EC3400AFAD42 /* BaseURL.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
+				05C5481F2BEA26AD00893ADC /* Gray04Button.swift in Sources */,
 				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
 				DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */,
 				DDE5E97F2BEB9B5B0026D32D /* LoginView.swift in Sources */,
