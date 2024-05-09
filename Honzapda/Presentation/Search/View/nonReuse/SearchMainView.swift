@@ -30,6 +30,7 @@ struct SearchMainView: View {
                     Image("background_searchmain")
                         .resizable()
                         .scaledToFill()
+                        .offset(y: -50)
                     
                     VStack { // 헤더 뷰
                         headerView()
@@ -57,12 +58,14 @@ struct SearchMainView: View {
                             } label: {
                                 if editNow {
                                     Text("완료")
-                                        .font(.sCoreDream(.medium, size: 10))
-                                        .padding()
+                                        .font(.sCoreDream(.medium, size: 12))
+                                        .foregroundStyle(.primary04)
+                                        .padding(5)
                                 } else {
                                     Text("편집")
-                                        .font(.sCoreDream(.medium, size: 10))
-                                        .padding()
+                                        .font(.sCoreDream(.medium, size: 12))
+                                        .foregroundStyle(.primary04)
+                                        .padding(5)
                                 }
                             }
                         }
@@ -75,7 +78,7 @@ struct SearchMainView: View {
                         
                     }
                     .frame(width: UIScreen.main.bounds.width)
-                    .padding(.top, 160)
+                    .padding(.top, 100)
                 }
             }
         }
@@ -102,7 +105,7 @@ struct SearchMainView: View {
             .padding(20)  // 텍스트 필드 내부에 패딩 추가
             .background(
                 RoundedRectangle(cornerRadius: 20)  // 둥근 사각형 배경
-                    .strokeBorder(.primary06, lineWidth: 1)  // 테두리 색상 및 두께 지정
+                    .strokeBorder(.primary05, lineWidth: 1)  // 테두리 색상 및 두께 지정
                     .background(RoundedRectangle(cornerRadius: 20).fill(Color.white))  // 테두리 내부를 흰색으로 채움
                     .onTapGesture {
                         searchViewModel.convertSearchPage.toggle()
@@ -135,16 +138,17 @@ struct SearchMainView: View {
                     .frame(width: 0)
                     .padding(.leading, 16)
             }
+            
             Text(name)
                 .multilineTextAlignment(.center)
                 .font(.sCoreDream(.medium, size: 14))
-                .foregroundColor(.primary04)
+                .foregroundColor(.primary03)
                 .padding(.vertical, 8)
                 .padding(.trailing)
         }
         .background(
             RoundedRectangle(cornerRadius: 20)
-                .strokeBorder(.primary05, lineWidth: 1)
+                .strokeBorder(.primary04, lineWidth: 1)
                 .background(.white)
         )
     }

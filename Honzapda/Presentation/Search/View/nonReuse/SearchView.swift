@@ -44,7 +44,7 @@ struct SearchView: View {
                         Text("전체 4")
                             .filterStyle(selected: true)
                         
-                        ForEach(filters, id: \.self){ filter in
+                        ForEach(filters, id: \.self) { filter in
                             filterGenerator(filter: filter, selection: selectedFilter)
                         }
                     }
@@ -70,14 +70,16 @@ struct SearchView: View {
                     .padding()
             }
             
-            TextField("카페명, 주소명으로 검색", text: $searchWord)
+            TextField("카페명, 주소명으로 검색", text: $searchViewModel.searchWord)
                 .onSubmit {
-                    searchViewModel.searchWord = searchWord
+                    searchViewModel.recentSearchWord
+                        .insert(searchViewModel.searchWord, at: 0)
                 }
                 .submitLabel(.done)
             
             Button {
-                searchViewModel.searchWord = searchWord
+                searchViewModel.recentSearchWord
+                    .insert(searchViewModel.searchWord, at: 0)
             } label: {
                 Image("icon_search_search_fill")
                     .padding()
@@ -106,6 +108,8 @@ struct SearchView: View {
                     .padding(.top)
                 CurationResultCellView()
                     .padding(.top)
+                Spacer()
+                    .frame(height: 100)
             }
         }
         .frame(width: UIScreen.main.bounds.width)
