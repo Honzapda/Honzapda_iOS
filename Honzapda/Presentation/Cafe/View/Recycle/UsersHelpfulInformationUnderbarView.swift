@@ -18,7 +18,7 @@ struct UsersHelpfulInformationUnderbarView: View {
         VStack(spacing: 0) {
             Text(info)
                 .foregroundColor(.primary05)
-                .font(Font.custom("S-Core Dream", size: 14))
+                .font(.sCoreDream(.bold, size: 14))
             
             Rectangle()
                 .foregroundColor(.gray03)

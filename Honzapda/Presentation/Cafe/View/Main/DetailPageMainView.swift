@@ -50,10 +50,10 @@ struct CafeBannerView: View {
                 
                 HStack {
                     Text("스테이 어도러블")
-                        .font(Font.custom("S-Core Dream", size: 24))
+                        .font(.sCoreDream(.bold, size: 24))
                     
                     Text("영업 중")
-                        .font(Font.custom("S-Core Dream", size: 8))
+                        .font(.sCoreDream(.light, size: 8))
                         .padding(4)
                         .overlay(
                             RoundedRectangle(cornerRadius: 8)
@@ -68,7 +68,7 @@ struct CafeBannerView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("경기 용인시 기흥구 죽전로43번길 15-3 1층")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                             .foregroundColor(.gray01)
                         
                         HStack {
@@ -76,7 +76,7 @@ struct CafeBannerView: View {
                                 .foregroundColor(.white)
                             
                             Text("010-9999-9999")
-                                .font(Font.custom("S-Core Dream", size: 12))
+                                .font(.sCoreDream(.medium, size: 12))
                                 .foregroundColor(.gray01)
                         }
                     }
@@ -87,7 +87,7 @@ struct CafeBannerView: View {
                         Image("Cafe/icon_my_heart_none")
                         
                         Text("가게\n찜하기")
-                            .font(Font.custom("S-Core Dream", size: 10))
+                            .font(.sCoreDream(.medium, size: 10))
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                     }
@@ -112,7 +112,7 @@ struct CafeInfomationView: View {
             VStack { // 카페 정보
                 HStack {
                     Text("카페 정보")
-                        .font(Font.custom("S-Core Dream", size: 18))
+                        .font(.sCoreDream(.bold, size: 18))
                         .foregroundColor(.gray09)
                     
                     Spacer()
@@ -129,7 +129,7 @@ struct CafeInfomationView: View {
                         Spacer(minLength: 11.87)
                         
                         Text("죽전역부터\n걸어서 8분")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                             .multilineTextAlignment(.center)
                             .foregroundColor(.primary06)
                     }
@@ -142,7 +142,7 @@ struct CafeInfomationView: View {
                         Spacer(minLength: 13.1)
                         
                         Text("평점\n4.83")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                             .multilineTextAlignment(.center)
                             .foregroundColor(.primary06)
                     }
@@ -154,7 +154,7 @@ struct CafeInfomationView: View {
                         Spacer(minLength: 13)
                         
                         Text("리뷰\n363개")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                             .multilineTextAlignment(.center)
                             .foregroundColor(.primary06)
                     }
@@ -167,7 +167,7 @@ struct CafeInfomationView: View {
             VStack { // 카페 소개
                 HStack {
                     Text("카페 소개")
-                        .font(Font.custom("S-Core Dream", size: 18))
+                        .font(.sCoreDream(.bold, size: 18))
                         .foregroundColor(.gray09)
                     
                     Spacer()
@@ -181,7 +181,7 @@ struct CafeInfomationView: View {
                         .foregroundColor(.gray02)
                     
                     Text("인테리어가 귀엽고 강아지가 감성적이예요 🥹")
-                        .font(Font.custom("S-Core Dream", size: 12))
+                        .font(.sCoreDream(.medium, size: 12))
                 }
             } //: 카페 소개
         }
@@ -206,7 +206,7 @@ struct CafeCongestionView: View {
             VStack(alignment: .leading, spacing: 8) { // 요일별 혼잡도
                 HStack {
                     Text("요일별 혼잡도")
-                        .font(Font.custom("S-Core Dream", size: 18))
+                        .font(.sCoreDream(.bold, size: 18))
                         .foregroundColor(.gray09)
                     
                     Image("Cafe/icon_home_info_none")
@@ -217,7 +217,7 @@ struct CafeCongestionView: View {
                     Spacer()
                 }
                 Text("요일별 혼잡도는 혼잡도 데이터를 모아 생성된 예상 혼잡도로서, 실제 척도와는 다를 수 있으니 유의하세요!")
-                    .font(Font.custom("S-Core Dream", size: 11))
+                    .font(.sCoreDream(.medium, size: 11))
                     .foregroundColor(.gray06)
                     .multilineTextAlignment(.leading)
                 
@@ -237,13 +237,13 @@ struct CafeCongestionView: View {
             VStack(alignment: .leading, spacing: 8) { // 평균 혼잡도
                 HStack {
                     Text("평균 혼잡도")
-                        .font(Font.custom("S-Core Dream", size: 18))
+                        .font(.sCoreDream(.bold, size: 18))
                         .foregroundColor(.gray09)
                     
                     Spacer()
                 }
                 Text("평일과 주말 각각 어느 시간대에 가장 카페가 혼잡한지 알 수 있어요.")
-                    .font(Font.custom("S-Core Dream", size: 11))
+                    .font(.sCoreDream(.medium, size: 11))
                     .foregroundColor(.gray06)
                     .multilineTextAlignment(.leading)
                 
@@ -257,21 +257,21 @@ struct CafeCongestionView: View {
                         
                         VStack(spacing: 8) {
                             Text("평일")
-                                .font(Font.custom("S-Core Dream", size: 16))
+                                .font(.sCoreDream(.bold, size: 16))
                                 .foregroundColor(.gray08)
                             
                             Text("18시 ")
-                                .font(Font.custom("S-Core Dream", size: 20))
+                                .font(.sCoreDream(.bold, size: 20))
                                 .foregroundColor(.primary05)
                             + Text("부터")
-                                .font(Font.custom("S-Core Dream", size: 14))
+                                .font(.sCoreDream(.light, size: 14))
                                 .foregroundColor(.gray06)
                             
                             Text("20시 ")
-                                .font(Font.custom("S-Core Dream", size: 20))
+                                .font(.sCoreDream(.bold, size: 20))
                                 .foregroundColor(.primary05)
                             + Text("까지")
-                                .font(Font.custom("S-Core Dream", size: 14))
+                                .font(.sCoreDream(.light, size: 14))
                                 .foregroundColor(.gray06)
                         }
                     } //: 평일
@@ -282,21 +282,21 @@ struct CafeCongestionView: View {
                         
                         VStack(spacing: 8) {
                             Text("주말")
-                                .font(Font.custom("S-Core Dream", size: 16))
+                                .font(.sCoreDream(.bold, size: 16))
                                 .foregroundColor(.gray08)
                             
                             Text("14시 ")
-                                .font(Font.custom("S-Core Dream", size: 20))
+                                .font(.sCoreDream(.bold, size: 20))
                                 .foregroundColor(.primary05)
                             + Text("부터")
-                                .font(Font.custom("S-Core Dream", size: 14))
+                                .font(.sCoreDream(.light, size: 14))
                                 .foregroundColor(.gray06)
                             
                             Text("16시 ")
-                                .font(Font.custom("S-Core Dream", size: 20))
+                                .font(.sCoreDream(.bold, size: 20))
                                 .foregroundColor(.primary05)
                             + Text("까지")
-                                .font(Font.custom("S-Core Dream", size: 14))
+                                .font(.sCoreDream(.light, size: 14))
                                 .foregroundColor(.gray06)
                         }
                     } //: 주말
@@ -309,14 +309,14 @@ struct CafeCongestionView: View {
             VStack(alignment: .leading, spacing: 8) { // 실시간 혼잡도
                 HStack {
                     Text("실시간 혼잡도")
-                        .font(Font.custom("S-Core Dream", size: 18))
+                        .font(.sCoreDream(.bold, size: 18))
                         .foregroundColor(.gray09)
                     
                     Spacer()
                 }
                 
                 Text("매장 카메라와 통신망을 이용해 분석한 실시간 혼잡도를 확인하세요.")
-                    .font(Font.custom("S-Core Dream", size: 11))
+                    .font(.sCoreDream(.medium, size: 11))
                     .foregroundColor(.gray06)
                     .multilineTextAlignment(.leading)
                 
@@ -330,14 +330,14 @@ struct CafeCongestionView: View {
                     HStack(spacing: 32) {
                         VStack(alignment: .trailing, spacing: 4) {
                             Text("스테이 어도러블")
-                                .font(Font.custom("S-Core Dream", size: 16))
+                                .font(.sCoreDream(.bold, size: 16))
                                 .foregroundColor(.primary05)
                             + Text("의")
-                                .font(Font.custom("S-Core Dream", size: 14))
+                                .font(.sCoreDream(.medium, size: 14))
                                 .foregroundColor(.gray08)
                             
                             Text("전체 좌석 수")
-                                .font(Font.custom("S-Core Dream", size: 14))
+                                .font(.sCoreDream(.medium, size: 14))
                                 .foregroundColor(.gray08)
                         }
                         
@@ -346,7 +346,7 @@ struct CafeCongestionView: View {
                             .frame(width: 1, height: 80)
                         
                         Text("23개")
-                            .font(Font.custom("S-Core Dream", size: 24))
+                            .font(.sCoreDream(.bold, size: 24))
                     } //: 전체 좌석 수
                 }
                 .frame(maxWidth: .infinity)
@@ -361,17 +361,17 @@ struct CafeCongestionView: View {
                         
                         VStack(alignment: .center, spacing: 4) {
                             Text("카메라 기준")
-                                .font(Font.custom("S-Core Dream", size: 14))
+                                .font(.sCoreDream(.bold, size: 14))
                                 .foregroundColor(.primary05)
                             
                             Text("현재 차있는 좌석")
-                                .font(Font.custom("S-Core Dream", size: 12))
+                                .font(.sCoreDream(.medium, size: 12))
                                 .foregroundColor(.gray08)
                             
                             Spacer().frame(height: 9)
                             
                             Text("4개")
-                                .font(Font.custom("S-Core Dream", size: 20))
+                                .font(.sCoreDream(.bold, size: 20))
                         }
                     } //: 카메라 기준 좌석 수
                     ZStack {
@@ -381,17 +381,17 @@ struct CafeCongestionView: View {
                         
                         VStack(alignment: .center, spacing: 4) {
                             Text("통신망 기준")
-                                .font(Font.custom("S-Core Dream", size: 14))
+                                .font(.sCoreDream(.bold, size: 14))
                                 .foregroundColor(.primary05)
                             
                             Text("현재 차있는 좌석")
-                                .font(Font.custom("S-Core Dream", size: 12))
+                                .font(.sCoreDream(.medium, size: 12))
                                 .foregroundColor(.gray08)
                             
                             Spacer().frame(height: 9)
                             
                             Text("6개")
-                                .font(Font.custom("S-Core Dream", size: 20))
+                                .font(.sCoreDream(.bold, size: 20))
                         }
                     } //: 통신망 기준 좌석 수
                 }
@@ -416,20 +416,20 @@ struct UserHelpfulInformationView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(spacing: 8) {
                         Text("유저의 도움 정보")
-                            .font(Font.custom("S-Core Dream", size: 18))
+                            .font(.sCoreDream(.bold, size: 18))
                             .foregroundColor(.gray09)
                         
                         Button("정보 제공하기") {
                             print("DUBUG: 정보 제공하기")
                         }
-                        .font(Font.custom("S-Core Dream", size: 11))
+                        .font(.sCoreDream(.medium, size: 11))
                         .foregroundColor(.primary05)
                         
                         Spacer()
                     }
                     
                     Text("유저들이 도와 제공한 카페 정보를 살펴보세요.\n유저들이 선택한 정보 순으로 제공해드릴게요 :)")
-                        .font(Font.custom("S-Core Dream", size: 11))
+                        .font(.sCoreDream(.medium, size: 11))
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.gray06)
                 }
@@ -437,7 +437,7 @@ struct UserHelpfulInformationView: View {
                 Spacer()
                 
                 NavigationLink("정보 더 보기", destination: MoreHelpfulInformationView())
-                    .font(Font.custom("S-Core Dream", size: 11))
+                    .font(.sCoreDream(.medium, size: 11))
                     .foregroundColor(.primary05)
             } //: 유저의 도움 정보 헤더
             
@@ -459,19 +459,19 @@ struct UsersReviewView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(spacing: 8) {
                         Text("리뷰")
-                            .font(Font.custom("S-Core Dream", size: 18))
+                            .font(.sCoreDream(.bold, size: 18))
                             .foregroundColor(.gray09)
                         
                         Button("리뷰 작성하기") {
                             print("DEBUG: 리뷰 작성하기")
                         }
-                        .font(Font.custom("S-Core Dream", size: 11))
+                        .font(.sCoreDream(.medium, size: 11))
                         .foregroundColor(.primary05)
                         
                         Spacer()
                     }
                     Text("유저들이 제공한 리뷰를 살펴보세요.\n유저들이 선택한 정보 순으로 제공해드릴게요 :)")
-                        .font(Font.custom("S-Core Dream", size: 11))
+                        .font(.sCoreDream(.medium, size: 11))
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.gray06)
                     
@@ -481,7 +481,7 @@ struct UsersReviewView: View {
                 Spacer()
                 
                 NavigationLink("리뷰 더 보기", destination: MoreReviewView())
-                    .font(Font.custom("S-Core Dream", size: 11))
+                    .font(.sCoreDream(.medium, size: 11))
                     .foregroundColor(.primary05)
             } //: 리뷰 헤더
             UsersReviewBoxView()
@@ -506,7 +506,7 @@ struct DayCongestionBoxView: View {
             
             VStack(spacing: 8) { // 혼잡도 이미지
                 Text(today)
-                    .font(Font.custom("S-Core Dream", size: 10))
+                    .font(.sCoreDream(.bold, size: 10))
                     .foregroundColor(textColor)
                 
                 if congestion == "COMFORTABLE" {

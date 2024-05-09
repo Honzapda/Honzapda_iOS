@@ -37,17 +37,17 @@ struct UsersHelpfulInformationBoxView: View {
                     
                     VStack(alignment: .leading) {
                         Text("체리")
-                            .font(Font.custom("S-Core Dream", size: 14))
+                            .font(.sCoreDream(.bold, size: 14))
                             .foregroundColor(.gray09)
                         
                         Text("이 카페를 ")
-                            .font(Font.custom("S-Core Dream", size: 10))
+                            .font(.sCoreDream(.medium, size: 10))
                             .foregroundColor(.gray07)
                         + Text("목요일 17시")
-                            .font(Font.custom("S-Core Dream", size: 10))
+                            .font(.sCoreDream(.bold, size: 10))
                             .foregroundColor(.primary05)
                         + Text("에 방문했어요")
-                            .font(Font.custom("S-Core Dream", size: 10))
+                            .font(.sCoreDream(.medium, size: 10))
                             .foregroundColor(.gray07)
                     }
                     
@@ -59,74 +59,72 @@ struct UsersHelpfulInformationBoxView: View {
                             .foregroundColor(.primary05)
                         
                         Text("추천 ")
-                            .font(Font.custom("S-Core Dream", size: 9))
+                            .font(.sCoreDream(.medium, size: 9))
                         + Text("123")
-                            .font(Font.custom("S-Core Dream", size: 9))
+                            .font(.sCoreDream(.bold, size: 9))
                             .foregroundColor(.primary05)
                         + Text("개")
-                            .font(Font.custom("S-Core Dream", size: 9))
+                            .font(.sCoreDream(.medium, size: 9))
                     }
                 } //: 유저 정보
                 
                 VStack(alignment: .leading, spacing: 12) { // 유저 제공 카페 정보
                     HStack(spacing: 4) {
                         Text("혼잡도는")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                         
                         UsersHelpfulInformationUnderbarView(info: "90%")
                         
                         Text("정도인 것 같아요")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                     }
                     
                     HStack(spacing: 4) {
                         UsersHelpfulInformationUnderbarView(info: "넓은")
                         
                         Text("책상을 보유하고 있어요")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                     }
                     
                     HStack(spacing: 4) {
                         UsersHelpfulInformationUnderbarView(info: "넉넉한")
                         Text("콘센트를 보유하고 있고 주로")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                         UsersHelpfulInformationUnderbarView(info: "책상 밑")
                         Text("에 있어요")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                     }
                     
                     HStack(spacing: 4) {
                         Text("화장실은")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                         UsersHelpfulInformationUnderbarView(info: "1층 계단 옆")
                         Text("에 있어요")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                     }
                     
                     HStack(spacing: 4) {
                         Text("노래는")
-                            .font(Font.custom("S-Core Dream", size: 12))
-                        
+                            .font(.sCoreDream(.medium, size: 12))
                         UsersHelpfulInformationUnderbarView(info: "잔잔한")
-                        
                         Text("음악이 많이 나와요")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                     }
                     
                     HStack(spacing: 4) {
                         Text("조명은")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                         UsersHelpfulInformationUnderbarView(info: "밝은")
                         Text("편이예요")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                     }
                     
                     HStack(spacing: 4) {
                         Text("전체적인 분위기는")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                         UsersHelpfulInformationUnderbarView(info: "아늑한")
                         Text("것 같아요")
-                            .font(Font.custom("S-Core Dream", size: 12))
+                            .font(.sCoreDream(.medium, size: 12))
                     }
                 } //: 유저 제공 카페 정보
             }
