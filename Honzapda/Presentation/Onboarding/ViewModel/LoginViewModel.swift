@@ -12,4 +12,5 @@ class LoginViewModel: ObservableObject {
     @Published public var id = ""
     @Published public var password = ""
     @Published public var isAutoLoginEnabled = false
+    @Published public var isErrorViewAppeared = false
 }

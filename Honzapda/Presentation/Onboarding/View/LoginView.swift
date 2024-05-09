@@ -169,6 +169,9 @@ struct LoginView: View {
                                     .font(.sCoreDream(.bold, size: 16))
                                     .tint(.white)
                             })
+                            .fullScreenCover(isPresented: $loginViewModel.isErrorViewAppeared, content: {
+                                LoginErrorView()
+                            })
                             .background {
                                 RoundedRectangle(cornerRadius: 8)
                                     .frame(width: 361, height: 45)

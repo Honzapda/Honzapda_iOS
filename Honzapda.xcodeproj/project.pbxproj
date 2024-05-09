@@ -67,6 +67,7 @@
 		DDE5E97D2BEB9B180026D32D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DDE5E97C2BEB9B180026D32D /* Alamofire */; };
 		DDE5E97F2BEB9B5B0026D32D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */; };
 		DDE5E9812BEBA1900026D32D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */; };
+		DDE5E9832BECE2560026D32D /* LoginErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9822BECE2560026D32D /* LoginErrorView.swift */; };
 		DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,7 @@
 		DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DDE5E9822BECE2560026D32D /* LoginErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorView.swift; sourceTree = "<group>"; };
 		DDFA805C2B98607600FF32C6 /* Honzapda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Honzapda.entitlements; sourceTree = "<group>"; };
 		DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleLoginButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -506,6 +508,7 @@
 			children = (
 				DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */,
 				DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */,
+				DDE5E9822BECE2560026D32D /* LoginErrorView.swift */,
 				DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */,
 				DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */,
 			);
@@ -636,6 +639,7 @@
 				DD78D6032BA1C6B6001A37EC /* Common.swift in Sources */,
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
 				BBEBEC9D2BC29E28003F9BF8 /* CurationResultView.swift in Sources */,
+				DDE5E9832BECE2560026D32D /* LoginErrorView.swift in Sources */,
 				DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
 				056A23A82BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift in Sources */,
