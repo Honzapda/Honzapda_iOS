@@ -201,9 +201,9 @@ struct FilterModifier: ViewModifier {
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
                 .background(
-                    RoundedRectangle(cornerRadius: 12)  // 둥근 사각형 배경
+                    RoundedRectangle(cornerRadius: 20)  // 둥근 사각형 배경
                         .strokeBorder(.primary05, lineWidth: 1)  // 테두리 색상 및 두께 지정
-                        .background(RoundedRectangle(cornerRadius: 12).fill(.primary05))) // 테두리 내부를 흰색으로 채움
+                        .background(RoundedRectangle(cornerRadius: 20).fill(.primary05))) // 테두리 내부를 흰색으로 채움
                 .foregroundColor(.white)
         } else {
             content
@@ -211,9 +211,9 @@ struct FilterModifier: ViewModifier {
                 .padding(.horizontal, 16)  // 좌우로 16포인트 패딩
                 .padding(.vertical, 8)
                 .background(
-                    RoundedRectangle(cornerRadius: 12)  // 둥근 사각형 배경
+                    RoundedRectangle(cornerRadius: 20)  // 둥근 사각형 배경
                         .strokeBorder(.primary05, lineWidth: 1)  // 테두리 색상 및 두께 지정
-                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white))) // 테두리 내부를 흰색으로 채움
+                        .background(RoundedRectangle(cornerRadius: 20).fill(Color.white))) // 테두리 내부를 흰색으로 채움
                 .foregroundColor(.primary05)
         }
     }

@@ -122,9 +122,12 @@ struct CurationResultCellView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("스테이 어도러블")
-                                .font(Font.custom("S-Core Dream", size: 14))
+                                .font(.sCoreDream(.bold, size: 16))
+                                .foregroundStyle(.gray10)
+                                .padding(.bottom, 10)
                             Text("경기 용인시 기흥구 죽전로43번길 15-3 1층")
-                                .font(Font.custom("S-Core Dream", size: 8))
+                                .font(.sCoreDream(.medium, size: 10))
+                                .foregroundStyle(.gray07)
                         }
                         .padding(.leading)
                         Spacer()
@@ -134,5 +137,6 @@ struct CurationResultCellView: View {
         }
         .frame(width: UIScreen.main.bounds.width * 0.9)
         .cornerRadius(12)
+        .shadow(radius: 3)
     }
 }
