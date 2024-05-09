@@ -17,7 +17,6 @@ import SwiftUI
 
 struct SearchView: View {
     @ObservedObject var searchViewModel: SearchViewModel
-    @State var searchWord: String = "" // 검색어 컨트롤
     // 필터는 기본적으론 none 이고 선택된 필터는 state로 관리됨
     @State var selectedFilter: FilterOption = .none
     // 필터: 거리순, 리뷰순, 저장순, 추천순

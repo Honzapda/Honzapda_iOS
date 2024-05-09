@@ -108,6 +108,7 @@ struct SearchMainView: View {
                     .strokeBorder(.primary05, lineWidth: 1)  // 테두리 색상 및 두께 지정
                     .background(RoundedRectangle(cornerRadius: 20).fill(Color.white))  // 테두리 내부를 흰색으로 채움
                     .onTapGesture {
+                        searchViewModel.searchWord = ""
                         searchViewModel.convertSearchPage.toggle()
                     }
             )
@@ -138,13 +139,19 @@ struct SearchMainView: View {
                     .frame(width: 0)
                     .padding(.leading, 16)
             }
+            Button {
+                searchViewModel.searchWord = name
+                searchViewModel.convertSearchPage = true
+            } label: {
+                Text(name)
+                    .multilineTextAlignment(.center)
+                    .font(.sCoreDream(.medium, size: 14))
+                    .foregroundColor(.primary03)
+                    .padding(.vertical, 8)
+                    .padding(.trailing)
+            }
+
             
-            Text(name)
-                .multilineTextAlignment(.center)
-                .font(.sCoreDream(.medium, size: 14))
-                .foregroundColor(.primary03)
-                .padding(.vertical, 8)
-                .padding(.trailing)
         }
         .background(
             RoundedRectangle(cornerRadius: 20)
