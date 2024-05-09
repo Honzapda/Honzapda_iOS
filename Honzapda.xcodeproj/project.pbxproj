@@ -68,6 +68,7 @@
 		DDE5E97F2BEB9B5B0026D32D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */; };
 		DDE5E9812BEBA1900026D32D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */; };
 		DDE5E9832BECE2560026D32D /* LoginErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9822BECE2560026D32D /* LoginErrorView.swift */; };
+		DDE5E9852BECF6860026D32D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9842BECF6860026D32D /* HomeView.swift */; };
 		DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,7 @@
 		DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DDE5E9822BECE2560026D32D /* LoginErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorView.swift; sourceTree = "<group>"; };
+		DDE5E9842BECF6860026D32D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DDFA805C2B98607600FF32C6 /* Honzapda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Honzapda.entitlements; sourceTree = "<group>"; };
 		DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleLoginButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -344,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0FF22C2B8ED8A60061F9DB /* Home.swift */,
+				DDE5E9842BECF6860026D32D /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
 				DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */,
 				056A23A62BEA028D00971D34 /* UserReviewsBoxView.swift in Sources */,
+				DDE5E9852BECF6860026D32D /* HomeView.swift in Sources */,
 				DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */,
 				DD0FF21E2B8ED7EF0061F9DB /* CurationEntity.swift in Sources */,
 				BBEBEC9A2BC29E28003F9BF8 /* CurationButtonFrame.swift in Sources */,
