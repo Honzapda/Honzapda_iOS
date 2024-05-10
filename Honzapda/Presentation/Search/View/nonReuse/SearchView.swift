@@ -69,7 +69,13 @@ struct SearchView: View {
                     .padding()
             }
             
-            TextField("카페명, 주소명으로 검색", text: $searchViewModel.searchWord)
+            TextField("", text: $searchViewModel.searchWord)
+                .placeholder(when:searchViewModel.searchWord.isEmpty, placeholder: {
+                    Text("카페명, 주소명으로 검색")
+                        .foregroundStyle(.gray05)
+                        .font(.sCoreDream(.medium, size: 14))
+                })
+                .foregroundColor(.gray09)
                 .onSubmit {
                     searchViewModel.recentSearchWord
                         .insert(searchViewModel.searchWord, at: 0)
@@ -116,7 +122,8 @@ struct SearchView: View {
     }
     
     @ViewBuilder
-    private func filterGenerator(filter: FilterOption, selection: FilterOption) -> some View {
+    private func filterGenerator(filter: FilterOption,
+                                 selection: FilterOption) -> some View {
         switch filter {
         case .distances:
             Button {
@@ -183,6 +190,19 @@ struct SearchView: View {
 
 enum FilterOption {
     case none, distances, reviewCount, saved, recommended
+}
+
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content) -> some View {
+
+        ZStack(alignment: alignment) {
+            placeholder().opacity(shouldShow ? 1 : 0)
+            self
+        }
+    }
 }
 
 extension View {

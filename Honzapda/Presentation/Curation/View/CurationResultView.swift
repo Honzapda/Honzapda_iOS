@@ -121,10 +121,22 @@ struct CurationResultCellView: View {
                         .foregroundColor(.white)
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("스테이 어도러블")
-                                .font(.sCoreDream(.bold, size: 16))
-                                .foregroundStyle(.gray10)
-                                .padding(.bottom, 10)
+                            HStack {
+                                Text("스테이 어도러블")
+                                    .font(.sCoreDream(.bold, size: 16))
+                                    .foregroundStyle(.gray10)
+                                Text("영업 중")
+                                    .font(.sCoreDream(.light, size: 8))
+                                    .padding(5)
+                                    .foregroundStyle(.gray08)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 20)  // 둥근 사각형 배경
+                                            .strokeBorder(.gray08, lineWidth: 0.5)  // 테두리 색상 및 두께 지정
+                                            .background(RoundedRectangle(cornerRadius: 20).fill(.white)))
+                                    .foregroundColor(.white)
+                                    .offset(y: -1)
+                            }
+                                .padding(.bottom, 8)
                             Text("경기 용인시 기흥구 죽전로43번길 15-3 1층")
                                 .font(.sCoreDream(.medium, size: 10))
                                 .foregroundStyle(.gray07)
