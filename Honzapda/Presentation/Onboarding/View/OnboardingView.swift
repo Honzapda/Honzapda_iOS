@@ -47,7 +47,7 @@ struct OnboardingView: View {
                 Spacer(minLength: 70)
                 
                 Button("유저로 로그인하기") {
-                    // TODO: 눌렀을 때 실행될 ViewModel 제작
+                    onboardingViewModel.isLoginButtonTapped.toggle()
                 }
                 .tint(.white)
                 .font(.sCoreDream(.bold, size: 16))
@@ -55,6 +55,9 @@ struct OnboardingView: View {
                 .background(
                     RoundedRectangle(cornerRadius: 8)
                         .fill(.primary05))
+                .fullScreenCover(isPresented: $onboardingViewModel.isLoginButtonTapped, content: {
+                    LoginView()
+                })
                 
                 AppleLoginButtonView()
                     .frame(width: 361, height: 45)

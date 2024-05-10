@@ -9,4 +9,5 @@ import SwiftUI
 
 class OnboardingViewModel: ObservableObject {
     @Published public var selectedTab = 0
+    @Published public var isLoginButtonTapped = false
 }
