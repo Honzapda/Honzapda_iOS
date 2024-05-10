@@ -116,7 +116,8 @@ struct SearchView: View {
     }
     
     @ViewBuilder
-    private func filterGenerator(filter: FilterOption, selection: FilterOption) -> some View {
+    private func filterGenerator(filter: FilterOption,
+                                 selection: FilterOption) -> some View {
         switch filter {
         case .distances:
             Button {

@@ -15,7 +15,7 @@ import SwiftUI
 struct SearchMainView: View {
     @ObservedObject var searchViewModel: SearchViewModel
     @State var editNow: Bool = false // 편집 기능 컨트롤
-
+    
     let title: String = "검색어를\n입력해주세요"
     let placeholderText: String = "카페명, 주소명으로 검색"
     
@@ -23,10 +23,13 @@ struct SearchMainView: View {
         NavigationView {
             
             GeometryReader { _ in
+                
                 NavigationLink(destination: SearchView(searchViewModel: searchViewModel), isActive: $searchViewModel.convertSearchPage) {
-                                    EmptyView()
-                                }
+                    EmptyView()
+                }
+                
                 ZStack(alignment: .top) {
+                    // 배경
                     Image("background_searchmain")
                         .resizable()
                         .scaledToFill()
@@ -38,18 +41,24 @@ struct SearchMainView: View {
                     }.frame(height: 45)
                     
                     VStack(alignment: .leading) { // 타이틀, 검색창
-                        Text(title)
-                            .font(Font.custom("S-Core Dream", size: 26))
-                            .foregroundColor(.primary06)
-                            .padding(.leading, 24)
-                            .padding(.bottom, 30)
+                        
+                        HighlightedText(highlightedSubstrings: [("검색어", .primary06), ("입력", .primary06)],
+                                        highlightedFont: .sCoreDream(.bold, size: 26),
+                                        originalText: "검색어를\n입력해주세요",
+                                        originalColor: .primary06,
+                                        originalFont: .sCoreDream(.medium, size: 26))
+                        .padding(.top, 15)
+                        .padding(.leading, 24)
+                        .padding(.bottom, 20)
+                        .lineSpacing(10.0)
+                        // 줄간 간격 조정 필요함
                         
                         searchWindow()
                             .padding(.bottom, 30)
                         
                         HStack { // 최근 검색어 타이틀, 편집기능
                             Text("최근 검색어")
-                                .font(Font.custom("S-CoreDream-6Bold", size: 18))
+                                .font(.sCoreDream(.bold, size: 20))
                                 .foregroundStyle(.primary06)
                                 .padding(.leading, 24)
                             
@@ -82,7 +91,7 @@ struct SearchMainView: View {
                 }
             }
         }
-       
+        
     }
     
     @ViewBuilder
@@ -150,7 +159,7 @@ struct SearchMainView: View {
                     .padding(.vertical, 8)
                     .padding(.trailing)
             }
-
+            
             
         }
         .background(
