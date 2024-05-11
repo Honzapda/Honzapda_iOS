@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AddReviewView: View {
+    @State var reviewRate: Int = 0
+    @State var reviewDetail: String = ""
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -17,15 +20,16 @@ struct AddReviewView: View {
                 AddVisitingDateView()
                 DividerBoxView()
                 
-                AddRatingView()
+                AddRatingView(rating: $reviewRate)
                 DividerBoxView()
                 
-                WriteReviewView()
+                WriteReviewView(inputText: $reviewDetail)
                 Gray04Button(text: "리뷰 게시하기", hEdgeSize: 16) {
                     print("DEBUG: 리뷰 게시하기")
                 }
             }
         }
+        // TODO: 뒤로가기 전에 확인 기능 추가
     }
 }
 
@@ -56,7 +60,12 @@ struct AddReviewPhotoView: View {
 }
 
 struct AddVisitingDateView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var isDatePickerShown = false
+    @State private var reviewDate: Date = Date()
+    @State private var tempDate: Date = Date()
+    @State private var buttonClicked: Bool = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -66,24 +75,49 @@ struct AddVisitingDateView: View {
                     .foregroundColor(.gray09)
                 Spacer()
             }
-            Gray02Box(horizontalPadding: 0) {
-                Text("2024.02.17 방문")
-                    .font(.sCoreDream(.medium, size: 14))
-                    .foregroundColor(.gray05)
-                    .padding(.vertical, 16)
-            }
-            .gesture(TapGesture().onEnded { isDatePickerShown = true })
-            .sheet(isPresented: $isDatePickerShown) {
-                ChoseDateView()
-                // TODO: Modal 사이즈 줄이기...어케하누
+            if !buttonClicked {
+                Gray02Box(horizontalPadding: 0) {
+                    Text("\(formatDate(date: reviewDate)) 방문")
+                        .font(.sCoreDream(.medium, size: 14))
+                        .foregroundColor(.gray05)
+                        .padding(.vertical, 16)
+                }
+                .gesture(TapGesture().onEnded { isDatePickerShown = true })
+                .sheet(isPresented: $isDatePickerShown) {
+                    ChoseDateView(date: $reviewDate,
+                                  isDatePickerShown: $isDatePickerShown,
+                                  buttonClicked: $buttonClicked, 
+                                  tempDate: $tempDate)
+                }
+            } else {
+                Primary05Box(horizontalPadding: 0) {
+                    Text("\(formatDate(date: reviewDate)) 방문")
+                        .font(.sCoreDream(.medium, size: 14))
+                        .foregroundColor(.white)
+                        .padding(.vertical, 16)
+                }
+                .gesture(TapGesture().onEnded { isDatePickerShown = true })
+                .sheet(isPresented: $isDatePickerShown) {
+                    ChoseDateView(date: $reviewDate,
+                                  isDatePickerShown: $isDatePickerShown,
+                                  buttonClicked: $buttonClicked,
+                                  tempDate: $tempDate)
+                }
             }
         }
         .padding(EdgeInsets(top: 40, leading: 24, bottom: 40, trailing: 24))
     }
+    
+    func formatDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        
+        return dateFormatter.string(from: date)
+    }
 }
 
 struct AddRatingView: View {
-    @State var rating = 0
+    @Binding var rating: Int
     
     var body: some View {
         VStack(spacing: 24) {
@@ -127,7 +161,7 @@ struct AddRatingView: View {
 }
 
 struct WriteReviewView: View {
-    @State var inputText: String = ""
+    @Binding var inputText: String
     
     var body: some View {
         VStack(spacing: 24) {
@@ -163,4 +197,3 @@ struct WriteReviewView: View {
 #Preview {
     AddReviewView()
 }
-

@@ -8,26 +8,28 @@
 import SwiftUI
 
 struct ChoseDateView: View {
-    @State private var date = Date()
+    @Binding var date: Date
+    @Binding var isDatePickerShown: Bool
+    @Binding var buttonClicked: Bool
+    @Binding var tempDate: Date
 
     var body: some View {
         VStack(spacing: 16) {
             DatePicker(
                 "Start Date",
-                selection: $date,
+                selection: $tempDate,
                 displayedComponents: [.date]
             )
             .datePickerStyle(.graphical)
             .accentColor(.primary05)
             
+            
             Primary05Button(text: "날짜 선택하기") {
-                print("DEBUG: 날짜 선택하기")
+                isDatePickerShown = false
+                buttonClicked = true
+                date = tempDate
             }
         }
         .padding(.horizontal, 16)
     }
-}
-
-#Preview {
-    ChoseDateView()
 }
