@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomTextEdiotor: View {
-    @State var inputText: String = ""
+    @Binding var inputText: String
     var placeHolder: String = ""
     
     var body: some View {
@@ -28,8 +28,4 @@ struct CustomTextEdiotor: View {
             }
         }
     }
-}
-
-#Preview {
-    CustomTextEdiotor()
 }

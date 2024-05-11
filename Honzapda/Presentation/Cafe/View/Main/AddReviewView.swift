@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct AddReviewView: View {
-    @State var reviewRate: Int = 0
-    @State var reviewDetail: String = ""
+    @State private var addReviewDateButtonClicked = false
+    @State private var reviewRate = 0
+    @State private var reviewDetail = ""
     
     var body: some View {
         NavigationView {
@@ -17,15 +18,23 @@ struct AddReviewView: View {
                 AddReviewPhotoView()
                 DividerBoxView()
                 
-                AddVisitingDateView()
+                AddVisitingDateView(buttonClicked: $addReviewDateButtonClicked)
                 DividerBoxView()
                 
                 AddRatingView(rating: $reviewRate)
                 DividerBoxView()
                 
                 WriteReviewView(inputText: $reviewDetail)
-                Gray04Button(text: "리뷰 게시하기", hEdgeSize: 16) {
-                    print("DEBUG: 리뷰 게시하기")
+                
+                if addReviewDateButtonClicked && 
+                    reviewRate != 0 &&
+                    reviewDetail.count >= 40 {
+                        Primary05Button(text: "리뷰 게시하기", hEdgeSize: 16) {
+                            // TODO: 팝업 창 구현
+                            print("DEBUG: 리뷰 게시하기")
+                    }
+                } else {
+                    Gray04Button(text: "리뷰 게시하기", hEdgeSize: 16) {  }
                 }
             }
         }
@@ -60,12 +69,10 @@ struct AddReviewPhotoView: View {
 }
 
 struct AddVisitingDateView: View {
-    @Environment(\.dismiss) private var dismiss
-    
     @State private var isDatePickerShown = false
     @State private var reviewDate: Date = Date()
     @State private var tempDate: Date = Date()
-    @State private var buttonClicked: Bool = false
+    @Binding var buttonClicked: Bool
 
     var body: some View {
         VStack(spacing: 24) {
@@ -135,8 +142,7 @@ struct AddRatingView: View {
                                 .gesture(TapGesture().onEnded({
                                     rating = number + 1
                                 }))
-                        }
-                        else {
+                        } else {
                             Image("Cafe/rating_star_fill")
                                 .gesture(TapGesture().onEnded({
                                     rating = number + 1
@@ -173,12 +179,12 @@ struct WriteReviewView: View {
             }
             Gray02Box() {
                 VStack {
-                    CustomTextEdiotor(inputText: self.inputText,
+                    CustomTextEdiotor(inputText: self.$inputText,
                                       placeHolder: "리뷰는 최소 40자 이상으로 작성해주세요!\n정확한 리뷰는 다른 유저에게 큰 도움이 돼요 :)")
                     Spacer()
                     HStack {
                         Spacer()
-                        Text("0/1000")
+                        Text("\(self.inputText.count)/1000")
                             .foregroundColor(.gray04)
                             .font(.sCoreDream(.medium, size: 10))
                     }
