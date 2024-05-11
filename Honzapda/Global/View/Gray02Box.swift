@@ -21,8 +21,7 @@ struct Gray02Box<Content: View>: View {
                         RoundedRectangle(cornerRadius: 12)
                             .fill(.gray02)
                     )
-            }
-            else {
+            } else {
                 content()
                     .frame(width: whSize[0], height: whSize[1])
                     .background(
