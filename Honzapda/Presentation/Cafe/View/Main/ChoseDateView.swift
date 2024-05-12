@@ -18,6 +18,12 @@ struct ChoseDateView: View {
     // MARK: BODY
     var body: some View {
         VStack(spacing: 16) {
+            Rectangle()
+                .foregroundColor(.gray03)
+                .frame(width: 100, height: 4)
+                .cornerRadius(8)
+                .padding(.top, 8)
+                .padding(.bottom, 4)
             DatePicker(
                 "Start Date",
                 selection: $tempDate,
@@ -25,6 +31,7 @@ struct ChoseDateView: View {
             )
             .datePickerStyle(.graphical)
             .accentColor(.primary05)
+            .id(tempDate)
             
             Primary05Button(text: "날짜 선택하기") {
                 isDatePickerShown = false
@@ -33,5 +40,6 @@ struct ChoseDateView: View {
             }
         }
         .padding(.horizontal, 16)
+        .padding(.bottom, 32)
     } //: BODY
 }
