@@ -210,6 +210,13 @@
 			path = Cafe;
 			sourceTree = "<group>";
 		};
+		05FB048B2BF0F509008A74AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BBEBEC8C2BC29E28003F9BF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +412,7 @@
 		DD0FF2312B8ED8A60061F9DB /* User */ = {
 			isa = PBXGroup;
 			children = (
+				05FB048B2BF0F509008A74AA /* View */,
 				DD0FF2322B8ED8A60061F9DB /* User.swift */,
 			);
 			path = User;
