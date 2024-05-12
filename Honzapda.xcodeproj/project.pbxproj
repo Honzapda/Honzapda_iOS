@@ -19,8 +19,8 @@
 		059C99972BEBA529000ED96B /* ChoseDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C99962BEBA529000ED96B /* ChoseDateView.swift */; };
 		05C545A12BF0974E00CECE21 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 05C545A02BF0974E00CECE21 /* PopupView */; };
 		05C545A32BF09B1C00CECE21 /* WhitePopupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C545A22BF09B1C00CECE21 /* WhitePopupBox.swift */; };
-		05C545A52BF0B4FE00CECE21 /* Gray03Button copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C545A42BF0B4FE00CECE21 /* Gray03Button copy.swift */; };
-		05C545A72BF0B50400CECE21 /* Primary05Button copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C545A62BF0B50400CECE21 /* Primary05Button copy.swift */; };
+		05C545A52BF0B4FE00CECE21 /* Gray03HalfButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C545A42BF0B4FE00CECE21 /* Gray03HalfButton.swift */; };
+		05C545A72BF0B50400CECE21 /* Primary05HalfButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C545A62BF0B50400CECE21 /* Primary05HalfButton.swift */; };
 		05C548182BEA0BD300893ADC /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548162BEA0BD300893ADC /* BaseURL.swift */; };
 		05C5481D2BEA254000893ADC /* Primary05Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5481C2BEA254000893ADC /* Primary05Button.swift */; };
 		05C5481F2BEA26AD00893ADC /* Gray04Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5481E2BEA26AD00893ADC /* Gray04Button.swift */; };
@@ -97,8 +97,8 @@
 		056F19612BEF971500B7C4AD /* Primary05Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Primary05Box.swift; sourceTree = "<group>"; };
 		059C99962BEBA529000ED96B /* ChoseDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseDateView.swift; sourceTree = "<group>"; };
 		05C545A22BF09B1C00CECE21 /* WhitePopupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitePopupBox.swift; sourceTree = "<group>"; };
-		05C545A42BF0B4FE00CECE21 /* Gray03Button copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gray03Button copy.swift"; sourceTree = "<group>"; };
-		05C545A62BF0B50400CECE21 /* Primary05Button copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Primary05Button copy.swift"; sourceTree = "<group>"; };
+		05C545A42BF0B4FE00CECE21 /* Gray03HalfButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gray03HalfButton.swift; sourceTree = "<group>"; };
+		05C545A62BF0B50400CECE21 /* Primary05HalfButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primary05HalfButton.swift; sourceTree = "<group>"; };
 		05C548162BEA0BD300893ADC /* BaseURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		05C5481C2BEA254000893ADC /* Primary05Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primary05Button.swift; sourceTree = "<group>"; };
 		05C5481E2BEA26AD00893ADC /* Gray04Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gray04Button.swift; sourceTree = "<group>"; };
@@ -247,8 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				05C5481C2BEA254000893ADC /* Primary05Button.swift */,
-				05C545A62BF0B50400CECE21 /* Primary05Button copy.swift */,
-				05C545A42BF0B4FE00CECE21 /* Gray03Button copy.swift */,
+				05C545A62BF0B50400CECE21 /* Primary05HalfButton.swift */,
+				05C545A42BF0B4FE00CECE21 /* Gray03HalfButton.swift */,
 				05C548202BEB46FF00893ADC /* Gray03Button.swift */,
 				05C5481E2BEA26AD00893ADC /* Gray04Button.swift */,
 				05C548222BEB4A9B00893ADC /* Gray02Box.swift */,
@@ -772,7 +772,7 @@
 				DD00452A2BA0867B008C66C9 /* OnboardingCardModel.swift in Sources */,
 				DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */,
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
-				05C545A52BF0B4FE00CECE21 /* Gray03Button copy.swift in Sources */,
+				05C545A52BF0B4FE00CECE21 /* Gray03HalfButton.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
 				DD117DA82BF4EC3400AFAD42 /* BaseURL.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
@@ -785,7 +785,7 @@
 				BBEBEC9C2BC29E28003F9BF8 /* CurationPopUpView.swift in Sources */,
 				059C99972BEBA529000ED96B /* ChoseDateView.swift in Sources */,
 				056A23A32BEA028D00971D34 /* MoreReviewView.swift in Sources */,
-				05C545A72BF0B50400CECE21 /* Primary05Button copy.swift in Sources */,
+				05C545A72BF0B50400CECE21 /* Primary05HalfButton.swift in Sources */,
 				BBEBEC9F2BC29E28003F9BF8 /* CurationTestViewFrame.swift in Sources */,
 				056F19622BEF971500B7C4AD /* Primary05Box.swift in Sources */,
 			);
