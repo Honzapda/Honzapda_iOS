@@ -12,6 +12,8 @@ struct CurationResultView: View {
     
     var body: some View {
         ZStack {
+            Color.gray03.edgesIgnoringSafeArea(.all)
+            
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
                     HeaderView()
@@ -31,7 +33,7 @@ struct CurationResultView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width)
-                    .background(Color("Gray03"))
+                    .background(.gray03)
                 }
             }
             .coordinateSpace(name: "Scroll")

@@ -11,33 +11,34 @@ struct CurationMainView: View {
     @ObservedObject var curationViewModel: CurationViewModel
     
     var body: some View {
-        ZStack(alignment: .top) {
-            Rectangle()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .foregroundStyle(.white)
-            
-            NavigationView { // 화면 전체가 테스트 뷰로 이동함
-                VStack {
+        
+        
+        NavigationView { // 화면 전체가 테스트 뷰로 이동함
+            ZStack(alignment: .top) {
+                Color.white.edgesIgnoringSafeArea(.all)
+                
+                VStack(alignment: .leading) {
+                    headerView()
+                        .background(.white)
+                    
                     NavigationLink(destination: CurationTestMainView(curationViewModel: curationViewModel),
                                    isActive: $curationViewModel.gotoTest) {
                         EmptyView()
                     }
                     
-                    headerView()
-                        .background(.white)
-                      
-                    
                     ScrollView {
                         
                         ZStack {
                             Image("background_curation")
+                                .resizable()
+                                .scaledToFill()
                             
                             VStack {
                                 // cubv1
                                 CurationBodyView( curationViewModel: curationViewModel,
                                                   dataset: curationViewModel.cuData,
                                                   blur: false)
-                                    .padding(.vertical, 48)
+                                .padding(.vertical, 48)
                                 
                                 Rectangle()
                                     .foregroundColor(.clear)
@@ -48,7 +49,7 @@ struct CurationMainView: View {
                                 CurationBodyView(curationViewModel: curationViewModel,
                                                  dataset: curationViewModel.cuData2,
                                                  blur: true)
-                                    .padding(.vertical, 48)
+                                .padding(.vertical, 48)
                                 
                                 Rectangle()
                                     .foregroundColor(.clear)
@@ -59,50 +60,50 @@ struct CurationMainView: View {
                                 CurationBodyView(curationViewModel: curationViewModel,
                                                  dataset: curationViewModel.cuData3,
                                                  blur: false)
-                                    .padding(.vertical, 48)
+                                .padding(.vertical, 48)
                                 
                                 Spacer()
                             }
                         }
-                    } // 캐러셀이 적용된 카드뷰들
+                    }
                 }
+                if curationViewModel.testPopup {
+                    TestStartPopUp(curationViewModel: curationViewModel)
+                } // 테스트 팝업
+                
+                if curationViewModel.gotoResult {
+                    CurationResultView(curationViewModel: curationViewModel)
+                }// 큐레이션 결과창 이동
+                
             }
-            if curationViewModel.testPopup {
-                TestStartPopUp(curationViewModel: curationViewModel)
-            } // 테스트 팝업
-            
-            if curationViewModel.gotoResult {
-                CurationResultView(curationViewModel: curationViewModel)
-            }// 큐레이션 결과창 이동
         }
-        
     }
-        
     
-    @ViewBuilder
-    private func headerView() -> some View {
-        VStack(alignment: .leading) {
-            HStack { // 헤더 부분, 로고와 앱 네임 -> 이미지 대체
-                Image("image_header_curationmain")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150)
-                    
-                Spacer()
-            }
-            .padding(.leading)
-            .background(.white)
-        }
-        .frame(height: 45)
-        .overlay(
-            Rectangle()
-                .frame(height: 1)
-                .foregroundColor(.gray03)
-                .offset(y: 7),
-            alignment: .bottom
-        )
-    }
 }
+
+
+@ViewBuilder
+private func headerView() -> some View {
+    VStack(alignment: .leading) {
+        HStack { // 헤더 부분, 로고와 앱 네임 -> 이미지 대체
+            Image("image_header_curationmain")
+                .frame(width: 150)
+            
+            Spacer()
+        }
+        .padding(.leading)
+        .background(.white)
+    }
+    .frame(height: 45)
+    .overlay(
+        Rectangle()
+            .frame(height: 1)
+            .foregroundColor(.gray03),
+        alignment: .bottom
+    )
+    .background(.white)
+}
+
 
 struct CurationBodyView: View {
     @ObservedObject var curationViewModel: CurationViewModel
@@ -121,7 +122,7 @@ struct CurationBodyView: View {
                     Spacer()
                 }
                 .padding(.bottom)
-
+                
                 HStack {
                     Text(dataset.subtitle)
                         .font(Font.custom("S-Core Dream", size: 10))
@@ -145,36 +146,36 @@ struct CurationBodyView: View {
                     .frame(width: 265, height: 367)
                     .cornerRadius(15)
                 }
-                .frame(height: 370) // Carousel의 전체 높이 설정
-                .blur(radius: 3)
-                .overlay(
-                    VStack {
-                        Text("간단한 테스트로\n나와 어울리는 카페를 추천받으세요!")
-                            .font(Font.custom("S-Core Dream", size: 16))
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
-                            .padding(10)
-                        Button {
-                            curationViewModel.testPopup = true
-                            print("gotoTest -> \(curationViewModel.testPopup)")
-                        } label: {
-                            Text("테스트하러 가기")
-                                .padding(.vertical, 10) // 상하 패딩 적용
-                                .padding(.horizontal, 15) // 좌우 패딩 적용
-                                .font(.custom("S-Core Dream", size: 10))
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.white)
-                                .background(Color.clear) // 먼저 Text의 배경색을 설정
-                                .clipShape(RoundedRectangle(cornerRadius: 24))
-                            // Text의 배경에 둥근 모서리 적용
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 24)
-                                    // Overlay로 RoundedRectangle 추가
-                                        .stroke(.white, lineWidth: 1) // 테두리 색상과 두께 설정
-                                )                        }
-
-                    }
-                )
+                         .frame(height: 370) // Carousel의 전체 높이 설정
+                         .blur(radius: 3)
+                         .overlay(
+                            VStack {
+                                Text("간단한 테스트로\n나와 어울리는 카페를 추천받으세요!")
+                                    .font(Font.custom("S-Core Dream", size: 16))
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.white)
+                                    .padding(10)
+                                Button {
+                                    curationViewModel.testPopup = true
+                                    print("gotoTest -> \(curationViewModel.testPopup)")
+                                } label: {
+                                    Text("테스트하러 가기")
+                                        .padding(.vertical, 10) // 상하 패딩 적용
+                                        .padding(.horizontal, 15) // 좌우 패딩 적용
+                                        .font(.custom("S-Core Dream", size: 10))
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(.white)
+                                        .background(Color.clear) // 먼저 Text의 배경색을 설정
+                                        .clipShape(RoundedRectangle(cornerRadius: 24))
+                                    // Text의 배경에 둥근 모서리 적용
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 24)
+                                            // Overlay로 RoundedRectangle 추가
+                                                .stroke(.white, lineWidth: 1) // 테두리 색상과 두께 설정
+                                        )                        }
+                                
+                            }
+                         )
             } else {
                 Carousel(pageCount: dataset.cafeImgArr.count,
                          visibleEdgeSpace: 30,
@@ -188,10 +189,10 @@ struct CurationBodyView: View {
                     .frame(width: 265, height: 367)
                     .cornerRadius(15)
                 }
-                .frame(height: 370) // Carousel의 전체 높이 설정
+                         .frame(height: 370) // Carousel의 전체 높이 설정
             }
             // Carousel View
-
+            
         }
     }
 }
@@ -209,11 +210,11 @@ struct CurationCardView: View {
             VStack(alignment: .leading) {
                 if let title = cafeTitle {
                     // Optional binding을 사용하여 cafeTitle이 nil이 아닌 경우에만 Text 뷰를 생성
-                                    Text(title)
-                                        .font(Font.custom("S-CoreDream-6Bold", size: 20))
-                                        .foregroundColor(.white)
-                                        .lineSpacing(8.0)
-                                }
+                    Text(title)
+                        .font(Font.custom("S-CoreDream-6Bold", size: 20))
+                        .foregroundColor(.white)
+                        .lineSpacing(8.0)
+                }
                 if let number = cafeNumber {
                     // Optional binding을 사용하여 cafeNumber이 nil이 아닌 경우에만 Text 뷰를 생성
                     Text("\(number)곳")

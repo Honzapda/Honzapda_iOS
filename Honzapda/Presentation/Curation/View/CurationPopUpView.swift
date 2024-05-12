@@ -49,12 +49,11 @@ struct TestStartPopUp: View {
                                 .frame(width: 288, height: 40)
                                 .cornerRadius(8)
                             Text("유의사항을 확인했어요")
-                                .font(Font.custom("S-Core Dream", size: 12))
+                                .font(.sCoreDream(.medium, size: 12))
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
                         }
                     }
-
                 }
             }
         }
