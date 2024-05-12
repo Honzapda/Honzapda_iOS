@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - PRIMARY05 색상을 배경으로 하는 View
 struct Primary05Box<Content: View>: View {
     var whSize: [CGFloat] = [0, 0]
     var horizontalPadding: CGFloat = 0
@@ -14,14 +15,14 @@ struct Primary05Box<Content: View>: View {
     
     var body: some View {
         ZStack {
-            if whSize == [0, 0] {
+            if whSize == [0, 0] {  // CASE 1: 고정된 W, H가 없는 경우
                 content()
                     .frame(maxWidth: .infinity, minHeight: 8)
                     .background(
                         RoundedRectangle(cornerRadius: 12)
                             .fill(.primary05)
                     )
-            } else {
+            } else {  // CASE 2: 고정된 W, H가 있는 경우
                 content()
                     .frame(width: whSize[0], height: whSize[1])
                     .background(
@@ -32,4 +33,4 @@ struct Primary05Box<Content: View>: View {
         }
         .padding(.horizontal, horizontalPadding)
     }
-}
+} //: GRAY02 색상을 배경으로 하는 View

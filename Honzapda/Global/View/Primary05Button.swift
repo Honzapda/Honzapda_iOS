@@ -7,10 +7,11 @@
 
 import SwiftUI
 
+// MARK: - PRIMARY05 색상 BUTTON
 struct Primary05Button: View {
     var text: String
     var hEdgeSize: CGFloat = 0
-    var clicked: (() -> Void)
+    var clicked: (() -> Void)   // Action
     
     var body: some View {
         Button(action: clicked) {
@@ -32,4 +33,4 @@ struct Primary05Button: View {
             .padding(.horizontal, hEdgeSize)
         }
     }
-}
+} //: PRIMARY05 색상 BUTTON

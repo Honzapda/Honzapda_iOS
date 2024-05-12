@@ -7,10 +7,11 @@
 
 import SwiftUI
 
+// MARK: - GRAY03 색상 BUTTON
 struct Gray03Button: View {
     var text: String
     var hEdgeSize: CGFloat = 0
-    var clicked: (() -> Void)
+    var clicked: (() -> Void)   // Action
     
     var body: some View {
         Button(action: clicked) {
@@ -32,4 +33,4 @@ struct Gray03Button: View {
             .padding(.horizontal, hEdgeSize)
         }
     }
-}
+} //: GRAY03 색상 버튼

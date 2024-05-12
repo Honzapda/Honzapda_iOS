@@ -62,5 +62,5 @@ extension View {
             UITextView.appearance().backgroundColor = .clear
             return self.background(content)
         }
-    }
+    } //: Text editor background color 설정하는 확장
 }
