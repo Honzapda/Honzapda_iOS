@@ -11,7 +11,11 @@ struct CurationMainView: View {
     @ObservedObject var curationViewModel: CurationViewModel
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
+            Rectangle()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .foregroundStyle(.white)
+            
             NavigationView { // 화면 전체가 테스트 뷰로 이동함
                 VStack {
                     NavigationLink(destination: CurationTestMainView(curationViewModel: curationViewModel),
@@ -19,19 +23,9 @@ struct CurationMainView: View {
                         EmptyView()
                     }
                     
-                    HStack { // 헤더 부분, 로고와 앱 네임 -> 이미지 대체
-                        Image("image_header_curationmain")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 120)
-                        
-                        Spacer()
-                    }
-                    .padding(.leading)
-                    
-                    Rectangle()
-                        .frame(width: UIScreen.main.bounds.width, height: 1)
-                        .foregroundColor(Color("Gray03"))
+                    headerView()
+                        .background(.white)
+                      
                     
                     ScrollView {
                         
@@ -81,6 +75,32 @@ struct CurationMainView: View {
                 CurationResultView(curationViewModel: curationViewModel)
             }// 큐레이션 결과창 이동
         }
+        
+    }
+        
+    
+    @ViewBuilder
+    private func headerView() -> some View {
+        VStack(alignment: .leading) {
+            HStack { // 헤더 부분, 로고와 앱 네임 -> 이미지 대체
+                Image("image_header_curationmain")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150)
+                    
+                Spacer()
+            }
+            .padding(.leading)
+            .background(.white)
+        }
+        .frame(height: 45)
+        .overlay(
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(.gray03)
+                .offset(y: 7),
+            alignment: .bottom
+        )
     }
 }
 
@@ -112,6 +132,7 @@ struct CurationBodyView: View {
                 .padding(.bottom, 24)
             }
             .padding(.leading, 24)
+            
             if blur {
                 Carousel(pageCount: dataset.cafeImgArr.count, visibleEdgeSpace: 30,
                          spacing: 30) { index in

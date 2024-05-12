@@ -67,7 +67,7 @@ struct CurationResultView: View {
         GeometryReader { proxy in
             let minY = proxy.frame(in: .named("Scroll")).minY
             let size = proxy.size
-            let height = (size.height + minY)
+            let height = max(0, size.height + minY)
             
             ZStack(alignment: .topLeading) {
                 Image("image_curationmain_cafesample1") // 추후 받아온 이미지로 대체
