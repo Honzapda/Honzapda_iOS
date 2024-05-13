@@ -57,8 +57,7 @@ extension View {
         if #available(iOS 16.0, *) {
             return self.scrollContentBackground(.hidden)
                 .background(content)
-        }
-        else {
+        } else {
             UITextView.appearance().backgroundColor = .clear
             return self.background(content)
         }

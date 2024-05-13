@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05154A332BF1E82200482832 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 05154A322BF1E82200482832 /* Alamofire */; };
+		05154A362BF1E84500482832 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 05154A352BF1E84500482832 /* Kingfisher */; };
 		056A23A12BEA028D00971D34 /* DetailPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23932BEA028D00971D34 /* DetailPageMainView.swift */; };
 		056A23A22BEA028D00971D34 /* MoreHelpfulInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23942BEA028D00971D34 /* MoreHelpfulInformationView.swift */; };
 		056A23A32BEA028D00971D34 /* MoreReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23952BEA028D00971D34 /* MoreReviewView.swift */; };
@@ -77,8 +79,6 @@
 		DD652D042B8A2FBF00542337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD652D032B8A2FBF00542337 /* Preview Assets.xcassets */; };
 		DD78D6032BA1C6B6001A37EC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD78D6022BA1C6B6001A37EC /* Common.swift */; };
 		DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */; };
-		DDE5E97A2BEB9B040026D32D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DDE5E9792BEB9B040026D32D /* Kingfisher */; };
-		DDE5E97D2BEB9B180026D32D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DDE5E97C2BEB9B180026D32D /* Alamofire */; };
 		DDE5E97F2BEB9B5B0026D32D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */; };
 		DDE5E9812BEBA1900026D32D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */; };
 		DDE5E9832BECE2560026D32D /* LoginErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9822BECE2560026D32D /* LoginErrorView.swift */; };
@@ -169,9 +169,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05154A362BF1E84500482832 /* Kingfisher in Frameworks */,
 				05C545A12BF0974E00CECE21 /* PopupView in Frameworks */,
-				DD9086902B8CD05B006E5625 /* Kingfisher in Frameworks */,
-				DD90868D2B8C98BF006E5625 /* Alamofire in Frameworks */,
+				05154A332BF1E82200482832 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,9 +630,9 @@
 			);
 			name = Honzapda;
 			packageProductDependencies = (
-				DD90868C2B8C98BF006E5625 /* Alamofire */,
-				DD90868F2B8CD05B006E5625 /* Kingfisher */,
 				05C545A02BF0974E00CECE21 /* PopupView */,
+				05154A322BF1E82200482832 /* Alamofire */,
+				05154A352BF1E84500482832 /* Kingfisher */,
 			);
 			productName = Honzapda;
 			productReference = DD652CF92B8A2FBE00542337 /* Honzapda.app */;
@@ -663,9 +663,9 @@
 			);
 			mainGroup = DD652CF02B8A2FBE00542337;
 			packageReferences = (
-				DD90868B2B8C98BF006E5625 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				DD90868E2B8CD05B006E5625 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				05C5459F2BF0974E00CECE21 /* XCRemoteSwiftPackageReference "PopupView" */,
+				05154A312BF1E82200482832 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				05154A342BF1E84500482832 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = DD652CFA2B8A2FBE00542337 /* Products */;
 			projectDirPath = "";
@@ -758,7 +758,6 @@
 				BBEBEC9A2BC29E28003F9BF8 /* CurationButtonFrame.swift in Sources */,
 				DDE5E9812BEBA1900026D32D /* LoginViewModel.swift in Sources */,
 				056A23A22BEA028D00971D34 /* MoreHelpfulInformationView.swift in Sources */,
-				DD0FF23A2B8ED8A60061F9DB /* Search.swift in Sources */,
 				05C548182BEA0BD300893ADC /* BaseURL.swift in Sources */,
 				05C545A32BF09B1C00CECE21 /* WhitePopupBox.swift in Sources */,
 				DD0FF2432B8EDE400061F9DB /* Protocol.swift in Sources */,
@@ -1023,6 +1022,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		05154A312BF1E82200482832 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		05154A342BF1E84500482832 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		05C5459F2BF0974E00CECE21 /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/PopupView.git";
@@ -1031,39 +1046,23 @@
 				minimumVersion = 2.9.2;
 			};
 		};
-		DD90868E2B8CD05B006E5625 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.11.0;
-			};
-		};
-		DDE5E97B2BEB9B180026D32D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		05154A322BF1E82200482832 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05154A312BF1E82200482832 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		05154A352BF1E84500482832 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05154A342BF1E84500482832 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		05C545A02BF0974E00CECE21 /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 05C5459F2BF0974E00CECE21 /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
-		};
-        DDE5E9792BEB9B040026D32D /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DDE5E9782BEB9B040026D32D /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		DDE5E97C2BEB9B180026D32D /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DDE5E97B2BEB9B180026D32D /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
