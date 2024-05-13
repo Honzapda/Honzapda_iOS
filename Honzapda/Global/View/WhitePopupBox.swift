@@ -98,7 +98,7 @@ struct SadTitleOneButton: View {
                 .frame(width: 96, height: 97)
                 .rotationEffect(Angle(degrees: -6.63))
                 .padding(.top, 24)
-                .padding(.bottom,16)
+                .padding(.bottom, 16)
             Text(title)
                 .font(.sCoreDream(.bold, size: 18))
                 .foregroundColor(.primary06)

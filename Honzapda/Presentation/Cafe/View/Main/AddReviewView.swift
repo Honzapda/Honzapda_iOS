@@ -95,15 +95,15 @@ struct AddReviewView: View {
         
         // MARK: 리뷰 게시하기 팝업
         .popup(isPresented: $isPostButtonClicked) {
-            WhitePopupBox(popupData: .smileTitleWithTwoButton("리뷰 작성을 완료하시겠어요?",
-                                                              "조금 더 작성하기",
-                                                              "완료하기",
-                                                              {
-                isPostButtonClicked = false
-            }, {
-                // TODO: 데이터 전송하기
-                dismiss()
-            }))
+            WhitePopupBox(popupData: .smileTitleWithTwoButton(
+                "리뷰 작성을 완료하시겠어요?",
+                "조금 더 작성하기",
+                "완료하기", {
+                    isPostButtonClicked = false
+                }, {
+                    // TODO: 데이터 전송하기
+                    dismiss()
+                }))
         } customize: { $0
             .dragToDismiss(false)
             .closeOnTap(false)
