@@ -56,7 +56,7 @@
 		DD0FF2602B8EDFD50061F9DB /* PyeongChangPeace-Bold 2.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2552B8EDFC80061F9DB /* PyeongChangPeace-Bold 2.otf */; };
 		DD0FF2612B8EDFD50061F9DB /* SCDream2.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF2542B8EDFC80061F9DB /* SCDream2.otf */; };
 		DD0FF2622B8EDFD50061F9DB /* SCDream7.otf in Resources */ = {isa = PBXBuildFile; fileRef = DD0FF24A2B8EDFC80061F9DB /* SCDream7.otf */; };
-		DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF2642B8EE7370061F9DB /* BaseURL.swift */; };
+		DD117DA82BF4EC3400AFAD42 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD117DA62BF4EC3400AFAD42 /* BaseURL.swift */; };
 		DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */; };
 		DD4BD92E2BA0123700D94748 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4BD92D2BA0123700D94748 /* View+.swift */; };
 		DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD652CFC2B8A2FBE00542337 /* HonzapdaApp.swift */; };
@@ -124,7 +124,7 @@
 		DD0FF2532B8EDFC80061F9DB /* SCDream3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream3.otf; sourceTree = "<group>"; };
 		DD0FF2542B8EDFC80061F9DB /* SCDream2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream2.otf; sourceTree = "<group>"; };
 		DD0FF2552B8EDFC80061F9DB /* PyeongChangPeace-Bold 2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PyeongChangPeace-Bold 2.otf"; sourceTree = "<group>"; };
-		DD0FF2642B8EE7370061F9DB /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		DD117DA62BF4EC3400AFAD42 /* BaseURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselView.swift; sourceTree = "<group>"; };
 		DD4BD92D2BA0123700D94748 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		DD652CF92B8A2FBE00542337 /* Honzapda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honzapda.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -431,9 +431,9 @@
 		DD0FF23B2B8ED9320061F9DB /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				DD117DA72BF4EC3400AFAD42 /* Privates */,
 				DD78D5FF2BA1C67A001A37EC /* Const */,
 				DD0FF2442B8EDE4C0061F9DB /* Extensions */,
-				DD0FF2632B8EE7110061F9DB /* Privates */,
 				DD0FF2412B8EDE2C0061F9DB /* Protocols */,
 				DD0FF2472B8EDE7E0061F9DB /* Resources */,
 				DD0FF23C2B8ED9520061F9DB /* Supportings */,
@@ -496,10 +496,10 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		DD0FF2632B8EE7110061F9DB /* Privates */ = {
+		DD117DA72BF4EC3400AFAD42 /* Privates */ = {
 			isa = PBXGroup;
 			children = (
-				DD0FF2642B8EE7370061F9DB /* BaseURL.swift */,
+				DD117DA62BF4EC3400AFAD42 /* BaseURL.swift */,
 			);
 			path = Privates;
 			sourceTree = "<group>";
@@ -695,7 +695,6 @@
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
 				BBEBEC9D2BC29E28003F9BF8 /* CurationResultView.swift in Sources */,
 				DDE5E9832BECE2560026D32D /* LoginErrorView.swift in Sources */,
-				DD0FF2652B8EE7370061F9DB /* BaseURL.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
 				BBEBECFE2BE9FF3C003F9BF8 /* SearchView.swift in Sources */,
 				DD4BD92E2BA0123700D94748 /* View+.swift in Sources */,
@@ -722,6 +721,7 @@
 				DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */,
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
+				DD117DA82BF4EC3400AFAD42 /* BaseURL.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
 				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
 				DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */,
