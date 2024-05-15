@@ -354,3 +354,17 @@ struct CurationTestButtonLabelCreater3: View {
         }
     }
 }
+//struct CustomTextStyleModifier: ViewModifier {
+//    var color: Color
+//    func body(content: Content) -> some View {
+//        content
+//            .font()
+//            .foregroundColor(color)
+//            .multilineTextAlignment(.leading)
+//    }
+//}
+extension View {
+    func costomTextStyleModifier (color: Color) -> some View {
+        self.modifier(CustomTextStyleModifier(color: color))
+    }
+}
