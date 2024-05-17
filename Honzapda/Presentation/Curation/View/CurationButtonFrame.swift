@@ -135,8 +135,8 @@ struct CurationTestSmallButtonLabelCreater: View {
     let title: String
     var body: some View {
         Text(title)
-            .font(.custom("S-CoreDream-5Medium", size: 18))
-            .foregroundColor(Color("Primary05"))
+            .font(.sCoreDream(.medium, size: 20))
+            .foregroundColor(.primary06)
             .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 24))
             .background(
                 RoundedRectangle(cornerRadius: 24)
@@ -153,12 +153,12 @@ struct CurationTestSmallButtonLabelCreater2: View {
     let title: String
     var body: some View {
         Text(title)
-            .font(.custom("S-CoreDream-5Medium", size: 18))
+            .font(.sCoreDream(.medium, size: 20))
             .foregroundColor(.white)
             .padding(EdgeInsets(top: 10, leading: 24, bottom: 10, trailing: 24))
             .background(
                 RoundedRectangle(cornerRadius: 24)
-                    .fill(Color("Primary05"))
+                    .fill(.primary05)
                     .shadow(radius: 3, x: 1, y: 3)
             )
             .padding(EdgeInsets(top: 0, leading: 4, bottom: 6, trailing: 4))
@@ -166,100 +166,68 @@ struct CurationTestSmallButtonLabelCreater2: View {
     }
 }
 
-// 큐레이션 태스트 3을 위한 버튼 생성기
 struct CurationTestButtonLabelCreater2: View {
     let num: Int
+
     var body: some View {
-         if num == 1 {
-            ZStack {
-                Image("button_curationTest_menu_coffee")
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(radius: 3)
-                
-                Text("카페의 정석!\n커피 메뉴")
-                    .font(Font.custom("S-CoreDream-6Bold", size: 16))
-                    .foregroundColor(.primary05)
-                    .multilineTextAlignment(.leading)
-                    .offset(x: -90)
-            }
-            .frame(width: UIScreen.main.bounds.width * 0.85)
-             
-        } else if num == 2 {
-            ZStack {
-                Image("button_curationTest_menu_beverage")
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(radius: 3)
-                
-                Text("그래도 당 충전은 해야지!\n달달한 음료 메뉴")
-                    .font(Font.custom("S-CoreDream-6Bold", size: 16))
-                    .foregroundColor(.second105)
-                    .multilineTextAlignment(.leading)
-                    .offset(x: -50)
-            }
-            .frame(width: UIScreen.main.bounds.width * 0.9)
+        ZStack {
+            Image(imageName(for: num))
+                .resizable()
+                .scaledToFit()
+                .shadow(radius: 3)
             
-        } else if num == 3 {
-            ZStack {
-                Image("button_curationTest_menu_dessert")
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(radius: 3)
-                
-                Text("카페는 디저트지!\n디저트 메뉴")
-                    .font(Font.custom("S-CoreDream-6Bold", size: 16))
-                    .foregroundColor(.second205)
-                    .multilineTextAlignment(.leading)
-                    .offset(x: -80)
-            }
-            .frame(width: UIScreen.main.bounds.width * 0.9)
-            
-        } else if num == 4 {
-            ZStack {
-                Image("button_curationTest_menu_coffeefill")
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(radius: 3)
-                
-                Text("카페의 정석!\n커피 메뉴")
-                    .font(Font.custom("S-CoreDream-6Bold", size: 16))
-                    .foregroundColor(.primary05)
-                    .multilineTextAlignment(.leading)
-                    .offset(x: -90)
-            }
-            .frame(width: UIScreen.main.bounds.width * 0.9)
-            
-        } else if num == 5 {
-            ZStack {
-                Image("button_curationTest_menu_beverageFill")
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(radius: 3)
-                
-                Text("그래도 당 충전은 해야지!\n달달한 음료 메뉴")
-                    .font(Font.custom("S-CoreDream-6Bold", size: 16))
-                    .foregroundColor(.second105)
-                    .multilineTextAlignment(.leading)
-                    .offset(x: -50)
-            }
-            .frame(width: UIScreen.main.bounds.width * 0.9)
-            
-        } else if num == 6 {
-            ZStack {
-                Image("button_curationTest_menu_dessertFill")
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(radius: 3)
-                
-                Text("카페는 디저트지!\n디저트 메뉴")
-                    .font(Font.custom("S-CoreDream-6Bold", size: 16))
-                    .foregroundColor(.second205)
-                    .multilineTextAlignment(.leading)
-                    .offset(x: -80)
-            }
-            .frame(width: UIScreen.main.bounds.width * 0.9)
-            
+            Text(text(for: num))
+                .font(Font.custom("S-CoreDream-6Bold", size: 16))
+                .foregroundColor(color(for: num))
+                .multilineTextAlignment(.leading)
+                .offset(x: offset(for: num))
+        }
+        .frame(width: frameWidth(for: num))
+    }
+
+    private func imageName(for num: Int) -> String {
+        switch num {
+        case 1: return "button_curationTest_menu_coffee"
+        case 2: return "button_curationTest_menu_beverage"
+        case 3: return "button_curationTest_menu_dessert"
+        case 4: return "button_curationTest_menu_coffeefill"
+        case 5: return "button_curationTest_menu_beverageFill"
+        case 6: return "button_curationTest_menu_dessertFill"
+        default: return ""
+        }
+    }
+
+    private func text(for num: Int) -> String {
+        switch num {
+        case 1, 4: return "카페의 정석!\n커피 메뉴"
+        case 2, 5: return "그래도 당 충전은 해야지!\n달달한 음료 메뉴"
+        case 3, 6: return "카페는 디저트지!\n디저트 메뉴"
+        default: return ""
+        }
+    }
+
+    private func color(for num: Int) -> Color {
+        switch num {
+        case 1, 4: return .primary05
+        case 2, 5: return .second105
+        case 3, 6: return .second205
+        default: return .black
+        }
+    }
+
+    private func offset(for num: Int) -> CGFloat {
+        switch num {
+        case 1, 4: return -90
+        case 2, 5: return -50
+        case 3, 6: return -80
+        default: return 0
+        }
+    }
+
+    private func frameWidth(for num: Int) -> CGFloat {
+        switch num {
+        case 1: return UIScreen.main.bounds.width * 0.85
+        default: return UIScreen.main.bounds.width * 0.9
         }
     }
 }

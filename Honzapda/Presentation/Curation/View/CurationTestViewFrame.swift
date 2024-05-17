@@ -14,8 +14,8 @@ struct CurationTestView1: View { // 오늘의 기분은 어떄요
             
             VStack(alignment: .leading, spacing: 30) {
                 Text("오늘의 기분은\n어때요?")
-                    .font(Font.custom("S-CoreDream-6Bold", size: 26))
-                    .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
+                    .font(.sCoreDream(.bold, size: 28))
+                    .foregroundStyle(.primary06)
                     .padding(.leading, 14)
                 
                 if curationViewModel.mood == "none" {
@@ -152,7 +152,7 @@ struct CurationTestView2: View {
 
             VStack(alignment: .leading, spacing: 30) {
                 Text("가장 마음에 드는\n키워드를 선택해주세요!")
-                    .font(Font.custom("S-CoreDream-6Bold", size: 26))
+                    .font(.sCoreDream(.bold, size: 28))
                     .foregroundColor(.primary06)
                     .padding(.leading, 14)
                     .padding(.bottom, 30)
@@ -195,8 +195,8 @@ struct CurationTestView3: View {
 
             VStack(alignment: .leading, spacing: 30) {
                 Text("오늘 먹고 싶은\n메뉴는?")
-                    .font(Font.custom("S-CoreDream-6Bold", size: 26))
-                    .foregroundColor(Color(red: 0.21, green: 0.23, blue: 0.64))
+                    .font(.sCoreDream(.bold, size: 28))
+                    .foregroundStyle(.primary06)
                     .padding(.leading, 14)
                 
                 menuSelectionView()
@@ -229,12 +229,13 @@ struct CurationTestView3: View {
 
 struct CurationTestView4: View {
     @ObservedObject var curationViewModel: CurationViewModel
+
     var body: some View {
         ZStack(alignment: .top) {
             Image("background_curationTest")
                 .resizable()
                 .scaledToFill()
-                .frame(width: screenWidth)
+                .frame(width: UIScreen.main.bounds.width)
             
             VStack(alignment: .leading, spacing: 30) {
                 Text("오늘 가고 싶은\n카페 분위기를 알려주세요!")
@@ -242,75 +243,32 @@ struct CurationTestView4: View {
                     .foregroundStyle(.primary06)
                     .padding(.leading, 14)
 
-                // 선택 안됨
-                if curationViewModel.atmosphare == "none" {
-                    HStack(spacing: -5) {
-                        Button {
-                            print( "quiet")
-                            curationViewModel.atmosphare = "quiet"
-                            curationViewModel.gotoTest = false
-                            curationViewModel.gotoResult = true
-                        } label: {
-                            CurationTestButtonLabelCreater3(num: 1)
-                        }
-                        Button {
-                            print( "drink")
-                            curationViewModel.atmosphare = "drink"
-                            curationViewModel.gotoTest = false
-                            curationViewModel.gotoResult = true
-                        } label: {
-                            CurationTestButtonLabelCreater3(num: 2)
-                                .padding(.vertical, 20)
-                        }
-                        Button {
-                            print( "dessert")
-                            curationViewModel.atmosphare = "dessert"
-                            curationViewModel.gotoTest = false
-                            curationViewModel.gotoResult = true
-                        } label: {
-                            CurationTestButtonLabelCreater3(num: 3)
-                        }
-                    }
-                    .frame(width: UIScreen.main.bounds.width * 0.9)
-                } else {
-                    HStack(spacing: -5) {
-                        Button {
-                            curationViewModel.atmosphare = "coffee"
-                        } label: {
-                            if curationViewModel.atmosphare == "coffee"{
-                                CurationTestButtonLabelCreater3(num: 4)
-                            } else {
-                                CurationTestButtonLabelCreater3(num: 1)
-                            }
-                        }
-                        Button {
-                            curationViewModel.atmosphare = "drink"
-                        } label: {
-                            if curationViewModel.atmosphare == "drink"{
-                                CurationTestButtonLabelCreater3(num: 5)
-                            } else {
-                                CurationTestButtonLabelCreater3(num: 2)
-                            }
-                        }
-                        Button {
-                            curationViewModel.atmosphare = "dessert"
-                        } label: {
-                            if curationViewModel.atmosphare == "dessert"{
-                                CurationTestButtonLabelCreater3(num: 6)
-                            } else {
-                                CurationTestButtonLabelCreater3(num: 3)
-                            }
-                        }
-                    }
-                    .frame(width: UIScreen.main.bounds.width * 0.9)
+                HStack(spacing: -5) {
+                    atmosphereButton(num: 1, label: "quiet")
+                    atmosphereButton(num: 2, label: "drink")
+                        .padding(.vertical, 20)
+                    atmosphereButton(num: 3, label: "dessert")
                 }
+                .frame(width: UIScreen.main.bounds.width * 0.9)
             }
-            .offset(y: screenHeight * 0.23)
-            .frame(width: UIScreen.main.bounds.width * 0.9,
-                   alignment: .leading)
+            .offset(y: UIScreen.main.bounds.height * 0.23)
+            .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+        }
+    }
+
+    private func atmosphereButton(num: Int, label: String) -> some View {
+        Button {
+            print(label)
+            curationViewModel.atmosphare = label
+            curationViewModel.gotoTest = false
+            curationViewModel.gotoResult = true
+        } label: {
+            CurationTestButtonLabelCreater3(num: curationViewModel.atmosphare == label ? num + 3 : num)
         }
     }
 }
+
+
 struct CUPV3: PreviewProvider {
     static var previews: some View {
         // CurationBodyView(dataset: cuData)
