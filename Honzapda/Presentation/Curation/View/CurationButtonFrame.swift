@@ -232,7 +232,7 @@ struct CurationTestButtonLabelCreater2: View {
             
         } else if num == 5 {
             ZStack {
-                Image("button_curationTest_menu_beveragefill")
+                Image("button_curationTest_menu_beverageFill")
                     .resizable()
                     .scaledToFit()
                     .shadow(radius: 3)
@@ -247,7 +247,7 @@ struct CurationTestButtonLabelCreater2: View {
             
         } else if num == 6 {
             ZStack {
-                Image("button_curationTest_menu_dessertfill")
+                Image("button_curationTest_menu_dessertFill")
                     .resizable()
                     .scaledToFit()
                     .shadow(radius: 3)
@@ -267,93 +267,53 @@ struct CurationTestButtonLabelCreater2: View {
 // 큐레이션 테스트 4를 위한 버튼 생성기
 struct CurationTestButtonLabelCreater3: View {
     let num: Int
+    
     var body: some View {
-         if num == 1 {
-            ZStack {
-                Image("button_curationTest_atmosphere_silent")
-                    .resizable()
-                    .frame(width: 99, height: 134)
-                    .shadow(radius: 3)
-                
-                Text("쾌적하고\n조용한 분위기")
-                    .font(Font.custom("S-Core Dream", size: 10))
-                    .foregroundColor(.primary05)
-                    .multilineTextAlignment(.center)
-                    .offset(y: 20)
-            }
-             
-        } else if num == 2 {
-            ZStack {
-                Image("button_curationTest_atmosphere_noisy")
-                    .resizable()
-                    .frame(width: 99, height: 134)
-                    .shadow(radius: 3)
-                
-                Text("적당한\n소음")
-                    .font(Font.custom("S-Core Dream", size: 10))
-                    .foregroundColor(.second105)
-                    .multilineTextAlignment(.center)
-                    .offset(y: 20)
-            }
+        ZStack {
+            Image(imageName(for: num))
+                .resizable()
+                .frame(width: 99, height: 134)
+                .shadow(radius: 3)
             
-        } else if num == 3 {
-            ZStack {
-                Image("button_curationTest_atmosphere_hotplace")
-                    .resizable()
-                    .frame(width: 99, height: 134)
-                    .shadow(radius: 3)
-                
-                Text("활기찬\n핫플레이스")
-                    .font(Font.custom("S-Core Dream", size: 10))
-                    .foregroundColor(.second205)
-                    .multilineTextAlignment(.center)
-                    .offset(y: 20)
-            }
-            
-        } else if num == 4 {
-            ZStack {
-                Image("button_curationTest_atmosphere_silentfill")
-                    .resizable()
-                    .frame(width: 99, height: 134)
-                    .shadow(radius: 3)
-                
-                Text("쾌적하고\n조용한 분위기")
-                    .font(Font.custom("S-Core Dream", size: 10))
-                    .foregroundColor(.primary05)
-                    .multilineTextAlignment(.center)
-                    .offset(y: 20)
-            }
-            
-        } else if num == 5 {
-            ZStack {
-                Image("button_curationTest_atmosphere_noisyfill")
-                    .resizable()
-                    .frame(width: 99, height: 134)
-                    .shadow(radius: 3)
-                
-                Text("적당한\n소음")
-                    .font(Font.custom("S-Core Dream", size: 10))
-                    .foregroundColor(.second105)
-                    .multilineTextAlignment(.center)
-                    .offset(y: 20)
-            }
-            
-        } else if num == 6 {
-            ZStack {
-                Image("button_curationTest_atmosphere_hotplacefill")
-                    .resizable()
-                    .frame(width: 99, height: 134)
-                    .shadow(radius: 3)
-                
-                Text("활기찬\n핫플레이스")
-                    .font(Font.custom("S-Core Dream", size: 10))
-                    .foregroundColor(.second205)
-                    .multilineTextAlignment(.center)
-                    .offset(y: 20)
-            }
+            Text(text(for: num))
+                .font(.sCoreDream(.medium, size: 12))
+                .foregroundColor(color(for: num))
+                .multilineTextAlignment(.center)
+                .offset(y: 20)
+        }
+    }
+    
+    private func imageName(for num: Int) -> String {
+        switch num {
+        case 1: return "button_curationTest_atmosphere_silent"
+        case 2: return "button_curationTest_atmosphere_noisy"
+        case 3: return "button_curationTest_atmosphere_hotplace"
+        case 4: return "button_curationTest_atmosphere_silentFill"
+        case 5: return "button_curationTest_atmosphere_noisyFill"
+        case 6: return "button_curationTest_atmosphere_hotplaceFill"
+        default: return ""
+        }
+    }
+    
+    private func text(for num: Int) -> String {
+        switch num {
+        case 1, 4: return "쾌적하고\n조용한 분위기"
+        case 2, 5: return "적당한\n소음"
+        case 3, 6: return "활기찬\n핫플레이스"
+        default: return ""
+        }
+    }
+    
+    private func color(for num: Int) -> Color {
+        switch num {
+        case 1, 4: return .primary05
+        case 2, 5: return .second105
+        case 3, 6: return .second205
+        default: return .black
         }
     }
 }
+
 //struct CustomTextStyleModifier: ViewModifier {
 //    var color: Color
 //    func body(content: Content) -> some View {
@@ -363,8 +323,3 @@ struct CurationTestButtonLabelCreater3: View {
 //            .multilineTextAlignment(.leading)
 //    }
 //}
-extension View {
-    func costomTextStyleModifier (color: Color) -> some View {
-        self.modifier(CustomTextStyleModifier(color: color))
-    }
-}

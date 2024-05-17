@@ -28,13 +28,13 @@ struct TestStartPopUp: View {
                 VStack(spacing: 16) {
                     // 타이틀
                     Text("테스트를 시작해볼까요?")
-                        .font(Font.custom("S-CoreDream-6Bold", size: 20))
+                        .font(.sCoreDream(.bold, size: 20))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.primary06)
                         .padding(.top, 11)
                     // 서브타이틀
                     Text("테스트는 총 네 단계로 이루어져 있어요.\n테스트에서는 전 단계로 돌아갈 수 없고,\n중간에 테스트를 종료하면 저장되지 않으니 조심하세요!")
-                        .font(Font.custom("S-Core Dream", size: 12))
+                        .font(.sCoreDream(.medium, size: 12))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.gray08)
                     
@@ -42,6 +42,12 @@ struct TestStartPopUp: View {
                         print("start curation test")
                         curationViewModel.gotoTest = true
                         curationViewModel.testPopup = false
+                        curationViewModel.mood = "none"
+                        curationViewModel.atmosphare = "none"
+                        curationViewModel.keyword = "none"
+                        curationViewModel.menu = "none"
+                        curationViewModel.progress = 0
+                    
                     } label: {
                         ZStack {
                             Rectangle()
