@@ -135,8 +135,6 @@ struct CurationTestView1: View { // 오늘의 기분은 어떄요
 }
 
 struct CurationTestView2: View {
-   //  @Binding var progress: Int
-    // @Binding var keyword: String
     @ObservedObject var curationViewModel: CurationViewModel
     
     let choiceArr: [[String]] = [["휴식", "감성 사진 찍기"],
