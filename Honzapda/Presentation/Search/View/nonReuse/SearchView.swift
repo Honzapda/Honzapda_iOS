@@ -70,7 +70,7 @@ struct SearchView: View {
             }
             
             TextField("", text: $searchViewModel.searchWord)
-                .placeholder(when:searchViewModel.searchWord.isEmpty, placeholder: {
+                .placeholder(when: searchViewModel.searchWord.isEmpty, placeholder: {
                     Text("카페명, 주소명으로 검색")
                         .foregroundStyle(.gray05)
                         .font(.sCoreDream(.medium, size: 14))
