@@ -11,14 +11,17 @@ import PopupView
 // MARK: - MAIN VIEW
 struct AddUserInfoView: View {
     // MARK: PARAMETER
+    @Environment(\.dismiss) private var dismiss
     @State private var isDatePickerShown = false
     @State private var reviewDate = Date()
     @State private var tempDate = Date()
+    
+    // 버튼 활성 조건들
     @State private var addReviewDateButtonClicked = false
+    @State private var questionCheck = [false, false, false, false,
+                                        false, false, false, false]
+    @State private var isPostButtonClicked = false
     
-    
-    
-
     // MARK: BODY
     var body: some View {
         NavigationView {
@@ -28,12 +31,20 @@ struct AddUserInfoView: View {
                                         reviewDate: $reviewDate)
                 DividerBoxView()
                 
-                AddInfoView()
-                Gray04Button(text: "정보 작성 완료하기") {
-                    print("정보 작성 완료하기")
+                AddInfoView(isConditionTure: $questionCheck)
+                if isConditionFilled() {
+                    Primary05Button(text: "정보 작성 완료하기") {
+                        isPostButtonClicked = true
+                    }
+                    .padding(.all, 16)
+                } else {
+                    Gray04Button(text: "정보 작성 완료하기") {
+                        print("정보 작성 완료하기")
+                    }
+                    .padding(.all, 16)
                 }
-                .padding(.all, 16)
             }
+            // 날짜 선택 half modal
             .popup(isPresented: $isDatePickerShown) {
                 ChoseDateView(date: $reviewDate,
                               isDatePickerShown: $isDatePickerShown,
@@ -48,8 +59,39 @@ struct AddUserInfoView: View {
                 .closeOnTap(false)
                 .backgroundColor(.black.opacity(0.5))
             } //: 날짜 선택 half modal
+            
+            // 리뷰 게시하기 팝업
+            .popup(isPresented: $isPostButtonClicked) {
+                WhitePopupBox(popupData: .smileTitleWithTwoButton(
+                    "리뷰 작성을 완료하시겠어요?",
+                    "조금 더 작성하기",
+                    "완료하기", {
+                        isPostButtonClicked = false
+                    }, {
+                        // TODO: 데이터 전송하기
+                        dismiss()
+                    }))
+            } customize: { $0
+                .dragToDismiss(false)
+                .closeOnTap(false)
+                .backgroundColor(.black.opacity(0.5))
+            } //: 리뷰 게시하기 팝업
         }
     } //: BODY
+    
+    // MARK: FUNCTION
+    private func isConditionFilled() -> Bool {
+        if addReviewDateButtonClicked {
+            for i in 0..<8 {
+                if !questionCheck[i] {
+                    return false
+                }
+            }
+            return true
+        }
+        
+        return false
+    }
 } //: MAIN VIEW
 
 // MARK: - 방문 날짜 등록 View
@@ -105,6 +147,8 @@ private struct AddVisitDateAndTimeView: View {
 } //: 방문 날짜 등록 VIEW
 
 private struct AddInfoView: View {
+    @Binding var isConditionTure: [Bool]
+    
     var body: some View {
         VStack(spacing: 16) {
             VStack(spacing: 8) {
@@ -122,29 +166,37 @@ private struct AddInfoView: View {
                 }
             }
             // MARK: 다중 질문 리스트
-            PercentTypeQuestionView(title: "Q. 카페가 얼마나 혼잡한가요?")
+            PercentTypeQuestionView(title: "Q. 카페가 얼마나 혼잡한가요?", 
+                                    isConditionTure: $isConditionTure[0])
             OptionTypeQuestionView(title: "Q. 앉았던 책상은 어떻게 느껴졌나요?",
-                                   btn1Title: "넓었어요", btn2Title: "적당했어요", btn3Title: "좁았어요")
+                                   btn1Title: "넓었어요", btn2Title: "적당했어요", btn3Title: "좁았어요",
+                                   isConditionTure: $isConditionTure[1])
             OptionTypeQuestionView(title: "Q. 콘센트 개수는 어떻게 느껴졌나요?",
-                                   btn1Title: "넉넉했어요", btn2Title: "적당했어요", btn3Title: "부족했어요")
+                                   btn1Title: "넉넉했어요", btn2Title: "적당했어요", btn3Title: "부족했어요",
+                                   isConditionTure: $isConditionTure[2])
             TextTypeQuestionView(title: "Q. 콘센트는 주로 어디에 있었나요?",
                                  leadingText: "주로",
                                  trailingText: "에 있어요",
-                                 placeHolder: "ex) 책상 밑, 책상 위")
+                                 placeHolder: "ex) 책상 밑, 책상 위",
+                                 isConditionTure: $isConditionTure[3])
             TextTypeQuestionView(title: "Q. 화장실은 어디에 있었나요?",
                                  leadingText: "화장실은",
                                  trailingText: "에 있어요",
-                                 placeHolder: "ex) 1층 카운터 옆")
+                                 placeHolder: "ex) 1층 카운터 옆",
+                                 isConditionTure: $isConditionTure[4])
             TextTypeQuestionView(title: "Q. 카페에서 어떤 종류의 노래가 많이 나왔나요?",
                                  leadingText: "노래는",
                                  trailingText: "음악이 많이 나와요",
-                                 placeHolder: "ex) 케이팝, 재즈")
+                                 placeHolder: "ex) 케이팝, 재즈",
+                                 isConditionTure: $isConditionTure[5])
             OptionTypeQuestionView(title: "Q. 카페 조명은 어떻게 느껴졌나요?",
-                                   btn1Title: "밝았어요", btn2Title: "적당했어요", btn3Title: "어두웠어요")
+                                   btn1Title: "밝았어요", btn2Title: "적당했어요", btn3Title: "어두웠어요",
+                                   isConditionTure: $isConditionTure[6])
             TextTypeQuestionView(title: "Q. 카페의 전체적인 분위기는 어떻게 느껴졌나요?",
                                  leadingText: "",
                                  trailingText: "분위기",
-                                 placeHolder: "ex) 조용한")
+                                 placeHolder: "ex) 조용한",
+                                 isConditionTure: $isConditionTure[7])
         }
         .padding(.vertical, 32)
         .padding(.horizontal, 24)
@@ -155,6 +207,7 @@ private struct AddInfoView: View {
 private struct PercentTypeQuestionView: View {
     let title: String!
     @State var selectedPercent: Int?    // 0 to 10
+    @Binding var isConditionTure: Bool
     
     var body: some View {
         Gray02Box {
@@ -178,9 +231,6 @@ private struct PercentTypeQuestionView: View {
                                         .background(.primary05)
                                         .clipShape(.circle)
                                         .frame(width: 12, height: 12)
-                                        .gesture(TapGesture().onEnded({
-                                            selectedPercent = number
-                                        }))
                                 }
                                 else {
                                     Circle()
@@ -190,6 +240,7 @@ private struct PercentTypeQuestionView: View {
                                         .frame(width: 12, height: 12)
                                         .gesture(TapGesture().onEnded({
                                             selectedPercent = number
+                                            isConditionTure = true
                                         }))
                                 }
                             }
@@ -222,6 +273,8 @@ private struct OptionTypeQuestionView: View {
     @State private var isOption2Selected = false
     @State private var isOption3Selected = false
     @State var isRemenberBtnSelected = false
+    @Binding var isConditionTure: Bool
+    
     
     // MARK: BODY
     var body: some View {
@@ -284,7 +337,7 @@ private struct OptionTypeQuestionView: View {
         isOption1Selected = buttonNumber == 1 ? true : false
         isOption2Selected = buttonNumber == 2 ? true : false
         isOption3Selected = buttonNumber == 3 ? true : false
-        
+        isConditionTure = true
     }
 } //: 3 OPTION 선택형 질문 VIEW
 
@@ -296,6 +349,7 @@ private struct TextTypeQuestionView: View {
     let placeHolder: String
     @State var isRemenberBtnSelected = false
     @State private var inputText  = ""
+    @Binding var isConditionTure: Bool
     
     var body: some View {
         Gray02Box {
@@ -322,7 +376,13 @@ private struct TextTypeQuestionView: View {
                         .foregroundStyle(.gray09)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: 135)
-                        .disabled(isRemenberBtnSelected)
+                        .onChange(of: inputText) { _ in
+                            if inputText != "" {
+                                isRemenberBtnSelected = false
+                                isConditionTure = checkCondition()
+                            }
+                            else { isConditionTure = checkCondition() }
+                        }
                         
                         Rectangle()
                             .fill(.gray03)
@@ -354,6 +414,7 @@ private struct TextTypeQuestionView: View {
                         if isRemenberBtnSelected == true {
                             inputText = ""
                         }
+                        isConditionTure = checkCondition()
                     }))
                     Text("기억나지 않아요")
                         .font(.sCoreDream(.medium, size: 10))
@@ -363,6 +424,11 @@ private struct TextTypeQuestionView: View {
             }
             .padding(.all, 24)
         }
+    }
+    
+    // MARK: FUNCTION
+    func checkCondition() -> Bool {
+        return inputText == "" && !isRemenberBtnSelected ? false : true
     }
 } //: TEXT 입력 타입의 질문 VIEW
 
