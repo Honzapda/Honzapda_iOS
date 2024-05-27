@@ -213,6 +213,7 @@ private struct PercentTypeQuestionView: View {
 
 // MARK: - 3 OPTION 선택형 질문 VIEW
 private struct OptionTypeQuestionView: View {
+    // MARK: PARAMETER
     let title: String!
     let btn1Title: String
     let btn2Title: String
@@ -222,7 +223,7 @@ private struct OptionTypeQuestionView: View {
     @State private var isOption3Selected = false
     @State var isRemenberBtnSelected = false
     
-    
+    // MARK: BODY
     var body: some View {
         Gray02Box {
             VStack(alignment: .leading, spacing: 16) {
@@ -233,42 +234,21 @@ private struct OptionTypeQuestionView: View {
                     Spacer()
                 }
                 HStack(spacing: 8) {
-                    Text(btn1Title)
-                        .font(.sCoreDream(.medium, size: 12))
-                        .foregroundStyle(.primary05)
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 16)
-                        .background(.white)
-                        .cornerRadius(24)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 24)
-                                .inset(by: 0.5)
-                                .stroke(.primary05, lineWidth: 1)
-                        )
-                    Text(btn2Title)
-                        .font(.sCoreDream(.medium, size: 12))
-                        .foregroundStyle(.primary05)
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 16)
-                        .background(.white)
-                        .cornerRadius(24)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 24)
-                                .inset(by: 0.5)
-                                .stroke(.primary05, lineWidth: 1)
-                        )
-                    Text(btn3Title)
-                        .font(.sCoreDream(.medium, size: 12))
-                        .foregroundStyle(.primary05)
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 16)
-                        .background(.white)
-                        .cornerRadius(24)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 24)
-                                .inset(by: 0.5)
-                                .stroke(.primary05, lineWidth: 1)
-                        )
+                    OptionQuestionButton(buttonTitle: btn1Title,
+                                         isButtonSelected: $isOption1Selected)
+                        .gesture(TapGesture().onEnded({
+                            buttonToggle(1)
+                        }))
+                    OptionQuestionButton(buttonTitle: btn2Title,
+                                         isButtonSelected: $isOption2Selected)
+                        .gesture(TapGesture().onEnded({
+                            buttonToggle(2)
+                        }))
+                    OptionQuestionButton(buttonTitle: btn3Title,
+                                         isButtonSelected: $isOption3Selected)
+                        .gesture(TapGesture().onEnded({
+                            buttonToggle(3)
+                        }))
                 }
                 HStack(spacing: 4) {
                     ZStack {
@@ -286,8 +266,7 @@ private struct OptionTypeQuestionView: View {
                         }
                     }
                     .gesture(TapGesture().onEnded({
-                        isRemenberBtnSelected.toggle()
-                        
+                        buttonToggle(0)
                     }))
                     Text("기억나지 않아요")
                         .font(.sCoreDream(.medium, size: 10))
@@ -297,6 +276,15 @@ private struct OptionTypeQuestionView: View {
             }
             .padding(.all, 24)
         }
+    } //: BODY
+    
+    // MARK: FUNCTION
+    func buttonToggle(_ buttonNumber: Int) {
+        isRemenberBtnSelected = buttonNumber == 0 ? true : false
+        isOption1Selected = buttonNumber == 1 ? true : false
+        isOption2Selected = buttonNumber == 2 ? true : false
+        isOption3Selected = buttonNumber == 3 ? true : false
+        
     }
 } //: 3 OPTION 선택형 질문 VIEW
 
@@ -377,6 +365,39 @@ private struct TextTypeQuestionView: View {
         }
     }
 } //: TEXT 입력 타입의 질문 VIEW
+
+// MARK: - OPTION 선택 버튼 VIEW
+private struct OptionQuestionButton: View {
+    // MARK: PARAMETER
+    let buttonTitle: String
+    @Binding var isButtonSelected: Bool
+    
+    // MARK: BODY
+    var body: some View {
+        if isButtonSelected {
+            Text(buttonTitle)
+                .font(.sCoreDream(.medium, size: 12))
+                .foregroundStyle(.white)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 16)
+                .background(.primary05)
+                .cornerRadius(24)
+        } else {
+            Text(buttonTitle)
+                .font(.sCoreDream(.medium, size: 12))
+                .foregroundStyle(.primary05)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 16)
+                .background(.white)
+                .cornerRadius(24)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 24)
+                        .inset(by: 0.5)
+                        .stroke(.primary05, lineWidth: 1)
+                )
+        }
+    }
+} //: OPTION 선택 버튼 VIEW
 
 #Preview {
     AddUserInfoView()
