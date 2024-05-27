@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 // MARK: - MAIN VIEW
 struct AddUserInfoView: View {
@@ -14,6 +15,8 @@ struct AddUserInfoView: View {
     @State private var reviewDate = Date()
     @State private var tempDate = Date()
     @State private var addReviewDateButtonClicked = false
+    
+    
     
 
     // MARK: BODY
@@ -331,6 +334,7 @@ private struct TextTypeQuestionView: View {
                         .foregroundStyle(.gray09)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: 135)
+                        .disabled(isRemenberBtnSelected)
                         
                         Rectangle()
                             .fill(.gray03)
@@ -359,7 +363,9 @@ private struct TextTypeQuestionView: View {
                     }
                     .gesture(TapGesture().onEnded({
                         isRemenberBtnSelected.toggle()
-                        
+                        if isRemenberBtnSelected == true {
+                            inputText = ""
+                        }
                     }))
                     Text("기억나지 않아요")
                         .font(.sCoreDream(.medium, size: 10))
