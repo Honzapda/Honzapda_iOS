@@ -13,13 +13,12 @@ struct AddUserInfoView: View {
     // MARK: PARAMETER
     @Environment(\.dismiss) private var dismiss
     @State private var isDatePickerShown = false
-    @State private var reviewDate = Date()
-    @State private var tempDate = Date()
-    
+    @State private var reviewDate = Date()  // 등록 버튼을 통해 저장되는 진짜 날짜
+    @State private var tempDate = Date()    // DatePicker에서 눌리는 날짜를 저장
     // 버튼 활성 조건들
     @State private var addReviewDateButtonClicked = false
     @State private var questionCheck = [false, false, false, false,
-                                        false, false, false, false]
+                                        false, false, false, false] // 질문1 ~ 질문8 까지 등록 여부 체크
     @State private var isPostButtonClicked = false
     
     // MARK: BODY
@@ -29,21 +28,21 @@ struct AddUserInfoView: View {
                 AddVisitDateAndTimeView(isDatePickerShown: $isDatePickerShown,
                                         addDateButtonClicked: $addReviewDateButtonClicked,
                                         reviewDate: $reviewDate)
+                
                 DividerBoxView()
                 
                 AddInfoView(isConditionTure: $questionCheck)
-                if isConditionFilled() {
-                    Primary05Button(text: "정보 작성 완료하기") {
-                        isPostButtonClicked = true
-                    }
+                
+                // 포스팅 버튼
+                if isConditionFilled() { // CASE 1: 포스팅 내용이 입력됐을 때
+                    Primary05Button(text: "정보 작성 완료하기") { isPostButtonClicked = true }
                     .padding(.all, 16)
-                } else {
-                    Gray04Button(text: "정보 작성 완료하기") {
-                        print("정보 작성 완료하기")
-                    }
+                } else { // CASE 2: 포스팅 내용이 채워지지 않았을 때
+                    Gray04Button(text: "정보 작성 완료하기") { print("정보 작성 완료하기") }
                     .padding(.all, 16)
                 }
             }
+            
             // 날짜 선택 half modal
             .popup(isPresented: $isDatePickerShown) {
                 ChoseDateView(date: $reviewDate,
@@ -76,20 +75,17 @@ struct AddUserInfoView: View {
                 .closeOnTap(false)
                 .backgroundColor(.black.opacity(0.5))
             } //: 리뷰 게시하기 팝업
-        }
+        } //: NAVIGATIONVIEW
     } //: BODY
     
     // MARK: FUNCTION
     private func isConditionFilled() -> Bool {
         if addReviewDateButtonClicked {
             for i in 0..<8 {
-                if !questionCheck[i] {
-                    return false
-                }
+                if !questionCheck[i] { return false }
             }
             return true
         }
-        
         return false
     }
 } //: MAIN VIEW
@@ -130,11 +126,10 @@ private struct AddVisitDateAndTimeView: View {
                 }
                 .gesture(TapGesture().onEnded { isDatePickerShown = true })
             } //: 방문 날짜 등록 버튼
-        } //: 방문 날짜 등록 View
+        }
         .padding(.vertical, 32)
         .padding(.horizontal, 24)
-        
-    }
+    } //: BODY
     
     // MARK: FUNCTION
     // Date 양식 수정
@@ -146,11 +141,15 @@ private struct AddVisitDateAndTimeView: View {
     } //: Date 양식 수정
 } //: 방문 날짜 등록 VIEW
 
+// MARK: - 정보 추가하기 VIEW
 private struct AddInfoView: View {
+    // MARK: PARAMETER
     @Binding var isConditionTure: [Bool]
     
+    // MARK: BODY
     var body: some View {
         VStack(spacing: 16) {
+            // 타이틀
             VStack(spacing: 8) {
                 HStack {
                     Text("정보 등록하기")
@@ -164,9 +163,10 @@ private struct AddInfoView: View {
                         .foregroundColor(.gray06)
                     Spacer()
                 }
-            }
-            // MARK: 다중 질문 리스트
-            PercentTypeQuestionView(title: "Q. 카페가 얼마나 혼잡한가요?", 
+            } //: 타이틀
+            
+            // 다중 질문 리스트
+            PercentTypeQuestionView(title: "Q. 카페가 얼마나 혼잡한가요?",
                                     isConditionTure: $isConditionTure[0])
             OptionTypeQuestionView(title: "Q. 앉았던 책상은 어떻게 느껴졌나요?",
                                    btn1Title: "넓었어요", btn2Title: "적당했어요", btn3Title: "좁았어요",
@@ -197,28 +197,34 @@ private struct AddInfoView: View {
                                  trailingText: "분위기",
                                  placeHolder: "ex) 조용한",
                                  isConditionTure: $isConditionTure[7])
+            //: 다중 질문 리스트
         }
         .padding(.vertical, 32)
         .padding(.horizontal, 24)
-    }
-}
+    } //: BODY
+} //: 정보 추가하기 VIEW
 
 // MARK: - 퍼센트 선택 타입 질문 VIEW
 private struct PercentTypeQuestionView: View {
+    // MARK: PARAMETER
     let title: String!
     @State var selectedPercent: Int?    // 0 to 10
     @Binding var isConditionTure: Bool
     
+    // MARK: BODY
     var body: some View {
         Gray02Box {
             VStack(spacing: 16) {
+                // 타이틀
                 HStack() {
                     Text(title)
                         .font(.sCoreDream(.bold, size: 14))
                         .foregroundStyle(.gray09)
                     Spacer()
-                }
+                } //: 타이틀
+                
                 VStack(spacing: 8) {
+                // 퍼센트 선택 바
                     ZStack {
                         Rectangle()
                             .frame(height: 1)
@@ -245,7 +251,8 @@ private struct PercentTypeQuestionView: View {
                                 }
                             }
                         }
-                    }
+                    } //: 퍼센트 선택 바
+                    
                     HStack {
                         Text("0%")
                             .font(.sCoreDream(.medium, size: 8))
@@ -259,7 +266,7 @@ private struct PercentTypeQuestionView: View {
             }
             .padding(.all, 24)
         }
-    }
+    } //: BODY
 } //: 퍼센트 선택 타입 질문 VIEW
 
 // MARK: - 3 OPTION 선택형 질문 VIEW
@@ -269,40 +276,38 @@ private struct OptionTypeQuestionView: View {
     let btn1Title: String
     let btn2Title: String
     let btn3Title: String
-    @State private var isOption1Selected = false
+    @State private var isOption1Selected = false    // 버튼 선택여부 확인
     @State private var isOption2Selected = false
     @State private var isOption3Selected = false
-    @State var isRemenberBtnSelected = false
-    @Binding var isConditionTure: Bool
-    
+    @State var isRemenberBtnSelected = false    // 기억나지 않아요 버튼 체크 여부
+    @Binding var isConditionTure: Bool  // 질문이 등록됐는지 여부 체크
     
     // MARK: BODY
     var body: some View {
         Gray02Box {
             VStack(alignment: .leading, spacing: 16) {
+                // 타이틀
                 HStack() {
                     Text(title)
                         .font(.sCoreDream(.bold, size: 14))
                         .foregroundStyle(.gray09)
                     Spacer()
-                }
+                } //: 타이틀
+                
+                // 3개 선택지
                 HStack(spacing: 8) {
                     OptionQuestionButton(buttonTitle: btn1Title,
                                          isButtonSelected: $isOption1Selected)
-                        .gesture(TapGesture().onEnded({
-                            buttonToggle(1)
-                        }))
+                        .gesture(TapGesture().onEnded({ buttonToggle(1) }))
                     OptionQuestionButton(buttonTitle: btn2Title,
                                          isButtonSelected: $isOption2Selected)
-                        .gesture(TapGesture().onEnded({
-                            buttonToggle(2)
-                        }))
+                        .gesture(TapGesture().onEnded({ buttonToggle(2) }))
                     OptionQuestionButton(buttonTitle: btn3Title,
                                          isButtonSelected: $isOption3Selected)
-                        .gesture(TapGesture().onEnded({
-                            buttonToggle(3)
-                        }))
-                }
+                        .gesture(TapGesture().onEnded({ buttonToggle(3) }))
+                } //: 3개 선택지
+                
+                // 기억나지 않아요 버튼
                 HStack(spacing: 4) {
                     ZStack {
                         Circle()
@@ -325,13 +330,14 @@ private struct OptionTypeQuestionView: View {
                         .font(.sCoreDream(.medium, size: 10))
                         .foregroundStyle(.gray08)
                     Spacer()
-                }
+                } //: 기억나지 않아요 버튼
             }
             .padding(.all, 24)
         }
     } //: BODY
     
     // MARK: FUNCTION
+    // 4개중 하나만 On 설정 함수
     func buttonToggle(_ buttonNumber: Int) {
         isRemenberBtnSelected = buttonNumber == 0 ? true : false
         isOption1Selected = buttonNumber == 1 ? true : false
@@ -343,29 +349,34 @@ private struct OptionTypeQuestionView: View {
 
 // MARK: - TEXT 입력 타입의 질문 VIEW
 private struct TextTypeQuestionView: View {
+    // MARK: PARAMETER
     let title: String
-    let leadingText: String
-    let trailingText: String
-    let placeHolder: String
+    let leadingText: String // 머릿말
+    let trailingText: String    // 꼬릿말
+    let placeHolder: String // 입력칸 예시
     @State var isRemenberBtnSelected = false
-    @State private var inputText  = ""
-    @Binding var isConditionTure: Bool
+    @State private var inputText  = ""  // 입력된 내용
+    @Binding var isConditionTure: Bool  // 질문에 내용 등록 여부 체크
     
+    // MARK: BODY
     var body: some View {
         Gray02Box {
             VStack(spacing: 16) {
+                // 타이틀
                 HStack() {
                     Text(title)
                         .font(.sCoreDream(.bold, size: 14))
                         .foregroundStyle(.gray09)
                     Spacer()
-                }
+                } //: 타이틀
+                
                 HStack(alignment: .bottom, spacing: 8) {
-                    if leadingText != "" {
+                    if leadingText != "" { // 맨 첫 문장이 있는 경우
                         Text(leadingText)
                             .font(.sCoreDream(.medium, size: 12))
                             .foregroundStyle(.gray09)
                     }
+                    // 입력창
                     VStack(spacing: 4) {
                         TextField(text: $inputText) {
                             Text(placeHolder)
@@ -387,13 +398,15 @@ private struct TextTypeQuestionView: View {
                         Rectangle()
                             .fill(.gray03)
                             .frame(maxWidth: 135, maxHeight: 1)
-                    }
+                    } //: 입력창
+                    
                     Text(trailingText)
                         .font(.sCoreDream(.medium, size: 12))
                         .foregroundStyle(.gray09)
                     
                     Spacer()
                 }
+                // 기억나지 않아요 버튼
                 HStack(spacing: 4) {
                     ZStack {
                         Circle()
@@ -411,22 +424,24 @@ private struct TextTypeQuestionView: View {
                     }
                     .gesture(TapGesture().onEnded({
                         isRemenberBtnSelected.toggle()
+                        isConditionTure = checkCondition()
+                        
                         if isRemenberBtnSelected == true {
                             inputText = ""
                         }
-                        isConditionTure = checkCondition()
                     }))
                     Text("기억나지 않아요")
                         .font(.sCoreDream(.medium, size: 10))
                         .foregroundStyle(.gray08)
                     Spacer()
-                }
+                } //: 기억나지 않아요 버튼
             }
             .padding(.all, 24)
         }
-    }
+    } //: BODY
     
     // MARK: FUNCTION
+    // 입력 완료 상태 확인
     func checkCondition() -> Bool {
         return inputText == "" && !isRemenberBtnSelected ? false : true
     }
@@ -462,10 +477,9 @@ private struct OptionQuestionButton: View {
                         .stroke(.primary05, lineWidth: 1)
                 )
         }
-    }
+    } //: BODY
 } //: OPTION 선택 버튼 VIEW
 
 #Preview {
     AddUserInfoView()
 }
-
