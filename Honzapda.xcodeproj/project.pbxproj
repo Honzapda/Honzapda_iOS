@@ -192,7 +192,6 @@
 				056A23942BEA028D00971D34 /* MoreHelpfulInformationView.swift */,
 				056A23952BEA028D00971D34 /* MoreReviewView.swift */,
 				05C548242BEB63BE00893ADC /* AddReviewView.swift */,
-				059C99962BEBA529000ED96B /* ChoseDateView.swift */,
 				052A3B922C038979008EBE2A /* AddUserInfoView.swift */,
 			);
 			path = Main;
@@ -201,6 +200,7 @@
 		056A239C2BEA028D00971D34 /* Recycle */ = {
 			isa = PBXGroup;
 			children = (
+				059C99962BEBA529000ED96B /* ChoseDateView.swift */,
 				056A23972BEA028D00971D34 /* DividerBoxView.swift */,
 				056A23982BEA028D00971D34 /* InfoBoxView.swift */,
 				056A23992BEA028D00971D34 /* UserReviewsBoxView.swift */,

@@ -14,7 +14,7 @@ struct ChoseDateView: View {
     @Binding var isDatePickerShown: Bool
     @Binding var buttonClicked: Bool
     @Binding var tempDate: Date
-
+    @State var isTimeDisplay = false
     // MARK: BODY
     var body: some View {
         VStack(spacing: 16) {
@@ -24,15 +24,24 @@ struct ChoseDateView: View {
                 .cornerRadius(8)
                 .padding(.top, 8)
                 .padding(.bottom, 4)
-            DatePicker(
-                "Start Date",
-                selection: $tempDate,
-                displayedComponents: [.date]
-            )
-            .datePickerStyle(.graphical)
-            .accentColor(.primary05)
-            .id(tempDate)
-            
+            if isTimeDisplay {
+                DatePicker(
+                    "Start Date",
+                    selection: $tempDate,
+                    displayedComponents: [.date, .hourAndMinute]
+                )
+                .datePickerStyle(.graphical)
+                .accentColor(.primary05)
+            } else {
+                DatePicker(
+                    "Start Date",
+                    selection: $tempDate,
+                    displayedComponents: [.date]
+                )
+                .datePickerStyle(.graphical)
+                .accentColor(.primary05)
+                .id(tempDate)
+            }
             Primary05Button(text: "날짜 선택하기") {
                 isDatePickerShown = false
                 buttonClicked = true

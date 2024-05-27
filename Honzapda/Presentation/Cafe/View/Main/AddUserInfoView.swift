@@ -9,10 +9,20 @@ import SwiftUI
 
 // MARK: - MAIN VIEW
 struct AddUserInfoView: View {
+    // MARK: PARAMETER
+    @State private var isDatePickerShown = false
+    @State private var reviewDate = Date()
+    @State private var tempDate = Date()
+    @State private var addReviewDateButtonClicked = false
+    
+
+    // MARK: BODY
     var body: some View {
         NavigationView {
             ScrollView {
-                AddVisitDateAndTimeView()
+                AddVisitDateAndTimeView(isDatePickerShown: $isDatePickerShown,
+                                        addDateButtonClicked: $addReviewDateButtonClicked,
+                                        reviewDate: $reviewDate)
                 DividerBoxView()
                 
                 AddInfoView()
@@ -21,17 +31,30 @@ struct AddUserInfoView: View {
                 }
                 .padding(.all, 16)
             }
+            .popup(isPresented: $isDatePickerShown) {
+                ChoseDateView(date: $reviewDate,
+                              isDatePickerShown: $isDatePickerShown,
+                              buttonClicked: $addReviewDateButtonClicked,
+                              tempDate: $tempDate,
+                              isTimeDisplay: true)
+                .background(.white)
+                .cornerRadius(12)
+            } customize: { $0
+                .type(.toast)
+                .position(.bottom)
+                .closeOnTap(false)
+                .backgroundColor(.black.opacity(0.5))
+            } //: 날짜 선택 half modal
         }
-    }
+    } //: BODY
 } //: MAIN VIEW
 
 // MARK: - 방문 날짜 등록 View
 private struct AddVisitDateAndTimeView: View {
     // MARK: PARAMETER
-    @State private var addReviewDateButtonClicked = false
-    @State private var isDatePickerShown = false    // 팝업 여부 체크
-    @State private var reviewDate = Date()    // 버튼을 클릭하여 선택한 Date
-    @State private var tempDate = Date()  // 단순 날짜만 선택한 경우 Date
+    @Binding var isDatePickerShown: Bool    // 팝업 여부 체크
+    @Binding var addDateButtonClicked: Bool
+    @Binding var reviewDate: Date    // 버튼을 클릭하여 선택한 Date
     
     // MARK: BODY
     var body: some View {
@@ -45,7 +68,7 @@ private struct AddVisitDateAndTimeView: View {
             } //: 타이틀
             
             // 방문 날짜 등록 버튼
-            if !addReviewDateButtonClicked { // CASE 1: 날짜 등록 기록 없을 때 -> 회색 버튼
+            if !addDateButtonClicked { // CASE 1: 날짜 등록 기록 없을 때 -> 회색 버튼
                 Gray02Box(horizontalPadding: 0) {
                     Text("\(formatDate(date: reviewDate)) 방문")
                         .font(.sCoreDream(.medium, size: 14))
