@@ -124,7 +124,7 @@ struct AddReviewView: View {
 } //: 메인
 
 // MARK: - 리뷰 사진 등록
-struct AddReviewPhotoView: View {
+private struct AddReviewPhotoView: View {
     // MARK: BODY
     var body: some View {
         VStack(spacing: 24) {
@@ -155,7 +155,7 @@ struct AddReviewPhotoView: View {
 } //: 리뷰 사진 등록
 
 // MARK: - 별점 등록하기
-struct AddRatingView: View {
+private struct AddRatingView: View {
     // MARK: PARAMETER
     @Binding var rating: Int
     
@@ -204,7 +204,7 @@ struct AddRatingView: View {
 } //: 별점 등록하기
 
 // MARK: - 리뷰 내용 작성하기
-struct WriteReviewView: View {
+private struct WriteReviewView: View {
     // MARK: PARAMETER
     @Binding var inputText: String
     

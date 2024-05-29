@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05154A332BF1E82200482832 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 05154A322BF1E82200482832 /* Alamofire */; };
 		05154A362BF1E84500482832 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 05154A352BF1E84500482832 /* Kingfisher */; };
+		052A3B932C038979008EBE2A /* AddUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052A3B922C038979008EBE2A /* AddUserInfoView.swift */; };
 		056A23A12BEA028D00971D34 /* DetailPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23932BEA028D00971D34 /* DetailPageMainView.swift */; };
 		056A23A22BEA028D00971D34 /* MoreHelpfulInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23942BEA028D00971D34 /* MoreHelpfulInformationView.swift */; };
 		056A23A32BEA028D00971D34 /* MoreReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23952BEA028D00971D34 /* MoreReviewView.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		052A3B922C038979008EBE2A /* AddUserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserInfoView.swift; sourceTree = "<group>"; };
 		056A23932BEA028D00971D34 /* DetailPageMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageMainView.swift; sourceTree = "<group>"; };
 		056A23942BEA028D00971D34 /* MoreHelpfulInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreHelpfulInformationView.swift; sourceTree = "<group>"; };
 		056A23952BEA028D00971D34 /* MoreReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreReviewView.swift; sourceTree = "<group>"; };
@@ -190,7 +192,7 @@
 				056A23942BEA028D00971D34 /* MoreHelpfulInformationView.swift */,
 				056A23952BEA028D00971D34 /* MoreReviewView.swift */,
 				05C548242BEB63BE00893ADC /* AddReviewView.swift */,
-				059C99962BEBA529000ED96B /* ChoseDateView.swift */,
+				052A3B922C038979008EBE2A /* AddUserInfoView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -198,6 +200,7 @@
 		056A239C2BEA028D00971D34 /* Recycle */ = {
 			isa = PBXGroup;
 			children = (
+				059C99962BEBA529000ED96B /* ChoseDateView.swift */,
 				056A23972BEA028D00971D34 /* DividerBoxView.swift */,
 				056A23982BEA028D00971D34 /* InfoBoxView.swift */,
 				056A23992BEA028D00971D34 /* UserReviewsBoxView.swift */,
@@ -771,6 +774,7 @@
 				DD0FF21C2B8ED7E20061F9DB /* CafeEntity.swift in Sources */,
 				BBEBEC9C2BC29E28003F9BF8 /* CurationPopUpView.swift in Sources */,
 				059C99972BEBA529000ED96B /* ChoseDateView.swift in Sources */,
+				052A3B932C038979008EBE2A /* AddUserInfoView.swift in Sources */,
 				056A23A32BEA028D00971D34 /* MoreReviewView.swift in Sources */,
 				05C545A72BF0B50400CECE21 /* Primary05HalfButton.swift in Sources */,
 				BBEBEC9F2BC29E28003F9BF8 /* CurationTestViewFrame.swift in Sources */,
