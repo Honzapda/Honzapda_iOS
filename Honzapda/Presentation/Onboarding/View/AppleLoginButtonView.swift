@@ -8,16 +8,20 @@
 import AuthenticationServices
 import SwiftUI
 
-struct AppleLoginButtonView: UIViewRepresentable {
-    
-    typealias UIViewType = UIView
-    
-    func makeUIView(context: Context) -> UIView {
-        return ASAuthorizationAppleIDButton()
-    }
-    
-    func updateUIView(_ uiView: UIView, context: Context) {
-        
+struct AppleLoginButtonView: View {
+    var body: some View {
+        SignInWithAppleButton(.signIn) { request in
+            request.requestedScopes = [.fullName, .email]
+        } onCompletion: { result in
+            switch result {
+            case .success(let authResults):
+                print("Authorisation successful")
+            case .failure(let error):
+                print("Authorisation failed: \(error.localizedDescription)")
+            }
+        }
+        .signInWithAppleButtonStyle(.black)
+        .frame(height: 45)
     }
 }
 
