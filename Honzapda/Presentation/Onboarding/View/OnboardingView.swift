@@ -3,6 +3,7 @@
 //  Honzapda
 //
 //  Created by YOUJIM on 2/29/24.
+//  Co-op with 0Hooni on 5/28/24.
 //
 
 import AuthenticationServices
@@ -11,14 +12,11 @@ import SwiftUI
 struct OnboardingView: View {
     @ObservedObject var onboardingViewModel = OnboardingViewModel()
     
+    // MARK: - BODY
     var body: some View {
-        ZStack {
-            Image("background_onboarding")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea()
-            
+        NavigationView {
             VStack {
+                // Index mark
                 HStack {
                     ForEach(0...3, id: \.self) { index in
                         if index == onboardingViewModel.selectedTab {
@@ -29,40 +27,33 @@ struct OnboardingView: View {
                             Circle()
                                 .stroke(.primary05, lineWidth: 0.5)
                                 .frame(width: 4, height: 4)
-                                .foregroundStyle(.clear)}
+                                .foregroundStyle(.clear)
+                        }
                     }
-                }
-                .padding(.top, 120)
+                } //: Index mark
+                .padding(.bottom, 40)
                 
-                Spacer(minLength: 40)
-                
+                // 스크롤 이미지
                 TabView(selection: $onboardingViewModel.selectedTab) {
                     ForEach(Common.carouselList.indices, id: \.self) { index in
                         OnboardingCarouselView(selectedTab: index)
                             .tag(index)
                     }
-                }
+                } //: 스크롤 이미지
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
-                Spacer(minLength: 70)
-                
-                Button("유저로 로그인하기") {
-                    onboardingViewModel.isLoginButtonTapped.toggle()
+                VStack(spacing: 12) {
+                    NavigationLink(
+                        destination: LoginView(),
+                        isActive: $onboardingViewModel.isLoginButtonTapped,
+                        label: {
+                            Primary05Button(text: "유저로 로그인하기") {
+                                onboardingViewModel.isLoginButtonTapped.toggle()
+                            }
+                        })
+                    AppleLoginButtonView()
                 }
-                .tint(.white)
-                .font(.sCoreDream(.bold, size: 16))
-                .frame(width: 361, height: 45)
-                .background(
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(.primary05))
-                .fullScreenCover(isPresented: $onboardingViewModel.isLoginButtonTapped, content: {
-                    LoginView()
-                })
-                
-                AppleLoginButtonView()
-                    .frame(width: 361, height: 45)
-                
-                Spacer(minLength: 24)
+                .padding(.bottom, 24)
                 
                 Button(action: {
                     // TODO: 눌렀을 때 실행될 ViewModel 제작
@@ -75,10 +66,21 @@ struct OnboardingView: View {
                         originalFont: .sCoreDream(.light, size: 12))
                 })
                 
-                Spacer(minLength: 96)
+                Spacer()
             }
+            .padding(.horizontal, 16)
+            .padding(.top, 120)
+            .padding(.bottom, 96)
+            // 배경 처리
+            .background(
+                Image("background_onboarding")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+            ) //: 배경 처리
+            .ignoresSafeArea(.all)
         }
-    }
+    } //: BODY
 }
 
 #Preview {

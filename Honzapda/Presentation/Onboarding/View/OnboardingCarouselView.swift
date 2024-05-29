@@ -20,25 +20,23 @@ struct OnboardingCarouselView: View {
                 originalFont: .sCoreDream(.medium, size: 22))
             .multilineTextAlignment(.center)
             .lineSpacing(12)
-            
-            Spacer(minLength: 16)
+            .padding(.bottom, 16)
             
             Text(Common.carouselList[selectedTab].captionText)
                 .foregroundStyle(.gray06)
                 .font(.sCoreDream(.medium, size: 14))
                 .multilineTextAlignment(.center)
                 .lineSpacing(5)
-            
-            Spacer(minLength: 40)
+                .padding(.bottom, 40)
             
             Image(Common.carouselList[selectedTab].imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 279, height: 228)
+                .padding(.horizontal, (50 - 16)) // 최대 이미지 사이즈 기준 - 부모 View 기본 Padding
         }
     }
 }
 
 #Preview {
-    OnboardingView(onboardingViewModel: OnboardingViewModel())
+    OnboardingCarouselView(selectedTab: 3)
 }
