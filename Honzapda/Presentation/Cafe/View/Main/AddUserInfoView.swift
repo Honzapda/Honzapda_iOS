@@ -16,9 +16,8 @@ struct AddUserInfoView: View {
     @State private var reviewDate = Date()  // 등록 버튼을 통해 저장되는 진짜 날짜
     @State private var tempDate = Date()    // DatePicker에서 눌리는 날짜를 저장
     // 버튼 활성 조건들
-    @State private var addReviewDateButtonClicked = false
-    @State private var questionCheck = [false, false, false, false,
-                                        false, false, false, false] // 질문1 ~ 질문8 까지 등록 여부 체크
+    @State private var isAddReviewDateButtonClicked = false
+    @State private var isComponentsFilled = Array(repeating: false, count: 8) // 질문1 ~ 질문8 까지 등록 여부 체크
     @State private var isPostButtonClicked = false
     
     // MARK: BODY
@@ -26,12 +25,12 @@ struct AddUserInfoView: View {
         NavigationView {
             ScrollView {
                 AddVisitDateAndTimeView(isDatePickerShown: $isDatePickerShown,
-                                        addDateButtonClicked: $addReviewDateButtonClicked,
+                                        addDateButtonClicked: $isAddReviewDateButtonClicked,
                                         reviewDate: $reviewDate)
                 
                 DividerBoxView()
                 
-                AddInfoView(isConditionTure: $questionCheck)
+                AddInfoView(isConditionTure: $isComponentsFilled)
                 
                 // 포스팅 버튼
                 if isConditionFilled() { // CASE 1: 포스팅 내용이 입력됐을 때
@@ -47,7 +46,7 @@ struct AddUserInfoView: View {
             .popup(isPresented: $isDatePickerShown) {
                 ChoseDateView(date: $reviewDate,
                               isDatePickerShown: $isDatePickerShown,
-                              buttonClicked: $addReviewDateButtonClicked,
+                              buttonClicked: $isAddReviewDateButtonClicked,
                               tempDate: $tempDate,
                               isTimeDisplay: true)
                 .background(.white)
@@ -80,10 +79,7 @@ struct AddUserInfoView: View {
     
     // MARK: FUNCTION
     private func isConditionFilled() -> Bool {
-        if addReviewDateButtonClicked {
-            for i in 0..<8 {
-                if !questionCheck[i] { return false }
-            }
+        if isAddReviewDateButtonClicked && !isComponentsFilled.contains(false) {
             return true
         }
         return false
@@ -169,10 +165,10 @@ private struct AddInfoView: View {
             PercentTypeQuestionView(title: "Q. 카페가 얼마나 혼잡한가요?",
                                     isConditionTure: $isConditionTure[0])
             OptionTypeQuestionView(title: "Q. 앉았던 책상은 어떻게 느껴졌나요?",
-                                   btn1Title: "넓었어요", btn2Title: "적당했어요", btn3Title: "좁았어요",
+                                   firstButtonTitle: "넓었어요", secondButtonTitle: "적당했어요", thirdButtonTitle: "좁았어요",
                                    isConditionTure: $isConditionTure[1])
             OptionTypeQuestionView(title: "Q. 콘센트 개수는 어떻게 느껴졌나요?",
-                                   btn1Title: "넉넉했어요", btn2Title: "적당했어요", btn3Title: "부족했어요",
+                                   firstButtonTitle: "넉넉했어요", secondButtonTitle: "적당했어요", thirdButtonTitle: "부족했어요",
                                    isConditionTure: $isConditionTure[2])
             TextTypeQuestionView(title: "Q. 콘센트는 주로 어디에 있었나요?",
                                  leadingText: "주로",
@@ -190,7 +186,7 @@ private struct AddInfoView: View {
                                  placeHolder: "ex) 케이팝, 재즈",
                                  isConditionTure: $isConditionTure[5])
             OptionTypeQuestionView(title: "Q. 카페 조명은 어떻게 느껴졌나요?",
-                                   btn1Title: "밝았어요", btn2Title: "적당했어요", btn3Title: "어두웠어요",
+                                   firstButtonTitle: "밝았어요", secondButtonTitle: "적당했어요", thirdButtonTitle: "어두웠어요",
                                    isConditionTure: $isConditionTure[6])
             TextTypeQuestionView(title: "Q. 카페의 전체적인 분위기는 어떻게 느껴졌나요?",
                                  leadingText: "",
@@ -225,33 +221,37 @@ private struct PercentTypeQuestionView: View {
                 
                 VStack(spacing: 8) {
                 // 퍼센트 선택 바
-                    ZStack {
+                    HStack {
+                        ForEach(0..<10) { number in
+                            if number == selectedPercent {
+                                Circle()
+                                    .stroke(.primary05, lineWidth: 1)
+                                    .background(.primary05)
+                                    .clipShape(.circle)
+                                    .frame(width: 12, height: 12)
+                            }
+                            else {
+                                Circle()
+                                    .stroke(.primary05, lineWidth: 1)
+                                    .background(.white)
+                                    .clipShape(.circle)
+                                    .frame(width: 12, height: 12)
+                                    .gesture(TapGesture().onEnded({
+                                        selectedPercent = number
+                                        isConditionTure = true
+                                    }))
+                            }
+                            if number != 9 {
+                                Spacer()
+                            }
+                        }
+                    }
+                    .background(
                         Rectangle()
                             .frame(height: 1)
                             .foregroundStyle(.primary05)
-                        HStack(spacing: 20) {
-                            ForEach(0..<10) { number in
-                                if number == selectedPercent {
-                                    Circle()
-                                        .stroke(.primary05, lineWidth: 1)
-                                        .background(.primary05)
-                                        .clipShape(.circle)
-                                        .frame(width: 12, height: 12)
-                                }
-                                else {
-                                    Circle()
-                                        .stroke(.primary05, lineWidth: 1)
-                                        .background(.white)
-                                        .clipShape(.circle)
-                                        .frame(width: 12, height: 12)
-                                        .gesture(TapGesture().onEnded({
-                                            selectedPercent = number
-                                            isConditionTure = true
-                                        }))
-                                }
-                            }
-                        }
-                    } //: 퍼센트 선택 바
+                    )
+                     //: 퍼센트 선택 바
                     
                     HStack {
                         Text("0%")
@@ -272,13 +272,13 @@ private struct PercentTypeQuestionView: View {
 // MARK: - 3 OPTION 선택형 질문 VIEW
 private struct OptionTypeQuestionView: View {
     // MARK: PARAMETER
-    let title: String!
-    let btn1Title: String
-    let btn2Title: String
-    let btn3Title: String
-    @State private var isOption1Selected = false    // 버튼 선택여부 확인
-    @State private var isOption2Selected = false
-    @State private var isOption3Selected = false
+    let title: String
+    let firstButtonTitle: String
+    let secondButtonTitle: String
+    let thirdButtonTitle: String
+    @State private var isFirstOptionSelected = false    // 버튼 선택여부 확인
+    @State private var isSecondOptionSelected = false
+    @State private var isThirdOptionSelected = false
     @State var isRemenberBtnSelected = false    // 기억나지 않아요 버튼 체크 여부
     @Binding var isConditionTure: Bool  // 질문이 등록됐는지 여부 체크
     
@@ -296,14 +296,14 @@ private struct OptionTypeQuestionView: View {
                 
                 // 3개 선택지
                 HStack(spacing: 8) {
-                    OptionQuestionButton(buttonTitle: btn1Title,
-                                         isButtonSelected: $isOption1Selected)
+                    OptionQuestionButton(buttonTitle: firstButtonTitle,
+                                         isButtonSelected: $isFirstOptionSelected)
                         .gesture(TapGesture().onEnded({ buttonToggle(1) }))
-                    OptionQuestionButton(buttonTitle: btn2Title,
-                                         isButtonSelected: $isOption2Selected)
+                    OptionQuestionButton(buttonTitle: secondButtonTitle,
+                                         isButtonSelected: $isSecondOptionSelected)
                         .gesture(TapGesture().onEnded({ buttonToggle(2) }))
-                    OptionQuestionButton(buttonTitle: btn3Title,
-                                         isButtonSelected: $isOption3Selected)
+                    OptionQuestionButton(buttonTitle: thirdButtonTitle,
+                                         isButtonSelected: $isThirdOptionSelected)
                         .gesture(TapGesture().onEnded({ buttonToggle(3) }))
                 } //: 3개 선택지
                 
@@ -340,9 +340,9 @@ private struct OptionTypeQuestionView: View {
     // 4개중 하나만 On 설정 함수
     func buttonToggle(_ buttonNumber: Int) {
         isRemenberBtnSelected = buttonNumber == 0 ? true : false
-        isOption1Selected = buttonNumber == 1 ? true : false
-        isOption2Selected = buttonNumber == 2 ? true : false
-        isOption3Selected = buttonNumber == 3 ? true : false
+        isFirstOptionSelected = buttonNumber == 1 ? true : false
+        isSecondOptionSelected = buttonNumber == 2 ? true : false
+        isThirdOptionSelected = buttonNumber == 3 ? true : false
         isConditionTure = true
     }
 } //: 3 OPTION 선택형 질문 VIEW
