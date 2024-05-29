@@ -29,7 +29,6 @@ struct SearchView: View {
                 Image("background_search")
                     .resizable()
                     .scaledToFill()
-                    .border(Color.blue)
                     .frame(width: UIScreen.main.bounds.width)
                     .overlay(
                         Text("검색어를 입력해주세요 ")
