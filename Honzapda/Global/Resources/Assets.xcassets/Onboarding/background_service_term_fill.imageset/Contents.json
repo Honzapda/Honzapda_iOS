@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "background_service_term_fill.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
