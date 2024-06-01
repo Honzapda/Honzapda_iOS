@@ -13,6 +13,7 @@ struct TermView: View {
     @StateObject var termViewModel = TermViewModel()
     @State var isTermButtonClicked = false
     
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -31,16 +32,16 @@ struct TermView: View {
                 
                 // 약관 동의 버튼
                 VStack(spacing: 16) {
-                    ForEach(0..<3) { i in
-                        let termType = termViewModel.terms[i].type
-                        let termTitle = termViewModel.terms[i].title
-                        let termContent = termViewModel.terms[i].content
+                    ForEach(0..<termViewModel.terms.count) { index in
+                        let curTermType = termViewModel.terms[index].type
+                        let curTermTitle = termViewModel.terms[index].title
+                        let curTermAgree = termViewModel.terms[index].isTermAgree
                         
-                        if termViewModel.terms[i].isTermAgree {
+                        if curTermAgree {
                             ZStack {
-                                Image("background_\(termType)_term_fill")
+                                Image("background_\(curTermType)_term_fill")
                                 HStack {
-                                    Text(termTitle)
+                                    Text(curTermTitle)
                                         .font(.sCoreDream(.extrabold, size: 18))
                                         .foregroundStyle(.primary06)
                                         .lineSpacing(8)
@@ -49,13 +50,16 @@ struct TermView: View {
                                         .frame(width: 40, height: 40)
                                 }
                                 .padding(.all, 24)
+                                .onTapGesture {
+                                    isTermButtonClicked = true
+                                }
                             }
                         } else {
                             ZStack {
-                                Image("background_\(termType)_term")
+                                Image("background_\(curTermType)_term")
                                     .grayscale(1)
                                 HStack {
-                                    Text(termTitle)
+                                    Text(curTermTitle)
                                         .font(.sCoreDream(.extrabold, size: 18))
                                         .foregroundStyle(.gray06)
                                         .lineSpacing(8)
@@ -64,6 +68,10 @@ struct TermView: View {
                                         .frame(width: 40, height: 40)
                                 }
                                 .padding(.all, 24)
+                                .onTapGesture {
+                                    let _ = (termViewModel.curIndex = index)
+                                    isTermButtonClicked = true
+                                }
                             }
                         }
                     }
@@ -84,20 +92,30 @@ struct TermView: View {
                     Image(systemName: "xmark")
                         .tint(.black)
                 }))
+            .popup(isPresented: $isTermButtonClicked) {
+                termDetailView(termViewModel: termViewModel,
+                               curTermNumber: $termViewModel.curIndex,
+                               isTermButtonClicked: $isTermButtonClicked)
+            } customize: { $0
+                .type(.toast)
+                .position(.bottom)
+                .closeOnTapOutside(true)
+                .backgroundColor(.black.opacity(0.5))
+            }
         }
     }
 }
 
 private struct termDetailView: View {
-    @Environment(\.dismiss) private var dismiss
-    let termDetailTitle: String
-    let termDetailContent: String
-    @Binding var isAgreeButtonClicked: Bool
+    var termViewModel: TermViewModel
+    @Binding var curTermNumber: Int
     @Binding var isTermButtonClicked: Bool
     
     var body: some View {
+        let termDetailTitle = termViewModel.terms[curTermNumber].title.replacingOccurrences(of: "\n", with: "")
+        let termDetailContent = termViewModel.terms[curTermNumber].content
+        
         VStack {
-            Spacer()
             VStack(spacing: 16) {
                 HStack {
                     Text(termDetailTitle)
@@ -116,17 +134,21 @@ private struct termDetailView: View {
                         .lineSpacing(2.0)
                 }
                 .padding(.bottom, 16)
-                .frame(height: 240)
+                .frame(height: 280)
                 .padding(.horizontal, 16)
                 
                 Primary05Button(text: "상기 내용을 이해하였으며 동의함") {
-                    isAgreeButtonClicked = true
+                    termViewModel.termAgree()
                     isTermButtonClicked = false
                 }
                 .padding(.bottom, 42)
             }
             .padding(.horizontal, 16)
         }
+        .background(
+            RoundedRectangle(cornerRadius: 24)
+                .foregroundStyle(.white)
+        )
     }
 }
 

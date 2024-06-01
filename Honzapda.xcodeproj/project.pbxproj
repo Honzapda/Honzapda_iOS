@@ -182,6 +182,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05453BA72C0B4B4B0052CA95 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */,
+				DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */,
+				05453BA12C070CF70052CA95 /* TermView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		05453BA82C0B4B520052CA95 /* Sub */ = {
+			isa = PBXGroup;
+			children = (
+				DDE5E9822BECE2560026D32D /* LoginErrorView.swift */,
+				DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */,
+				DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */,
+			);
+			path = Sub;
+			sourceTree = "<group>";
+		};
 		056A23922BEA028D00971D34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,12 +620,8 @@
 		DDFA805D2B98637E00FF32C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */,
-				DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */,
-				DDE5E9822BECE2560026D32D /* LoginErrorView.swift */,
-				DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */,
-				DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */,
-				05453BA12C070CF70052CA95 /* TermView.swift */,
+				05453BA72C0B4B4B0052CA95 /* Main */,
+				05453BA82C0B4B520052CA95 /* Sub */,
 			);
 			path = View;
 			sourceTree = "<group>";
