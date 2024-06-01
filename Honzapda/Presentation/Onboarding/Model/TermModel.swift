@@ -11,6 +11,5 @@ struct TermModel: Hashable {
     let type: String
     let title: String
     var isTermAgree: Bool
-    var isTermButtonClicked: Bool
     let content: String
 }
