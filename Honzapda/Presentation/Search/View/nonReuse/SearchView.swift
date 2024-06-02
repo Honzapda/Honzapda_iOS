@@ -186,25 +186,12 @@ struct SearchView: View {
     }
 }
 
-
+// MARK: 필터 컨트롤
 enum FilterOption {
     case none, distances, reviewCount, saved, recommended
 }
 
-extension View {
-    func placeholder<Content: View>(
-        when shouldShow: Bool,
-        alignment: Alignment = .leading,
-        @ViewBuilder placeholder: () -> Content) -> some View {
-
-        ZStack(alignment: alignment) {
-            placeholder().opacity(shouldShow ? 1 : 0)
-            self
-        }
-    }
-}
-
-extension View {
+extension View { // 필터 모양 설정하는 모디파이어
     func filterStyle(selected: Bool) -> some View {
         self.modifier(FilterModifier(selection: selected))
     }

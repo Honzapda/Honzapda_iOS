@@ -6,7 +6,7 @@
 //
 
 // SearchMainView 완료
-// 고, 타이틀, 검색창, 최근 검색어 ui 구현
+// 로고, 타이틀, 검색창, 최근 검색어 ui 구현
 // 검색창 선택시 SearchView로 전환하도록 함
 // SearchView에서 검색할 때마다 이를 searchViewModel의 recentSearched 배열에 기록 후 이를 받아온다 (pulbished 이용)
 import SwiftUI
