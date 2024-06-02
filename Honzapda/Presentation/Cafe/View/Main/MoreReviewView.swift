@@ -84,7 +84,7 @@ struct ReviewView: View {
                 
                 Spacer()
                 
-                NavigationLink("리뷰 작성하기", destination: MoreReviewView())
+                NavigationLink("리뷰 작성하기", destination: AddReviewView())
                     .font(.sCoreDream(.medium, size: 11))
                 .foregroundColor(.primary05)
             } //: 리뷰 헤더

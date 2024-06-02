@@ -33,6 +33,7 @@ struct SearchMainView: View {
                     Image("background_searchmain")
                         .resizable()
                         .scaledToFill()
+                        .ignoresSafeArea()
                         .offset(y: -50)
                     
                     VStack { // 헤더 뷰
@@ -91,9 +92,8 @@ struct SearchMainView: View {
                 }
             }
         }
-        
     }
-    
+        
     @ViewBuilder
     private func headerView() -> some View {
         HStack { // 헤더 : 로고

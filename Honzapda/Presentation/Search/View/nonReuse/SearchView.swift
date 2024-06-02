@@ -29,7 +29,6 @@ struct SearchView: View {
                 Image("background_search")
                     .resizable()
                     .scaledToFill()
-                    .border(Color.blue)
                     .frame(width: UIScreen.main.bounds.width)
                     .overlay(
                         Text("검색어를 입력해주세요 ")
@@ -69,7 +68,13 @@ struct SearchView: View {
                     .padding()
             }
             
-            TextField("카페명, 주소명으로 검색", text: $searchViewModel.searchWord)
+            TextField("", text: $searchViewModel.searchWord)
+                .placeholder(when: searchViewModel.searchWord.isEmpty, placeholder: {
+                    Text("카페명, 주소명으로 검색")
+                        .foregroundStyle(.gray05)
+                        .font(.sCoreDream(.medium, size: 14))
+                })
+                .foregroundColor(.gray09)
                 .onSubmit {
                     searchViewModel.recentSearchWord
                         .insert(searchViewModel.searchWord, at: 0)
@@ -181,12 +186,12 @@ struct SearchView: View {
     }
 }
 
-
+// MARK: 필터 컨트롤
 enum FilterOption {
     case none, distances, reviewCount, saved, recommended
 }
 
-extension View {
+extension View { // 필터 모양 설정하는 모디파이어
     func filterStyle(selected: Bool) -> some View {
         self.modifier(FilterModifier(selection: selected))
     }
