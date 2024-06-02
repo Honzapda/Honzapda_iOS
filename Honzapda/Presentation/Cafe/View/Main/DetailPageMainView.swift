@@ -530,7 +530,7 @@ struct DayCongestionBoxView: View {
     }
 } //: 요일별 혼잡도 이미지 박스
 
-//MARK: - 프리뷰
+// MARK: - 프리뷰
 #Preview {
     DetailPageMainView()
 } //: 프리뷰
