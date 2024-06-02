@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon_my_plus_fill.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -10,6 +10,10 @@
 		05154A332BF1E82200482832 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 05154A322BF1E82200482832 /* Alamofire */; };
 		05154A362BF1E84500482832 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 05154A352BF1E84500482832 /* Kingfisher */; };
 		052A3B932C038979008EBE2A /* AddUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052A3B922C038979008EBE2A /* AddUserInfoView.swift */; };
+		05372C432C0CA9CF0031B536 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05372C3E2C0CA9CF0031B536 /* UserViewModel.swift */; };
+		05372C442C0CA9CF0031B536 /* UserCafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05372C402C0CA9CF0031B536 /* UserCafeView.swift */; };
+		05372C452C0CA9CF0031B536 /* HelpMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05372C412C0CA9CF0031B536 /* HelpMessageView.swift */; };
+		05372C462C0CA9CF0031B536 /* LogoutAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05372C422C0CA9CF0031B536 /* LogoutAlertView.swift */; };
 		056A23A12BEA028D00971D34 /* DetailPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23932BEA028D00971D34 /* DetailPageMainView.swift */; };
 		056A23A22BEA028D00971D34 /* MoreHelpfulInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23942BEA028D00971D34 /* MoreHelpfulInformationView.swift */; };
 		056A23A32BEA028D00971D34 /* MoreReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23952BEA028D00971D34 /* MoreReviewView.swift */; };
@@ -87,6 +91,10 @@
 
 /* Begin PBXFileReference section */
 		052A3B922C038979008EBE2A /* AddUserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserInfoView.swift; sourceTree = "<group>"; };
+		05372C3E2C0CA9CF0031B536 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		05372C402C0CA9CF0031B536 /* UserCafeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCafeView.swift; sourceTree = "<group>"; };
+		05372C412C0CA9CF0031B536 /* HelpMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpMessageView.swift; sourceTree = "<group>"; };
+		05372C422C0CA9CF0031B536 /* LogoutAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutAlertView.swift; sourceTree = "<group>"; };
 		056A23932BEA028D00971D34 /* DetailPageMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageMainView.swift; sourceTree = "<group>"; };
 		056A23942BEA028D00971D34 /* MoreHelpfulInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreHelpfulInformationView.swift; sourceTree = "<group>"; };
 		056A23952BEA028D00971D34 /* MoreReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreReviewView.swift; sourceTree = "<group>"; };
@@ -178,6 +186,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05372C3D2C0CA9CF0031B536 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				05372C3E2C0CA9CF0031B536 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		05372C3F2C0CA9CF0031B536 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05372C402C0CA9CF0031B536 /* UserCafeView.swift */,
+				05372C412C0CA9CF0031B536 /* HelpMessageView.swift */,
+				05372C422C0CA9CF0031B536 /* LogoutAlertView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		056A23922BEA028D00971D34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +481,8 @@
 		DD0FF2312B8ED8A60061F9DB /* User */ = {
 			isa = PBXGroup;
 			children = (
+				05372C3F2C0CA9CF0031B536 /* View */,
+				05372C3D2C0CA9CF0031B536 /* ViewModel */,
 				DD0FF2322B8ED8A60061F9DB /* User.swift */,
 			);
 			path = User;
@@ -723,6 +751,7 @@
 			files = (
 				056A23A72BEA028D00971D34 /* UsersHelpfulInformationBoxView.swift in Sources */,
 				05C548232BEB4A9B00893ADC /* Gray02Box.swift in Sources */,
+				05372C442C0CA9CF0031B536 /* UserCafeView.swift in Sources */,
 				DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */,
 				BBEBECA02BC29E28003F9BF8 /* CurationViewModel.swift in Sources */,
 				05C548272BEB735D00893ADC /* CustomTextEdiotor.swift in Sources */,
@@ -740,6 +769,7 @@
 				BBEBECFC2BE9FF21003F9BF8 /* SearchMainView.swift in Sources */,
 				056A23A82BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift in Sources */,
 				DD4BD92E2BA0123700D94748 /* View+.swift in Sources */,
+				05372C432C0CA9CF0031B536 /* UserViewModel.swift in Sources */,
 				056A23A12BEA028D00971D34 /* DetailPageMainView.swift in Sources */,
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
 				DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */,
@@ -756,8 +786,10 @@
 				BBEBEC9E2BC29E28003F9BF8 /* CurationTestView.swift in Sources */,
 				05C548252BEB63BE00893ADC /* AddReviewView.swift in Sources */,
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
+				05372C462C0CA9CF0031B536 /* LogoutAlertView.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				056A23A52BEA028D00971D34 /* InfoBoxView.swift in Sources */,
+				05372C452C0CA9CF0031B536 /* HelpMessageView.swift in Sources */,
 				056A23A42BEA028D00971D34 /* DividerBoxView.swift in Sources */,
 				DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */,
 				DD00452A2BA0867B008C66C9 /* OnboardingCardModel.swift in Sources */,
