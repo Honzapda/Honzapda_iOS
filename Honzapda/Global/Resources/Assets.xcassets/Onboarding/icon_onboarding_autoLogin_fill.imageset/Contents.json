@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon_onboarding_autoLogin_fill.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
