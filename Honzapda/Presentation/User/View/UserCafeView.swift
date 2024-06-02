@@ -38,11 +38,11 @@ struct MyCafeView: View {
                     Divider()
                     
                     Text("3개의 찜한 카페")
-                        .foregroundColor(Color.primary06)
+                        .foregroundColor(.primary06)
                         .font(.sCoreDream(.bold, size: 14))
                         .padding(EdgeInsets(top: 16,
                                             leading: 24,
-                                            bottom: 2,
+                                            bottom: 0,
                                             trailing: 0)
                         )
                     
@@ -52,129 +52,43 @@ struct MyCafeView: View {
                             print(userViewModel.sortColumn)
                         } label: {
                             Text("거리순")
-                                .lineLimit(1)
-                                .padding(EdgeInsets(top: 8,
-                                                    leading: 12,
-                                                    bottom: 8,
-                                                    trailing: 12)
-                                )
-                                .foregroundColor(
-                                    userViewModel.sortColumn == "distance"
-                                    ? Color.white
-                                    : Color.primary05
-                                )
-                                .font(.sCoreDream(.medium, size: 12))
-                                .background(RoundedRectangle(cornerRadius: 20)
-                                    .foregroundColor(
-                                            userViewModel.sortColumn == "distance"
-                                            ? Color.primary05
-                                            : Color.white
-                                        )
-                                    .overlay(RoundedRectangle(cornerRadius: 20)
-                                        .stroke(Color.primary05, lineWidth: 1.3)
-                                    )
-                                )
                         }
-                        .padding(.leading, 24)
+                        .modifier(SortButtonModifier(isSelected: userViewModel.sortColumn == "distance"))
                         
                         Button {
                             userViewModel.sortColumn = "review"
                             print(userViewModel.sortColumn)
                         } label: {
                             Text("리뷰순")
-                                .lineLimit(1)
-                                .padding(EdgeInsets(top: 8,
-                                                    leading: 12,
-                                                    bottom: 8,
-                                                    trailing: 12)
-                                )
-                                .foregroundColor(
-                                    userViewModel.sortColumn == "review"
-                                    ? Color.white
-                                    : Color.primary05
-                                )
-                                .font(.sCoreDream(.medium, size: 12))
-                                .background(RoundedRectangle(cornerRadius: 20)
-                                    .foregroundColor(
-                                            userViewModel.sortColumn == "review"
-                                            ? Color.primary05
-                                            : Color.white
-                                        )
-                                    .overlay(RoundedRectangle(cornerRadius: 20)
-                                        .stroke(Color.primary05, lineWidth: 1.3)
-                                    )
-                                )
                         }
-                        .padding(3)
+                        .modifier(SortButtonModifier(isSelected: userViewModel.sortColumn == "review"))
                         
                         Button {
                             userViewModel.sortColumn = "bookmark"
                             print(userViewModel.sortColumn)
                         } label: {
                             Text("저장순")
-                                .lineLimit(1)
-                                .padding(EdgeInsets(top: 8,
-                                                    leading: 12,
-                                                    bottom: 8,
-                                                    trailing: 12)
-                                )
-                                .foregroundColor(
-                                    userViewModel.sortColumn == "bookmark"
-                                    ? Color.white
-                                    : Color.primary05
-                                )
-                                .font(.sCoreDream(.medium, size: 12))
-                                .background(RoundedRectangle(cornerRadius: 20)
-                                    .foregroundColor(
-                                            userViewModel.sortColumn == "bookmark"
-                                            ? Color.primary05
-                                            : Color.white
-                                        )
-                                    .overlay(RoundedRectangle(cornerRadius: 20)
-                                        .stroke(Color.primary05, lineWidth: 1.3)
-                                    )
-                                )
                         }
-                        .padding(3)
-                        
+                        .modifier(SortButtonModifier(isSelected: userViewModel.sortColumn == "bookmark"))
+            
                         Button {
                             userViewModel.sortColumn = "recommend"
                             print(userViewModel.sortColumn)
                         } label: {
                             Text("추천순")
-                                .lineLimit(1)
-                                .padding(EdgeInsets(top: 8,
-                                                    leading: 12,
-                                                    bottom: 8,
-                                                    trailing: 12)
-                                )
-                                .foregroundColor(
-                                    userViewModel.sortColumn == "recommend"
-                                    ? Color.white
-                                    : Color.primary05
-                                )
-                                .font(.sCoreDream(.medium, size: 12))
-                                .background(RoundedRectangle(cornerRadius: 20)
-                                    .foregroundColor(
-                                        userViewModel.sortColumn == "recommend"
-                                        ? Color.primary05
-                                        : Color.white
-                                    )
-                                    .overlay(RoundedRectangle(cornerRadius: 20)
-                                        .stroke(Color.primary05, lineWidth: 1.3)
-                                    )
-                                )
                         }
-                        .padding(3)
+                        .modifier(SortButtonModifier(isSelected: userViewModel.sortColumn == "recommend"))
                         
                         Spacer()
                     } //: 정렬 버튼
-                    .frame(width: UIScreen.main.bounds.width)
                     .background(.white)
-                    .padding(.bottom, 8)
+                    .padding(EdgeInsets(top: 6,
+                                        leading: 24,
+                                        bottom: 16,
+                                        trailing: 0)
+                    )
                 }
-                .background(Color.white)
-                Spacer()
+                .background(.white)
                 
                 ScrollView {
                     LazyVStack(spacing: 8) {
@@ -184,7 +98,7 @@ struct MyCafeView: View {
                     }
                 } //: ScrollView
             }
-            .frame(height: UIScreen.main.bounds.height-115)
+            .background(.gray01)
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -200,7 +114,7 @@ struct MyCafeListCardView: View {
             VStack(alignment: .leading, spacing: 16) {
                 // TODO: api 결과 값에 따라 보여줄 ViewModel 적용
                 ZStack {
-                    Image("cafe1") // 가게 이미지
+                    Image(.cafe1) // 가게 이미지
                         .resizable()
                         .frame(width: 345, height: 160)
                         .clipped()
@@ -210,11 +124,11 @@ struct MyCafeListCardView: View {
                         HStack {
                             Spacer()
                             VStack {
-                                Image("icon_my_heart_fill")
+                                Image(.iconMyHeartFill)
                                     .padding(4)
                                 
                                 Text("가게 찜")
-                                    .foregroundColor(Color.white)
+                                    .foregroundColor(.white)
                                     .font(.sCoreDream(.medium, size: 6))
                             }
                             .padding(10)
@@ -225,7 +139,7 @@ struct MyCafeListCardView: View {
                 VStack(alignment: .leading, spacing: 8) { // 가게 정보 텍스트
                     HStack {
                         Text("필아웃커피 보정점")
-                            .foregroundColor(Color.gray10)
+                            .foregroundColor(.gray10)
                             .font(.sCoreDream(.bold, size: 16))
                         
                         Text(userViewModel.openNow ? "영업 중" : "휴무")
@@ -234,21 +148,21 @@ struct MyCafeListCardView: View {
                             .background(RoundedRectangle(cornerRadius: 8)
                                 .stroke(lineWidth: 0.5)
                             )
-                            .foregroundColor(Color.gray08)
+                            .foregroundColor(.gray08)
                     }
                     
                     Text("경기 용인시 기흥구 죽전로 15번길 7-5 상가 1층")
                         .font(.sCoreDream(.medium, size: 10))
-                        .foregroundColor(Color.gray07)
+                        .foregroundColor(.gray07)
                         .padding(.bottom, 24)
                 } //: 가게 정보 텍스트
                 .padding(.leading, 24)
             }
-            .background(Color.white)
+            .background(.white)
             .cornerRadius(12)
             .shadow(radius: 3)
         }
-        .padding(EdgeInsets(top: 4,
+        .padding(EdgeInsets(top: 24,
                             leading: 20,
                             bottom: 4,
                             trailing: 20)
@@ -256,6 +170,29 @@ struct MyCafeListCardView: View {
         .frame(width: 345, height: 240)
     }
 }
+
+struct SortButtonModifier: ViewModifier {
+    var isSelected: Bool
+    func body(content: Content) -> some View {
+        content
+            .lineLimit(1)
+            .padding(EdgeInsets(top: 8,
+                                leading: 12,
+                                bottom: 8,
+                                trailing: 12)
+            )
+            .foregroundColor(isSelected ? .white : .primary05)
+            .font(.sCoreDream(.medium, size: 12))
+            .background(RoundedRectangle(cornerRadius: 20)
+                .foregroundColor(isSelected ? .primary05 : .white)
+                .overlay(RoundedRectangle(cornerRadius: 20)
+                    .stroke(.primary05, lineWidth: 1.3)
+                )
+            )
+            .padding(3)
+    }
+}
+
 
 #Preview {
     MyCafeView()

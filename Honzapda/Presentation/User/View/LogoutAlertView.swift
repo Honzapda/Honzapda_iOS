@@ -16,7 +16,7 @@ struct LogoutAlertView: View {
             ZStack {
                 Color.clear
                 VStack {
-                    Image("image_my_bored")
+                    Image(.imageMyBored)
                         .frame(width: 112, height: 112)
                         .padding(.bottom, 25)
                         .padding(.top, 40)
@@ -24,7 +24,7 @@ struct LogoutAlertView: View {
                     Text("현재 계정에서\n로그아웃하시겠어요?")
                         .multilineTextAlignment(.center)
                         .font(.sCoreDream(.bold, size: 20))
-                        .foregroundStyle(Color.primary06)
+                        .foregroundStyle(.primary06)
                         .padding(.bottom, 18)
                     
                     HStack(spacing: 12) { // 버튼
@@ -34,14 +34,14 @@ struct LogoutAlertView: View {
                         ) {
                             Text("로그아웃")
                                 .font(.sCoreDream(.medium, size: 14))
-                                .foregroundColor(Color.gray07)
+                                .foregroundColor(.gray07)
                                 .padding(EdgeInsets(top: 13,
                                                     leading: 34,
                                                     bottom: 13,
                                                     trailing: 34)
                                 )
                                 .background(RoundedRectangle(cornerRadius: 12)
-                                    .fill(Color.gray03)
+                                    .fill(.gray03)
                                     .frame(width: 130, height: 44)
                                 )
                         } //: 로그아웃
@@ -53,14 +53,14 @@ struct LogoutAlertView: View {
                             // TODO: 로그인 유지 로직 구현
                             Text("로그인 유지")
                                 .font(.sCoreDream(.medium, size: 14))
-                                .foregroundColor(Color.white)
+                                .foregroundColor(.white)
                                 .padding(EdgeInsets(top: 13,
                                                     leading: 34,
                                                     bottom: 13,
                                                     trailing: 34)
                                 )
                                 .background(RoundedRectangle(cornerRadius: 12)
-                                    .fill(Color.primary05)
+                                    .fill(.primary05)
                                     .frame(width: 130, height: 44)
                                 )
                         } //: 로그인 유지
@@ -68,7 +68,7 @@ struct LogoutAlertView: View {
                     .padding(.bottom, 16)
                 }
                 .background(RoundedRectangle(cornerRadius: 16)
-                    .fill(Color.white)
+                    .fill(.white)
                     .frame(width: 320, height: 320)
                     .shadow(radius: 1)
                 )
@@ -80,3 +80,4 @@ struct LogoutAlertView: View {
 #Preview {
     LogoutAlertView()
 }
+
