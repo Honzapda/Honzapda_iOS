@@ -8,7 +8,7 @@
 import SwiftUI
 
 // MARK: - 내가 찜한 카페 뷰
-struct MyCafeView: View {
+struct UserCafeView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var userViewModel = UserViewModel()
     
@@ -195,5 +195,5 @@ struct SortButtonModifier: ViewModifier {
 
 
 #Preview {
-    MyCafeView()
+    UserCafeView()
 }

@@ -24,6 +24,6 @@ class UserViewModel: ObservableObject {
     @Published public var isProfileUpdate: Bool = false // 프로필 사진 ToastMessage
     @Published public var isErrorUpdate: Bool = false // Error ToastMessage
     
-    @Published public var sortColumn: String = "" // MyCafeView 선택된 정렬 조건
+    @Published public var sortColumn: String = "" // UserCafeView 선택된 정렬 조건
     @Published public var openNow: Bool = true // MyCafeListCardView 가게 영업 유무
 }
