@@ -84,11 +84,11 @@ struct CurationResultView: View {
                         ZStack(alignment: .topLeading) {
                             VStack(alignment: .leading, spacing: 20) {
                                 Text("오늘\n내 취향에 맞는\n혼잡도 낮은 카페")
-                                    .font(Font.custom("S-Core Dream", size: 24))
+                                    .font(.sCoreDream(.medium, size: 24))
                                     .foregroundColor(.white)
                                 
                                 Text("8곳")
-                                    .font(Font.custom("S-Core Dream", size: 12))
+                                    .font(.sCoreDream(.medium, size: 12))
                                     .foregroundColor(.white)
                             }
                             .offset(x: -70, y: 30)

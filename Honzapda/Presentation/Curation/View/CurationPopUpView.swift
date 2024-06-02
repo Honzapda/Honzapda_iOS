@@ -42,16 +42,12 @@ struct TestStartPopUp: View {
                         print("start curation test")
                         curationViewModel.gotoTest = true
                         curationViewModel.testPopup = false
-                        curationViewModel.mood = "none"
-                        curationViewModel.atmosphare = "none"
-                        curationViewModel.keyword = "none"
-                        curationViewModel.menu = "none"
-                        curationViewModel.progress = 0
+                        curationViewModel.initalizeCurationResult()
                     
                     } label: {
                         ZStack {
                             Rectangle()
-                                .foregroundColor(Color("Primary05"))
+                                .foregroundColor(.primary05)
                                 .frame(width: 288, height: 40)
                                 .cornerRadius(8)
                             Text("유의사항을 확인했어요")
@@ -107,13 +103,13 @@ struct CafeListPopUp: View {
                     
                     // 텍스트
                     Text("나와 어울리는\n카페 리스트 생성 완료 :)")
-                        .font(Font.custom("S-CoreDream-6Bold", size: 20))
+                        .font(.sCoreDream(.bold, size: 20))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.primary06)
                         .padding(.top, 11)
                     
                     Text("테스트 결과를 바탕으로 한 카페 리스트가 생성되었어요!\n함께 보러 가볼까요?")
-                        .font(Font.custom("S-Core Dream", size: 12))
+                        .font(.sCoreDream(.medium, size: 12))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.gray08)
                 }

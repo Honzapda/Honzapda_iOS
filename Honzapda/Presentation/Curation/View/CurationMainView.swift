@@ -116,7 +116,7 @@ struct CurationBodyView: View {
                 
                 HStack {
                     Text(dataset.title)
-                        .font(Font.custom("S-CoreDream-6Bold", size: 26))
+                        .font(.sCoreDream(.bold, size: 26))
                         .foregroundColor(.primary06)
                         .lineSpacing(10)
                     Spacer()
@@ -125,7 +125,8 @@ struct CurationBodyView: View {
                 
                 HStack {
                     Text(dataset.subtitle)
-                        .font(Font.custom("S-Core Dream", size: 10))
+                        .font(.sCoreDream(.medium, size: 10))
+
                         .foregroundColor(.primary06)
                         .lineSpacing(5)
                     Spacer()
@@ -151,10 +152,11 @@ struct CurationBodyView: View {
                          .overlay(
                             VStack {
                                 Text("간단한 테스트로\n나와 어울리는 카페를 추천받으세요!")
-                                    .font(Font.custom("S-Core Dream", size: 16))
+                                    .font(.sCoreDream(.bold, size: 16))
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.white)
-                                    .padding(10)
+                                    .padding(5)
+                                
                                 Button {
                                     curationViewModel.testPopup = true
                                     print("gotoTest -> \(curationViewModel.testPopup)")
@@ -162,7 +164,7 @@ struct CurationBodyView: View {
                                     Text("테스트하러 가기")
                                         .padding(.vertical, 10) // 상하 패딩 적용
                                         .padding(.horizontal, 15) // 좌우 패딩 적용
-                                        .font(.custom("S-Core Dream", size: 10))
+                                        .font(.sCoreDream(.medium, size: 10))
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(.white)
                                         .background(Color.clear) // 먼저 Text의 배경색을 설정
@@ -211,14 +213,14 @@ struct CurationCardView: View {
                 if let title = cafeTitle {
                     // Optional binding을 사용하여 cafeTitle이 nil이 아닌 경우에만 Text 뷰를 생성
                     Text(title)
-                        .font(Font.custom("S-CoreDream-6Bold", size: 20))
+                        .font(.sCoreDream(.bold, size: 20))
                         .foregroundColor(.white)
                         .lineSpacing(8.0)
                 }
                 if let number = cafeNumber {
                     // Optional binding을 사용하여 cafeNumber이 nil이 아닌 경우에만 Text 뷰를 생성
                     Text("\(number)곳")
-                        .font(Font.custom("S-Core Dream", size: 12))
+                        .font(.sCoreDream(.medium, size: 12))
                         .foregroundColor(.white)
                         .padding(.top, 5)
                 }
