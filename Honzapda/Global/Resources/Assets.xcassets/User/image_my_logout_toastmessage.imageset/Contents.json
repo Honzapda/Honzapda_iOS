@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "image_my_logout_toastmessage.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
