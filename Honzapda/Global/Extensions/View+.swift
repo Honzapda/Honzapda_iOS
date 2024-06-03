@@ -63,3 +63,50 @@ extension View {
         }
     } //: Text editor background color 설정하는 확장
 }
+
+// MARK: - Navigation back button custom
+struct customNavigationBackButton: View {
+    let color: Color
+    let title: String
+    let dismiss: DismissAction
+    
+    var body: some View {
+        Button {
+            dismiss()
+        } label: {
+            HStack {
+                Image(.iconChevronLeft) // '<' Image
+                    .foregroundColor(color)
+                
+                Text(title)
+                    .foregroundStyle(.black)
+            }
+        }
+    }
+}
+
+struct SignUpTitle: View {
+    let firstHightlightText: String
+    let firstNormalText: String
+    let secondHightlightText: String
+    let secondNormalText: String
+    let thirdHightlightText: String
+    let thirdNormalText: String
+    var body: some View {
+        (Text(firstHightlightText)
+            .font(.sCoreDream(.bold, size: 26))
+        + Text(firstNormalText)
+            .font(.sCoreDream(.medium, size: 26))
+        + Text(secondHightlightText)
+            .font(.sCoreDream(.bold, size: 26))
+        + Text(secondNormalText)
+            .font(.sCoreDream(.medium, size: 26))
+        + Text(thirdHightlightText)
+            .font(.sCoreDream(.bold, size: 26))
+        + Text(thirdNormalText)
+            .font(.sCoreDream(.medium, size: 26))
+        )
+        .foregroundStyle(.primary06)
+        .lineSpacing(12)
+    }
+}
