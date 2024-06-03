@@ -50,9 +50,6 @@ struct TermView: View {
                                         .frame(width: 40, height: 40)
                                 }
                                 .padding(.all, 24)
-                                .onTapGesture {
-                                    isTermButtonClicked = true
-                                }
                             }
                         } else {
                             ZStack {
@@ -69,9 +66,17 @@ struct TermView: View {
                                 }
                                 .padding(.all, 24)
                                 .onTapGesture {
-                                    let _ = (termViewModel.curIndex = index)
+                                    termViewModel.setCurrentTermIndex(index: index)
                                     isTermButtonClicked = true
                                 }
+                            }
+                        }
+                        
+                        if index == termViewModel.terms.count - 1 {
+                            if termViewModel.shoudNavigate {
+                                NavigationLink(destination: SignUpEmailTypeView(),
+                                               isActive: $termViewModel.shoudNavigate) {
+                                    EmptyView() }
                             }
                         }
                     }
@@ -94,7 +99,6 @@ struct TermView: View {
                 }))
             .popup(isPresented: $isTermButtonClicked) {
                 termDetailView(termViewModel: termViewModel,
-                               curTermNumber: $termViewModel.curIndex,
                                isTermButtonClicked: $isTermButtonClicked)
             } customize: { $0
                 .type(.toast)
@@ -108,12 +112,12 @@ struct TermView: View {
 
 private struct termDetailView: View {
     var termViewModel: TermViewModel
-    @Binding var curTermNumber: Int
     @Binding var isTermButtonClicked: Bool
     
     var body: some View {
-        let termDetailTitle = termViewModel.terms[curTermNumber].title.replacingOccurrences(of: "\n", with: "")
-        let termDetailContent = termViewModel.terms[curTermNumber].content
+        let curIndex = termViewModel.getCurrentTermIndex()
+        let termDetailTitle = termViewModel.terms[curIndex].title.replacingOccurrences(of: "\n", with: "")
+        let termDetailContent = termViewModel.terms[curIndex].content
         
         VStack {
             VStack(spacing: 16) {
@@ -138,7 +142,8 @@ private struct termDetailView: View {
                 .padding(.horizontal, 16)
                 
                 Primary05Button(text: "상기 내용을 이해하였으며 동의함") {
-                    termViewModel.termAgree()
+                    termViewModel.termAgree(index: curIndex)
+                    termViewModel.setShoudNavigate()
                     isTermButtonClicked = false
                 }
                 .padding(.bottom, 42)

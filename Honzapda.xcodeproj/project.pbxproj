@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		05154A332BF1E82200482832 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 05154A322BF1E82200482832 /* Alamofire */; };
 		05154A362BF1E84500482832 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 05154A352BF1E84500482832 /* Kingfisher */; };
+		0520F6782C0DA97200FAE653 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520F6772C0DA97200FAE653 /* SignUpModel.swift */; };
+		0520F67A2C0DAA4600FAE653 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520F6792C0DAA4600FAE653 /* SignUpViewModel.swift */; };
+		052829042C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052829032C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift */; };
+		0538C0742C0E2D43001CBB96 /* SignUpEmailTypeView copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538C0732C0E2D43001CBB96 /* SignUpEmailTypeView copy.swift */; };
+		0538C0762C0E2D45001CBB96 /* SignUpPasswordTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538C0752C0E2D45001CBB96 /* SignUpPasswordTypeView.swift */; };
+		0538C0782C0E35D4001CBB96 /* SignUpCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538C0772C0E35D4001CBB96 /* SignUpCompleteView.swift */; };
 		05453BA22C070CF70052CA95 /* TermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05453BA12C070CF70052CA95 /* TermView.swift */; };
 		05453BA42C074F990052CA95 /* TermModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05453BA32C074F990052CA95 /* TermModel.swift */; };
 		05453BA62C0751D00052CA95 /* TermViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05453BA52C0751D00052CA95 /* TermViewModel.swift */; };
@@ -88,6 +94,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0520F6772C0DA97200FAE653 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		0520F6792C0DAA4600FAE653 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		052829032C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordCheckTypeView.swift; sourceTree = "<group>"; };
+		0538C0732C0E2D43001CBB96 /* SignUpEmailTypeView copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpEmailTypeView copy.swift"; sourceTree = "<group>"; };
+		0538C0752C0E2D45001CBB96 /* SignUpPasswordTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordTypeView.swift; sourceTree = "<group>"; };
+		0538C0772C0E35D4001CBB96 /* SignUpCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteView.swift; sourceTree = "<group>"; };
 		05453BA12C070CF70052CA95 /* TermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermView.swift; sourceTree = "<group>"; };
 		05453BA32C074F990052CA95 /* TermModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermModel.swift; sourceTree = "<group>"; };
 		05453BA52C0751D00052CA95 /* TermViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewModel.swift; sourceTree = "<group>"; };
@@ -188,6 +200,9 @@
 				DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */,
 				DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */,
 				05453BA12C070CF70052CA95 /* TermView.swift */,
+				0538C0732C0E2D43001CBB96 /* SignUpEmailTypeView copy.swift */,
+				0538C0752C0E2D45001CBB96 /* SignUpPasswordTypeView.swift */,
+				052829032C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -368,6 +383,8 @@
 				DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */,
 				DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */,
 				05453BA52C0751D00052CA95 /* TermViewModel.swift */,
+				0520F6792C0DAA4600FAE653 /* SignUpViewModel.swift */,
+				0538C0772C0E35D4001CBB96 /* SignUpCompleteView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -613,6 +630,7 @@
 			children = (
 				DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */,
 				05453BA32C074F990052CA95 /* TermModel.swift */,
+				0520F6772C0DA97200FAE653 /* SignUpModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -756,7 +774,9 @@
 				05453BA62C0751D00052CA95 /* TermViewModel.swift in Sources */,
 				BBEBEC9D2BC29E28003F9BF8 /* CurationResultView.swift in Sources */,
 				05C4CBFC2C0385E00014F519 /* BaseURL.swift in Sources */,
+				0520F67A2C0DAA4600FAE653 /* SignUpViewModel.swift in Sources */,
 				DDE5E9832BECE2560026D32D /* LoginErrorView.swift in Sources */,
+				0538C0742C0E2D43001CBB96 /* SignUpEmailTypeView copy.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
 				BBEBECFE2BE9FF3C003F9BF8 /* SearchView.swift in Sources */,
 				DD4BD92E2BA0123700D94748 /* View+.swift in Sources */,
@@ -779,6 +799,7 @@
 				BBEBEC9E2BC29E28003F9BF8 /* CurationTestView.swift in Sources */,
 				05C548252BEB63BE00893ADC /* AddReviewView.swift in Sources */,
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
+				0538C0762C0E2D45001CBB96 /* SignUpPasswordTypeView.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				056A23A52BEA028D00971D34 /* InfoBoxView.swift in Sources */,
 				056A23A42BEA028D00971D34 /* DividerBoxView.swift in Sources */,
@@ -788,7 +809,10 @@
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
 				05C545A52BF0B4FE00CECE21 /* Gray03HalfButton.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
+				052829042C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift in Sources */,
+				0538C0782C0E35D4001CBB96 /* SignUpCompleteView.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
+				0520F6782C0DA97200FAE653 /* SignUpModel.swift in Sources */,
 				05C5481F2BEA26AD00893ADC /* Gray04Button.swift in Sources */,
 				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
 				DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */,
