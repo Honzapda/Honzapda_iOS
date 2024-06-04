@@ -12,6 +12,7 @@
 		0520F6782C0DA97200FAE653 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520F6772C0DA97200FAE653 /* SignUpModel.swift */; };
 		0520F67A2C0DAA4600FAE653 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520F6792C0DAA4600FAE653 /* SignUpViewModel.swift */; };
 		052829042C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052829032C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift */; };
+		05315EC32C0ECB0900DE5F79 /* SignUpCurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05315EC22C0ECB0900DE5F79 /* SignUpCurationView.swift */; };
 		0538C0742C0E2D43001CBB96 /* SignUpEmailTypeView copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538C0732C0E2D43001CBB96 /* SignUpEmailTypeView copy.swift */; };
 		0538C0762C0E2D45001CBB96 /* SignUpPasswordTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538C0752C0E2D45001CBB96 /* SignUpPasswordTypeView.swift */; };
 		0538C0782C0E35D4001CBB96 /* SignUpCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538C0772C0E35D4001CBB96 /* SignUpCompleteView.swift */; };
@@ -97,6 +98,7 @@
 		0520F6772C0DA97200FAE653 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		0520F6792C0DAA4600FAE653 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		052829032C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordCheckTypeView.swift; sourceTree = "<group>"; };
+		05315EC22C0ECB0900DE5F79 /* SignUpCurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCurationView.swift; sourceTree = "<group>"; };
 		0538C0732C0E2D43001CBB96 /* SignUpEmailTypeView copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpEmailTypeView copy.swift"; sourceTree = "<group>"; };
 		0538C0752C0E2D45001CBB96 /* SignUpPasswordTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordTypeView.swift; sourceTree = "<group>"; };
 		0538C0772C0E35D4001CBB96 /* SignUpCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,8 @@
 				0538C0732C0E2D43001CBB96 /* SignUpEmailTypeView copy.swift */,
 				0538C0752C0E2D45001CBB96 /* SignUpPasswordTypeView.swift */,
 				052829032C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift */,
+				0538C0772C0E35D4001CBB96 /* SignUpCompleteView.swift */,
+				05315EC22C0ECB0900DE5F79 /* SignUpCurationView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -384,7 +388,6 @@
 				DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */,
 				05453BA52C0751D00052CA95 /* TermViewModel.swift */,
 				0520F6792C0DAA4600FAE653 /* SignUpViewModel.swift */,
-				0538C0772C0E35D4001CBB96 /* SignUpCompleteView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */,
 				BBEBECA02BC29E28003F9BF8 /* CurationViewModel.swift in Sources */,
 				05C548272BEB735D00893ADC /* CustomTextEdiotor.swift in Sources */,
+				05315EC32C0ECB0900DE5F79 /* SignUpCurationView.swift in Sources */,
 				DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */,
 				BBEBEC9B2BC29E28003F9BF8 /* CurationMainView.swift in Sources */,
 				BBEBED052BEA02F0003F9BF8 /* SearchViewModel.swift in Sources */,
