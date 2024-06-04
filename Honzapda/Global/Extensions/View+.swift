@@ -7,11 +7,11 @@
 
 import SwiftUI
 
+// MARK: - GLOBAL STRUCT
 
 // MARK: 문장 중간 지정된 단어들의 색깔과 굵기를 바꿔주는 구조체 선언
 // CAUTION: 처음 등장하는 단어를 체크하기 때문에 공통된 단어들일지라도 처음 등장한 단어에만 적용됨
 // 모두 적용하고 싶으면 원하는 단어의 수대로 적용해줘야함
-
 struct HighlightedText: View {
     var highlightedSubstrings: [(String, Color)]
     var highlightedFont: Font
@@ -49,19 +49,6 @@ struct HighlightedText: View {
         
         return result
     }
-}
-
-extension View {
-    // MARK: - Text editor background color 설정하는 확장
-    func textEditorBackground(_ content: Color) -> some View {
-        if #available(iOS 16.0, *) {
-            return self.scrollContentBackground(.hidden)
-                .background(content)
-        } else {
-            UITextView.appearance().backgroundColor = .clear
-            return self.background(content)
-        }
-    } //: Text editor background color 설정하는 확장
 }
 
 // MARK: - Navigation back button custom
@@ -110,3 +97,57 @@ struct SignUpTitle: View {
         .lineSpacing(12)
     }
 }
+
+struct GrayOutlineButton: View {
+    let title: String
+    @State var isSelected = false
+    
+    var body: some View {
+        if isSelected {
+            Text(title)
+                .font(.sCoreDream(.medium, size: 16))
+                .foregroundColor(.white)
+                .padding(EdgeInsets(top: 8, leading: 24, bottom: 8, trailing: 24))
+                .background(.primary05)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 24)
+                        .inset(by: 0.5)
+                        .stroke(.primary05, lineWidth: 1)
+                    
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 24))
+                .onTapGesture {
+                    isSelected = false
+                }
+        } else {
+            Text(title)
+                .font(.sCoreDream(.medium, size: 16))
+                .foregroundColor(.gray06)
+                .padding(EdgeInsets(top: 8, leading: 24, bottom: 8, trailing: 24))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 24)
+                        .inset(by: 0.5)
+                        .stroke(.gray04, lineWidth: 1)
+                )
+                .onTapGesture {
+                    isSelected = true
+                }
+        }
+    }
+}
+
+// MARK: - EXTENSION
+extension View {
+    // MARK: - Text editor background color 설정하는 확장
+    func textEditorBackground(_ content: Color) -> some View {
+        if #available(iOS 16.0, *) {
+            return self.scrollContentBackground(.hidden)
+                .background(content)
+        } else {
+            UITextView.appearance().backgroundColor = .clear
+            return self.background(content)
+        }
+    } //: Text editor background color 설정하는 확장
+} //: EXTENSION
+
+// MARK: - PRIAVTE STRUCT
