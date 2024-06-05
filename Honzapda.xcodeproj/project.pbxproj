@@ -29,6 +29,9 @@
 		056A23A82BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A239B2BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift */; };
 		056F19622BEF971500B7C4AD /* Primary05Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056F19612BEF971500B7C4AD /* Primary05Box.swift */; };
 		059C99972BEBA529000ED96B /* ChoseDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C99962BEBA529000ED96B /* ChoseDateView.swift */; };
+		05A84AFF2C0ED35F00D021B3 /* SignUpCurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A84AFE2C0ED35F00D021B3 /* SignUpCurationViewModel.swift */; };
+		05A84B012C0EF41E00D021B3 /* SignUpCurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A84B002C0EF41E00D021B3 /* SignUpCurationModel.swift */; };
+		05A84B042C10A66A00D021B3 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 05A84B032C10A66A00D021B3 /* WrappingHStack */; };
 		05C4CBFC2C0385E00014F519 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C4CBFB2C0385E00014F519 /* BaseURL.swift */; };
 		05C545A12BF0974E00CECE21 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 05C545A02BF0974E00CECE21 /* PopupView */; };
 		05C545A32BF09B1C00CECE21 /* WhitePopupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C545A22BF09B1C00CECE21 /* WhitePopupBox.swift */; };
@@ -115,6 +118,8 @@
 		056A239B2BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersHelpfulInformationUnderbarView.swift; sourceTree = "<group>"; };
 		056F19612BEF971500B7C4AD /* Primary05Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Primary05Box.swift; sourceTree = "<group>"; };
 		059C99962BEBA529000ED96B /* ChoseDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseDateView.swift; sourceTree = "<group>"; };
+		05A84AFE2C0ED35F00D021B3 /* SignUpCurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCurationViewModel.swift; sourceTree = "<group>"; };
+		05A84B002C0EF41E00D021B3 /* SignUpCurationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCurationModel.swift; sourceTree = "<group>"; };
 		05C4CBFB2C0385E00014F519 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		05C545A22BF09B1C00CECE21 /* WhitePopupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitePopupBox.swift; sourceTree = "<group>"; };
 		05C545A42BF0B4FE00CECE21 /* Gray03HalfButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gray03HalfButton.swift; sourceTree = "<group>"; };
@@ -187,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A84B042C10A66A00D021B3 /* WrappingHStack in Frameworks */,
 				05154A362BF1E84500482832 /* Kingfisher in Frameworks */,
 				05C545A12BF0974E00CECE21 /* PopupView in Frameworks */,
 				05154A332BF1E82200482832 /* Alamofire in Frameworks */,
@@ -388,6 +394,7 @@
 				DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */,
 				05453BA52C0751D00052CA95 /* TermViewModel.swift */,
 				0520F6792C0DAA4600FAE653 /* SignUpViewModel.swift */,
+				05A84AFE2C0ED35F00D021B3 /* SignUpCurationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -634,6 +641,7 @@
 				DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */,
 				05453BA32C074F990052CA95 /* TermModel.swift */,
 				0520F6772C0DA97200FAE653 /* SignUpModel.swift */,
+				05A84B002C0EF41E00D021B3 /* SignUpCurationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -668,6 +676,7 @@
 				05C545A02BF0974E00CECE21 /* PopupView */,
 				05154A322BF1E82200482832 /* Alamofire */,
 				05154A352BF1E84500482832 /* Kingfisher */,
+				05A84B032C10A66A00D021B3 /* WrappingHStack */,
 			);
 			productName = Honzapda;
 			productReference = DD652CF92B8A2FBE00542337 /* Honzapda.app */;
@@ -701,6 +710,7 @@
 				05C5459F2BF0974E00CECE21 /* XCRemoteSwiftPackageReference "PopupView" */,
 				05154A312BF1E82200482832 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				05154A342BF1E84500482832 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				05A84B022C10A66A00D021B3 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 			);
 			productRefGroup = DD652CFA2B8A2FBE00542337 /* Products */;
 			projectDirPath = "";
@@ -803,6 +813,7 @@
 				BBEBEC9E2BC29E28003F9BF8 /* CurationTestView.swift in Sources */,
 				05C548252BEB63BE00893ADC /* AddReviewView.swift in Sources */,
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
+				05A84B012C0EF41E00D021B3 /* SignUpCurationModel.swift in Sources */,
 				0538C0762C0E2D45001CBB96 /* SignUpPasswordTypeView.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				056A23A52BEA028D00971D34 /* InfoBoxView.swift in Sources */,
@@ -828,6 +839,7 @@
 				059C99972BEBA529000ED96B /* ChoseDateView.swift in Sources */,
 				05453BA42C074F990052CA95 /* TermModel.swift in Sources */,
 				056A23A32BEA028D00971D34 /* MoreReviewView.swift in Sources */,
+				05A84AFF2C0ED35F00D021B3 /* SignUpCurationViewModel.swift in Sources */,
 				05C545A72BF0B50400CECE21 /* Primary05HalfButton.swift in Sources */,
 				BBEBEC9F2BC29E28003F9BF8 /* CurationTestViewFrame.swift in Sources */,
 				056F19622BEF971500B7C4AD /* Primary05Box.swift in Sources */,
@@ -1082,6 +1094,14 @@
 				minimumVersion = 7.11.0;
 			};
 		};
+		05A84B022C10A66A00D021B3 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.11;
+			};
+		};
 		05C5459F2BF0974E00CECE21 /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/PopupView.git";
@@ -1102,6 +1122,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 05154A342BF1E84500482832 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		05A84B032C10A66A00D021B3 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05A84B022C10A66A00D021B3 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
 		};
 		05C545A02BF0974E00CECE21 /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;
