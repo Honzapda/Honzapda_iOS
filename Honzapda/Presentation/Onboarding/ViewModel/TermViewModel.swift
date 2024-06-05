@@ -25,8 +25,6 @@ class TermViewModel: ObservableObject {
     private var curIndex = Int()
     @Published var shoudNavigate = false
     
-    
-    
     func getCurrentTermIndex() -> Int {
         return self.curIndex
     }
@@ -35,10 +33,12 @@ class TermViewModel: ObservableObject {
         self.curIndex = index
     }
     
+    /// 해당 이용약관 동의로 전환
     func termAgree(index: Int) {
         terms[index].isTermAgree = true
     }
     
+    /// 전체 이용약관 동의 확인
     func isAllTermAgree() -> Bool {
         for i in 0..<terms.count {
             if !terms[i].isTermAgree { return false }
@@ -46,6 +46,7 @@ class TermViewModel: ObservableObject {
         return true
     }
     
+    /// 전체 이용약관 동의시 View 이동
     func setShoudNavigate() {
         shoudNavigate = isAllTermAgree()
     }

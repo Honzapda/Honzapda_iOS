@@ -12,7 +12,7 @@ struct LoginView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var loginViewModel = LoginViewModel()
     
-    var body: some View {// 로그인 메인
+    var body: some View { // 로그인 메인
         VStack {
             Spacer()
             VStack {
@@ -105,7 +105,9 @@ struct LoginView: View {
                                 .padding(.leading, 8)
                         }
                     }) //: 자동 로그인 버튼
+                    
                     Spacer()
+                    
                     Button("아이디 찾기") {
                         // TODO: 아이디 찾기 화면으로 연결
                     }
@@ -169,20 +171,8 @@ struct LoginView: View {
         )
         
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: backButton)
+        .navigationBarItems(leading: customNavigationBackButton(color: .white, title: "", dismiss: self.dismiss))
     } //: BODY
-    
-    // MARK: - 커스텀 버튼
-    var backButton : some View {
-        Button{
-            dismiss()
-        } label: {
-            HStack {
-                Image(systemName: "chevron.left") // '<' Image
-                    .foregroundColor(.white)
-            }
-        }
-    }
 }
 
 #Preview {

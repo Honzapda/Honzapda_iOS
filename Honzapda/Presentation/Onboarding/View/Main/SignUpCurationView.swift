@@ -8,11 +8,12 @@
 import SwiftUI
 import WrappingHStack
 
+// MARK: - 회원가입 큐레이션 View
 struct SignUpCurationView: View {
+    // MARK: PARAMS
     @StateObject var signUpCurationViewModel = SignUpCurationViewModel()
-//    private var gridItemLayout = [GridItem(.adaptive(minimum: 100))]
-    private var gridColumns = [GridItem(.adaptive(minimum: 72, maximum: 182))]
     
+    // MARK: BODY
     var body: some View {
         NavigationView {
             VStack {
@@ -45,7 +46,6 @@ struct SignUpCurationView: View {
                     }
                 }
                 
-                
                 Primary05Button(text: "취향 생성 완료하기") {
                     print("DEBUG: 취향 생성 완료하기")
                 }
@@ -58,8 +58,8 @@ struct SignUpCurationView: View {
                 .font(.sCoreDream(.medium, size: 12))
                 .foregroundColor(.gray06)
         }))
-    }
-}
+    } //: BODY
+} //: 회원가입 큐레이션 View
 
 #Preview {
     SignUpCurationView()

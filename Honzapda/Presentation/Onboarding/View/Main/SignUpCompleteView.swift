@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+// MARK: - 회원가입 완료 View
 struct SignUpCompleteView: View {
+    // MARK: PARAMS
     @State private var isTimerFinish = false
     
+    // MARK: BODY
     var body: some View {
         NavigationView {
             VStack {
@@ -40,13 +43,13 @@ struct SignUpCompleteView: View {
                 .ignoresSafeArea(.all)
                 .aspectRatio(contentMode: .fit)
         )
-        .onAppear {
+        .onAppear { /// 3초가 지나면 큐레이션 뷰로 넘어감
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.isTimerFinish = true
             }
         }
-    }
-}
+    } //: BODY
+} //: 회원가입 완료 View
 
 #Preview {
     SignUpCompleteView()

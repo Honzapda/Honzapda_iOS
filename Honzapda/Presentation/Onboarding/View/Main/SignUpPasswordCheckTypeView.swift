@@ -7,13 +7,16 @@
 
 import SwiftUI
 
+// MARK: - 회원가입 비밀번호 확인 입력 View
 struct SignUpPasswordCheckTypeView: View {
+    // MARK: PARAMS
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var signUpViewModel = SignUpViewModel()
     @State private var inputText = ""
     let placeholder = "비밀번호 확인"
     @State private var isNextButtonClicked = false
     
+    // MARK: BODY
     var body: some View {
         VStack {
             VStack {
@@ -66,8 +69,8 @@ struct SignUpPasswordCheckTypeView: View {
         .navigationBarItems(leading: customNavigationBackButton(color: .black,
                                                                 title: "",
                                                                 dismiss: self.dismiss))
-    }
-}
+    } //: BODY
+} //: 회원가입 비밀번호 확인 입력 View
 
 #Preview {
     SignUpPasswordCheckTypeView()

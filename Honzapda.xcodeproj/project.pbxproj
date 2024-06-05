@@ -93,7 +93,6 @@
 		DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */; };
 		DDE5E97F2BEB9B5B0026D32D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */; };
 		DDE5E9812BEBA1900026D32D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */; };
-		DDE5E9832BECE2560026D32D /* LoginErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9822BECE2560026D32D /* LoginErrorView.swift */; };
 		DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -182,7 +181,6 @@
 		DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		DDE5E9822BECE2560026D32D /* LoginErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorView.swift; sourceTree = "<group>"; };
 		DDFA805C2B98607600FF32C6 /* Honzapda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Honzapda.entitlements; sourceTree = "<group>"; };
 		DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleLoginButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,7 +218,6 @@
 		05453BA82C0B4B520052CA95 /* Sub */ = {
 			isa = PBXGroup;
 			children = (
-				DDE5E9822BECE2560026D32D /* LoginErrorView.swift */,
 				DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */,
 				DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */,
 			);
@@ -789,7 +786,6 @@
 				BBEBEC9D2BC29E28003F9BF8 /* CurationResultView.swift in Sources */,
 				05C4CBFC2C0385E00014F519 /* BaseURL.swift in Sources */,
 				0520F67A2C0DAA4600FAE653 /* SignUpViewModel.swift in Sources */,
-				DDE5E9832BECE2560026D32D /* LoginErrorView.swift in Sources */,
 				0538C0742C0E2D43001CBB96 /* SignUpEmailTypeView copy.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
 				BBEBECFE2BE9FF3C003F9BF8 /* SearchView.swift in Sources */,

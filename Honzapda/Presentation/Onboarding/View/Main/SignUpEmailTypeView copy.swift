@@ -7,13 +7,16 @@
 
 import SwiftUI
 
+// MARK: - 회원가입 이메일 입력 View
 struct SignUpEmailTypeView: View {
+    // MARK: PARAMS
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var signUpViewModel = SignUpViewModel()
     @State private var inputText = ""
     let placeholder = "honzapda@gmail.com"
     @State private var isNextButtonClicked = false
     
+    // MARK: BODY
     var body: some View {
         VStack {
             VStack {
@@ -67,8 +70,8 @@ struct SignUpEmailTypeView: View {
                                                                 title: "",
                                                                 dismiss: self.dismiss))
         
-    }
-}
+    } //: BODY
+} //: 회원가입 이메일 입력 View
 
 #Preview {
     SignUpEmailTypeView()

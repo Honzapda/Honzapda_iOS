@@ -8,12 +8,14 @@
 import SwiftUI
 import PopupView
 
+// MARK: - 약관 동의 Main View
 struct TermView: View {
+    // MARK: PARAMS
     @Environment(\.dismiss) private var dismiss
     @StateObject var termViewModel = TermViewModel()
     @State var isTermButtonClicked = false
     
-    
+    // MARK: BODY
     var body: some View {
         NavigationView {
             VStack {
@@ -107,13 +109,16 @@ struct TermView: View {
                 .backgroundColor(.black.opacity(0.5))
             }
         }
-    }
-}
+    } //: BODY
+} //: 약관 동의 Main View
 
+// MARK: - Popup되는 약관 화면
 private struct termDetailView: View {
+    // MARK: PARAMS
     var termViewModel: TermViewModel
     @Binding var isTermButtonClicked: Bool
     
+    // MARK: BODY
     var body: some View {
         let curIndex = termViewModel.getCurrentTermIndex()
         let termDetailTitle = termViewModel.terms[curIndex].title.replacingOccurrences(of: "\n", with: "")
@@ -154,8 +159,8 @@ private struct termDetailView: View {
             RoundedRectangle(cornerRadius: 24)
                 .foregroundStyle(.white)
         )
-    }
-}
+    } //: BODY
+} //: Popup되는 약관 화면
 
 #Preview {
     TermView()
