@@ -129,6 +129,7 @@ struct GrayOutlineButton: View {
                         .inset(by: 0.5)
                         .stroke(.gray04, lineWidth: 1)
                 )
+                .frame(height: 40)
                 .onTapGesture {
                     isSelected = true
                 }
