@@ -13,7 +13,7 @@ struct SignUpEmailTypeView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var signUpViewModel = SignUpViewModel()
     @State private var inputText = ""
-    let placeholder = "honzapda@gmail.com"
+    private let placeholder = "honzapda@gmail.com"
     @State private var isNextButtonClicked = false
     
     // MARK: BODY
@@ -53,7 +53,7 @@ struct SignUpEmailTypeView: View {
             .padding(.bottom, 80)
             
             NavigationLink(
-                destination: SignUpPasswordTypeView(),
+                destination: SignUpPasswordTypeView(signUpViewModel: self.signUpViewModel),
                 isActive: $isNextButtonClicked,
                 label: { EmptyView() }
             )
@@ -66,7 +66,7 @@ struct SignUpEmailTypeView: View {
                 .scaledToFit()
         )
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: customNavigationBackButton(color: .black,
+        .navigationBarItems(leading: CustomNavigationBackButton(color: .black,
                                                                 title: "",
                                                                 dismiss: self.dismiss))
         

@@ -13,7 +13,6 @@ struct TermView: View {
     // MARK: PARAMS
     @Environment(\.dismiss) private var dismiss
     @StateObject var termViewModel = TermViewModel()
-    @State var isTermButtonClicked = false
     
     // MARK: BODY
     var body: some View {
@@ -69,7 +68,7 @@ struct TermView: View {
                                 .padding(.all, 24)
                                 .onTapGesture {
                                     termViewModel.setCurrentTermIndex(index: index)
-                                    isTermButtonClicked = true
+                                    termViewModel.terms[index].isTermButtonClicked = true
                                 }
                             }
                         }
@@ -99,9 +98,8 @@ struct TermView: View {
                     Image(systemName: "xmark")
                         .tint(.black)
                 }))
-            .popup(isPresented: $isTermButtonClicked) {
-                termDetailView(termViewModel: termViewModel,
-                               isTermButtonClicked: $isTermButtonClicked)
+            .popup(isPresented: $termViewModel.terms[termViewModel.getCurrentTermIndex()].isTermButtonClicked) {
+                termDetailView(termViewModel: termViewModel)
             } customize: { $0
                 .type(.toast)
                 .position(.bottom)
@@ -116,7 +114,6 @@ struct TermView: View {
 private struct termDetailView: View {
     // MARK: PARAMS
     var termViewModel: TermViewModel
-    @Binding var isTermButtonClicked: Bool
     
     // MARK: BODY
     var body: some View {
@@ -149,7 +146,7 @@ private struct termDetailView: View {
                 Primary05Button(text: "상기 내용을 이해하였으며 동의함") {
                     termViewModel.termAgree(index: curIndex)
                     termViewModel.setShoudNavigate()
-                    isTermButtonClicked = false
+                    termViewModel.terms[termViewModel.getCurrentTermIndex()].isTermButtonClicked = false
                 }
                 .padding(.bottom, 42)
             }

@@ -11,9 +11,9 @@ import SwiftUI
 struct SignUpPasswordTypeView: View {
     // MARK: PARAMS
     @Environment(\.dismiss) private var dismiss
-    @ObservedObject var signUpViewModel = SignUpViewModel()
+    @ObservedObject var signUpViewModel: SignUpViewModel
     @State private var inputText = ""
-    let placeholder = "비밀번호 입력"
+    private let placeholder = "비밀번호 입력"
     @State private var isNextButtonClicked = false
     
     // MARK: BODY
@@ -70,7 +70,7 @@ struct SignUpPasswordTypeView: View {
             .padding(.bottom, 80)
             
             NavigationLink(
-                destination: SignUpPasswordCheckTypeView(),
+                destination: SignUpPasswordCheckTypeView(signUpViewModel: self.signUpViewModel),
                 isActive: $isNextButtonClicked,
                 label: { EmptyView() }
             )
@@ -83,12 +83,8 @@ struct SignUpPasswordTypeView: View {
                 .scaledToFit()
         )
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: customNavigationBackButton(color: .black,
+        .navigationBarItems(leading: CustomNavigationBackButton(color: .black,
                                                                 title: "",
                                                                 dismiss: self.dismiss))
     } //: BODY
 } //: 회원가입 비밀번호 입력 View
-
-#Preview {
-    SignUpPasswordTypeView()
-}

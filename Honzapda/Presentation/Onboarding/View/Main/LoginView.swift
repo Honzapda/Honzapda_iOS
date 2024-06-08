@@ -171,7 +171,7 @@ struct LoginView: View {
         )
         
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: customNavigationBackButton(color: .white, title: "", dismiss: self.dismiss))
+        .navigationBarItems(leading: CustomNavigationBackButton(color: .white, title: "", dismiss: self.dismiss))
     } //: BODY
 }
 
