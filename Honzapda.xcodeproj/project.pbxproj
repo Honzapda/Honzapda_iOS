@@ -9,7 +9,19 @@
 /* Begin PBXBuildFile section */
 		05154A332BF1E82200482832 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 05154A322BF1E82200482832 /* Alamofire */; };
 		05154A362BF1E84500482832 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 05154A352BF1E84500482832 /* Kingfisher */; };
+		051576832C140855006EFF23 /* GrayOutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051576822C140855006EFF23 /* GrayOutlineButton.swift */; };
+		051576852C140893006EFF23 /* SignUpTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051576842C140893006EFF23 /* SignUpTitle.swift */; };
+		0520F6782C0DA97200FAE653 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520F6772C0DA97200FAE653 /* SignUpModel.swift */; };
+		0520F67A2C0DAA4600FAE653 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520F6792C0DAA4600FAE653 /* SignUpViewModel.swift */; };
+		052829042C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052829032C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift */; };
 		052A3B932C038979008EBE2A /* AddUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052A3B922C038979008EBE2A /* AddUserInfoView.swift */; };
+		05315EC32C0ECB0900DE5F79 /* SignUpCurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05315EC22C0ECB0900DE5F79 /* SignUpCurationView.swift */; };
+		0538C0742C0E2D43001CBB96 /* SignUpEmailTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538C0732C0E2D43001CBB96 /* SignUpEmailTypeView.swift */; };
+		0538C0762C0E2D45001CBB96 /* SignUpPasswordTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538C0752C0E2D45001CBB96 /* SignUpPasswordTypeView.swift */; };
+		0538C0782C0E35D4001CBB96 /* SignUpCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538C0772C0E35D4001CBB96 /* SignUpCompleteView.swift */; };
+		05453BA22C070CF70052CA95 /* TermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05453BA12C070CF70052CA95 /* TermView.swift */; };
+		05453BA42C074F990052CA95 /* TermModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05453BA32C074F990052CA95 /* TermModel.swift */; };
+		05453BA62C0751D00052CA95 /* TermViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05453BA52C0751D00052CA95 /* TermViewModel.swift */; };
 		056A23A12BEA028D00971D34 /* DetailPageMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23932BEA028D00971D34 /* DetailPageMainView.swift */; };
 		056A23A22BEA028D00971D34 /* MoreHelpfulInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23942BEA028D00971D34 /* MoreHelpfulInformationView.swift */; };
 		056A23A32BEA028D00971D34 /* MoreReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23952BEA028D00971D34 /* MoreReviewView.swift */; };
@@ -18,8 +30,13 @@
 		056A23A62BEA028D00971D34 /* UserReviewsBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A23992BEA028D00971D34 /* UserReviewsBoxView.swift */; };
 		056A23A72BEA028D00971D34 /* UsersHelpfulInformationBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A239A2BEA028D00971D34 /* UsersHelpfulInformationBoxView.swift */; };
 		056A23A82BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A239B2BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift */; };
+		056A7BDE2C141468005BC740 /* HighlightedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A7BDD2C141468005BC740 /* HighlightedText.swift */; };
+		056A7BE02C14148A005BC740 /* CustomNavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056A7BDF2C14148A005BC740 /* CustomNavigationBackButton.swift */; };
 		056F19622BEF971500B7C4AD /* Primary05Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056F19612BEF971500B7C4AD /* Primary05Box.swift */; };
 		059C99972BEBA529000ED96B /* ChoseDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C99962BEBA529000ED96B /* ChoseDateView.swift */; };
+		05A84AFF2C0ED35F00D021B3 /* SignUpCurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A84AFE2C0ED35F00D021B3 /* SignUpCurationViewModel.swift */; };
+		05A84B012C0EF41E00D021B3 /* SignUpCurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A84B002C0EF41E00D021B3 /* SignUpCurationModel.swift */; };
+		05A84B042C10A66A00D021B3 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 05A84B032C10A66A00D021B3 /* WrappingHStack */; };
 		05C4CBFC2C0385E00014F519 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C4CBFB2C0385E00014F519 /* BaseURL.swift */; };
 		05C545A12BF0974E00CECE21 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 05C545A02BF0974E00CECE21 /* PopupView */; };
 		05C545A32BF09B1C00CECE21 /* WhitePopupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C545A22BF09B1C00CECE21 /* WhitePopupBox.swift */; };
@@ -81,12 +98,23 @@
 		DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */; };
 		DDE5E97F2BEB9B5B0026D32D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */; };
 		DDE5E9812BEBA1900026D32D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */; };
-		DDE5E9832BECE2560026D32D /* LoginErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5E9822BECE2560026D32D /* LoginErrorView.swift */; };
 		DDFA80612B9863CF00FF32C6 /* AppleLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		051576822C140855006EFF23 /* GrayOutlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayOutlineButton.swift; sourceTree = "<group>"; };
+		051576842C140893006EFF23 /* SignUpTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTitle.swift; sourceTree = "<group>"; };
+		0520F6772C0DA97200FAE653 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		0520F6792C0DAA4600FAE653 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		052829032C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordCheckTypeView.swift; sourceTree = "<group>"; };
 		052A3B922C038979008EBE2A /* AddUserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserInfoView.swift; sourceTree = "<group>"; };
+		05315EC22C0ECB0900DE5F79 /* SignUpCurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCurationView.swift; sourceTree = "<group>"; };
+		0538C0732C0E2D43001CBB96 /* SignUpEmailTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailTypeView.swift; sourceTree = "<group>"; };
+		0538C0752C0E2D45001CBB96 /* SignUpPasswordTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordTypeView.swift; sourceTree = "<group>"; };
+		0538C0772C0E35D4001CBB96 /* SignUpCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompleteView.swift; sourceTree = "<group>"; };
+		05453BA12C070CF70052CA95 /* TermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermView.swift; sourceTree = "<group>"; };
+		05453BA32C074F990052CA95 /* TermModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermModel.swift; sourceTree = "<group>"; };
+		05453BA52C0751D00052CA95 /* TermViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewModel.swift; sourceTree = "<group>"; };
 		056A23932BEA028D00971D34 /* DetailPageMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageMainView.swift; sourceTree = "<group>"; };
 		056A23942BEA028D00971D34 /* MoreHelpfulInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreHelpfulInformationView.swift; sourceTree = "<group>"; };
 		056A23952BEA028D00971D34 /* MoreReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreReviewView.swift; sourceTree = "<group>"; };
@@ -95,8 +123,12 @@
 		056A23992BEA028D00971D34 /* UserReviewsBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReviewsBoxView.swift; sourceTree = "<group>"; };
 		056A239A2BEA028D00971D34 /* UsersHelpfulInformationBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersHelpfulInformationBoxView.swift; sourceTree = "<group>"; };
 		056A239B2BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersHelpfulInformationUnderbarView.swift; sourceTree = "<group>"; };
+		056A7BDD2C141468005BC740 /* HighlightedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedText.swift; sourceTree = "<group>"; };
+		056A7BDF2C14148A005BC740 /* CustomNavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBackButton.swift; sourceTree = "<group>"; };
 		056F19612BEF971500B7C4AD /* Primary05Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Primary05Box.swift; sourceTree = "<group>"; };
 		059C99962BEBA529000ED96B /* ChoseDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseDateView.swift; sourceTree = "<group>"; };
+		05A84AFE2C0ED35F00D021B3 /* SignUpCurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCurationViewModel.swift; sourceTree = "<group>"; };
+		05A84B002C0EF41E00D021B3 /* SignUpCurationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCurationModel.swift; sourceTree = "<group>"; };
 		05C4CBFB2C0385E00014F519 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		05C545A22BF09B1C00CECE21 /* WhitePopupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitePopupBox.swift; sourceTree = "<group>"; };
 		05C545A42BF0B4FE00CECE21 /* Gray03HalfButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gray03HalfButton.swift; sourceTree = "<group>"; };
@@ -159,7 +191,6 @@
 		DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		DDE5E9822BECE2560026D32D /* LoginErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorView.swift; sourceTree = "<group>"; };
 		DDFA805C2B98607600FF32C6 /* Honzapda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Honzapda.entitlements; sourceTree = "<group>"; };
 		DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleLoginButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A84B042C10A66A00D021B3 /* WrappingHStack in Frameworks */,
 				05154A362BF1E84500482832 /* Kingfisher in Frameworks */,
 				05C545A12BF0974E00CECE21 /* PopupView in Frameworks */,
 				05154A332BF1E82200482832 /* Alamofire in Frameworks */,
@@ -178,6 +210,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05453BA72C0B4B4B0052CA95 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */,
+				DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */,
+				05453BA12C070CF70052CA95 /* TermView.swift */,
+				0538C0732C0E2D43001CBB96 /* SignUpEmailTypeView.swift */,
+				0538C0752C0E2D45001CBB96 /* SignUpPasswordTypeView.swift */,
+				052829032C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift */,
+				0538C0772C0E35D4001CBB96 /* SignUpCompleteView.swift */,
+				05315EC22C0ECB0900DE5F79 /* SignUpCurationView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		05453BA82C0B4B520052CA95 /* Sub */ = {
+			isa = PBXGroup;
+			children = (
+				DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */,
+				DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */,
+				051576842C140893006EFF23 /* SignUpTitle.swift */,
+			);
+			path = Sub;
+			sourceTree = "<group>";
+		};
 		056A23922BEA028D00971D34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +313,9 @@
 				056F19612BEF971500B7C4AD /* Primary05Box.swift */,
 				05C548262BEB735D00893ADC /* CustomTextEdiotor.swift */,
 				05C545A22BF09B1C00CECE21 /* WhitePopupBox.swift */,
+				051576822C140855006EFF23 /* GrayOutlineButton.swift */,
+				056A7BDD2C141468005BC740 /* HighlightedText.swift */,
+				056A7BDF2C14148A005BC740 /* CustomNavigationBackButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,6 +404,9 @@
 			children = (
 				DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */,
 				DDE5E9802BEBA1900026D32D /* LoginViewModel.swift */,
+				05453BA52C0751D00052CA95 /* TermViewModel.swift */,
+				0520F6792C0DAA4600FAE653 /* SignUpViewModel.swift */,
+				05A84AFE2C0ED35F00D021B3 /* SignUpCurationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -588,6 +651,9 @@
 			isa = PBXGroup;
 			children = (
 				DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */,
+				05453BA32C074F990052CA95 /* TermModel.swift */,
+				0520F6772C0DA97200FAE653 /* SignUpModel.swift */,
+				05A84B002C0EF41E00D021B3 /* SignUpCurationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -595,11 +661,8 @@
 		DDFA805D2B98637E00FF32C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DDBBD8F72B9068DD00FC2973 /* OnboardingView.swift */,
-				DDE5E97E2BEB9B5B0026D32D /* LoginView.swift */,
-				DDE5E9822BECE2560026D32D /* LoginErrorView.swift */,
-				DDFA80602B9863CF00FF32C6 /* AppleLoginButtonView.swift */,
-				DD4BD92B2BA00F4800D94748 /* OnboardingCarouselView.swift */,
+				05453BA72C0B4B4B0052CA95 /* Main */,
+				05453BA82C0B4B520052CA95 /* Sub */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -625,6 +688,7 @@
 				05C545A02BF0974E00CECE21 /* PopupView */,
 				05154A322BF1E82200482832 /* Alamofire */,
 				05154A352BF1E84500482832 /* Kingfisher */,
+				05A84B032C10A66A00D021B3 /* WrappingHStack */,
 			);
 			productName = Honzapda;
 			productReference = DD652CF92B8A2FBE00542337 /* Honzapda.app */;
@@ -658,6 +722,7 @@
 				05C5459F2BF0974E00CECE21 /* XCRemoteSwiftPackageReference "PopupView" */,
 				05154A312BF1E82200482832 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				05154A342BF1E84500482832 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				05A84B022C10A66A00D021B3 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 			);
 			productRefGroup = DD652CFA2B8A2FBE00542337 /* Products */;
 			projectDirPath = "";
@@ -726,14 +791,17 @@
 				DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */,
 				BBEBECA02BC29E28003F9BF8 /* CurationViewModel.swift in Sources */,
 				05C548272BEB735D00893ADC /* CustomTextEdiotor.swift in Sources */,
+				05315EC32C0ECB0900DE5F79 /* SignUpCurationView.swift in Sources */,
 				DD0FF2282B8ED8250061F9DB /* UserEntity.swift in Sources */,
 				BBEBEC9B2BC29E28003F9BF8 /* CurationMainView.swift in Sources */,
 				BBEBED052BEA02F0003F9BF8 /* SearchViewModel.swift in Sources */,
 				DD78D6032BA1C6B6001A37EC /* Common.swift in Sources */,
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
+				05453BA62C0751D00052CA95 /* TermViewModel.swift in Sources */,
 				BBEBEC9D2BC29E28003F9BF8 /* CurationResultView.swift in Sources */,
 				05C4CBFC2C0385E00014F519 /* BaseURL.swift in Sources */,
-				DDE5E9832BECE2560026D32D /* LoginErrorView.swift in Sources */,
+				0520F67A2C0DAA4600FAE653 /* SignUpViewModel.swift in Sources */,
+				0538C0742C0E2D43001CBB96 /* SignUpEmailTypeView.swift in Sources */,
 				DD0FF2102B8ED58D0061F9DB /* NetworkModel.swift in Sources */,
 				BBEBECFE2BE9FF3C003F9BF8 /* SearchView.swift in Sources */,
 				DD4BD92E2BA0123700D94748 /* View+.swift in Sources */,
@@ -756,6 +824,8 @@
 				BBEBEC9E2BC29E28003F9BF8 /* CurationTestView.swift in Sources */,
 				05C548252BEB63BE00893ADC /* AddReviewView.swift in Sources */,
 				DD0FF2392B8ED8A60061F9DB /* User.swift in Sources */,
+				05A84B012C0EF41E00D021B3 /* SignUpCurationModel.swift in Sources */,
+				0538C0762C0E2D45001CBB96 /* SignUpPasswordTypeView.swift in Sources */,
 				DD652CFF2B8A2FBE00542337 /* ContentView.swift in Sources */,
 				056A23A52BEA028D00971D34 /* InfoBoxView.swift in Sources */,
 				056A23A42BEA028D00971D34 /* DividerBoxView.swift in Sources */,
@@ -765,19 +835,29 @@
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
 				05C545A52BF0B4FE00CECE21 /* Gray03HalfButton.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
+				052829042C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift in Sources */,
+				0538C0782C0E35D4001CBB96 /* SignUpCompleteView.swift in Sources */,
 				DD652CFD2B8A2FBE00542337 /* HonzapdaApp.swift in Sources */,
+				0520F6782C0DA97200FAE653 /* SignUpModel.swift in Sources */,
 				05C5481F2BEA26AD00893ADC /* Gray04Button.swift in Sources */,
 				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
+				051576832C140855006EFF23 /* GrayOutlineButton.swift in Sources */,
 				DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */,
 				DDE5E97F2BEB9B5B0026D32D /* LoginView.swift in Sources */,
+				05453BA22C070CF70052CA95 /* TermView.swift in Sources */,
 				BBEBEC992BC29E28003F9BF8 /* Carousel.swift in Sources */,
+				051576852C140893006EFF23 /* SignUpTitle.swift in Sources */,
 				DD0FF21C2B8ED7E20061F9DB /* CafeEntity.swift in Sources */,
 				BBEBEC9C2BC29E28003F9BF8 /* CurationPopUpView.swift in Sources */,
 				059C99972BEBA529000ED96B /* ChoseDateView.swift in Sources */,
+				05453BA42C074F990052CA95 /* TermModel.swift in Sources */,
 				052A3B932C038979008EBE2A /* AddUserInfoView.swift in Sources */,
 				056A23A32BEA028D00971D34 /* MoreReviewView.swift in Sources */,
+				05A84AFF2C0ED35F00D021B3 /* SignUpCurationViewModel.swift in Sources */,
 				05C545A72BF0B50400CECE21 /* Primary05HalfButton.swift in Sources */,
 				BBEBEC9F2BC29E28003F9BF8 /* CurationTestViewFrame.swift in Sources */,
+				056A7BE02C14148A005BC740 /* CustomNavigationBackButton.swift in Sources */,
+				056A7BDE2C141468005BC740 /* HighlightedText.swift in Sources */,
 				056F19622BEF971500B7C4AD /* Primary05Box.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1030,6 +1110,14 @@
 				minimumVersion = 7.11.0;
 			};
 		};
+		05A84B022C10A66A00D021B3 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.11;
+			};
+		};
 		05C5459F2BF0974E00CECE21 /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/PopupView.git";
@@ -1050,6 +1138,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 05154A342BF1E84500482832 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		05A84B032C10A66A00D021B3 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05A84B022C10A66A00D021B3 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
 		};
 		05C545A02BF0974E00CECE21 /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;
