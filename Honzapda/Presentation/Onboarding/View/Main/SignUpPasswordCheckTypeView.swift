@@ -51,6 +51,12 @@ struct SignUpPasswordCheckTypeView: View {
                 isNextButtonClicked = true
             }
             .padding(.bottom, 80)
+            
+            NavigationLink(
+                destination: SignUpCompleteView(),
+                isActive: $isNextButtonClicked,
+                label: { EmptyView() }
+            )
         }
         .edgesIgnoringSafeArea(.bottom)
         .padding(.horizontal, 16)
@@ -59,12 +65,6 @@ struct SignUpPasswordCheckTypeView: View {
                 .resizable()
                 .scaledToFit()
         )
-        .fullScreenCover(isPresented: $isNextButtonClicked) {
-            SignUpCompleteView()
-        }
-        .transaction({ transaction in
-            transaction.disablesAnimations = true
-        })
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomNavigationBackButton(color: .black,
                                                                 title: "",
