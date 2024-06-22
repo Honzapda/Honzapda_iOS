@@ -10,6 +10,7 @@ import SwiftUI
 struct GrayOutlineButton: View {
     let title: String
     @State var isSelected = false
+    @Binding var selectedCount: Int
     
     var body: some View {
         if isSelected {
@@ -27,6 +28,7 @@ struct GrayOutlineButton: View {
                 .clipShape(RoundedRectangle(cornerRadius: 24))
                 .onTapGesture {
                     isSelected = false
+                    selectedCount -= 1
                 }
         } else {
             Text(title)
@@ -41,6 +43,7 @@ struct GrayOutlineButton: View {
                 .frame(height: 40)
                 .onTapGesture {
                     isSelected = true
+                    selectedCount += 1
                 }
         }
     }
