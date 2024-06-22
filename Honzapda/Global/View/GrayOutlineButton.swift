@@ -48,8 +48,3 @@ struct GrayOutlineButton: View {
         }
     }
 }
-
-
-#Preview {
-    GrayOutlineButton(title: "Test")
-}
