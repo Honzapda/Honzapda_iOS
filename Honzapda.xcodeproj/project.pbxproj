@@ -48,6 +48,13 @@
 		05C548232BEB4A9B00893ADC /* Gray02Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548222BEB4A9B00893ADC /* Gray02Box.swift */; };
 		05C548252BEB63BE00893ADC /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548242BEB63BE00893ADC /* AddReviewView.swift */; };
 		05C548272BEB735D00893ADC /* CustomTextEdiotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548262BEB735D00893ADC /* CustomTextEdiotor.swift */; };
+		BBBDDF812C284CAD007197B5 /* CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDDF802C284CAD007197B5 /* CoreLocation.swift */; };
+		BBBDDF832C284CC7007197B5 /* HonzapdaCafeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDDF822C284CC7007197B5 /* HonzapdaCafeModel.swift */; };
+		BBBDDF852C284CD2007197B5 /* POIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDDF842C284CD2007197B5 /* POIModel.swift */; };
+		BBBDDF892C284D02007197B5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDDF882C284D02007197B5 /* HomeViewModel.swift */; };
+		BBBDDF8B2C284D14007197B5 /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDDF8A2C284D14007197B5 /* HomeCardView.swift */; };
+		BBBDDF8D2C284D36007197B5 /* HomeSavedCafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDDF8C2C284D36007197B5 /* HomeSavedCafeView.swift */; };
+		BBBDDF8F2C284D76007197B5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDDF8E2C284D76007197B5 /* HomeView.swift */; };
 		BBEBEC992BC29E28003F9BF8 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBEC8D2BC29E28003F9BF8 /* Carousel.swift */; };
 		BBEBEC9A2BC29E28003F9BF8 /* CurationButtonFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBEC8E2BC29E28003F9BF8 /* CurationButtonFrame.swift */; };
 		BBEBEC9B2BC29E28003F9BF8 /* CurationMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBEC8F2BC29E28003F9BF8 /* CurationMainView.swift */; };
@@ -139,6 +146,13 @@
 		05C548222BEB4A9B00893ADC /* Gray02Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gray02Box.swift; sourceTree = "<group>"; };
 		05C548242BEB63BE00893ADC /* AddReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
 		05C548262BEB735D00893ADC /* CustomTextEdiotor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEdiotor.swift; sourceTree = "<group>"; };
+		BBBDDF802C284CAD007197B5 /* CoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocation.swift; sourceTree = "<group>"; };
+		BBBDDF822C284CC7007197B5 /* HonzapdaCafeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonzapdaCafeModel.swift; sourceTree = "<group>"; };
+		BBBDDF842C284CD2007197B5 /* POIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIModel.swift; sourceTree = "<group>"; };
+		BBBDDF882C284D02007197B5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BBBDDF8A2C284D14007197B5 /* HomeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
+		BBBDDF8C2C284D36007197B5 /* HomeSavedCafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSavedCafeView.swift; sourceTree = "<group>"; };
+		BBBDDF8E2C284D76007197B5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BBEBEC8D2BC29E28003F9BF8 /* Carousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		BBEBEC8E2BC29E28003F9BF8 /* CurationButtonFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurationButtonFrame.swift; sourceTree = "<group>"; };
 		BBEBEC8F2BC29E28003F9BF8 /* CurationMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurationMainView.swift; sourceTree = "<group>"; };
@@ -316,6 +330,34 @@
 				051576822C140855006EFF23 /* GrayOutlineButton.swift */,
 				056A7BDD2C141468005BC740 /* HighlightedText.swift */,
 				056A7BDF2C14148A005BC740 /* CustomNavigationBackButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBBDDF7D2C284C7D007197B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBBDDF802C284CAD007197B5 /* CoreLocation.swift */,
+				BBBDDF822C284CC7007197B5 /* HonzapdaCafeModel.swift */,
+				BBBDDF842C284CD2007197B5 /* POIModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBBDDF7E2C284C87007197B5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BBBDDF882C284D02007197B5 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BBBDDF7F2C284C8F007197B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BBBDDF8A2C284D14007197B5 /* HomeCardView.swift */,
+				BBBDDF8C2C284D36007197B5 /* HomeSavedCafeView.swift */,
+				BBBDDF8E2C284D76007197B5 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -500,6 +542,9 @@
 		DD0FF22B2B8ED8A60061F9DB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BBBDDF7F2C284C8F007197B5 /* View */,
+				BBBDDF7E2C284C87007197B5 /* ViewModel */,
+				BBBDDF7D2C284C7D007197B5 /* Model */,
 				DD0FF22C2B8ED8A60061F9DB /* Home.swift */,
 			);
 			path = Home;
@@ -799,6 +844,7 @@
 				DD0FF2262B8ED81C0061F9DB /* SearchEntity.swift in Sources */,
 				05453BA62C0751D00052CA95 /* TermViewModel.swift in Sources */,
 				BBEBEC9D2BC29E28003F9BF8 /* CurationResultView.swift in Sources */,
+				BBBDDF8F2C284D76007197B5 /* HomeView.swift in Sources */,
 				05C4CBFC2C0385E00014F519 /* BaseURL.swift in Sources */,
 				0520F67A2C0DAA4600FAE653 /* SignUpViewModel.swift in Sources */,
 				0538C0742C0E2D43001CBB96 /* SignUpEmailTypeView.swift in Sources */,
@@ -809,9 +855,12 @@
 				056A23A82BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift in Sources */,
 				DD4BD92E2BA0123700D94748 /* View+.swift in Sources */,
 				056A23A12BEA028D00971D34 /* DetailPageMainView.swift in Sources */,
+				BBBDDF892C284D02007197B5 /* HomeViewModel.swift in Sources */,
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
 				DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */,
 				056A23A62BEA028D00971D34 /* UserReviewsBoxView.swift in Sources */,
+				BBBDDF8D2C284D36007197B5 /* HomeSavedCafeView.swift in Sources */,
+				BBBDDF852C284CD2007197B5 /* POIModel.swift in Sources */,
 				05C548212BEB46FF00893ADC /* Gray03Button.swift in Sources */,
 				DD0FF20E2B8ED57B0061F9DB /* NetworkManager.swift in Sources */,
 				DD0FF21E2B8ED7EF0061F9DB /* CurationEntity.swift in Sources */,
@@ -834,6 +883,7 @@
 				DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */,
 				DD0FF2122B8ED59B0061F9DB /* NetworkConstant.swift in Sources */,
 				05C545A52BF0B4FE00CECE21 /* Gray03HalfButton.swift in Sources */,
+				BBBDDF8B2C284D14007197B5 /* HomeCardView.swift in Sources */,
 				DD0FF2222B8ED8020061F9DB /* OnboardingEntity.swift in Sources */,
 				052829042C0B911F00D4DAE1 /* SignUpPasswordCheckTypeView.swift in Sources */,
 				0538C0782C0E35D4001CBB96 /* SignUpCompleteView.swift in Sources */,
@@ -841,8 +891,10 @@
 				0520F6782C0DA97200FAE653 /* SignUpModel.swift in Sources */,
 				05C5481F2BEA26AD00893ADC /* Gray04Button.swift in Sources */,
 				DD0FF2362B8ED8A60061F9DB /* Home.swift in Sources */,
+				BBBDDF832C284CC7007197B5 /* HonzapdaCafeModel.swift in Sources */,
 				051576832C140855006EFF23 /* GrayOutlineButton.swift in Sources */,
 				DD4BD92C2BA00F4800D94748 /* OnboardingCarouselView.swift in Sources */,
+				BBBDDF812C284CAD007197B5 /* CoreLocation.swift in Sources */,
 				DDE5E97F2BEB9B5B0026D32D /* LoginView.swift in Sources */,
 				05453BA22C070CF70052CA95 /* TermView.swift in Sources */,
 				BBEBEC992BC29E28003F9BF8 /* Carousel.swift in Sources */,

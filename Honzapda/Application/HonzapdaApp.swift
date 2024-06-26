@@ -12,7 +12,8 @@ struct HonzapdaApp: App {
     var body: some Scene {
         WindowGroup {
             // OnboardingView()
-            SearchMainView(searchViewModel: SearchViewModel())
+            //SearchMainView(searchViewModel: SearchViewModel())
+            HomeView(homeViewModel: HomeViewModel())
         }
     }
 }
