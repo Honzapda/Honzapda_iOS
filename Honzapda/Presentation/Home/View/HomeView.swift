@@ -10,8 +10,6 @@ import MapKit
 
 struct HomeView: View {
     @ObservedObject var homeViewModel: HomeViewModel // 홈 뷰 모델 지향
-    @GestureState private var dragOffset = CGSize.zero // 드래그제스쳐 관리
-    @State private var bias: CGFloat = 0
     @State private var annotations = [
         // 추후 이 부분은 set에서 가까운 위치 순으로 가져오도록 설계된다.
         // homeViewModel로부터 소팅 후 뿌린다.
@@ -22,15 +20,20 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             // 지도 화면에 설정
-            Map(coordinateRegion: $homeViewModel.region, annotationItems: annotations) { annotation in
-                MapAnnotation(coordinate: annotation.coordinate) {
-                    VStack {
-                        Image(self.getIcon(for: annotation.type)) // 각 타입에 따라 다른 이미지
-                            .frame(width: 20, height: 20)
-                            .shadow(radius: 10)
-                      
-                        Text(annotation.title ?? "Unknown")
-                            .font(.caption)
+            Map(coordinateRegion: Binding($homeViewModel.nowRegion) ?? 
+                .constant(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.5665,
+                                                                            longitude: 126.9780),
+                                             span: MKCoordinateSpan(latitudeDelta: 0.005,
+                                                                    longitudeDelta: 0.005))),
+                annotationItems: annotations) { annotation in
+                            MapAnnotation(coordinate: annotation.coordinate) {
+                                VStack {
+                                    Image(self.getIcon(for: annotation.type))
+                                        .frame(width: 20, height: 20)
+                                        .shadow(radius: 10)
+                                  
+                                    Text(annotation.title ?? "Unknown")
+                                        .font(.caption)
                            
                     }
                 }
@@ -55,36 +58,25 @@ struct HomeView: View {
                         .resizable()
                         .frame(width: 40, height: 40)
                 }
+//                Button {
+//                    homeViewModel.updateRegion(lat: 0.1, lon: 0.1)
+//                } label: {
+//                    Text("Changeup")
+//                }
+
             }
             .padding(.trailing)
             .frame(width: UIScreen.main.bounds.width, alignment: .trailing)
             .offset(y: -100)
             
-            if homeViewModel.bottomSheetisShowing { // 바텀시트 온오프
-                HomeBottomSheetView(homeViewModel: homeViewModel)
-                    .zIndex(3)
-                    .transition(.move(edge: .bottom))
-                    .offset(y: UIScreen.main.bounds.height/2 + bias)
-                    .gesture(
-                        DragGesture()
-                            .updating($dragOffset) { value, state, _ in
-                                state = value.translation
-                                bias = state.height
-                            }
-                            .onEnded { value in
-                                if value.translation.height > 50 { // 드래그 길이가 50보다 크면 화면을 숨깁니다.
-                                    
-                                    withAnimation {
-                                        homeViewModel.bottomSheetisShowing = false
-                                    }
-                                } else if value.translation.height < -50 {
-                                    withAnimation {
-                                        bias = -UIScreen.main.bounds.height/2
-                                    }
-                                }
-                            }
-                    )
-            }
+           Text("") //빈 영역을 이용해서
+                .popup(isPresented: $homeViewModel.bottomSheetisShowing) {
+                    HomeBottomSheetView(homeViewModel: homeViewModel)
+                } customize: { view in
+                    view .type(.toast)
+                        .position(.bottom)
+                        .dragToDismiss(true)
+                }
         }
     }
     func getIcon(for type: CustomAnnotation.AnnotationType) -> String {

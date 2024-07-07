@@ -9,32 +9,39 @@ import SwiftUI
 import Combine
 import MapKit
 
+@MainActor
 class HomeViewModel: ObservableObject {
-    @Published var region: MKCoordinateRegion = MKCoordinateRegion()
+    @Published var nowRegion: MKCoordinateRegion?
+// coreLocation -> homeviewmodel -> nowRegion -> 홈뷰 로의 데이터 흐름 단일화 
     // 현재 위치를 로케이션 매니저에서 입력받음
     @Published var bottomSheetisShowing: Bool = false // 바텀시트의 온오프 관리
     // ToDo: 자료구조 추가되어야 하는 것
     @Published var honzapdaCafeSet = Set<HonzapdaCafe>() // 중복 제거를 위해서 set으로 설정함. -> 이걸로 지도도 찍고, 카드뷰도 만들고, 바텀시트도 만듬
     @Published var honzapdaCafeArr: [HonzapdaCafe] = []
     
-    var locationManager: LocationManager = LocationManager()
+    private var locationManager: LocationManager = LocationManager()
     private var cancellables = Set<AnyCancellable>()
     
     
     
     init() {
-        let seoulCityHallCoordinate = CLLocationCoordinate2D(latitude: 37.5665, longitude: 126.9780)
-               self.region = MKCoordinateRegion(
-                   center: seoulCityHallCoordinate,
-                   span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-                   )
-                   // 임시 주석 처리 - 서울시청으로 좌표 고정을 위함
-//        locationManager.$region
-//            .sink { [weak self] newRegion in
-//                self?.region = newRegion
-//            }
-//            .store(in: &cancellables) // 이제 locationManager의 region을 안전하게 구독할 수 있습니다.
+        locationManager.$region
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.nowRegion, on: self)
+            .store(in: &cancellables)
     }
+    
+    func updateRegion(lat: Double, lon: Double) {
+        guard var currentRegion = nowRegion else {
+            print("no nowRegion")
+                  return
+              }
+        print("update Region func activate")
+              currentRegion.center.latitude += lat
+              currentRegion.center.longitude += lon
+              nowRegion = currentRegion
+    }
+
     
     // ToDo : 함수 추가되어야 하는 것
     func postSavedCafe(id: Int) {
