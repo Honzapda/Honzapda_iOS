@@ -15,7 +15,7 @@ struct HomeBottomSheetView: View {
         GridItem(.flexible()),  // 각 열이 유연하게 크기 조정되도록 설정합니다.
         GridItem(.flexible())
     ]
-    var cafes: [HonzapdaCafe] = sampleData
+    var cafes: [HonzapdaCafe] = HomeViewModel.sampleData
     var body: some View {
         ZStack(alignment: .top) {
             Image("MySavedCafeBottomSheetAsset")

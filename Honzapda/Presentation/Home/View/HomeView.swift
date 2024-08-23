@@ -10,6 +10,7 @@ import MapKit
 
 struct HomeView: View {
     @ObservedObject var homeViewModel: HomeViewModel // 홈 뷰 모델 지향
+    @State var gotoDetail: Bool = false
     @State private var annotations = [
         // 추후 이 부분은 set에서 가까운 위치 순으로 가져오도록 설계된다.
         // homeViewModel로부터 소팅 후 뿌린다.
@@ -20,25 +21,28 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             // 지도 화면에 설정
-            Map(coordinateRegion: Binding($homeViewModel.nowRegion) ?? 
+            Map(coordinateRegion: Binding($homeViewModel.nowRegion) ??
                 .constant(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.5665,
                                                                             longitude: 126.9780),
                                              span: MKCoordinateSpan(latitudeDelta: 0.005,
                                                                     longitudeDelta: 0.005))),
                 annotationItems: annotations) { annotation in
-                            MapAnnotation(coordinate: annotation.coordinate) {
-                                VStack {
-                                    Image(self.getIcon(for: annotation.type))
-                                        .frame(width: 20, height: 20)
-                                        .shadow(radius: 10)
-                                  
-                                    Text(annotation.title ?? "Unknown")
-                                        .font(.caption)
-                           
+                MapAnnotation(coordinate: annotation.coordinate) {
+                    VStack {
+                        Image(self.getIcon(for: annotation.type))
+                            .frame(width: 20, height: 20)
+                            .shadow(radius: 10)
+                            .onTapGesture {
+                                homeViewModel.cardViewisShowing.toggle()
+                            }
+                        
+                        Text(annotation.title ?? "Unknown")
+                            .font(.caption)
+                        
                     }
                 }
             }
-            .ignoresSafeArea()
+                .ignoresSafeArea()
             
             VStack { // 세이브 버튼, 내 위치 버튼 설정
                 Button {// 세이브 버튼
@@ -52,24 +56,34 @@ struct HomeView: View {
                 
                 Button { // 내 위치 버튼
                     print("center button tap")
-//                    homeViewModel.locationManager.requestCurrentLocation()
+                    //                    homeViewModel.locationManager.requestCurrentLocation()
                 } label: {
                     Image("icon_home_locationButton_none")
                         .resizable()
                         .frame(width: 40, height: 40)
                 }
-//                Button {
-//                    homeViewModel.updateRegion(lat: 0.1, lon: 0.1)
-//                } label: {
-//                    Text("Changeup")
-//                }
-
+                //                Button {
+                //                    homeViewModel.updateRegion(lat: 0.1, lon: 0.1)
+                //                } label: {
+                //                    Text("Changeup")
+                //                }
+                
             }
             .padding(.trailing)
             .frame(width: UIScreen.main.bounds.width, alignment: .trailing)
             .offset(y: -100)
             
-           Text("") //빈 영역을 이용해서
+            if homeViewModel.cardViewisShowing {
+                Carousel(pageCount: homeViewModel.sampleData.count, visibleEdgeSpace: 20,
+                         spacing: 30,
+                         startingIndex: 0) { idx in
+                    CardView(homeViewModel: homeViewModel, dataset: homeViewModel.sampleData[idx])
+                    .border(.green)
+                }
+                         .border(.red)
+            }
+            
+            EmptyView() // 팝업 뷰
                 .popup(isPresented: $homeViewModel.bottomSheetisShowing) {
                     HomeBottomSheetView(homeViewModel: homeViewModel)
                 } customize: { view in

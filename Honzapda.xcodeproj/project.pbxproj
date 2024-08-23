@@ -48,6 +48,7 @@
 		05C548232BEB4A9B00893ADC /* Gray02Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548222BEB4A9B00893ADC /* Gray02Box.swift */; };
 		05C548252BEB63BE00893ADC /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548242BEB63BE00893ADC /* AddReviewView.swift */; };
 		05C548272BEB735D00893ADC /* CustomTextEdiotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C548262BEB735D00893ADC /* CustomTextEdiotor.swift */; };
+		BB2DB6E82C43C87000156ACD /* remake_CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2DB6E72C43C87000156ACD /* remake_CardView.swift */; };
 		BBBDDF812C284CAD007197B5 /* CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDDF802C284CAD007197B5 /* CoreLocation.swift */; };
 		BBBDDF832C284CC7007197B5 /* HonzapdaCafeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDDF822C284CC7007197B5 /* HonzapdaCafeModel.swift */; };
 		BBBDDF852C284CD2007197B5 /* POIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDDF842C284CD2007197B5 /* POIModel.swift */; };
@@ -146,6 +147,7 @@
 		05C548222BEB4A9B00893ADC /* Gray02Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gray02Box.swift; sourceTree = "<group>"; };
 		05C548242BEB63BE00893ADC /* AddReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
 		05C548262BEB735D00893ADC /* CustomTextEdiotor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEdiotor.swift; sourceTree = "<group>"; };
+		BB2DB6E72C43C87000156ACD /* remake_CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remake_CardView.swift; sourceTree = "<group>"; };
 		BBBDDF802C284CAD007197B5 /* CoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocation.swift; sourceTree = "<group>"; };
 		BBBDDF822C284CC7007197B5 /* HonzapdaCafeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonzapdaCafeModel.swift; sourceTree = "<group>"; };
 		BBBDDF842C284CD2007197B5 /* POIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIModel.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				BBBDDF8A2C284D14007197B5 /* HomeCardView.swift */,
 				BBBDDF8C2C284D36007197B5 /* HomeSavedCafeView.swift */,
 				BBBDDF8E2C284D76007197B5 /* HomeView.swift */,
+				BB2DB6E72C43C87000156ACD /* remake_CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -855,6 +858,7 @@
 				056A23A82BEA028D00971D34 /* UsersHelpfulInformationUnderbarView.swift in Sources */,
 				DD4BD92E2BA0123700D94748 /* View+.swift in Sources */,
 				056A23A12BEA028D00971D34 /* DetailPageMainView.swift in Sources */,
+				BB2DB6E82C43C87000156ACD /* remake_CardView.swift in Sources */,
 				BBBDDF892C284D02007197B5 /* HomeViewModel.swift in Sources */,
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
 				DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */,
