@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 
-class APIManager: ObservableObject  {
+class APIManager: ObservableObject {
     static let shared = APIManager()
     private var headers: HTTPHeaders = []
 }
@@ -23,9 +23,7 @@ extension APIManager {
                                            responseDataType: U.Type,
                                            requestDataType: T.Type,
                                            parameter: T?,
-                                           completionHandler: @escaping (U)->Void
-    ){
-        
+                                           completionHandler: @escaping (U)->Void) {
         guard let url = URL(string: BaseURL.baseURL + urlEndpointString) else { return }
         print("get 요청 URL --> \(url)")
         print("Request 쿼리 --> \(String(describing: parameter))")
@@ -51,7 +49,7 @@ extension APIManager {
         guard let url = URL(string: BaseURL.baseURL + urlEndpointString) else { return }
         print("post 요청 URL --> \(url)")
         print("Request 쿼리 --> \(String(describing: parameter))")
-
+        
         AF
             .request(url, method: .post, parameters: parameter, encoder: .json, headers: self.headers)
             .responseDecodable(of: U.self) { response in
@@ -59,6 +57,10 @@ extension APIManager {
                 case .success(let success):
                     completionHandler(success)
                 case .failure(let error):
+                    if let data = response.data {
+                        let responseString = String(data: data, encoding: .utf8)
+                        print("Response Data: \(responseString ?? "No data")")
+                    }
                     print(error.localizedDescription)
                 }
             }
@@ -66,14 +68,14 @@ extension APIManager {
     }
     
     func deleteData<T: Codable, U: Decodable>(urlEndpointString: String,
-                                            responseDataType: U.Type,
-                                            requestDataType: T.Type,
-                                            parameter: T?,
-                                            completionHandler: @escaping (U)->Void) {
+                                              responseDataType: U.Type,
+                                              requestDataType: T.Type,
+                                              parameter: T?,
+                                              completionHandler: @escaping (U)->Void) {
         
         guard let url = URL(string: BaseURL.baseURL + urlEndpointString) else { return }
         print("delete 요청 URL --> \(url)")
-        print("Request 쿼리 --> \(parameter)")
+        print("Request 쿼리 --> \(String(describing: parameter))")
         
         AF
             .request(url, method: .delete, parameters: parameter, encoder: .json, headers: self.headers)
@@ -88,4 +90,3 @@ extension APIManager {
             .resume()
     }
 }
-
