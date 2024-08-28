@@ -126,15 +126,23 @@ struct LoginView: View {
                 .padding(.bottom, 48)
                 
                 // 조건별 로그인 버튼
-                if loginViewModel.id.isEmpty || loginViewModel.password.isEmpty  {
+                if loginViewModel.id.isEmpty || loginViewModel.password.isEmpty {
                     Gray04Button(text: "로그인") { // CASE 1: 비활성화
                         // TODO: 로그인 화면 전환
+                        
                     }
                 } else {
                     Primary05Button(text: "로그인") { // CASE 2: 활성화
-                        // TODO: 로그인 체크
+                        // TODO: 로그인 체크 - 메인 스레드에서 이루어져야 한다
+                        //dlwodyd0517@gmail.com
+                        loginViewModel.API_IdPwLogin(email: loginViewModel.id, passward: loginViewModel.password) {
+                            if loginViewModel.loginData != nil {
+                                print("로그인 성공!")
+                            } else {
+                                print("로그인 실패")
+                            }
+                        }
                     }
-                    
                 }
                 // 회원가입 멘트
                 HStack {
