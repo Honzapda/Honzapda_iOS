@@ -46,8 +46,15 @@ struct SignUpEmailTypeView: View {
             }
             .padding(.horizontal, 8)
             
-            HStack{
-                Text(EmailValidation(email: inputText))
+            HStack {
+                signUpViewModel.EmailValidation(email: inputText) ? 
+                Text("사용 가능한 이메일이예요! :)")
+                    .font(.sCoreDream(.medium, size: 12))
+                    .foregroundColor(.primary06)
+                    .padding(.top, 16)
+                    .padding(.horizontal, 24)
+                :
+                Text("이메일 형식이 올바르지 않아요 :(")
                     .font(.sCoreDream(.medium, size: 12))
                     .foregroundColor(.primary06)
                     .padding(.top, 16)
@@ -58,7 +65,7 @@ struct SignUpEmailTypeView: View {
             Spacer()
             
             Group {
-                if EmailValidation(email: inputText) == "사용 가능한 이메일이예요! :)" {
+                if signUpViewModel.EmailValidation(email: inputText) {
                     Primary05Button(text: "다음으로") {
                         signUpViewModel.signUpModel.email = inputText
                         isNextButtonClicked = true
@@ -92,24 +99,7 @@ struct SignUpEmailTypeView: View {
         
     } //: BODY
     
-    // MARK: - FUNCTION
-    // 이메일 형식 체크
-    private func EmailValidation(email: String) -> String {
-        if email.isEmpty {
-            return ""
-        } else {
-            /// 나중에 최소지원 16으로 올리면 /정규표현식/ 방식으로 변경
-            let emailRegEx = "[A-Z0-9a-z._%+_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-            let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx) // 정규식 전환
-            let isValidEmailForm = emailPredicate.evaluate(with: email) // 이메일 형식 체크
-            
-            if isValidEmailForm {
-                return "사용 가능한 이메일이예요! :)"
-            } else {
-                return "이메일 형식이 올바르지 않아요 :("
-            }
-        }
-    } //: 이메일 형식 체크
+
 } //: 회원가입 이메일 입력 View
 
 #Preview {

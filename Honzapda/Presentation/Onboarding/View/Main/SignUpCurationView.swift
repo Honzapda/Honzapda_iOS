@@ -12,7 +12,7 @@ import WrappingHStack
 struct SignUpCurationView: View {
     // MARK: PARAMS
     @StateObject var signUpCurationViewModel = SignUpCurationViewModel()
-    @State private var selectedCount = 0
+   
     
     // MARK: BODY
     var body: some View {
@@ -42,19 +42,17 @@ struct SignUpCurationView: View {
                     
                     WrappingHStack(signUpCurationViewModel.signUpCurationModel,
                                    id: \.self, alignment: .center) { model in
-                        GrayOutlineButton(title: model.title,
-                                          isSelected: model.isSelected,
-                                          selectedCount: $selectedCount)
+                        GrayOutlineButton(title: model.title, signUpCurationViewModel: signUpCurationViewModel,
+                                          isSelected: model.isSelected)
                             .padding(.bottom, 6)
                     }
                 }
                 
-                if selectedCount < 3 {
+                if signUpCurationViewModel.selectedCount < 3 {
                     Gray04Button(text: "취향 생성 완료하기") {  }
                         .disabled(true)
                 } else {
                     Primary05Button(text: "취향 생성 완료하기") {
-                        print("DEBUG: 취향 생성 완료하기")
                     }
                 }
             }

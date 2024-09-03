@@ -11,6 +11,7 @@ import SwiftUI
 struct LoginView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var loginViewModel = LoginViewModel()
+    @State var isLoginFailed: Bool = false
     
     var body: some View { // 로그인 메인
         VStack {
@@ -134,12 +135,17 @@ struct LoginView: View {
                 } else {
                     Primary05Button(text: "로그인") { // CASE 2: 활성화
                         // TODO: 로그인 체크 - 메인 스레드에서 이루어져야 한다
-                        //dlwodyd0517@gmail.com
-                        loginViewModel.API_IdPwLogin(email: loginViewModel.id, passward: loginViewModel.password) {
+                        loginViewModel.apiAuthLogin(email: loginViewModel.id, passward: loginViewModel.password) {
                             if loginViewModel.loginData != nil {
                                 print("로그인 성공!")
                             } else {
                                 print("로그인 실패")
+                                // 팝업 - 로그인 실패
+                                EmptyView()
+                                    .popup(isPresented: $isLoginFailed) {
+                                        WhitePopupBox()
+                                    }
+                                
                             }
                         }
                     }

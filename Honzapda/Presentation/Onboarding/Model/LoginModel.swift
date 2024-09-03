@@ -12,7 +12,7 @@ struct LoginRequestModel: Codable {
     let password: String
 }
 
-struct LoginResponseResult: Codable {
+struct LoginResponseModel: Codable {
     let id: Int
     let name: String
     let profileImage: String

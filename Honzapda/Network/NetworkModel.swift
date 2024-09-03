@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct APIModel<T: Codable>: Codable {
-    let isSuccess: Bool?
-    let code: String?
-    let message: String?
-    let result: T?
+struct CommonResponseModel<ResultType: Codable>: Codable {
+    let isSuccess: Bool
+    let code: String
+    let message: String
+    let result: ResultType
 }
+
