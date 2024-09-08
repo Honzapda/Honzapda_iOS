@@ -99,7 +99,7 @@ struct TermView: View {
                         .tint(.black)
                 }))
             .popup(isPresented: $termViewModel.terms[termViewModel.getCurrentTermIndex()].isTermButtonClicked) {
-                termDetailView(termViewModel: termViewModel)
+                TermDetailView(termViewModel: termViewModel)
             } customize: { $0
                 .type(.toast)
                 .position(.bottom)
@@ -111,7 +111,7 @@ struct TermView: View {
 } //: 약관 동의 Main View
 
 // MARK: - Popup되는 약관 화면
-private struct termDetailView: View {
+private struct TermDetailView: View {
     // MARK: PARAMS
     var termViewModel: TermViewModel
     

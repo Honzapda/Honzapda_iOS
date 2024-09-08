@@ -59,6 +59,8 @@
 		BBEBECFC2BE9FF21003F9BF8 /* SearchMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBECFB2BE9FF21003F9BF8 /* SearchMainView.swift */; };
 		BBEBECFE2BE9FF3C003F9BF8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBECFD2BE9FF3C003F9BF8 /* SearchView.swift */; };
 		BBEBED052BEA02F0003F9BF8 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBED042BEA02F0003F9BF8 /* SearchViewModel.swift */; };
+		BBFA785D2C7C2A6800E81D68 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA785C2C7C2A6800E81D68 /* LoginModel.swift */; };
+		BBFA78602C7C2AC200E81D68 /* CommonRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA785F2C7C2AC200E81D68 /* CommonRequestModel.swift */; };
 		DD0045262BA07E67008C66C9 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */; };
 		DD0045282BA07EA1008C66C9 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045272BA07EA1008C66C9 /* Font+.swift */; };
 		DD00452A2BA0867B008C66C9 /* OnboardingCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */; };
@@ -150,6 +152,8 @@
 		BBEBECFB2BE9FF21003F9BF8 /* SearchMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMainView.swift; sourceTree = "<group>"; };
 		BBEBECFD2BE9FF3C003F9BF8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		BBEBED042BEA02F0003F9BF8 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		BBFA785C2C7C2A6800E81D68 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		BBFA785F2C7C2AC200E81D68 /* CommonRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRequestModel.swift; sourceTree = "<group>"; };
 		DD0045252BA07E67008C66C9 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DD0045272BA07EA1008C66C9 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		DD0045292BA0867B008C66C9 /* OnboardingCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardModel.swift; sourceTree = "<group>"; };
@@ -399,6 +403,14 @@
 			path = Reuse;
 			sourceTree = "<group>";
 		};
+		BBFA785E2C7C2AA900E81D68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBFA785F2C7C2AC200E81D68 /* CommonRequestModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DD0045242BA07D3E008C66C9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +548,7 @@
 		DD0FF23B2B8ED9320061F9DB /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				BBFA785E2C7C2AA900E81D68 /* Model */,
 				05C4CBFA2C0385BF0014F519 /* Privates */,
 				05C548192BEA1AF500893ADC /* View */,
 				DD78D5FF2BA1C67A001A37EC /* Const */,
@@ -654,6 +667,7 @@
 				05453BA32C074F990052CA95 /* TermModel.swift */,
 				0520F6772C0DA97200FAE653 /* SignUpModel.swift */,
 				05A84B002C0EF41E00D021B3 /* SignUpCurationModel.swift */,
+				BBFA785C2C7C2A6800E81D68 /* LoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -810,6 +824,7 @@
 				DD4BD92E2BA0123700D94748 /* View+.swift in Sources */,
 				056A23A12BEA028D00971D34 /* DetailPageMainView.swift in Sources */,
 				DD0FF2202B8ED7F80061F9DB /* HomeEntity.swift in Sources */,
+				BBFA78602C7C2AC200E81D68 /* CommonRequestModel.swift in Sources */,
 				DDBBD8F82B9068DD00FC2973 /* OnboardingView.swift in Sources */,
 				056A23A62BEA028D00971D34 /* UserReviewsBoxView.swift in Sources */,
 				05C548212BEB46FF00893ADC /* Gray03Button.swift in Sources */,
@@ -855,6 +870,7 @@
 				056A23A32BEA028D00971D34 /* MoreReviewView.swift in Sources */,
 				05A84AFF2C0ED35F00D021B3 /* SignUpCurationViewModel.swift in Sources */,
 				05C545A72BF0B50400CECE21 /* Primary05HalfButton.swift in Sources */,
+				BBFA785D2C7C2A6800E81D68 /* LoginModel.swift in Sources */,
 				BBEBEC9F2BC29E28003F9BF8 /* CurationTestViewFrame.swift in Sources */,
 				056A7BE02C14148A005BC740 /* CustomNavigationBackButton.swift in Sources */,
 				056A7BDE2C141468005BC740 /* HighlightedText.swift in Sources */,

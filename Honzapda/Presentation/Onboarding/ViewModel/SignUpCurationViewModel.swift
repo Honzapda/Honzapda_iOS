@@ -8,6 +8,7 @@
 import Foundation
 
 class SignUpCurationViewModel: ObservableObject {
+    @Published var selectedCount = 0
     @Published var signUpCurationModel: [SignUpCurationModel] = [
         SignUpCurationModel(title: "1층"), SignUpCurationModel(title: "테이크아웃"), SignUpCurationModel(title: "잔잔한"),
         SignUpCurationModel(title: "친목"), SignUpCurationModel(title: "2층"), SignUpCurationModel(title: "카페 탐방"),

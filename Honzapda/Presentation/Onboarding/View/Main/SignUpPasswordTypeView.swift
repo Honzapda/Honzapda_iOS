@@ -15,6 +15,7 @@ struct SignUpPasswordTypeView: View {
     @State private var inputText = ""
     private let placeholder = "비밀번호 입력"
     @State private var isNextButtonClicked = false
+    @State private var isVisibilityButtonClicked = false
     
     // MARK: BODY
     var body: some View {
@@ -50,22 +51,61 @@ struct SignUpPasswordTypeView: View {
             Spacer()
             
             Gray02Box {
-                TextField(text: $inputText) {
-                    Text(placeholder)
-                        .font(.sCoreDream(.medium, size: 14))
-                        .foregroundStyle(.gray05)
+                HStack {
+                    Group {
+                        if isVisibilityButtonClicked {
+                            TextField(text: $inputText) {
+                                Text(placeholder)
+                                    .font(.sCoreDream(.medium, size: 14))
+                                    .foregroundStyle(.gray05)
+                            }
+                        } else {
+                            SecureField(text: $inputText) {
+                                Text(placeholder)
+                                    .font(.sCoreDream(.medium, size: 14))
+                                    .foregroundStyle(.gray05)
+                            }
+                        }
+                    }
+                    .font(.sCoreDream(.medium, size: 14))
+                    .foregroundStyle(.primary06)
+                    .padding(.vertical, 18)
+                    .padding(.horizontal, 24)
+                    
+                    Spacer()
+                    
+                    Image("icon_password_visiblity")
+                        .padding(.all, 24)
+                        .onTapGesture {
+                            isVisibilityButtonClicked.toggle()
+                        }
                 }
-                .font(.sCoreDream(.medium, size: 14))
-                .foregroundStyle(.primary06)
-                .padding(.vertical, 18)
-                .padding(.horizontal, 24)
             }
             .padding(.horizontal, 8)
             
+            HStack{
+                Text(PasswordValidation(pw: inputText))
+                    .font(.sCoreDream(.medium, size: 12))
+                    .foregroundColor(.primary06)
+                    .padding(.top, 16)
+                    .padding(.horizontal, 24)
+                Spacer()
+            }
+            
             Spacer()
             
-            Primary05Button(text: "다음으로") {
-                isNextButtonClicked = true
+            Group {
+                if PasswordValidation(pw: inputText) == "사용 가능한 비밀번호예요! :)" {
+                    Primary05Button(text: "다음으로") {
+                        signUpViewModel.signUpModel.password = inputText
+                        isNextButtonClicked = true
+                    }
+                } else {
+                    Gray04Button(text: "다음으로") {
+                        // No Action
+                    }
+                    .disabled(true)
+                }
             }
             .padding(.bottom, 80)
             
@@ -87,4 +127,22 @@ struct SignUpPasswordTypeView: View {
                                                                 title: "",
                                                                 dismiss: self.dismiss))
     } //: BODY
+    
+    // MARK: - FUNCTION
+    // 비밀번호 형식 체크
+    private func PasswordValidation(pw password: String) -> String {
+        if password.isEmpty {
+            return ""
+        } else {
+            let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,}"
+            let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)   // 정규식 전환
+            let isValidPasswordForm = passwordPredicate.evaluate(with: password)    // 비밀번호 형식 체크
+            
+            if isValidPasswordForm {
+                return "사용 가능한 비밀번호예요! :)"
+            } else {
+                return "비밀번호 형식이 올바르지 않아요 :("
+            }
+        }
+    } //: 비밀번호 형식 체크
 } //: 회원가입 비밀번호 입력 View

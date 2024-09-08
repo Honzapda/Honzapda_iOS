@@ -11,8 +11,8 @@ import SwiftUI
 struct HonzapdaApp: App {
     var body: some Scene {
         WindowGroup {
-            // OnboardingView()
-            SearchMainView(searchViewModel: SearchViewModel())
+             OnboardingView()
+            //SearchMainView(searchViewModel: SearchViewModel())
         }
     }
 }

@@ -38,6 +38,7 @@ struct SignUpCompleteView: View {
                     label: { EmptyView() })
             }
         }
+        .navigationBarBackButtonHidden(true)
         .background(
             Image(.backgroundSignupComplete)
                 .ignoresSafeArea(.all)

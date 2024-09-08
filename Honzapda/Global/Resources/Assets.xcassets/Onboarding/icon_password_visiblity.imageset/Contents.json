@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon_password_visiblity.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
