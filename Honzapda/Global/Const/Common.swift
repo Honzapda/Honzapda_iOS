@@ -36,3 +36,4 @@ struct Common {
             imageName: "image_onboarding_plug")
     ]
 }
+

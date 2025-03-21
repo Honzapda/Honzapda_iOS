@@ -45,12 +45,36 @@ struct SignUpPasswordCheckTypeView: View {
             }
             .padding(.horizontal, 8)
             
+            HStack{
+                Text(IsPasswordSame(pw: inputText))
+                    .font(.sCoreDream(.medium, size: 12))
+                    .foregroundColor(.primary06)
+                    .padding(.top, 16)
+                    .padding(.horizontal, 24)
+                Spacer()
+            }
+            
             Spacer()
             
-            Primary05Button(text: "HONZAPDA 가입하기") {
-                isNextButtonClicked = true
+            Group {
+                if IsPasswordSame(pw: inputText) == "비밀번호가 일치해요! :)" {
+                    Primary05Button(text: "HONZAPDA 가입하기") {
+                        isNextButtonClicked = true
+                    }
+                } else {
+                    Gray04Button(text: "다음으로") {
+                        // No Action
+                    }
+                    .disabled(true)
+                }
             }
             .padding(.bottom, 80)
+            
+            NavigationLink(
+                destination: SignUpCompleteView(),
+                isActive: $isNextButtonClicked,
+                label: { EmptyView() }
+            )
         }
         .edgesIgnoringSafeArea(.bottom)
         .padding(.horizontal, 16)
@@ -59,15 +83,25 @@ struct SignUpPasswordCheckTypeView: View {
                 .resizable()
                 .scaledToFit()
         )
-        .fullScreenCover(isPresented: $isNextButtonClicked) {
-            SignUpCompleteView()
-        }
-        .transaction({ transaction in
-            transaction.disablesAnimations = true
-        })
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomNavigationBackButton(color: .black,
                                                                 title: "",
                                                                 dismiss: self.dismiss))
     } //: BODY
+    
+    // MARK: - FUNCTION
+    private func IsPasswordSame(pw retypePassword: String) -> String {
+        if retypePassword.isEmpty {
+            return ""
+        } else {
+            let isPasswordSame = (signUpViewModel.signUpModel.password == retypePassword)
+            
+            if isPasswordSame {
+                return "비밀번호가 일치해요! :)"
+            } else {
+                return "비밀번호가 일치하지 않아요 :("
+            }
+        }
+    }
+    
 } //: 회원가입 비밀번호 확인 입력 View

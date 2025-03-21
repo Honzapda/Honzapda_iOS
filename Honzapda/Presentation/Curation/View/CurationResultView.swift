@@ -12,6 +12,8 @@ struct CurationResultView: View {
     
     var body: some View {
         ZStack {
+            Color.gray03.edgesIgnoringSafeArea(.all)
+            
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
                     HeaderView()
@@ -31,7 +33,7 @@ struct CurationResultView: View {
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width)
-                    .background(Color("Gray03"))
+                    .background(.gray03)
                 }
             }
             .coordinateSpace(name: "Scroll")
@@ -67,7 +69,7 @@ struct CurationResultView: View {
         GeometryReader { proxy in
             let minY = proxy.frame(in: .named("Scroll")).minY
             let size = proxy.size
-            let height = (size.height + minY)
+            let height = max(0, size.height + minY)
             
             ZStack(alignment: .topLeading) {
                 Image("image_curationmain_cafesample1") // 추후 받아온 이미지로 대체
@@ -82,11 +84,11 @@ struct CurationResultView: View {
                         ZStack(alignment: .topLeading) {
                             VStack(alignment: .leading, spacing: 20) {
                                 Text("오늘\n내 취향에 맞는\n혼잡도 낮은 카페")
-                                    .font(Font.custom("S-Core Dream", size: 24))
+                                    .font(.sCoreDream(.medium, size: 24))
                                     .foregroundColor(.white)
                                 
                                 Text("8곳")
-                                    .font(Font.custom("S-Core Dream", size: 12))
+                                    .font(.sCoreDream(.medium, size: 12))
                                     .foregroundColor(.white)
                             }
                             .offset(x: -70, y: 30)

@@ -42,13 +42,40 @@ struct SignUpEmailTypeView: View {
                 .foregroundStyle(.primary06)
                 .padding(.vertical, 18)
                 .padding(.horizontal, 24)
+                .keyboardType(.emailAddress)
             }
             .padding(.horizontal, 8)
             
+            HStack {
+                signUpViewModel.EmailValidation(email: inputText) ? 
+                Text("사용 가능한 이메일이예요! :)")
+                    .font(.sCoreDream(.medium, size: 12))
+                    .foregroundColor(.primary06)
+                    .padding(.top, 16)
+                    .padding(.horizontal, 24)
+                :
+                Text("이메일 형식이 올바르지 않아요 :(")
+                    .font(.sCoreDream(.medium, size: 12))
+                    .foregroundColor(.primary06)
+                    .padding(.top, 16)
+                    .padding(.horizontal, 24)
+                Spacer()
+            }
+            
             Spacer()
             
-            Primary05Button(text: "다음으로") {
-                isNextButtonClicked = true
+            Group {
+                if signUpViewModel.EmailValidation(email: inputText) {
+                    Primary05Button(text: "다음으로") {
+                        signUpViewModel.signUpModel.email = inputText
+                        isNextButtonClicked = true
+                    }
+                } else {
+                    Gray04Button(text: "다음으로") {
+                        // No Action
+                    }
+                    .disabled(true)
+                }
             }
             .padding(.bottom, 80)
             
@@ -71,6 +98,8 @@ struct SignUpEmailTypeView: View {
                                                                 dismiss: self.dismiss))
         
     } //: BODY
+    
+
 } //: 회원가입 이메일 입력 View
 
 #Preview {

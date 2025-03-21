@@ -10,5 +10,4 @@ import SwiftUI
 struct SignUpModel {
     var email: String = ""
     var password: String = ""
-    var passwordCheck: String = ""
 }

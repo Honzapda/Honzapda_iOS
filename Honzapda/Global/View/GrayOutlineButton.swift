@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GrayOutlineButton: View {
     let title: String
+    let signUpCurationViewModel : SignUpCurationViewModel
     @State var isSelected = false
     
     var body: some View {
@@ -27,6 +28,7 @@ struct GrayOutlineButton: View {
                 .clipShape(RoundedRectangle(cornerRadius: 24))
                 .onTapGesture {
                     isSelected = false
+                    signUpCurationViewModel.selectedCount += 1
                 }
         } else {
             Text(title)
@@ -41,12 +43,8 @@ struct GrayOutlineButton: View {
                 .frame(height: 40)
                 .onTapGesture {
                     isSelected = true
+                    signUpCurationViewModel.selectedCount -= 1
                 }
         }
     }
-}
-
-
-#Preview {
-    GrayOutlineButton(title: "Test")
 }
