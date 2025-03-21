@@ -4,7 +4,9 @@ struct CurationTestMainView: View {
     @ObservedObject var curationViewModel: CurationViewModel
     
     var body: some View {
+        
         ZStack(alignment: .top) {
+            
             HeaderView(curationViewModel: curationViewModel) // 헤더 부분 분리
             
             Group { // 프로그레스에 따른 뷰 변경
@@ -27,6 +29,7 @@ struct CurationTestMainView: View {
             .animation(.default, value: curationViewModel.progress)
         }
         .navigationBarBackButtonHidden(true)
+        .background(Color.white)
     }
 }
 

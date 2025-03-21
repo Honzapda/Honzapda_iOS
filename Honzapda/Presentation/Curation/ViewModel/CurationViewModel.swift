@@ -33,6 +33,13 @@ class CurationViewModel: ObservableObject {
     @Published var atmosphare: String = "none"
     // MARK: 큐레이션 바디 뷰 데이터셋 셈플
 
+    func initalizeCurationResult() {
+        mood = "none"
+        atmosphare = "none"
+        keyword = "none"
+        menu = "none"
+        progress = 0
+    }
     let cuData: CurationBVdataset = CurationBVdataset(title: "오늘의\n카페 추천",
                                                        subtitle: "오늘은 어디 가지?\n카페 고르기 힘들 때, HONZAPDA에서 추천해드려요!",
                                                        cafeImgArr: ["image_curationmain_cafesample1",

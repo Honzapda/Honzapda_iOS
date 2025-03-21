@@ -28,13 +28,13 @@ struct TestStartPopUp: View {
                 VStack(spacing: 16) {
                     // 타이틀
                     Text("테스트를 시작해볼까요?")
-                        .font(Font.custom("S-CoreDream-6Bold", size: 20))
+                        .font(.sCoreDream(.bold, size: 20))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.primary06)
                         .padding(.top, 11)
                     // 서브타이틀
                     Text("테스트는 총 네 단계로 이루어져 있어요.\n테스트에서는 전 단계로 돌아갈 수 없고,\n중간에 테스트를 종료하면 저장되지 않으니 조심하세요!")
-                        .font(Font.custom("S-Core Dream", size: 12))
+                        .font(.sCoreDream(.medium, size: 12))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.gray08)
                     
@@ -42,19 +42,20 @@ struct TestStartPopUp: View {
                         print("start curation test")
                         curationViewModel.gotoTest = true
                         curationViewModel.testPopup = false
+                        curationViewModel.initalizeCurationResult()
+                    
                     } label: {
                         ZStack {
                             Rectangle()
-                                .foregroundColor(Color("Primary05"))
+                                .foregroundColor(.primary05)
                                 .frame(width: 288, height: 40)
                                 .cornerRadius(8)
                             Text("유의사항을 확인했어요")
-                                .font(Font.custom("S-Core Dream", size: 12))
+                                .font(.sCoreDream(.medium, size: 12))
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
                         }
                     }
-
                 }
             }
         }
@@ -102,13 +103,13 @@ struct CafeListPopUp: View {
                     
                     // 텍스트
                     Text("나와 어울리는\n카페 리스트 생성 완료 :)")
-                        .font(Font.custom("S-CoreDream-6Bold", size: 20))
+                        .font(.sCoreDream(.bold, size: 20))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.primary06)
                         .padding(.top, 11)
                     
                     Text("테스트 결과를 바탕으로 한 카페 리스트가 생성되었어요!\n함께 보러 가볼까요?")
-                        .font(Font.custom("S-Core Dream", size: 12))
+                        .font(.sCoreDream(.medium, size: 12))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.gray08)
                 }
